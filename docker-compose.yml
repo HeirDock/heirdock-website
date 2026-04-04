@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3006:3006"
+    volumes:
+      - ./apps/web/src:/app/src
+      - ./apps/web/public:/app/public
+      - ./apps/web/index.html:/app/index.html
+    environment:
+      - VITE_ENVIRONMENT=development

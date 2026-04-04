@@ -1,0 +1,33 @@
+name: Deploy Production
+
+on:
+  push:
+    tags:
+      - "production-*"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/build-and-deploy.yml
+    with:
+      environment: production
+    permissions:
+      id-token: write
+      contents: read
+
+  health-check:
+    name: Health Check
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify site is accessible
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://heirdock.com)
+          if [ "$STATUS" != "200" ]; then
+            echo "Health check failed with status $STATUS"
+            exit 1
+          fi
+          echo "Health check passed (HTTP $STATUS)"

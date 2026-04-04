@@ -1,0 +1,65 @@
+name: Build and Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-frontend:
+    name: Build & Deploy Frontend
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/heirdock-website-${{ inputs.environment }}-github-deploy
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_ENVIRONMENT: ${{ inputs.environment }}
+          VITE_NOINDEX: ${{ inputs.environment == 'staging' && 'true' || 'false' }}
+
+      - name: Deploy static assets to S3
+        run: |
+          aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
+            --exclude "*.html" \
+            --exclude "*.json" \
+            --cache-control "max-age=31536000,public" \
+            --delete
+
+      - name: Deploy HTML files to S3
+        run: |
+          aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.json" \
+            --cache-control "no-cache,no-store,must-revalidate"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"

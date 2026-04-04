@@ -1,0 +1,9 @@
+{
+  "name": "heirdock-website-contact-form",
+  "version": "1.0.0",
+  "description": "Contact form handler with reCAPTCHA verification and SES delivery",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.0.0"
+  }
+}
