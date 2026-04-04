@@ -95,6 +95,35 @@ export default function PartnerLanding() {
         </div>
       </section>
 
+      {/* Explore More */}
+      <section className="section section--white">
+        <div className="container">
+          <h2 className="section__title">Learn more</h2>
+          <div className="feature-grid">
+            <Link to="/partner/how-it-works" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#128736;</div>
+              <div className="feature-card__title">How It Works</div>
+              <p className="feature-card__description">See the 5-step partner workflow from registration to client service.</p>
+            </Link>
+            <Link to="/partner/features" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__title">Partner Features</div>
+              <p className="feature-card__description">Client workspaces, document sharing, analytics, and team management.</p>
+            </Link>
+            <Link to="/partner/pricing" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#128176;</div>
+              <div className="feature-card__title">Pricing</div>
+              <p className="feature-card__description">Flexible plans from Solo to Enterprise. Start with a free 60-day pilot.</p>
+            </Link>
+            <Link to="/partner/use-cases" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#128188;</div>
+              <div className="feature-card__title">Use Cases</div>
+              <p className="feature-card__description">How insurance agents, estate planners, and appraisers use HeirDock.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cta-band">
         <div className="container">

@@ -109,16 +109,32 @@ export default function CustomerLanding() {
         </div>
       </section>
 
-      {/* Pricing Teaser */}
-      <section className="section section--white text-center">
+      {/* Explore More */}
+      <section className="section section--white">
         <div className="container">
-          <h2 className="section__title">Simple, transparent pricing</h2>
-          <p className="section__subtitle">
-            Start with a 30-day free trial. Plans from $50/year.
-          </p>
-          <Link to="/customer/pricing" className="btn btn--primary btn--lg">
-            View Pricing &rarr;
-          </Link>
+          <h2 className="section__title">Explore</h2>
+          <div className="feature-grid">
+            <Link to="/customer/features" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__title">Features</div>
+              <p className="feature-card__description">AI identification, valuations, family sharing, vault, coverage insights, and more.</p>
+            </Link>
+            <Link to="/customer/pricing" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#128176;</div>
+              <div className="feature-card__title">Pricing</div>
+              <p className="feature-card__description">Simple, transparent plans from $50/year. 30-day free trial on all plans.</p>
+            </Link>
+            <Link to="/customer/use-cases" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#127968;</div>
+              <div className="feature-card__title">Use Cases</div>
+              <p className="feature-card__description">Insurance readiness, estate planning, disaster recovery, and moving.</p>
+            </Link>
+            <Link to="/customer/how-it-works" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="feature-card__icon">&#128736;</div>
+              <div className="feature-card__title">How It Works</div>
+              <p className="feature-card__description">Four simple steps to organize your household — at your own pace.</p>
+            </Link>
+          </div>
         </div>
       </section>
 
