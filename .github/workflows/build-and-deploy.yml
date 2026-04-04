@@ -37,9 +37,13 @@ jobs:
       - run: npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+          if [ "${{ inputs.environment }}" = "staging" ]; then
+            npm run build:staging
+          else
+            npm run build
+          fi
         env:
-          VITE_ENVIRONMENT: ${{ inputs.environment }}
           VITE_NOINDEX: ${{ inputs.environment == 'staging' && 'true' || 'false' }}
 
       - name: Deploy static assets to S3

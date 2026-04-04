@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build:client && npm run build:server && npm run prerender",
+    "build:staging": "npm run build:client -- --mode staging && npm run build:server -- --mode staging && npm run prerender",
     "build:client": "vite build --outDir dist/client --ssrManifest",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
     "prerender": "node dist/server/entry-server.js",
