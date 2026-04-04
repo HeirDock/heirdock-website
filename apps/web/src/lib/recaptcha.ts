@@ -11,8 +11,13 @@ export function loadRecaptcha(): Promise<void> {
       return;
     }
 
-    if (window.grecaptcha) {
+    if (window.grecaptcha?.execute) {
       resolve();
+      return;
+    }
+
+    if (!SITE_KEY) {
+      reject(new Error("reCAPTCHA site key not configured"));
       return;
     }
 
@@ -20,9 +25,14 @@ export function loadRecaptcha(): Promise<void> {
     script.src = `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`;
     script.async = true;
     script.onload = () => {
-      window.grecaptcha.ready(() => resolve());
+      if (window.grecaptcha?.ready) {
+        window.grecaptcha.ready(() => resolve());
+      } else {
+        // grecaptcha loaded but .ready not available — likely a v2 key
+        reject(new Error("reCAPTCHA loaded but not v3 — check that the site key is a v3 key"));
+      }
     };
-    script.onerror = () => reject(new Error("Failed to load reCAPTCHA"));
+    script.onerror = () => reject(new Error("Failed to load reCAPTCHA script"));
     document.head.appendChild(script);
   });
 
@@ -30,11 +40,21 @@ export function loadRecaptcha(): Promise<void> {
 }
 
 export async function getRecaptchaToken(action: string): Promise<string> {
-  await loadRecaptcha();
-  return window.grecaptcha.execute(SITE_KEY, { action });
+  try {
+    await loadRecaptcha();
+    return await window.grecaptcha.execute(SITE_KEY, { action });
+  } catch (err) {
+    console.error("reCAPTCHA error:", err);
+    // In staging/development, allow submission without reCAPTCHA
+    const env = import.meta.env.VITE_ENVIRONMENT;
+    if (env === "staging" || env === "development") {
+      console.warn("reCAPTCHA failed, submitting without token (staging mode)");
+      return "staging-bypass";
+    }
+    throw err;
+  }
 }
 
-// Extend Window type for grecaptcha
 declare global {
   interface Window {
     grecaptcha: {
