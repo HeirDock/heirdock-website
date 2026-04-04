@@ -30,7 +30,7 @@ resource "aws_iam_role_policy" "lambda_ses" {
       {
         Effect   = "Allow"
         Action   = ["ses:SendEmail", "ses:SendRawEmail"]
-        Resource = var.ses_domain_identity_arn
+        Resource = "arn:aws:ses:${var.aws_region}:*:identity/*"
       }
     ]
   })
