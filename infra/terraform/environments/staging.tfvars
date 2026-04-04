@@ -1,4 +1,5 @@
 environment = "staging"
+aws_profile = "heirdock-production"
 
 create_dns           = false
 create_oidc_provider = true

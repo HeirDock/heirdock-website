@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "aws_profile" {
+  description = "AWS CLI profile to use (set to null in CI where OIDC provides credentials)"
+  type        = string
+  default     = null
+}
+
 variable "environment" {
   description = "Environment name (staging, production)"
   type        = string

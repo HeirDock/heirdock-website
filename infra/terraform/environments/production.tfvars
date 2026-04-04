@@ -1,4 +1,5 @@
 environment = "production"
+aws_profile = "heirdock-production"
 
 create_dns           = false
 create_oidc_provider = false
