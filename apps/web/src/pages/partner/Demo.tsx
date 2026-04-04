@@ -43,11 +43,6 @@ export default function Demo() {
             <div className="form__message form__message--success">
               <strong>Demo request received!</strong> Thank you for your interest. A member of our
               team will be in touch within 1 business day to schedule your demo.
-              <div style={{ marginTop: "var(--space-lg)" }}>
-                <button onClick={reset} className="btn btn--outline btn--sm">
-                  Submit another request
-                </button>
-              </div>
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} className="form">
