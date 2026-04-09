@@ -48,7 +48,7 @@ module "cloudfront" {
   frontend_bucket_regional_domain_name = module.s3.frontend_bucket_regional_domain_name
   domain_name                          = var.domain_name
   cdn_domain_names                     = var.cdn_domain_names
-  certificate_arn                      = var.create_dns ? module.dns.certificate_arn : ""
+  certificate_arn                      = var.create_dns ? module.dns.certificate_arn : var.certificate_arn
   logs_bucket_domain                   = module.s3.logs_bucket_domain
 }
 

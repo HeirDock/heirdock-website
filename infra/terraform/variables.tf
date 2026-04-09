@@ -53,6 +53,12 @@ variable "recaptcha_secret_key" {
   # Do NOT commit the secret key to source control
 }
 
+variable "certificate_arn" {
+  description = "ACM certificate ARN (used when create_dns is false and cert is managed manually)"
+  type        = string
+  default     = ""
+}
+
 variable "ses_domain_identity_arn" {
   description = "SES domain identity ARN (used when create_dns is false and SES is managed elsewhere)"
   type        = string
