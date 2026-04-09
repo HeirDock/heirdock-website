@@ -9,7 +9,7 @@ export default function About() {
           <Link to="/" className="page-header__back">&larr; Back to Home</Link>
           <h1 className="page-header__title">What is HeirDock?</h1>
           <p className="page-header__subtitle">
-            HeirDock helps people organize and understand what they own —
+            HeirDock helps people organize and understand what they own -
             without turning it into another ongoing task.
           </p>
         </div>
@@ -20,7 +20,7 @@ export default function About() {
         <div className="container container--narrow">
           <p>
             Over a lifetime, we accumulate meaningful things: furniture, collections, heirlooms, tools, keepsakes, and
-            everyday items that quietly add up. Most of it lives in closets, basements, storage units, or memory —
+            everyday items that quietly add up. Most of it lives in closets, basements, storage units, or memory -
             undocumented, undervalued, and hard for anyone else to make sense of later.
           </p>
           <p className="text-teal" style={{ fontWeight: 500, fontSize: "var(--text-md)" }}>
@@ -38,12 +38,12 @@ export default function About() {
               both desktop and mobile devices. Using photos, natural language, and AI, HeirDock helps you
               identify items, record context, understand potential value, and keep everything in one clear,
               living record. You can add details gradually, update things when life changes, and take action
-              only if and when it makes sense — sell, donate, share, or simply leave clear information
+              only if and when it makes sense - sell, donate, share, or simply leave clear information
               behind.
             </p>
             <p>
               There's no pressure to finish, no complex workflows, and no need to manage it every day. It's a
-              calm, useful tool that grows with you — and stays useful for those who come after.
+              calm, useful tool that grows with you - and stays useful for those who come after.
             </p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function About() {
         <div className="container container--narrow">
           <div className="callout callout--light">
             <p>
-              It's especially useful during moments of transition — downsizing, relocating, decluttering,
+              It's especially useful during moments of transition - downsizing, relocating, decluttering,
               supporting aging parents, or simply wanting peace of mind about what you have and what it
               means.
             </p>
@@ -124,7 +124,7 @@ export default function About() {
             <div className="callout__title">In One Sentence</div>
             <p>
               HeirDock helps people understand what they own, why it matters, and
-              what options they have — without turning it into another job.
+              what options they have - without turning it into another job.
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function About() {
               <div className="feature-card__icon">&#128161;</div>
               <div className="feature-card__title">Clarity without complexity</div>
               <p className="feature-card__description">
-                Understand what you own — without turning it into another
+                Understand what you own - without turning it into another
                 task or ongoing responsibility.
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function About() {
               <div className="feature-card__title">Clear records when needed</div>
               <p className="feature-card__description">
                 Generate clean, organized reports to share with family or
-                professionals — without managing legal workflows.
+                professionals - without managing legal workflows.
               </p>
             </div>
             <div className="feature-card">
@@ -180,7 +180,7 @@ export default function About() {
               <div className="feature-card__title">A calm foundation for the future</div>
               <p className="feature-card__description">
                 Reduce uncertainty, avoid burden later, and gain peace of mind
-                through understanding — not urgency.
+                through understanding - not urgency.
               </p>
             </div>
           </div>
@@ -192,9 +192,9 @@ export default function About() {
         <div className="container">
           <h3>Ready to get started?</h3>
           <div style={{ marginTop: "var(--space-xl)" }}>
-            <a href="https://app.heirdock.com/signup" className="btn btn--primary btn--lg">
-              Try HeirDock Free &rarr;
-            </a>
+            <Link to="/contact" className="btn btn--primary btn--lg">
+              Get in Touch &rarr;
+            </Link>
           </div>
         </div>
       </section>

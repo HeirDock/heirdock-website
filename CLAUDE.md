@@ -12,7 +12,7 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 - **Infrastructure:** AWS S3 + CloudFront, Terraform
 - **CI/CD:** GitHub Actions with OIDC authentication
 - **Forms:** Lambda + API Gateway + SES + reCAPTCHA v3
-- **Containerization:** Docker (Node 22 Alpine) for local dev only
+- **Containerization:** Docker (Node 24 Alpine) for local dev only
 
 ## Brand Guidelines
 
@@ -78,7 +78,7 @@ heirdock-website/
 
 - **S3:** `heirdock-website-{env}-frontend` (static files), `heirdock-website-{env}-logs` (access logs)
 - **CloudFront:** CDN with OAC, clean URL routing function, custom 404 page
-- **Lambda:** Contact form handler (Node.js 22, ARM64)
+- **Lambda:** Contact form handler (Node.js 24, ARM64)
 - **API Gateway:** POST /contact endpoint with CORS and rate limiting
 - **SES:** Email delivery for form submissions
 - **Route 53 + ACM:** DNS and SSL (production only, when zone migrates)

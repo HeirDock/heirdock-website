@@ -79,13 +79,13 @@ export default function Security() {
             <div className="diff-card">
               <div className="diff-card__label">Confidential</div>
               <div className="diff-card__statement">
-                Personal information, item details, addresses — protected by RLS, encryption, and audit logging. No PII in application logs.
+                Personal information, item details, addresses - protected by RLS, encryption, and audit logging. No PII in application logs.
               </div>
             </div>
             <div className="diff-card">
               <div className="diff-card__label">Restricted</div>
               <div className="diff-card__statement">
-                Vault documents, financial data, insurance policies — application-layer AES-256 encryption with per-document KMS keys and full audit trail.
+                Vault documents, financial data, insurance policies - application-layer AES-256 encryption with per-document KMS keys and full audit trail.
               </div>
             </div>
           </div>

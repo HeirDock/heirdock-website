@@ -8,7 +8,7 @@ export default function PartnerLanding() {
         <div className="container">
           <h1 className="hero__title">Household Asset Intelligence for Your Clients</h1>
           <p className="hero__subtitle" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Help your clients document, organize, and understand their physical assets —
+            Help your clients document, organize, and understand their physical assets -
             so you can deliver better service with complete information.
           </p>
           <div className="hero__actions">
@@ -29,8 +29,8 @@ export default function PartnerLanding() {
           <div className="problem-section">
             <div className="problem-section__narrative">
               <p>
-                Your clients own valuable physical assets — collectibles, jewelry, heirlooms, artwork,
-                and everyday items — but most can't articulate what they have or what it's worth.
+                Your clients own valuable physical assets - collectibles, jewelry, heirlooms, artwork,
+                and everyday items - but most can't articulate what they have or what it's worth.
               </p>
               <p>
                 Without organized documentation, insurance coverage has gaps, estate plans are
@@ -79,7 +79,7 @@ export default function PartnerLanding() {
               <div className="feature-card__icon">&#128176;</div>
               <div className="feature-card__title">Financial Advisors</div>
               <p className="feature-card__description">
-                Gain a complete picture of client wealth — including the physical assets that
+                Gain a complete picture of client wealth - including the physical assets that
                 traditional financial tools miss.
               </p>
             </div>

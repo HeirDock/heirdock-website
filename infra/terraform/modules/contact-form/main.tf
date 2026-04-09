@@ -47,7 +47,7 @@ resource "aws_lambda_function" "contact_form" {
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
   handler          = "index.handler"
-  runtime          = "nodejs22.x"
+  runtime          = "nodejs24.x"
   architectures    = ["arm64"]
   timeout          = 10
   memory_size      = 128
@@ -56,10 +56,11 @@ resource "aws_lambda_function" "contact_form" {
 
   environment {
     variables = {
-      RECAPTCHA_SECRET_KEY = var.recaptcha_secret_key
-      FROM_EMAIL           = "contact@heirdock.com"
-      TO_EMAIL             = "info@heirdock.com"
-      ALLOWED_ORIGINS      = join(",", var.allowed_origins)
+      RECAPTCHA_SECRET_KEY    = var.recaptcha_secret_key
+      FROM_EMAIL              = "contact@heirdock.com"
+      TO_EMAIL                = "info@heirdock.com"
+      ALLOWED_ORIGINS         = join(",", var.allowed_origins)
+      ALLOW_RECAPTCHA_BYPASS  = var.environment == "staging" ? "true" : "false"
     }
   }
 }

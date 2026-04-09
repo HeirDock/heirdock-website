@@ -73,10 +73,7 @@ export default function Nav() {
         </div>
 
         <div className="site-nav__actions">
-          <a href="https://app.heirdock.com/signup" className="btn btn--primary btn--sm">
-            Sign Up
-          </a>
-          <a href="https://app.heirdock.com/login" className="btn btn--outline btn--sm">
+          <a href="https://app.heirdock.com/login" className="btn btn--primary btn--sm">
             Sign In
           </a>
         </div>
@@ -98,8 +95,7 @@ export default function Nav() {
         <Link to="/customer/pricing" className="site-nav__link">Pricing</Link>
         <Link to="/faq" className="site-nav__link">FAQ</Link>
         <Link to="/contact" className="site-nav__link">Contact</Link>
-        <a href="https://app.heirdock.com/signup" className="btn btn--primary">Sign Up</a>
-        <a href="https://app.heirdock.com/login" className="btn btn--outline">Sign In</a>
+        <a href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</a>
       </div>
     </nav>
   );

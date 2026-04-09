@@ -106,8 +106,6 @@ export default function Contact() {
 
           <div style={{ marginTop: "var(--space-3xl)", paddingTop: "var(--space-2xl)", borderTop: "1px solid var(--color-border)" }}>
             <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)" }}>
-              You can also reach us at{" "}
-              <a href="mailto:support@heirdock.com">support@heirdock.com</a>.
               For answers to common questions, visit our{" "}
               <Link to="/faq">FAQ</Link> or{" "}
               <Link to="/help">Help Center</Link>.

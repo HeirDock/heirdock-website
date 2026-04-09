@@ -26,6 +26,7 @@ import DataRights from "./pages/legal/DataRights";
 import AcceptableUse from "./pages/legal/AcceptableUse";
 import Dpa from "./pages/legal/Dpa";
 import Accessibility from "./pages/legal/Accessibility";
+import Invite from "./pages/Invite";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="faq" element={<Faq />} />
         <Route path="help" element={<Help />} />
         <Route path="status" element={<Status />} />
+        <Route path="invite" element={<Invite />} />
 
         {/* Customer */}
         <Route path="customer" element={<CustomerLanding />} />

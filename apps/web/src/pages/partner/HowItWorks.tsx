@@ -8,7 +8,7 @@ export default function PartnerHowItWorks() {
           <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
           <h1 className="page-header__title">How It Works for Partners</h1>
           <p className="page-header__subtitle">
-            From registration to client service — a streamlined workflow for professionals.
+            From registration to client service - a streamlined workflow for professionals.
           </p>
         </div>
       </section>

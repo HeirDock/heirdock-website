@@ -29,7 +29,7 @@ export default function WhyPartner() {
               <div className="feature-card__icon">&#128200;</div>
               <div className="feature-card__title">Improve documentation quality</div>
               <p className="feature-card__description">
-                Photos, serial numbers, valuations, and evidence — all organized and accessible
+                Photos, serial numbers, valuations, and evidence - all organized and accessible
                 through the Partner Portal. Better data means better outcomes for your clients.
               </p>
             </div>
@@ -37,7 +37,7 @@ export default function WhyPartner() {
               <div className="feature-card__icon">&#129309;</div>
               <div className="feature-card__title">Strengthen client trust</div>
               <p className="feature-card__description">
-                Offering HeirDock shows clients you care about the complete picture — not
+                Offering HeirDock shows clients you care about the complete picture - not
                 just the financial side. It deepens relationships and builds long-term loyalty.
               </p>
             </div>

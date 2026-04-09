@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CustomerPricing() {
   return (
     <>
@@ -5,7 +7,7 @@ export default function CustomerPricing() {
         <div className="container">
           <h1 className="page-header__title">Choose Your Plan</h1>
           <p className="page-header__subtitle">
-            Start free and add features as you need them — at your own pace.
+            Start free and add features as you need them - at your own pace.
           </p>
         </div>
       </section>
@@ -50,9 +52,9 @@ export default function CustomerPricing() {
                   Home Inventory Snapshot export
                 </div>
               </div>
-              <a href="https://app.heirdock.com/signup" className="btn btn--outline">
-                Get Started Free
-              </a>
+              <Link to="/contact" className="btn btn--outline">
+                Contact Us
+              </Link>
             </div>
 
             {/* Plus */}
@@ -101,9 +103,9 @@ export default function CustomerPricing() {
                   Item Documentation PDF
                 </div>
               </div>
-              <a href="https://app.heirdock.com/signup" className="btn btn--primary">
-                Start Free Trial
-              </a>
+              <Link to="/contact" className="btn btn--primary">
+                Contact Us
+              </Link>
             </div>
 
             {/* Family */}
@@ -151,9 +153,9 @@ export default function CustomerPricing() {
                   Priority support
                 </div>
               </div>
-              <a href="https://app.heirdock.com/signup" className="btn btn--outline">
-                Start Free Trial
-              </a>
+              <Link to="/contact" className="btn btn--outline">
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

@@ -34,12 +34,12 @@ const faqs: FaqItemData[] = [
   {
     question: "Who is HeirDock for?",
     answer:
-      "HeirDock is designed for anyone who has accumulated belongings over a lifetime and wants clarity without complexity — especially those preparing for life transitions like downsizing, estate planning, or supporting aging parents.",
+      "HeirDock is designed for anyone who has accumulated belongings over a lifetime and wants clarity without complexity - especially those preparing for life transitions like downsizing, estate planning, or supporting aging parents.",
   },
   {
     question: "Do I need to catalog everything at once?",
     answer:
-      "No. HeirDock is designed for gradual use. Add items whenever it's convenient — there's no pressure to finish, and the tool grows with you over time.",
+      "No. HeirDock is designed for gradual use. Add items whenever it's convenient - there's no pressure to finish, and the tool grows with you over time.",
   },
   {
     question: "How does the AI identification work?",
@@ -49,7 +49,7 @@ const faqs: FaqItemData[] = [
   {
     question: "Can I share my records with family members?",
     answer:
-      "Yes. You can invite Trusted Participants with role-based access — Viewers can see assigned items, Contributors can help catalog, and Stewards have elevated access for estate planning purposes.",
+      "Yes. You can invite Trusted Participants with role-based access - Viewers can see assigned items, Contributors can help catalog, and Stewards have elevated access for estate planning purposes.",
   },
   {
     question: "Can professionals access my records?",

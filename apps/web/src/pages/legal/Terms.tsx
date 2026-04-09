@@ -5,7 +5,7 @@ export default function Terms() {
       <section className="section">
         <div className="container container--narrow">
           <h1>Terms of Service</h1>
-          <p>This page is being finalized. For current terms of service information, please contact us at <a href="mailto:support@heirdock.com">support@heirdock.com</a>.</p>
+          <p>This page is being finalized. For current terms of service information, please contact us at <a href="mailto:legal@heirdock.com">legal@heirdock.com</a>.</p>
         </div>
       </section>
     </>

@@ -123,9 +123,9 @@ export default function CustomerUseCases() {
             Whatever your reason, HeirDock gives you clarity and control.
           </p>
           <div className="cta-band__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--white btn--lg">
-              Start Free Trial &rarr;
-            </a>
+            <Link to="/contact" className="btn btn--white btn--lg">
+              Get in Touch &rarr;
+            </Link>
           </div>
         </div>
       </section>

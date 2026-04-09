@@ -8,7 +8,7 @@ export default function CustomerHowItWorks() {
           <Link to="/customer" className="page-header__back">&larr; Back to For Families</Link>
           <h1 className="page-header__title">How HeirDock Works</h1>
           <p className="page-header__subtitle">
-            A simple, gradual approach to organizing your household — no pressure, no deadlines.
+            A simple, gradual approach to organizing your household - no pressure, no deadlines.
           </p>
         </div>
       </section>
@@ -22,8 +22,8 @@ export default function CustomerHowItWorks() {
               <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>1</div>
               <h3>Create your household</h3>
               <p style={{ marginTop: "var(--space-md)" }}>
-                Sign up and create your Household Record. Add your first property — your home, a storage unit,
-                a vacation house — and you're ready to begin. The setup takes less than five minutes.
+                Sign up and create your Household Record. Add your first property - your home, a storage unit,
+                a vacation house - and you're ready to begin. The setup takes less than five minutes.
               </p>
             </div>
 
@@ -37,7 +37,7 @@ export default function CustomerHowItWorks() {
                 sales data. Add details like purchase date, serial numbers, or receipts as evidence.
               </p>
               <p>
-                There's no rush — add items whenever it's convenient. Five items today,
+                There's no rush - add items whenever it's convenient. Five items today,
                 five more next weekend. HeirDock grows with you.
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function CustomerHowItWorks() {
               <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>4</div>
               <h3>Stay protected</h3>
               <p style={{ marginTop: "var(--space-md)" }}>
-                Store sensitive documents in the encrypted Vault — wills, deeds, insurance cards,
+                Store sensitive documents in the encrypted Vault - wills, deeds, insurance cards,
                 certificates. Link insurance policies to items and get Coverage Insights that
                 identify potential gaps. When you need it, export a comprehensive Home Inventory
                 Snapshot for insurance claims, estate planning, or family reference.
@@ -81,14 +81,14 @@ export default function CustomerHowItWorks() {
       {/* CTA */}
       <section className="cta-band">
         <div className="container">
-          <h2 className="cta-band__title">Ready to get started?</h2>
+          <h2 className="cta-band__title">Have questions?</h2>
           <p className="cta-band__subtitle">
-            Create your free household record in minutes.
+            We'd love to tell you more about how HeirDock can help your household.
           </p>
           <div className="cta-band__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--white btn--lg">
-              Start Your Free Trial &rarr;
-            </a>
+            <Link to="/contact" className="btn btn--white btn--lg">
+              Get in Touch &rarr;
+            </Link>
           </div>
         </div>
       </section>
