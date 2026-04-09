@@ -54,7 +54,7 @@ export default function WhyPartner() {
               <div className="feature-card__title">Help clients close coverage gaps</div>
               <p className="feature-card__description">
                 Surface underinsured items and planning opportunities so your clients
-                are fully protected — not just on paper.
+                are fully protected, not just on paper.
               </p>
             </div>
             <div className="feature-card">

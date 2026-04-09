@@ -47,11 +47,7 @@ export default function Invite() {
                     Thank you for your interest in HeirDock. We'll reach out when
                     your invitation is ready. Keep an eye on your inbox.
                   </p>
-                  <div style={{ marginTop: "var(--space-lg)" }}>
-                    <button onClick={reset} className="btn btn--outline btn--sm">
-                      Submit another request
-                    </button>
-                  </div>
+
                 </div>
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit} className="form">
