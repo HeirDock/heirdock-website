@@ -1,11 +1,22 @@
+import { useEffect } from "react";
 
 export default function Terms() {
+  useEffect(() => {
+    if (document.getElementById("termly-jssdk")) return;
+    const script = document.createElement("script");
+    script.id = "termly-jssdk";
+    script.src = "https://app.termly.io/embed-policy.min.js";
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <>
       <section className="section">
         <div className="container container--narrow">
-          <h1>Terms of Service</h1>
-          <p>This page is being finalized. For current terms of service information, please contact us at <a href="mailto:legal@heirdock.com">legal@heirdock.com</a>.</p>
+          <div
+            data-id="951fb2b1-3132-407e-87ac-3a48a5082247"
+            {...{ name: "termly-embed" }}
+          />
         </div>
       </section>
     </>

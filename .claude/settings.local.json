@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:heirway-tracker-aaronober1.replit.app)",
+      "mcp__plugin_compound-engineering_context7__resolve-library-id",
+      "WebSearch",
+      "mcp__plugin_compound-engineering_context7__query-docs",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:vike.dev)",
+      "WebFetch(domain:registry.terraform.io)"
+    ]
+  }
+}

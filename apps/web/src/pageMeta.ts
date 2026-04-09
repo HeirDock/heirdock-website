@@ -109,8 +109,8 @@ export const pageMeta: Record<string, PageMeta> = {
       "Schedule a personalized demo of HeirDock's Partner Portal. See how it fits your professional practice.",
   },
   "/legal/terms": {
-    title: "HeirDock - Terms of Service",
-    description: "HeirDock Terms of Service.",
+    title: "HeirDock - Terms of Use",
+    description: "HeirDock Terms of Use.",
     noindex: true,
   },
   "/legal/privacy": {
