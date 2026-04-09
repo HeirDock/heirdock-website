@@ -9,7 +9,7 @@ interface FormState {
 }
 
 interface SubmitData {
-  formType: "contact" | "demo";
+  formType: "contact" | "demo" | "invite";
   name: string;
   email: string;
   message: string;
@@ -44,8 +44,12 @@ export function useContactForm() {
         setState({ status: "error", errorMessage: "Please enter a valid email address." });
         return;
       }
-      if (!data.message.trim() || data.message.length > 5000) {
+      if (data.formType !== "invite" && (!data.message.trim() || data.message.length > 5000)) {
         setState({ status: "error", errorMessage: "Please enter a message (max 5000 characters)." });
+        return;
+      }
+      if (data.formType === "invite" && data.message.length > 2000) {
+        setState({ status: "error", errorMessage: "Message is too long (max 2000 characters)." });
         return;
       }
 

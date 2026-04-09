@@ -9,13 +9,13 @@ export default function CustomerLanding() {
           <h1 className="hero__title">Your household, organized and protected</h1>
           <p className="hero__subtitle">
             HeirDock helps families catalog, understand, and manage the physical assets
-            in their lives — from heirlooms and collectibles to everyday valuables.
+            in their lives - from heirlooms and collectibles to everyday valuables.
             Start building your household record today.
           </p>
           <div className="hero__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--primary btn--lg">
-              Start Your Free Trial &rarr;
-            </a>
+            <Link to="/customer/how-it-works" className="btn btn--primary btn--lg">
+              See How It Works &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -25,14 +25,14 @@ export default function CustomerLanding() {
         <div className="container">
           <h2 className="section__title">Everything you need in one place</h2>
           <p className="section__subtitle">
-            A calm, organized way to document what you own — so you and your family have clarity when it matters most.
+            A calm, organized way to document what you own - so you and your family have clarity when it matters most.
           </p>
           <div className="feature-grid">
             <div className="feature-card">
               <div className="feature-card__icon">&#128247;</div>
               <div className="feature-card__title">Capture with ease</div>
               <p className="feature-card__description">
-                Take a photo or describe an item. HeirDock handles the rest — identifying, categorizing,
+                Take a photo or describe an item. HeirDock handles the rest - identifying, categorizing,
                 and organizing your belongings automatically.
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function CustomerLanding() {
               <div className="feature-card__title">Secure and private</div>
               <p className="feature-card__description">
                 Your data is encrypted at rest and in transit. The Vault provides additional
-                AES-256 encryption for sensitive documents.
+                bank-level encryption for sensitive documents.
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function CustomerLanding() {
         <div className="container text-center">
           <h2 className="section__title">How it works</h2>
           <p className="section__subtitle">
-            Four simple steps to organize your household — at your own pace.
+            Four simple steps to organize your household - at your own pace.
           </p>
           <div className="step-grid">
             <div className="step-card">
@@ -132,7 +132,7 @@ export default function CustomerLanding() {
             <Link to="/customer/how-it-works" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="feature-card__icon">&#128736;</div>
               <div className="feature-card__title">How It Works</div>
-              <p className="feature-card__description">Four simple steps to organize your household — at your own pace.</p>
+              <p className="feature-card__description">Four simple steps to organize your household - at your own pace.</p>
             </Link>
           </div>
         </div>
@@ -146,11 +146,10 @@ export default function CustomerLanding() {
             It only takes a few minutes to create your household record and begin cataloging.
           </p>
           <div className="cta-band__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--white btn--lg">
-              Start Your Free Trial &rarr;
-            </a>
+            <Link to="/contact" className="btn btn--white btn--lg">
+              Get in Touch &rarr;
+            </Link>
           </div>
-          <p className="cta-band__note">Free for 30 days. No credit card required.</p>
         </div>
       </section>
     </>

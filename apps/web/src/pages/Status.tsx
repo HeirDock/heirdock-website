@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Status() {
   return (
     <>
@@ -63,7 +65,7 @@ export default function Status() {
           </div>
 
           <p style={{ marginTop: "var(--space-3xl)", fontSize: "var(--text-sm)", color: "var(--color-text-muted)" }}>
-            For urgent issues, contact <a href="mailto:support@heirdock.com">support@heirdock.com</a>.
+            For urgent issues, please use our <Link to="/contact">contact form</Link>.
           </p>
         </div>
       </section>

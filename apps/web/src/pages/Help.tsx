@@ -24,7 +24,7 @@ export default function Help() {
             </Link>
             <Link to="/customer/features" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="feature-card__icon">&#128206;</div>
-              <div className="feature-card__title">Inventory Management</div>
+              <div className="feature-card__title">Asset Management</div>
               <p className="feature-card__description">
                 Learn how to add items, upload evidence, organize with collections and tags, and manage your catalog.
               </p>

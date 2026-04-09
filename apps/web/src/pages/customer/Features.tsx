@@ -8,7 +8,7 @@ export default function CustomerFeatures() {
           <Link to="/customer" className="page-header__back">&larr; Back to For Families</Link>
           <h1 className="page-header__title">Features</h1>
           <p className="page-header__subtitle">
-            Everything you need to catalog, protect, and pass on what matters — powered by AI.
+            Everything you need to catalog, protect, and pass on what matters - powered by AI.
           </p>
         </div>
       </section>
@@ -21,7 +21,7 @@ export default function CustomerFeatures() {
               <h3>AI Identify</h3>
               <p>
                 Take a photo of any item and let HeirDock's AI recognize it instantly. It suggests
-                a name, category, and relevant details — saving you time and effort on every entry.
+                a name, category, and relevant details - saving you time and effort on every entry.
               </p>
               <p>
                 Works with furniture, jewelry, collectibles, artwork, electronics, tools, and more.
@@ -41,7 +41,7 @@ export default function CustomerFeatures() {
               <h3>Market Valuation</h3>
               <p>
                 Get automatic market value estimates based on real comparable sales data.
-                HeirDock searches recent transactions to suggest what your items might be worth —
+                HeirDock searches recent transactions to suggest what your items might be worth -
                 no appraisal needed for everyday items.
               </p>
               <p>
@@ -87,7 +87,7 @@ export default function CustomerFeatures() {
                 elevated access for estate planning and management.
               </p>
               <p>
-                Everyone sees only what they need to — with clear controls over sharing
+                Everyone sees only what they need to - with clear controls over sharing
                 and permissions.
               </p>
             </div>
@@ -103,9 +103,9 @@ export default function CustomerFeatures() {
             <div className="feature-section__content">
               <h3>Vault Storage</h3>
               <p>
-                Store your most sensitive documents in the encrypted Vault — wills, deeds,
+                Store your most sensitive documents in the encrypted Vault - wills, deeds,
                 insurance policies, certificates, and more. Each document is protected with
-                AES-256 encryption and per-document encryption keys.
+                bank-level encryption with per-document security.
               </p>
               <p>
                 Access is strictly controlled. Only you and participants you explicitly authorize
@@ -147,7 +147,7 @@ export default function CustomerFeatures() {
               <p>
                 Designate successors for your items, create distribution plans, and leave
                 legacy messages for the people who matter. HeirDock helps you organize your
-                wishes clearly — so your family doesn't have to guess.
+                wishes clearly - so your family doesn't have to guess.
               </p>
               <p>
                 Export structured reports for estate attorneys, financial advisors, or family
@@ -164,12 +164,12 @@ export default function CustomerFeatures() {
         <div className="container">
           <h2 className="cta-band__title">See it in action</h2>
           <p className="cta-band__subtitle">
-            Start your free trial and explore all features for 30 days.
+            Have questions about HeirDock's features? We'd love to hear from you.
           </p>
           <div className="cta-band__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--white btn--lg">
-              Start Free Trial &rarr;
-            </a>
+            <Link to="/contact" className="btn btn--white btn--lg">
+              Get in Touch &rarr;
+            </Link>
             <Link to="/customer/pricing" className="btn btn--outline btn--lg" style={{ borderColor: "white", color: "white" }}>
               View Pricing
             </Link>

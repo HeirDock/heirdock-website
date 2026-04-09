@@ -6,6 +6,7 @@ const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL;
 const TO_EMAIL = process.env.TO_EMAIL;
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || "").split(",");
+const ALLOW_RECAPTCHA_BYPASS = process.env.ALLOW_RECAPTCHA_BYPASS === "true";
 
 function corsHeaders(origin) {
   const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
@@ -61,6 +62,7 @@ exports.handler = async (event) => {
     // Determine form type
     const formType = body.formType || "contact";
     const isDemo = formType === "demo";
+    const isInvite = formType === "invite";
 
     // Input validation
     const name = stripHtml(body.name || "");
@@ -74,7 +76,11 @@ exports.handler = async (event) => {
     if (!email || !isValidEmail(email)) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: "Valid email is required" }) };
     }
-    if (!message || message.length > 5000) {
+    if (isInvite) {
+      if (message.length > 2000) {
+        return { statusCode: 400, headers, body: JSON.stringify({ error: "Message is too long (max 2000 characters)" }) };
+      }
+    } else if (!message || message.length > 5000) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: "Message is required (max 5000 characters)" }) };
     }
     if (!recaptchaToken) {
@@ -87,9 +93,9 @@ exports.handler = async (event) => {
     const clientCount = isDemo ? stripHtml(body.clientCount || "") : "";
     const inquiryType = !isDemo ? stripHtml(body.inquiryType || "General") : "";
 
-    // Verify reCAPTCHA (skip for staging bypass)
+    // Verify reCAPTCHA (bypass only allowed in staging via env var)
     let recaptchaResult = { success: true, score: 1.0, action: "staging-bypass" };
-    if (recaptchaToken !== "staging-bypass") {
+    if (!(ALLOW_RECAPTCHA_BYPASS && recaptchaToken === "staging-bypass")) {
       recaptchaResult = await verifyRecaptcha(recaptchaToken);
       console.log("reCAPTCHA result:", JSON.stringify({
         success: recaptchaResult.success,
@@ -105,12 +111,24 @@ exports.handler = async (event) => {
     }
 
     // Build email content
-    const subject = isDemo
-      ? `HeirDock Demo Request: ${name} (${company || "N/A"})`
-      : `HeirDock Contact [${inquiryType}]: ${name}`;
+    let subject, htmlBody, textBody;
 
-    const htmlBody = isDemo
-      ? `
+    if (isInvite) {
+      subject = `HeirDock Invite Request: ${name}`;
+      htmlBody = `
+        <h2>New Invite Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${message ? `<p><strong>Interest:</strong></p><p>${message.replace(/\n/g, "<br>")}</p>` : "<p><em>No additional details provided.</em></p>"}
+        <hr>
+        <p style="color: #999; font-size: 12px;">
+          reCAPTCHA score: ${recaptchaResult.score} | Sent from heirdock.com invite request form
+        </p>
+      `;
+      textBody = `Invite Request\nName: ${name}\nEmail: ${email}\nInterest:\n${message || "(none)"}`;
+    } else if (isDemo) {
+      subject = `HeirDock Demo Request: ${name} (${company || "N/A"})`;
+      htmlBody = `
         <h2>New Demo Request</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -123,8 +141,11 @@ exports.handler = async (event) => {
         <p style="color: #999; font-size: 12px;">
           reCAPTCHA score: ${recaptchaResult.score} | Sent from heirdock.com demo request form
         </p>
-      `
-      : `
+      `;
+      textBody = `Demo Request\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nRole: ${role}\nClients: ${clientCount}\nMessage:\n${message}`;
+    } else {
+      subject = `HeirDock Contact [${inquiryType}]: ${name}`;
+      htmlBody = `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -136,10 +157,8 @@ exports.handler = async (event) => {
           reCAPTCHA score: ${recaptchaResult.score} | Sent from heirdock.com contact form
         </p>
       `;
-
-    const textBody = isDemo
-      ? `Demo Request\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nRole: ${role}\nClients: ${clientCount}\nMessage:\n${message}`
-      : `Contact Form\nName: ${name}\nEmail: ${email}\nType: ${inquiryType}\nMessage:\n${message}`;
+      textBody = `Contact Form\nName: ${name}\nEmail: ${email}\nType: ${inquiryType}\nMessage:\n${message}`;
+    }
 
     const command = new SendEmailCommand({
       Source: FROM_EMAIL,

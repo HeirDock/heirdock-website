@@ -10,13 +10,13 @@ export default function Home() {
           <h1 className="hero__title">Know what you own. Protect what matters.</h1>
           <p className="hero__subtitle">
             HeirDock helps households identify, organize, value, and manage
-            the physical assets in their lives — from heirlooms and collectibles to
+            the physical assets in their lives - from heirlooms and collectibles to
             jewelry, art, and everyday valuables.
           </p>
           <div className="hero__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--primary btn--lg">
-              Start Your Free Trial &rarr;
-            </a>
+            <Link to="/invite" className="btn btn--primary btn--lg">
+              Request Early Access &rarr;
+            </Link>
             <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
               Sign In
             </a>
@@ -29,14 +29,14 @@ export default function Home() {
         <div className="container">
           <h2 className="section__title">How HeirDock Works</h2>
           <p className="section__subtitle">
-            Everything you need to organize what you own — with the future in mind.
+            Everything you need to organize what you own - with the future in mind.
           </p>
           <div className="feature-grid">
             <div className="feature-card">
               <div className="feature-card__icon">&#128206;</div>
               <div className="feature-card__title">Capture your household assets</div>
               <p className="feature-card__description">
-                Take a photo or describe an item to document the belongings that matter —
+                Take a photo or describe an item to document the belongings that matter -
                 furniture, collectibles, jewelry, heirlooms, and everyday valuables.
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
               <div className="feature-card__title">AI helps identify and estimate value</div>
               <p className="feature-card__description">
                 HeirDock uses AI to help identify items and suggest potential
-                market value — no research required.
+                market value - no research required.
               </p>
             </div>
             <div className="feature-card">
@@ -60,7 +60,7 @@ export default function Home() {
               <div className="feature-card__icon">&#128196;</div>
               <div className="feature-card__title">Export your household record</div>
               <p className="feature-card__description">
-                Generate a comprehensive summary of your household assets —
+                Generate a comprehensive summary of your household assets -
                 ready for insurance, estate planning, or family reference.
               </p>
             </div>
@@ -83,9 +83,9 @@ export default function Home() {
                 investments, real estate, and insurance.
               </p>
               <p>
-                But the physical assets inside the home — collectibles,
+                But the physical assets inside the home - collectibles,
                 jewelry, heirlooms, artwork, memorabilia, and everyday
-                valuables — often remain undocumented and difficult
+                valuables - often remain undocumented and difficult
                 to manage.
               </p>
             </div>
@@ -119,11 +119,10 @@ export default function Home() {
             Get started – It only takes a few minutes to start organizing what you have.
           </p>
           <div className="cta-band__actions">
-            <a href="https://app.heirdock.com/signup" className="btn btn--white btn--lg">
-              Start organizing &rarr;
-            </a>
+            <Link to="/about" className="btn btn--white btn--lg">
+              Learn More &rarr;
+            </Link>
           </div>
-          <p className="cta-band__note">Free to start</p>
         </div>
       </section>
 
