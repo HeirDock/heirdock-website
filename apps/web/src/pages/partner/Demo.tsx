@@ -4,7 +4,7 @@ import { useContactForm } from "../../lib/useContactForm";
 
 export default function Demo() {
   const formRef = useRef<HTMLFormElement>(null);
-  const { status, errorMessage, submit, reset } = useContactForm();
+  const { status, errorMessage, submit } = useContactForm();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

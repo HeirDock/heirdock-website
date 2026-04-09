@@ -11,7 +11,7 @@ export function loadRecaptcha(): Promise<void> {
       return;
     }
 
-    if (window.grecaptcha?.execute) {
+    if (window.grecaptcha && typeof window.grecaptcha.execute === "function") {
       resolve();
       return;
     }
