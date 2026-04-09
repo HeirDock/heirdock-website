@@ -155,7 +155,7 @@ export default function CustomerPricing() {
               <div className="pricing-tier__features">
                 <div className="pricing-tier__feature">
                   <span className="pricing-tier__feature-check">&#10003;</span>
-                  Everything in Essentials
+                  All features included
                 </div>
                 <div className="pricing-tier__feature">
                   <span className="pricing-tier__feature-check">&#10003;</span>
@@ -186,7 +186,7 @@ export default function CustomerPricing() {
               <div className="pricing-tier__features">
                 <div className="pricing-tier__feature">
                   <span className="pricing-tier__feature-check">&#10003;</span>
-                  Everything in Plus
+                  All features included
                 </div>
                 <div className="pricing-tier__feature">
                   <span className="pricing-tier__feature-check">&#10003;</span>
