@@ -20,12 +20,12 @@ export default function CustomerUseCases() {
             <div className="feature-section__content">
               <h3>Insurance Readiness</h3>
               <p>
-                <strong>The problem:</strong> Most families can't produce a complete inventory when filing
+                <strong>The problem:</strong> Most families can't produce a complete asset record when filing
                 an insurance claim. After a fire, flood, or theft, they're left trying to reconstruct
                 what was lost from memory.
               </p>
               <p>
-                <strong>How HeirDock helps:</strong> Build a documented inventory with photos, serial numbers,
+                <strong>How HeirDock helps:</strong> Build a documented asset record with photos, serial numbers,
                 valuations, and receipts. Link insurance policies to items. Get Coverage Insights that identify
                 gaps before you need to file a claim.
               </p>

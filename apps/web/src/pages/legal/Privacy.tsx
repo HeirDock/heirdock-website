@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 export default function Privacy() {
   useEffect(() => {
-    if (document.getElementById("termly-jssdk")) return;
+    const existing = document.getElementById("termly-jssdk");
+    if (existing) existing.remove();
     const script = document.createElement("script");
     script.id = "termly-jssdk";
     script.src = "https://app.termly.io/embed-policy.min.js";

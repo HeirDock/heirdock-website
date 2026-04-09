@@ -48,7 +48,7 @@ export async function getRecaptchaToken(action: string): Promise<string> {
     // In staging/development, allow submission without reCAPTCHA
     const env = import.meta.env.VITE_ENVIRONMENT;
     if (env === "staging" || env === "development") {
-      console.warn("reCAPTCHA failed, submitting without token (staging mode)");
+      console.warn("reCAPTCHA failed, submitting without token (staging/dev mode)");
       return "staging-bypass";
     }
     throw err;

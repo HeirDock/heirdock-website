@@ -70,7 +70,7 @@ export default function CustomerHowItWorks() {
               <p style={{ marginTop: "var(--space-md)" }}>
                 Store sensitive documents in the encrypted Vault - wills, deeds, insurance cards,
                 certificates. Link insurance policies to items and get Coverage Insights that
-                identify potential gaps. When you need it, export a comprehensive Home Inventory
+                identify potential gaps. When you need it, export a comprehensive Home Asset
                 Snapshot for insurance claims, estate planning, or family reference.
               </p>
             </div>

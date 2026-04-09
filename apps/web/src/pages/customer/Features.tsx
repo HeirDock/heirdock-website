@@ -105,7 +105,7 @@ export default function CustomerFeatures() {
               <p>
                 Store your most sensitive documents in the encrypted Vault - wills, deeds,
                 insurance policies, certificates, and more. Each document is protected with
-                AES-256 encryption and per-document encryption keys.
+                bank-level encryption with per-document security.
               </p>
               <p>
                 Access is strictly controlled. Only you and participants you explicitly authorize

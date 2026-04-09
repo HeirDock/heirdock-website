@@ -7,26 +7,6 @@ interface FaqItemData {
 
 const faqs: FaqItemData[] = [
   {
-    question: "Can I upgrade or downgrade my plan at any time?",
-    answer:
-      "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.",
-  },
-  {
-    question: "What happens when my free trial ends?",
-    answer:
-      "Your 30-day free trial will automatically convert to the Basic plan unless you choose to upgrade. All your data remains safe and accessible.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Absolutely. We use military-grade AES-256 encryption for your Digital Vault entries and follow industry best practices for data security and privacy.",
-  },
-  {
-    question: "Can I cancel my subscription?",
-    answer:
-      "Yes, you can cancel your subscription at any time from your account settings. You'll retain access to paid features until the end of your current billing period.",
-  },
-  {
     question: "What is HeirDock?",
     answer:
       "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Using photos, natural language, and AI, it creates a living record of what you own.",
@@ -55,6 +35,26 @@ const faqs: FaqItemData[] = [
     question: "Can professionals access my records?",
     answer:
       "Only with your explicit consent. You can grant read-only access to professional partners like insurance agents, estate planners, or appraisers through the Partner Portal.",
+  },
+  {
+    question: "Can I upgrade or downgrade my plan at any time?",
+    answer:
+      "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.",
+  },
+  {
+    question: "What happens when my free trial ends?",
+    answer:
+      "Your 30-day free trial will automatically convert to the Basic plan unless you choose to upgrade. All your data remains safe and accessible.",
+  },
+  {
+    question: "Is my data secure?",
+    answer:
+      "Absolutely. We use industry-standard encryption for your Digital Vault entries and follow best practices for data security and privacy.",
+  },
+  {
+    question: "Can I cancel my subscription?",
+    answer:
+      "Yes, you can cancel your subscription at any time from your account settings. You'll retain access to paid features until the end of your current billing period.",
   },
 ];
 

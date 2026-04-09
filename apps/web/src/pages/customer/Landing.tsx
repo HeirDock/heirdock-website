@@ -57,7 +57,7 @@ export default function CustomerLanding() {
               <div className="feature-card__title">Secure and private</div>
               <p className="feature-card__description">
                 Your data is encrypted at rest and in transit. The Vault provides additional
-                AES-256 encryption for sensitive documents.
+                bank-level encryption for sensitive documents.
               </p>
             </div>
           </div>

@@ -16,7 +16,6 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="site-footer__heading">Quick Links</div>
             <div className="site-footer__links">
               <Link to="/about">What is HeirDock?</Link>
               <Link to="/customer">For Families</Link>
@@ -27,12 +26,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="site-footer__heading">Legal</div>
             <div className="site-footer__links">
               <Link to="/legal/privacy">Privacy Policy</Link>
               <Link to="/legal/terms">Terms of Use</Link>
               <Link to="/security">Data Security</Link>
-              <Link to="/contact">Contact Support</Link>
+              <Link to="/contact">Contact Us</Link>
             </div>
           </div>
         </div>

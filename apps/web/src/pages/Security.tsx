@@ -15,20 +15,19 @@ export default function Security() {
           <div className="feature-grid">
             <div className="feature-card">
               <div className="feature-card__icon">&#128274;</div>
-              <div className="feature-card__title">Encryption at rest &amp; in transit</div>
+              <div className="feature-card__title">End-to-end encryption</div>
               <p className="feature-card__description">
-                All data is encrypted using industry-standard AES-256 encryption at rest
-                and TLS 1.2+ in transit. Vault documents use per-document encryption keys
-                managed by AWS KMS.
+                All data - at rest and in transit. Vault documents are individually
+                encrypted with dedicated keys for an additional layer of protection.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon">&#128101;</div>
-              <div className="feature-card__title">Access control</div>
+              <div className="feature-card__title">Access Control</div>
               <p className="feature-card__description">
-                Row-Level Security (RLS) enforced at the database level ensures every query
-                is scoped to the correct household. Role-based access controls (RBAC) govern
-                what each participant can see and do.
+                Strict data isolation ensures households can only access their own information.
+                Role-based permissions let you control exactly what each family member, executor,
+                or advisor can see and do.
               </p>
             </div>
             <div className="feature-card">
@@ -42,51 +41,46 @@ export default function Security() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon">&#128170;</div>
-              <div className="feature-card__title">SOC 2 Type II roadmap</div>
+              <div className="feature-card__title">Built on SOC 2 principles</div>
               <p className="feature-card__description">
-                HeirDock is building toward SOC 2 Type II certification covering Security,
-                Availability, and Confidentiality trust criteria. Our infrastructure and
-                processes are designed with compliance in mind from day one.
+                HeirDock is designed with SOC 2 Type II principles in mind - covering Security,
+                Availability, and Confidentiality trust criteria. Compliance is built into
+                our infrastructure and processes from day one.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon">&#127760;</div>
-              <div className="feature-card__title">GDPR &amp; CCPA compliance</div>
+              <div className="feature-card__title">Privacy by design</div>
               <p className="feature-card__description">
-                We respect data rights. Users can export, correct, and delete their data.
-                Consent-based sharing ensures partners only access information with explicit
-                household approval.
+                Our platform is built with GDPR and CCPA principles in mind - including
+                data export, correction, and deletion. Partners only access information
+                with explicit household approval.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon">&#128736;</div>
-              <div className="feature-card__title">Infrastructure security</div>
+              <div className="feature-card__title">Infrastructure Security</div>
               <p className="feature-card__description">
-                Hosted on AWS with WAF, Shield, GuardDuty, and CloudTrail. Secrets managed
-                via AWS Secrets Manager. No credentials hardcoded, ever. Automated vulnerability
-                scanning on every deployment.
+                Hosted on secure cloud infrastructure with layered defenses - threat detection,
+                traffic protection, credential protection, and audit logging. Every deployment
+                is automatically scanned for vulnerabilities.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Data Classification */}
-      <section className="section">
-        <div className="container container--narrow">
-          <h2 className="section__title">How we classify your data</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-xl)", marginTop: "var(--space-2xl)" }}>
-            <div className="diff-card">
-              <div className="diff-card__label">Confidential</div>
-              <div className="diff-card__statement">
-                Personal information, item details, addresses - protected by RLS, encryption, and audit logging. No PII in application logs.
-              </div>
+            <div className="feature-card">
+              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__title">Availability</div>
+              <p className="feature-card__description">
+                Built for reliability with redundant infrastructure, automated failover,
+                and continuous monitoring to keep your data accessible when you need it.
+              </p>
             </div>
-            <div className="diff-card">
-              <div className="diff-card__label">Restricted</div>
-              <div className="diff-card__statement">
-                Vault documents, financial data, insurance policies - application-layer AES-256 encryption with per-document KMS keys and full audit trail.
-              </div>
+            <div className="feature-card">
+              <div className="feature-card__icon">&#129302;</div>
+              <div className="feature-card__title">Responsible AI</div>
+              <p className="feature-card__description">
+                AI features like identification and valuation run in isolated, secure environments.
+                Your data is never used to train models and is not shared with third parties.
+              </p>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/security": {
     title: "HeirDock - Security & Privacy",
     description:
-      "Learn how HeirDock protects your data with AES-256 encryption, row-level security, audit logging, and compliance-ready infrastructure.",
+      "Learn how HeirDock protects your data with industry-standard encryption, row-level security, audit logging, and compliance-ready infrastructure.",
   },
   "/faq": {
     title: "HeirDock - FAQ",
@@ -36,7 +36,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/help": {
     title: "HeirDock - Help Center",
     description:
-      "Find help and support resources for using HeirDock. Browse guides on inventory management, AI features, sharing, and security.",
+      "Find help and support resources for using HeirDock. Browse guides on asset management, AI features, sharing, and security.",
   },
   "/status": {
     title: "HeirDock - System Status",

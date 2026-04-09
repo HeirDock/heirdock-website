@@ -41,7 +41,7 @@ export default function PartnerLanding() {
             <div className="problem-section__sidebar">
               <h4>Sound Familiar?</h4>
               <ul>
-                <li>Clients can't produce a home inventory for coverage review</li>
+                <li>Clients can't produce a home asset record for coverage review</li>
                 <li>Estate settlements stall over undocumented personal property</li>
                 <li>Claims are delayed by missing documentation</li>
                 <li>Appraisals lack structured baseline data</li>

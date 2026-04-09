@@ -61,19 +61,15 @@ export default function About() {
             </div>
             <div className="audience-card">
               <span className="audience-card__icon">&#128161;</span>
-              <span className="audience-card__text">Want clarity without complexity</span>
+              <span className="audience-card__text">Want clarity without complexity - organizing gradually, at their own pace</span>
             </div>
             <div className="audience-card">
               <span className="audience-card__icon">&#128149;</span>
               <span className="audience-card__text">Care about reducing future burden on family</span>
             </div>
             <div className="audience-card">
-              <span className="audience-card__icon">&#128336;</span>
-              <span className="audience-card__text">Are organizing gradually, not all at once</span>
-            </div>
-            <div className="audience-card">
-              <span className="audience-card__icon">&#128260;</span>
-              <span className="audience-card__text">Don't want another app to manage every day</span>
+              <span className="audience-card__icon">&#128737;</span>
+              <span className="audience-card__text">Want to make sure their belongings are properly covered by insurance</span>
             </div>
           </div>
         </div>
@@ -168,11 +164,27 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="feature-card__icon">&#128737;</div>
+              <div className="feature-card__title">Know you're covered</div>
+              <p className="feature-card__description">
+                Understand what you have and whether your insurance coverage
+                matches - before you need to file a claim.
+              </p>
+            </div>
+            <div className="feature-card">
               <div className="feature-card__icon">&#128196;</div>
               <div className="feature-card__title">Clear records when needed</div>
               <p className="feature-card__description">
                 Generate clean, organized reports to share with family or
                 professionals - without managing legal workflows.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-card__icon">&#129309;</div>
+              <div className="feature-card__title">Share with professionals</div>
+              <p className="feature-card__description">
+                Give your insurance agent, estate planner, or financial advisor
+                access to the records they need to serve you better.
               </p>
             </div>
             <div className="feature-card">
