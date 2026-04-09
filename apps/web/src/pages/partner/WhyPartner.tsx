@@ -51,10 +51,10 @@ export default function WhyPartner() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon">&#128176;</div>
-              <div className="feature-card__title">Revenue opportunity</div>
+              <div className="feature-card__title">Help clients close coverage gaps</div>
               <p className="feature-card__description">
-                Identify underinsured items, recommend additional coverage, and surface
-                planning opportunities that benefit both you and your clients.
+                Surface underinsured items and planning opportunities so your clients
+                are fully protected — not just on paper.
               </p>
             </div>
             <div className="feature-card">
