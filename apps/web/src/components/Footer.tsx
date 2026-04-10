@@ -30,6 +30,7 @@ export default function Footer() {
               <Link to="/legal/privacy">Privacy Policy</Link>
               <Link to="/legal/terms">Terms of Use</Link>
               <Link to="/security">Data Security</Link>
+              <a href="https://status.heirdock.com" target="_blank" rel="noopener noreferrer">System Status</a>
               <Link to="/contact">Contact Us</Link>
             </div>
           </div>
