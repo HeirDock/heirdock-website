@@ -9,7 +9,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:www.npmjs.com)",
       "WebFetch(domain:vike.dev)",
-      "WebFetch(domain:registry.terraform.io)"
+      "WebFetch(domain:registry.terraform.io)",
+      "WebFetch(domain:heirdock.com)",
+      "WebFetch(domain:www.heirdock.com)"
     ]
   }
 }

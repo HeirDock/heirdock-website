@@ -21,7 +21,7 @@ export default function Footer() {
               <Link to="/customer">For Families</Link>
               <Link to="/customer/pricing">Pricing</Link>
               <Link to="/faq">FAQ</Link>
-              <Link to="/help">Help Center</Link>
+              <a href="https://support.heirdock.com" target="_blank" rel="noopener noreferrer">Support Center</a>
             </div>
           </div>
 
