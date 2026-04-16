@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <div className="site-footer__logo">
-              <img src="/heirdock-logo.png" alt="HeirDock" height="24" style={{ filter: "brightness(0) invert(1)" }} />
+              <img src="/heirdock-logo-dark.png" alt="HeirDock" height="60" style={{ width: "auto" }} />
             </div>
             <p>
               HeirDock helps people bring clarity to what they own -

@@ -42,7 +42,7 @@ export default function Nav() {
     <nav ref={navRef} className={`site-nav${scrolled ? " site-nav--scrolled" : ""}`}>
       <div className="container">
         <Link to="/" className="site-nav__logo">
-          <img src="/heirdock-logo.png" alt="HeirDock" style={{ height: "26px", width: "auto" }} />
+          <img src="/heirdock-logo.png" alt="HeirDock" style={{ height: "60px", width: "auto" }} />
         </Link>
 
         <div className="site-nav__links">
