@@ -24,6 +24,7 @@ function buildHeadTags(routePath: string): string {
 
   const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
   const shouldNoindex = noindex || meta.noindex;
+  const ogImage = `${SITE_URL}/og-image.png`;
 
   const tags = [
     `<title>${meta.title}</title>`,
@@ -35,10 +36,16 @@ function buildHeadTags(routePath: string): string {
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="HeirDock" />`,
+    `<meta property="og:image" content="${ogImage}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="HeirDock — Know what you own. Protect what matters." />`,
     // Twitter
-    `<meta name="twitter:card" content="summary" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
     `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
+    `<meta name="twitter:image" content="${ogImage}" />`,
+    `<meta name="twitter:image:alt" content="HeirDock — Know what you own. Protect what matters." />`,
   ];
 
   if (shouldNoindex) {

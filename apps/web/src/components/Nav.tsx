@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoUrl from "../assets/images/heirdock-logo.png";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function Nav() {
     <nav ref={navRef} className={`site-nav${scrolled ? " site-nav--scrolled" : ""}`}>
       <div className="container">
         <Link to="/" className="site-nav__logo">
-          <img src="/heirdock-logo.png" alt="HeirDock" style={{ height: "60px", width: "auto" }} />
+          <img src={logoUrl} alt="HeirDock" style={{ height: "60px", width: "auto" }} />
         </Link>
 
         <div className="site-nav__links">

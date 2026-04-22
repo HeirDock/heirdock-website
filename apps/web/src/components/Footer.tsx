@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoDarkUrl from "../assets/images/heirdock-logo-dark.png";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <div className="site-footer__logo">
-              <img src="/heirdock-logo-dark.png" alt="HeirDock" height="60" style={{ width: "auto" }} />
+              <img src={logoDarkUrl} alt="HeirDock" height="60" style={{ width: "auto" }} />
             </div>
             <p>
               HeirDock helps people bring clarity to what they own -
