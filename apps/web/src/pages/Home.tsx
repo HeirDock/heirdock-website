@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import HeroVideo from "../components/HeroVideo";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
               Sign In
             </a>
           </div>
+          <HeroVideo />
         </div>
       </section>
 

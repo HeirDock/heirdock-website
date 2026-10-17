@@ -260,6 +260,25 @@
   margin-bottom: var(--space-xl);
 }
 
+.hero-video {
+  max-width: 880px;
+  margin: var(--space-2xl) auto 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  /* Navy rather than transparent, so the frame that shows before the first
+     video frame decodes is brand colour and not a flash of page background. */
+  background: var(--color-navy);
+}
+
+.hero-video__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero__scroll {
   display: block;
   margin: var(--space-xl) auto 0;
