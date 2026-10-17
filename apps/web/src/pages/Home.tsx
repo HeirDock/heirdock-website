@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero */}
       <section className="hero hero--light">
         <div className="container">
-          <div className="hero__eyebrow">HeirDock</div>
+          <HeroVideo />
           <h1 className="hero__title">Know what you own. Protect what matters.</h1>
           <p className="hero__subtitle">
             HeirDock helps households identify, organize, value, and manage
@@ -22,14 +22,15 @@ export default function Home() {
               Sign In
             </a>
           </div>
-          <HeroVideo />
         </div>
       </section>
 
       {/* How HeirDock Works */}
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title">How HeirDock Works</h2>
+          <h2 className="section__title">
+            How <span className="text-navy-light">HeirDock</span> Works
+          </h2>
           <p className="section__subtitle">
             Everything you need to organize what you own - with the future in mind.
           </p>
@@ -131,7 +132,9 @@ export default function Home() {
       {/* Why Choose HeirDock */}
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title">Why Choose HeirDock?</h2>
+          <h2 className="section__title">
+            Why Choose <span className="text-navy-light">HeirDock</span>?
+          </h2>
           <div className="benefit-section">
             <div>
               <div className="benefit-list">

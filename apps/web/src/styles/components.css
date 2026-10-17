@@ -223,17 +223,6 @@
   color: var(--color-bg-white);
 }
 
-.hero__eyebrow {
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  color: var(--color-navy);
-  margin-bottom: var(--space-md);
-}
-
-.hero--navy .hero__eyebrow {
-  color: var(--color-bg-white);
-}
-
 .hero__title {
   font-size: var(--text-2xl);
   font-weight: 700;
@@ -262,7 +251,7 @@
 
 .hero-video {
   max-width: 880px;
-  margin: var(--space-2xl) auto 0;
+  margin: 0 auto var(--space-2xl);
   aspect-ratio: 16 / 9;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
@@ -297,10 +286,6 @@
 @media (max-width: 767px) {
   .hero {
     padding: var(--space-3xl) 0;
-  }
-
-  .hero__eyebrow {
-    font-size: var(--text-2xl);
   }
 
   .hero__title {
