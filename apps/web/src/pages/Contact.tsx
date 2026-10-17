@@ -39,7 +39,7 @@ export default function Contact() {
             <div className="form__message form__message--success">
               <strong>Message sent!</strong> Thank you for reaching out. We'll get back to you within
               1–2 business days.
-              <div style={{ marginTop: "var(--space-lg)" }}>
+              <div className="mt-lg">
                 <button onClick={reset} className="btn btn--outline btn--sm">
                   Send another message
                 </button>
@@ -92,7 +92,7 @@ export default function Contact() {
                 {status === "submitting" ? "Sending..." : "Send Message \u2192"}
               </button>
 
-              <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>
+              <p className="fine-print">
                 This site is protected by reCAPTCHA and the Google{" "}
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
                   Privacy Policy
@@ -104,8 +104,8 @@ export default function Contact() {
             </form>
           )}
 
-          <div style={{ marginTop: "var(--space-3xl)", paddingTop: "var(--space-2xl)", borderTop: "1px solid var(--color-border)" }}>
-            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-muted)" }}>
+          <div className="page-aside">
+            <p className="text-sm text-muted">
               For answers to common questions, visit our{" "}
               <Link to="/faq">FAQ</Link> or{" "}
               <Link to="/help">Help Center</Link>.

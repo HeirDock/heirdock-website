@@ -23,7 +23,7 @@ export default function About() {
             everyday items that quietly add up. Most of it lives in closets, basements, storage units, or memory -
             undocumented, undervalued, and hard for anyone else to make sense of later.
           </p>
-          <p className="text-brand" style={{ fontWeight: 500, fontSize: "var(--text-md)" }}>
+          <p className="text-brand font-medium text-md">
             HeirDock gives you a simple way to capture clarity over time.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function About() {
       <section className="section section--white">
         <div className="container">
           <h2 className="section__title">What Makes HeirDock Different</h2>
-          <div className="diff-grid" style={{ maxWidth: "720px", margin: "0 auto" }}>
+          <div className="diff-grid narrow">
             <div className="diff-card">
               <div className="diff-card__label">It's not a to-do list</div>
               <div className="diff-card__statement">Add items when it's convenient</div>
@@ -203,7 +203,7 @@ export default function About() {
       <section className="section text-center">
         <div className="container">
           <h3>Ready to get started?</h3>
-          <div style={{ marginTop: "var(--space-xl)" }}>
+          <div className="mt-xl">
             <Link to="/contact" className="btn btn--primary btn--lg">
               Get in Touch &rarr;
             </Link>

@@ -58,7 +58,7 @@ export default function PartnerHowItWorks() {
       <section className="section text-center">
         <div className="container">
           <h3>Ready to streamline your workflow?</h3>
-          <div style={{ marginTop: "var(--space-xl)" }}>
+          <div className="mt-xl">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo &rarr;
             </Link>

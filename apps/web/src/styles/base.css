@@ -204,7 +204,23 @@ ul, ol {
 /* The logo blue: 3.45:1 on white, so only on text 24px and up. */
 .text-brand-highlight { color: var(--color-brand-highlight); }
 .text-italic { font-style: italic; }
+.text-sm { font-size: var(--text-sm); }
+.text-md { font-size: var(--text-md); }
+.font-medium { font-weight: 500; }
 .font-bold { font-weight: 600; }
+.fine-print { font-size: var(--text-xs); color: var(--color-text-muted); }
+.narrow { max-width: var(--max-width-narrow); margin-left: auto; margin-right: auto; }
+
+/* Spacing utilities are !important so a single-purpose class always wins
+   over element rules like p:last-child { margin-bottom: 0 }, as the inline
+   styles they replace did. */
+.mt-md { margin-top: var(--space-md) !important; }
+.mt-lg { margin-top: var(--space-lg) !important; }
+.mt-xl { margin-top: var(--space-xl) !important; }
+.mt-2xl { margin-top: var(--space-2xl) !important; }
+.mt-3xl { margin-top: var(--space-3xl) !important; }
+.mb-xl { margin-bottom: var(--space-xl) !important; }
+.mb-4xl { margin-bottom: var(--space-4xl) !important; }
 
 .sr-only {
   position: absolute;

@@ -110,7 +110,7 @@ export default function Demo() {
                 {status === "submitting" ? "Submitting..." : "Request Demo \u2192"}
               </button>
 
-              <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>
+              <p className="fine-print">
                 This site is protected by reCAPTCHA and the Google{" "}
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
                   Privacy Policy

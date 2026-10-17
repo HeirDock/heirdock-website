@@ -16,22 +16,22 @@ export default function CustomerHowItWorks() {
       {/* Steps */}
       <section className="section section--white">
         <div className="container">
-          <div style={{ maxWidth: "var(--max-width-narrow)", margin: "0 auto" }}>
+          <div className="narrow">
             {/* Step 1 */}
-            <div style={{ marginBottom: "var(--space-4xl)" }}>
-              <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>1</div>
+            <div className="step-list__item">
+              <div className="step-card__number">1</div>
               <h3>Create your household</h3>
-              <p style={{ marginTop: "var(--space-md)" }}>
+              <p className="mt-md">
                 Sign up and create your Household Record. Add your first property - your home, a storage unit,
                 a vacation house - and you're ready to begin. The setup takes less than five minutes.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div style={{ marginBottom: "var(--space-4xl)" }}>
-              <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>2</div>
+            <div className="step-list__item">
+              <div className="step-card__number">2</div>
               <h3>Catalog your items</h3>
-              <p style={{ marginTop: "var(--space-md)" }}>
+              <p className="mt-md">
                 Use the guided wizard to add items one at a time. Take a photo and let AI Identify
                 recognize the item, suggest a category, and estimate market value using real comparable
                 sales data. Add details like purchase date, serial numbers, or receipts as evidence.
@@ -43,31 +43,31 @@ export default function CustomerHowItWorks() {
             </div>
 
             {/* Step 3 */}
-            <div style={{ marginBottom: "var(--space-4xl)" }}>
-              <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>3</div>
+            <div className="step-list__item">
+              <div className="step-card__number">3</div>
               <h3>Organize and share</h3>
-              <p style={{ marginTop: "var(--space-md)" }}>
+              <p className="mt-md">
                 Assign items to people, add stories and context, organize into collections, and
                 invite Trusted Participants to view or contribute. Use roles to control access:
               </p>
-              <ul style={{ paddingLeft: "var(--space-xl)", marginTop: "var(--space-md)" }}>
-                <li style={{ marginBottom: "var(--space-sm)", listStyle: "disc", color: "var(--color-text-secondary)" }}>
+              <ul className="step-list__bullets">
+                <li>
                   <strong>Viewers</strong> can see items assigned to them
                 </li>
-                <li style={{ marginBottom: "var(--space-sm)", listStyle: "disc", color: "var(--color-text-secondary)" }}>
+                <li>
                   <strong>Contributors</strong> can help catalog and add items
                 </li>
-                <li style={{ marginBottom: "var(--space-sm)", listStyle: "disc", color: "var(--color-text-secondary)" }}>
+                <li>
                   <strong>Stewards</strong> have elevated access for estate planning
                 </li>
               </ul>
             </div>
 
             {/* Step 4 */}
-            <div style={{ marginBottom: "var(--space-4xl)" }}>
-              <div className="step-card__number" style={{ margin: "0 0 var(--space-lg)" }}>4</div>
+            <div className="step-list__item">
+              <div className="step-card__number">4</div>
               <h3>Stay protected</h3>
-              <p style={{ marginTop: "var(--space-md)" }}>
+              <p className="mt-md">
                 Store sensitive documents in the encrypted Vault - wills, deeds, insurance cards,
                 certificates. Link insurance policies to items and get Coverage Insights that
                 identify potential gaps. When you need it, export a comprehensive Home Asset

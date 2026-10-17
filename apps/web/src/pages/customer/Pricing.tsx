@@ -18,7 +18,7 @@ export default function CustomerPricing() {
           <p className="section__subtitle">
             Choose your plan based on how much space you need.
           </p>
-          <div className="feature-grid" style={{ marginBottom: "var(--space-4xl)" }}>
+          <div className="feature-grid mb-4xl">
             <div className="feature-card">
               <div className="feature-card__icon">&#9889;</div>
               <div className="feature-card__title">AI Identify &amp; Valuation</div>
@@ -204,11 +204,11 @@ export default function CustomerPricing() {
             </div>
           </div>
 
-          <div className="text-center" style={{ marginTop: "var(--space-2xl)" }}>
+          <div className="text-center mt-2xl">
             <Link to="/invite" className="btn btn--primary btn--lg">
               Request Early Access &rarr;
             </Link>
-            <p className="text-muted" style={{ marginTop: "var(--space-md)", fontSize: "var(--text-sm)" }}>
+            <p className="text-muted mt-md text-sm">
               Start with the 30-day free trial on any plan. Upgrade, downgrade, or cancel at any time.
             </p>
           </div>

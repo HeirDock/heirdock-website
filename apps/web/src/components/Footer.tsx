@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <div className="site-footer__logo">
-              <img src={logoDarkUrl} alt="HeirDock" height="60" style={{ width: "auto" }} />
+              <img src={logoDarkUrl} alt="HeirDock" height="60" />
             </div>
             <p>
               HeirDock helps people bring clarity to what they own -
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__bottom">
-          &copy; {new Date().getFullYear()} HeirDock, LLC. All rights reserved.
+          &copy; {__BUILD_YEAR__} HeirDock, LLC. All rights reserved.
         </div>
       </div>
     </footer>

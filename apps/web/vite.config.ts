@@ -4,6 +4,11 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  // Fixed at build time so the prerendered footer and the hydrated one agree;
+  // a runtime new Date() would mismatch after New Year until the next build.
+  define: {
+    __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
+  },
   resolve: {
     alias: {
       components: path.resolve(__dirname, "src/components"),

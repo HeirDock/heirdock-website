@@ -64,7 +64,7 @@ export default function Help() {
       <section className="section text-center">
         <div className="container">
           <h3>Can't find what you're looking for?</h3>
-          <p className="text-muted" style={{ marginTop: "var(--space-md)", marginBottom: "var(--space-xl)" }}>
+          <p className="text-muted mt-md mb-xl">
             Check our <Link to="/faq">FAQ</Link> for common questions or <Link to="/contact">contact us</Link> directly.
           </p>
         </div>

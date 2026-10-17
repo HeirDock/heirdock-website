@@ -128,7 +128,7 @@ export default function PartnerPricing() {
       <section className="section text-center">
         <div className="container">
           <h3>Have questions about partner pricing?</h3>
-          <p className="text-muted" style={{ marginTop: "var(--space-md)", marginBottom: "var(--space-xl)" }}>
+          <p className="text-muted mt-md mb-xl">
             Every practice is different. Let's find the right plan for your needs.
           </p>
           <Link to="/partner/demo" className="btn btn--primary">
