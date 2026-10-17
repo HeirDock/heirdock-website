@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "color-no-hex": [true, { "message": "Use a color token from src/styles/tokens.css" }],
+    "color-named": ["never", { "message": "Use a color token from src/styles/tokens.css" }],
+    "function-disallowed-list": [
+      ["rgb", "rgba", "hsl", "hsla"],
+      { "message": "Use a color token from src/styles/tokens.css" }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/tokens.css"],
+      "rules": {
+        "color-no-hex": null,
+        "function-disallowed-list": null
+      }
+    }
+  ]
+}

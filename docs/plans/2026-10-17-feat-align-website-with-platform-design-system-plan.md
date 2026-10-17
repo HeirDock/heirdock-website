@@ -330,17 +330,17 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 
 ### PR B: Cleanup + guard (no visual change)
 
-- [ ] Replace the 14 link-card resets with `.card--link` (customer/Landing.tsx:117-132, Help.tsx:18-53, partner/Landing.tsx:103-118).
-- [ ] Classes for the repeated inline patterns:
+- [x] Replace the 14 link-card resets with `.card--link` (customer/Landing.tsx:117-132, Help.tsx:18-53, partner/Landing.tsx:103-118).
+- [x] Classes for the repeated inline patterns:
   - `.fine-print` (Contact.tsx:95, 108; Invite.tsx:96; partner/Demo.tsx:113; Status.tsx:67; customer/Pricing.tsx:211)
   - the step layouts in customer/HowItWorks.tsx:19-70
   - the Status banner and service list (Status.tsx:17-59)
   - the About section titles (About.tsx:55, 94, 132)
-- [ ] Home.tsx:171-199 literals (`#FEF3E2`, `#E8F0F8`, `#FCE4EC`, `#6B8E6B`) → state or accent soft tokens.
-- [ ] Remaining `style` blocks: zero, or truly dynamic with a stated disable reason.
-- [ ] The guard (ESLint + stylelint) as above.
-- [ ] Footer year: set it at build time (for example a Vite `define`), so the prerender and hydration match.
-- [ ] Pixel-diff against PR A's after screenshots. Expect no differences.
+- [x] Home.tsx:171-199 literals (`#FEF3E2`, `#E8F0F8`, `#FCE4EC`, `#6B8E6B`) → state or accent soft tokens.
+- [x] Remaining `style` blocks: zero, or truly dynamic with a stated disable reason.
+- [x] The guard (ESLint + stylelint) as above.
+- [x] Footer year: set it at build time (for example a Vite `define`), so the prerender and hydration match.
+- [x] Pixel-diff against PR A's after screenshots. Expect no differences.
 
 ### PR C: Icons
 
