@@ -28,7 +28,7 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 - Development: `cd apps/web && npm run dev` (port 3006)
 - Docker: `docker compose up` (port 3006, hot-reload via volume mounts)
 - Build: `cd apps/web && npm run build` (outputs to dist/client/)
-- Lint: `cd apps/web && npm run lint`
+- Lint: `cd apps/web && npm run lint` (ESLint, then stylelint; together they reject inline `style` props and raw hex/rgb/hsl/named colors anywhere outside `src/styles/tokens.css`)
 - Type check: `cd apps/web && npm run typecheck`
 
 ## Build Pipeline
