@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 
 export default function About() {
   return (
@@ -6,7 +7,7 @@ export default function About() {
       {/* Page Header */}
       <section className="page-header">
         <div className="container">
-          <Link to="/" className="page-header__back">&larr; Back to Home</Link>
+          <Link to="/" className="page-header__back"><Icon name="arrowBack" /> Back to Home</Link>
           <h1 className="page-header__title">What is HeirDock?</h1>
           <p className="page-header__subtitle">
             HeirDock helps people organize and understand what they own -
@@ -56,19 +57,19 @@ export default function About() {
           <p className="section__subtitle">HeirDock is designed for people who:</p>
           <div className="audience-grid">
             <div className="audience-card">
-              <span className="audience-card__icon">&#127968;</span>
+              <span className="audience-card__icon"><Icon name="home" /></span>
               <span className="audience-card__text">Have accumulated a lifetime of belongings</span>
             </div>
             <div className="audience-card">
-              <span className="audience-card__icon">&#128161;</span>
+              <span className="audience-card__icon"><Icon name="lightbulb" /></span>
               <span className="audience-card__text">Want clarity without complexity - organizing gradually, at their own pace</span>
             </div>
             <div className="audience-card">
-              <span className="audience-card__icon">&#128149;</span>
+              <span className="audience-card__icon"><Icon name="favorite" /></span>
               <span className="audience-card__text">Care about reducing future burden on family</span>
             </div>
             <div className="audience-card">
-              <span className="audience-card__icon">&#128737;</span>
+              <span className="audience-card__icon"><Icon name="shield" /></span>
               <span className="audience-card__text">Want to make sure their belongings are properly covered by insurance</span>
             </div>
           </div>
@@ -132,7 +133,7 @@ export default function About() {
           <h2 className="section__title">Why Choose HeirDock?</h2>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128161;</div>
+              <div className="feature-card__icon"><Icon name="lightbulb" /></div>
               <div className="feature-card__title">Clarity without complexity</div>
               <p className="feature-card__description">
                 Understand what you own - without turning it into another
@@ -140,7 +141,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">AI that does the heavy lifting</div>
               <p className="feature-card__description">
                 Identify items and estimate potential value using real market
@@ -148,7 +149,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#127919;</div>
+              <div className="feature-card__icon"><Icon name="trackChanges" /></div>
               <div className="feature-card__title">Built for real life</div>
               <p className="feature-card__description">
                 Add items gradually, update them over time, and take action only if
@@ -156,7 +157,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128274;</div>
+              <div className="feature-card__icon"><Icon name="lock" /></div>
               <div className="feature-card__title">Your information, protected</div>
               <p className="feature-card__description">
                 Private, secure cloud storage with clear controls over what's shared
@@ -164,7 +165,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128737;</div>
+              <div className="feature-card__icon"><Icon name="shield" /></div>
               <div className="feature-card__title">Know you're covered</div>
               <p className="feature-card__description">
                 Understand what you have and whether your insurance coverage
@@ -172,7 +173,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128196;</div>
+              <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Clear records when needed</div>
               <p className="feature-card__description">
                 Generate clean, organized reports to share with family or
@@ -180,7 +181,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#129309;</div>
+              <div className="feature-card__icon"><Icon name="handshake" /></div>
               <div className="feature-card__title">Share with professionals</div>
               <p className="feature-card__description">
                 Give your insurance agent, estate planner, or financial advisor
@@ -188,7 +189,7 @@ export default function About() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128154;</div>
+              <div className="feature-card__icon"><Icon name="spa" /></div>
               <div className="feature-card__title">A calm foundation for the future</div>
               <p className="feature-card__description">
                 Reduce uncertainty, avoid burden later, and gain peace of mind
@@ -205,7 +206,7 @@ export default function About() {
           <h3>Ready to get started?</h3>
           <div className="mt-xl">
             <Link to="/contact" className="btn btn--primary btn--lg">
-              Get in Touch &rarr;
+              Get in Touch <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

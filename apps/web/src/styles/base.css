@@ -80,6 +80,15 @@ p a,
   outline-offset: 2px;
 }
 
+/* Icon.tsx: sized by the surrounding font-size, colored by currentColor, so
+   an icon drops into any slot that used to hold a text glyph. */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+
 img {
   max-width: 100%;
   height: auto;

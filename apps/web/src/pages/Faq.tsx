@@ -1,4 +1,5 @@
 import { useState, useId } from "react";
+import Icon from "../components/Icon";
 
 interface FaqItemData {
   question: string;
@@ -74,7 +75,7 @@ function FaqItem({ item, index }: { item: FaqItemData; index: number }) {
         aria-controls={answerId}
       >
         {item.question}
-        <span className="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        <span className="faq-item__chevron" aria-hidden="true"><Icon name="expandMore" /></span>
       </button>
       <div
         id={answerId}

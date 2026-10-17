@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function PartnerFeatures() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
+          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Partner Features</h1>
           <p className="page-header__subtitle">
             Tools designed for professional workflows - built on top of your clients' household records.
@@ -17,7 +18,7 @@ export default function PartnerFeatures() {
         <div className="container">
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128188;</div>
+              <div className="feature-card__icon"><Icon name="work" /></div>
               <div className="feature-card__title">Client Workspace</div>
               <p className="feature-card__description">
                 A dedicated workspace for each client with organized access to their household record,
@@ -25,7 +26,7 @@ export default function PartnerFeatures() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128196;</div>
+              <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Document Sharing</div>
               <p className="feature-card__description">
                 Access client-consented documents, photos, and records. Download evidence
@@ -33,7 +34,7 @@ export default function PartnerFeatures() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128202;</div>
+              <div className="feature-card__icon"><Icon name="barChart" /></div>
               <div className="feature-card__title">Coverage Gap Analysis</div>
               <p className="feature-card__description">
                 See where client insurance coverage may fall short based on documented items
@@ -41,7 +42,7 @@ export default function PartnerFeatures() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128200;</div>
+              <div className="feature-card__icon"><Icon name="trendingUp" /></div>
               <div className="feature-card__title">Analytics Dashboard</div>
               <p className="feature-card__description">
                 Track client engagement, documentation progress, and portfolio-level insights
@@ -49,7 +50,7 @@ export default function PartnerFeatures() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128101;</div>
+              <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Team Management</div>
               <p className="feature-card__description">
                 Add team members to your partner organization with role-based permissions.
@@ -57,7 +58,7 @@ export default function PartnerFeatures() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128274;</div>
+              <div className="feature-card__icon"><Icon name="lock" /></div>
               <div className="feature-card__title">Consent-Based Access</div>
               <p className="feature-card__description">
                 All client data access is consent-based and audited. Clients control
@@ -76,7 +77,7 @@ export default function PartnerFeatures() {
           </p>
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

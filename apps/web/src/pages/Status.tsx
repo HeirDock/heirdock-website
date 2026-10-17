@@ -15,7 +15,7 @@ export default function Status() {
       <section className="section section--white">
         <div className="container container--narrow text-center">
           <div className="status-banner">
-            <span className="status-banner__dot">&#9679;</span>
+            <span className="status-banner__dot" aria-hidden="true" />
             <span className="status-banner__text">All Systems Operational</span>
           </div>
 

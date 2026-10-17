@@ -1,3 +1,5 @@
+import Icon from "../components/Icon";
+
 export default function Security() {
   return (
     <>
@@ -14,7 +16,7 @@ export default function Security() {
         <div className="container">
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128274;</div>
+              <div className="feature-card__icon"><Icon name="lock" /></div>
               <div className="feature-card__title">End-to-end encryption</div>
               <p className="feature-card__description">
                 All data - at rest and in transit. Vault documents are individually
@@ -22,7 +24,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128101;</div>
+              <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Access Control</div>
               <p className="feature-card__description">
                 Strict data isolation ensures households can only access their own information.
@@ -31,7 +33,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128221;</div>
+              <div className="feature-card__icon"><Icon name="editNote" /></div>
               <div className="feature-card__title">Audit logging</div>
               <p className="feature-card__description">
                 All sensitive operations are logged to an append-only audit trail.
@@ -40,7 +42,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128170;</div>
+              <div className="feature-card__icon"><Icon name="verifiedUser" /></div>
               <div className="feature-card__title">Built on SOC 2 principles</div>
               <p className="feature-card__description">
                 HeirDock is designed with SOC 2 Type II principles in mind - covering Security,
@@ -49,7 +51,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#127760;</div>
+              <div className="feature-card__icon"><Icon name="public" /></div>
               <div className="feature-card__title">Privacy by design</div>
               <p className="feature-card__description">
                 Our platform is built with GDPR and CCPA principles in mind - including
@@ -58,7 +60,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128736;</div>
+              <div className="feature-card__icon"><Icon name="build" /></div>
               <div className="feature-card__title">Infrastructure Security</div>
               <p className="feature-card__description">
                 Hosted on secure cloud infrastructure with layered defenses - threat detection,
@@ -67,7 +69,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">Availability</div>
               <p className="feature-card__description">
                 Built for reliability with redundant infrastructure, automated failover,
@@ -75,7 +77,7 @@ export default function Security() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#129302;</div>
+              <div className="feature-card__icon"><Icon name="smartToy" /></div>
               <div className="feature-card__title">Responsible AI</div>
               <p className="feature-card__description">
                 AI features like identification and valuation run in isolated, secure environments.

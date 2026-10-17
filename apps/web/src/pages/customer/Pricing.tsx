@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function CustomerPricing() {
   return (
@@ -20,84 +21,84 @@ export default function CustomerPricing() {
           </p>
           <div className="feature-grid mb-4xl">
             <div className="feature-card">
-              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">AI Identify &amp; Valuation</div>
               <p className="feature-card__description">
                 Photo-based item recognition, market value estimates, and automatic high-value detection.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128206;</div>
+              <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Evidence Capture</div>
               <p className="feature-card__description">
                 Photos, serial numbers, receipts, and documents for every item.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128274;</div>
+              <div className="feature-card__icon"><Icon name="lock" /></div>
               <div className="feature-card__title">Vault Storage</div>
               <p className="feature-card__description">
                 Bank-level encrypted storage for wills, deeds, insurance policies, and sensitive documents.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128101;</div>
+              <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Family &amp; Partner Sharing</div>
               <p className="feature-card__description">
                 Invite family with role-based access, and share with professionals like insurance agents or estate planners to assist.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128203;</div>
+              <div className="feature-card__icon"><Icon name="assignment" /></div>
               <div className="feature-card__title">Coverage Insights</div>
               <p className="feature-card__description">
                 Link insurance policies to items and identify potential coverage gaps.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128196;</div>
+              <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Export &amp; Reports</div>
               <p className="feature-card__description">
                 Home Asset Snapshots, item documentation PDFs, and structured reports for professionals.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128172;</div>
+              <div className="feature-card__icon"><Icon name="chat" /></div>
               <div className="feature-card__title">Exceptional Support</div>
               <p className="feature-card__description">
                 We pride ourselves on providing amazing support to every customer, on every plan.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#127991;</div>
+              <div className="feature-card__icon"><Icon name="localOffer" /></div>
               <div className="feature-card__title">Tags, Stories &amp; Collections</div>
               <p className="feature-card__description">
                 Organize items with custom tags, personal stories, and collections that can be assigned to trusts.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128140;</div>
+              <div className="feature-card__icon"><Icon name="mail" /></div>
               <div className="feature-card__title">Estate Transition</div>
               <p className="feature-card__description">
                 Designate successors, create distribution plans, and leave legacy messages for loved ones.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128197;</div>
+              <div className="feature-card__icon"><Icon name="calendarMonth" /></div>
               <div className="feature-card__title">Annual Review Prompts</div>
               <p className="feature-card__description">
                 Gentle reminders to keep your household record current and up to date.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128221;</div>
+              <div className="feature-card__icon"><Icon name="editNote" /></div>
               <div className="feature-card__title">Guided Catalog Wizard</div>
               <p className="feature-card__description">
                 Step-by-step guidance to add items quickly and thoroughly.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#43;</div>
+              <div className="feature-card__icon"><Icon name="add" /></div>
               <div className="feature-card__title">And Many More</div>
               <p className="feature-card__description">
                 Guided wizards, annual review prompts, exceptional support, and more - every feature included with every plan.
@@ -112,7 +113,7 @@ export default function CustomerPricing() {
           <div className="pricing-grid">
             {/* Essentials */}
             <div className="pricing-tier">
-              <div className="pricing-tier__icon">&#128293;</div>
+              <div className="pricing-tier__icon"><Icon name="localFireDepartment" /></div>
               <div className="pricing-tier__name">Essentials</div>
               <p className="pricing-tier__description">
                 All features for a single household
@@ -123,19 +124,19 @@ export default function CustomerPricing() {
               <div className="pricing-tier__period">30-day free trial included</div>
               <div className="pricing-tier__features">
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   All features included
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   1 property
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   1 collection
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Up to 50 assets
                 </div>
               </div>
@@ -143,7 +144,7 @@ export default function CustomerPricing() {
 
             {/* Plus */}
             <div className="pricing-tier pricing-tier--featured">
-              <div className="pricing-tier__icon">&#11088;</div>
+              <div className="pricing-tier__icon"><Icon name="star" /></div>
               <div className="pricing-tier__name">Plus</div>
               <p className="pricing-tier__description">
                 More room for growing households
@@ -154,19 +155,19 @@ export default function CustomerPricing() {
               <div className="pricing-tier__period">30-day free trial included</div>
               <div className="pricing-tier__features">
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   All features included
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Up to 3 properties
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Up to 3 collections
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Up to 500 assets
                 </div>
               </div>
@@ -174,7 +175,7 @@ export default function CustomerPricing() {
 
             {/* Complete */}
             <div className="pricing-tier">
-              <div className="pricing-tier__icon">&#128106;</div>
+              <div className="pricing-tier__icon"><Icon name="familyRestroom" /></div>
               <div className="pricing-tier__name">Complete</div>
               <p className="pricing-tier__description">
                 Unlimited access for your entire household
@@ -185,19 +186,19 @@ export default function CustomerPricing() {
               <div className="pricing-tier__period">30-day free trial included</div>
               <div className="pricing-tier__features">
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   All features included
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Unlimited properties
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Unlimited collections
                 </div>
                 <div className="pricing-tier__feature">
-                  <span className="pricing-tier__feature-check">&#10003;</span>
+                  <span className="pricing-tier__feature-check"><Icon name="check" /></span>
                   Unlimited assets
                 </div>
               </div>
@@ -206,7 +207,7 @@ export default function CustomerPricing() {
 
           <div className="text-center mt-2xl">
             <Link to="/invite" className="btn btn--primary btn--lg">
-              Request Early Access &rarr;
+              Request Early Access <Icon name="arrowForward" />
             </Link>
             <p className="text-muted mt-md text-sm">
               Start with the 30-day free trial on any plan. Upgrade, downgrade, or cancel at any time.

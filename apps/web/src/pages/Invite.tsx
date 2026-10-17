@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../lib/useContactForm";
+import Icon from "../components/Icon";
 
 export default function Invite() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -41,7 +42,7 @@ export default function Invite() {
             <div className="invite-page__form-side">
               {status === "success" ? (
                 <div className="form__message form__message--success">
-                  <div className="invite-success__icon">&#10003;</div>
+                  <div className="invite-success__icon"><Icon name="check" /></div>
                   <strong>You're on the list!</strong>
                   <p className="mt-md">
                     Thank you for your interest in HeirDock. We'll reach out when
@@ -90,7 +91,7 @@ export default function Invite() {
 
                   <button type="submit" disabled={status === "submitting"}
                     className="btn btn--primary btn--lg form__submit">
-                    {status === "submitting" ? "Submitting..." : "Request Invite \u2192"}
+                    {status === "submitting" ? "Submitting..." : <>Request Invite <Icon name="arrowForward" /></>}
                   </button>
 
                   <p className="fine-print">

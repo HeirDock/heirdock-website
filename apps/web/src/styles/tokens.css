@@ -23,6 +23,7 @@
   --color-secondary-light: #edf8f6;
   --color-accent: #deb05e;
   --color-accent-hover: #cfa04e;
+  --color-accent-active: #8c6a29; /* theme-only: gold that holds 3:1 on accent-light */
   --color-accent-light: #fff8ec;
 
   /* Neutrals */
