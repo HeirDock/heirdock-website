@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import HeroVideo from "../components/HeroVideo";
+import Icon from "../components/Icon";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
           </p>
           <div className="hero__actions">
             <Link to="/invite" className="btn btn--primary btn--lg">
-              Request Early Access &rarr;
+              Request Early Access <Icon name="arrowForward" />
             </Link>
             <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
               Sign In
@@ -36,7 +37,7 @@ export default function Home() {
           </p>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128206;</div>
+              <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Capture your household assets</div>
               <p className="feature-card__description">
                 Take a photo or describe an item to document the belongings that matter -
@@ -44,7 +45,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">AI helps identify and estimate value</div>
               <p className="feature-card__description">
                 HeirDock uses AI to help identify items and suggest potential
@@ -52,7 +53,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128221;</div>
+              <div className="feature-card__icon"><Icon name="editNote" /></div>
               <div className="feature-card__title">Add context and preferences</div>
               <p className="feature-card__description">
                 Record who items belong to, add memories and context, assign
@@ -60,7 +61,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128196;</div>
+              <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Export your household record</div>
               <p className="feature-card__description">
                 Generate a comprehensive summary of your household assets -
@@ -123,7 +124,7 @@ export default function Home() {
           </p>
           <div className="cta-band__actions">
             <Link to="/about" className="btn btn--primary btn--lg">
-              Learn More &rarr;
+              Learn More <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
@@ -139,27 +140,27 @@ export default function Home() {
             <div>
               <div className="benefit-list">
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   Simple and intuitive
                 </div>
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   AI-powered understanding
                 </div>
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   Organize gradually
                 </div>
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   Private and secure
                 </div>
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   Clear records when needed
                 </div>
                 <div className="benefit-list__item">
-                  <span className="benefit-list__check">&#10003;</span>
+                  <span className="benefit-list__check"><Icon name="check" /></span>
                   Confidence through clarity
                 </div>
               </div>
@@ -168,7 +169,7 @@ export default function Home() {
               <div className="benefit-mockup__header">Household Assets</div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon benefit-mockup__icon--accent">&#9201;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--accent"><Icon name="watch" /></div>
                   <div>
                     <div className="benefit-mockup__name">Vintage Watch</div>
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
@@ -177,12 +178,12 @@ export default function Home() {
                 <div>
                   <span className="benefit-mockup__owner">Emma</span>
                   {" "}
-                  <span className="benefit-mockup__status benefit-mockup__status--assigned">&#10003; Assigned</span>
+                  <span className="benefit-mockup__status benefit-mockup__status--assigned"><Icon name="check" /> Assigned</span>
                 </div>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon benefit-mockup__icon--primary">&#128218;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--primary"><Icon name="style" /></div>
                   <div>
                     <div className="benefit-mockup__name">Baseball Card Collection</div>
                     <div className="benefit-mockup__category">Collectibles</div>
@@ -191,12 +192,12 @@ export default function Home() {
                 <div>
                   <span className="benefit-mockup__owner">Jack</span>
                   {" "}
-                  <span className="benefit-mockup__status benefit-mockup__status--assigned">&#10003; Assigned</span>
+                  <span className="benefit-mockup__status benefit-mockup__status--assigned"><Icon name="check" /> Assigned</span>
                 </div>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon benefit-mockup__icon--secondary">&#128142;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--secondary"><Icon name="diamond" /></div>
                   <div>
                     <div className="benefit-mockup__name">Gold Ring</div>
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
@@ -220,7 +221,7 @@ export default function Home() {
                 record of everything you own.
               </p>
               <Link to="/customer" className="btn btn--primary">
-                Learn More &rarr;
+                Learn More <Icon name="arrowForward" />
               </Link>
             </div>
             <div className="dual-path__card">
@@ -230,7 +231,7 @@ export default function Home() {
                 structured, accessible records.
               </p>
               <Link to="/partner" className="btn btn--outline">
-                Partner With Us &rarr;
+                Partner With Us <Icon name="arrowForward" />
               </Link>
             </div>
           </div>

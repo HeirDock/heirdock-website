@@ -59,6 +59,8 @@
   cursor: pointer;
   padding: var(--space-sm);
   color: var(--color-text-primary);
+  font-size: var(--text-xl);
+  line-height: 0;
 }
 
 .site-nav__mobile {
@@ -311,6 +313,12 @@
   border-color: var(--color-primary);
 }
 
+/* The app marks "opens something" with a trailing chevron, not "View" text. */
+.card__chevron {
+  color: var(--color-primary);
+  vertical-align: -0.2em;
+}
+
 .feature-card__icon {
   width: 56px;
   height: 56px;
@@ -523,12 +531,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
 }
 
-.benefit-mockup__icon--accent { background: var(--color-accent-light); }
-.benefit-mockup__icon--primary { background: var(--color-primary-light); }
-.benefit-mockup__icon--secondary { background: var(--color-secondary-light); }
+.benefit-mockup__icon--accent {
+  background: var(--color-accent-light);
+  color: var(--color-accent-active);
+}
+
+.benefit-mockup__icon--primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.benefit-mockup__icon--secondary {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary-hover);
+}
 
 .benefit-mockup__owner {
   font-size: var(--text-xs);
@@ -927,8 +946,11 @@
 }
 
 .status-banner__dot {
-  color: var(--color-success);
-  font-size: var(--text-2xl);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-success);
+  flex-shrink: 0;
 }
 
 /* Text on a state's soft background uses its soft-fg, as the app's alerts
@@ -1011,7 +1033,8 @@
 }
 
 .faq-item__chevron {
-  font-size: var(--text-sm);
+  display: flex;
+  font-size: var(--text-xl);
   transition: transform var(--duration-base) var(--ease-default);
   flex-shrink: 0;
   color: var(--color-text-muted);

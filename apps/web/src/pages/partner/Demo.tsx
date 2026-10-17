@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../../lib/useContactForm";
+import Icon from "../../components/Icon";
 
 export default function Demo() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -28,7 +29,7 @@ export default function Demo() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
+          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Request a Demo</h1>
           <p className="page-header__subtitle">
             Schedule a personalized walkthrough of HeirDock's Partner Portal
@@ -107,7 +108,7 @@ export default function Demo() {
 
               <button type="submit" disabled={status === "submitting"}
                 className="btn btn--primary btn--lg form__submit">
-                {status === "submitting" ? "Submitting..." : "Request Demo \u2192"}
+                {status === "submitting" ? "Submitting..." : <>Request Demo <Icon name="arrowForward" /></>}
               </button>
 
               <p className="fine-print">

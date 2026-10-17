@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function CustomerFeatures() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/customer" className="page-header__back">&larr; Back to For Families</Link>
+          <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
           <h1 className="page-header__title">Features</h1>
           <p className="page-header__subtitle">
             Everything you need to catalog, protect, and pass on what matters - powered by AI.
@@ -168,7 +169,7 @@ export default function CustomerFeatures() {
           </p>
           <div className="cta-band__actions">
             <Link to="/contact" className="btn btn--primary btn--lg">
-              Get in Touch &rarr;
+              Get in Touch <Icon name="arrowForward" />
             </Link>
             <Link to="/customer/pricing" className="btn btn--outline btn--lg">
               View Pricing

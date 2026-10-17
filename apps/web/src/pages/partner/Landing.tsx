@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function PartnerLanding() {
   return (
@@ -13,7 +14,7 @@ export default function PartnerLanding() {
           </p>
           <div className="hero__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
             <Link to="/partner/why-partner" className="btn btn--outline btn--lg">
               Why Partner?
@@ -60,7 +61,7 @@ export default function PartnerLanding() {
           </p>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128203;</div>
+              <div className="feature-card__icon"><Icon name="assignment" /></div>
               <div className="feature-card__title">Insurance Agents</div>
               <p className="feature-card__description">
                 Improve coverage accuracy, streamline claims documentation, and identify gaps
@@ -68,7 +69,7 @@ export default function PartnerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9878;</div>
+              <div className="feature-card__icon"><Icon name="balance" /></div>
               <div className="feature-card__title">Estate Planners</div>
               <p className="feature-card__description">
                 Access organized asset records, distribution plans, and successor designations
@@ -76,7 +77,7 @@ export default function PartnerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128176;</div>
+              <div className="feature-card__icon"><Icon name="payments" /></div>
               <div className="feature-card__title">Financial Advisors</div>
               <p className="feature-card__description">
                 Gain a complete picture of client wealth - including the physical assets that
@@ -84,7 +85,7 @@ export default function PartnerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128270;</div>
+              <div className="feature-card__icon"><Icon name="search" /></div>
               <div className="feature-card__title">Appraisers</div>
               <p className="feature-card__description">
                 Start with structured baseline data, photos, and market comparables rather than
@@ -101,23 +102,23 @@ export default function PartnerLanding() {
           <h2 className="section__title">Learn more</h2>
           <div className="feature-grid">
             <Link to="/partner/how-it-works" className="feature-card card--link">
-              <div className="feature-card__icon">&#128736;</div>
-              <div className="feature-card__title">How It Works</div>
+              <div className="feature-card__icon"><Icon name="build" /></div>
+              <div className="feature-card__title">How It Works <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">See the 5-step partner workflow from registration to client service.</p>
             </Link>
             <Link to="/partner/features" className="feature-card card--link">
-              <div className="feature-card__icon">&#9889;</div>
-              <div className="feature-card__title">Partner Features</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
+              <div className="feature-card__title">Partner Features <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Client workspaces, document sharing, analytics, and team management.</p>
             </Link>
             <Link to="/partner/pricing" className="feature-card card--link">
-              <div className="feature-card__icon">&#128176;</div>
-              <div className="feature-card__title">Pricing</div>
+              <div className="feature-card__icon"><Icon name="payments" /></div>
+              <div className="feature-card__title">Pricing <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Flexible plans from Solo to Enterprise. Start with a free 60-day pilot.</p>
             </Link>
             <Link to="/partner/use-cases" className="feature-card card--link">
-              <div className="feature-card__icon">&#128188;</div>
-              <div className="feature-card__title">Use Cases</div>
+              <div className="feature-card__icon"><Icon name="work" /></div>
+              <div className="feature-card__title">Use Cases <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">How insurance agents, estate planners, and appraisers use HeirDock.</p>
             </Link>
           </div>
@@ -133,7 +134,7 @@ export default function PartnerLanding() {
           </p>
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

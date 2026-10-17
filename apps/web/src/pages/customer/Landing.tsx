@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function CustomerLanding() {
   return (
@@ -14,7 +15,7 @@ export default function CustomerLanding() {
           </p>
           <div className="hero__actions">
             <Link to="/customer/how-it-works" className="btn btn--primary btn--lg">
-              See How It Works &rarr;
+              See How It Works <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
@@ -29,7 +30,7 @@ export default function CustomerLanding() {
           </p>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128247;</div>
+              <div className="feature-card__icon"><Icon name="photoCamera" /></div>
               <div className="feature-card__title">Capture with ease</div>
               <p className="feature-card__description">
                 Take a photo or describe an item. HeirDock handles the rest - identifying, categorizing,
@@ -37,7 +38,7 @@ export default function CustomerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9889;</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">AI-powered insights</div>
               <p className="feature-card__description">
                 Get instant identification and market valuations based on real comparable sales.
@@ -45,7 +46,7 @@ export default function CustomerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128101;</div>
+              <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Share with family</div>
               <p className="feature-card__description">
                 Invite Trusted Participants with role-based access. Viewers can see, Contributors can help
@@ -53,7 +54,7 @@ export default function CustomerLanding() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128274;</div>
+              <div className="feature-card__icon"><Icon name="lock" /></div>
               <div className="feature-card__title">Secure and private</div>
               <p className="feature-card__description">
                 Your data is encrypted at rest and in transit. The Vault provides additional
@@ -103,7 +104,7 @@ export default function CustomerLanding() {
           </div>
           <div className="mt-2xl">
             <Link to="/customer/how-it-works" className="btn btn--outline">
-              Learn more about how it works &rarr;
+              Learn more about how it works <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
@@ -115,23 +116,23 @@ export default function CustomerLanding() {
           <h2 className="section__title">Explore</h2>
           <div className="feature-grid">
             <Link to="/customer/features" className="feature-card card--link">
-              <div className="feature-card__icon">&#9889;</div>
-              <div className="feature-card__title">Features</div>
+              <div className="feature-card__icon"><Icon name="bolt" /></div>
+              <div className="feature-card__title">Features <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">AI identification, valuations, family sharing, vault, coverage insights, and more.</p>
             </Link>
             <Link to="/customer/pricing" className="feature-card card--link">
-              <div className="feature-card__icon">&#128176;</div>
-              <div className="feature-card__title">Pricing</div>
+              <div className="feature-card__icon"><Icon name="payments" /></div>
+              <div className="feature-card__title">Pricing <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Simple, transparent plans from $50/year. 30-day free trial on all plans.</p>
             </Link>
             <Link to="/customer/use-cases" className="feature-card card--link">
-              <div className="feature-card__icon">&#127968;</div>
-              <div className="feature-card__title">Use Cases</div>
+              <div className="feature-card__icon"><Icon name="home" /></div>
+              <div className="feature-card__title">Use Cases <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Insurance readiness, estate planning, disaster recovery, and moving.</p>
             </Link>
             <Link to="/customer/how-it-works" className="feature-card card--link">
-              <div className="feature-card__icon">&#128736;</div>
-              <div className="feature-card__title">How It Works</div>
+              <div className="feature-card__icon"><Icon name="build" /></div>
+              <div className="feature-card__title">How It Works <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Four simple steps to organize your household - at your own pace.</p>
             </Link>
           </div>
@@ -147,7 +148,7 @@ export default function CustomerLanding() {
           </p>
           <div className="cta-band__actions">
             <Link to="/contact" className="btn btn--primary btn--lg">
-              Get in Touch &rarr;
+              Get in Touch <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logoUrl from "../assets/images/heirdock-logo.png";
+import Icon from "./Icon";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,7 +79,7 @@ export default function Nav() {
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
-          {mobileOpen ? "\u2715" : "\u2630"}
+          <Icon name={mobileOpen ? "close" : "menu"} />
         </button>
       </div>
 

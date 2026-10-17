@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function WhyPartner() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
+          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Why Partner With HeirDock</h1>
           <p className="page-header__subtitle">
             Differentiate your practice with household asset intelligence.
@@ -17,7 +18,7 @@ export default function WhyPartner() {
         <div className="container">
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon">&#128640;</div>
+              <div className="feature-card__icon"><Icon name="rocketLaunch" /></div>
               <div className="feature-card__title">Reduce client friction</div>
               <p className="feature-card__description">
                 Clients arrive with organized, documented asset records instead of vague
@@ -26,7 +27,7 @@ export default function WhyPartner() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128200;</div>
+              <div className="feature-card__icon"><Icon name="trendingUp" /></div>
               <div className="feature-card__title">Improve documentation quality</div>
               <p className="feature-card__description">
                 Photos, serial numbers, valuations, and evidence - all organized and accessible
@@ -34,7 +35,7 @@ export default function WhyPartner() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#129309;</div>
+              <div className="feature-card__icon"><Icon name="handshake" /></div>
               <div className="feature-card__title">Strengthen client trust</div>
               <p className="feature-card__description">
                 Offering HeirDock shows clients you care about the complete picture - not
@@ -42,7 +43,7 @@ export default function WhyPartner() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128202;</div>
+              <div className="feature-card__icon"><Icon name="barChart" /></div>
               <div className="feature-card__title">Engagement insights</div>
               <p className="feature-card__description">
                 Track which clients are actively documenting, which have coverage gaps,
@@ -50,7 +51,7 @@ export default function WhyPartner() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#128176;</div>
+              <div className="feature-card__icon"><Icon name="payments" /></div>
               <div className="feature-card__title">Help clients close coverage gaps</div>
               <p className="feature-card__description">
                 Surface underinsured items and planning opportunities so your clients
@@ -58,7 +59,7 @@ export default function WhyPartner() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-card__icon">&#9989;</div>
+              <div className="feature-card__icon"><Icon name="taskAlt" /></div>
               <div className="feature-card__title">Easy to get started</div>
               <p className="feature-card__description">
                 60-day free pilot. No technical setup required. Start with a single client
@@ -78,7 +79,7 @@ export default function WhyPartner() {
           </p>
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

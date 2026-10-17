@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../lib/useContactForm";
+import Icon from "../components/Icon";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -89,7 +90,7 @@ export default function Contact() {
 
               <button type="submit" disabled={status === "submitting"}
                 className="btn btn--primary btn--lg form__submit">
-                {status === "submitting" ? "Sending..." : "Send Message \u2192"}
+                {status === "submitting" ? "Sending..." : <>Send Message <Icon name="arrowForward" /></>}
               </button>
 
               <p className="fine-print">

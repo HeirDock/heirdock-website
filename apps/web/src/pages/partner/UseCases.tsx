@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function PartnerUseCases() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
+          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Partner Use Cases</h1>
           <p className="page-header__subtitle">
             How professionals across industries use HeirDock to serve clients better.
@@ -17,7 +18,7 @@ export default function PartnerUseCases() {
         <div className="container">
           <div className="use-case-grid">
             <div className="use-case-card">
-              <div className="use-case-card__icon">&#128203;</div>
+              <div className="use-case-card__icon"><Icon name="assignment" /></div>
               <h3 className="use-case-card__title">Insurance Agents</h3>
               <p className="use-case-card__description">
                 Review client household inventories to ensure adequate coverage. Identify high-value items
@@ -26,7 +27,7 @@ export default function PartnerUseCases() {
               </p>
             </div>
             <div className="use-case-card">
-              <div className="use-case-card__icon">&#9878;</div>
+              <div className="use-case-card__icon"><Icon name="balance" /></div>
               <h3 className="use-case-card__title">Estate Planners</h3>
               <p className="use-case-card__description">
                 Access structured asset records and distribution plans to support comprehensive estate planning.
@@ -35,7 +36,7 @@ export default function PartnerUseCases() {
               </p>
             </div>
             <div className="use-case-card">
-              <div className="use-case-card__icon">&#128270;</div>
+              <div className="use-case-card__icon"><Icon name="search" /></div>
               <h3 className="use-case-card__title">Appraisers</h3>
               <p className="use-case-card__description">
                 Start appraisals with structured baseline data - photos, categories, AI-generated
@@ -44,7 +45,7 @@ export default function PartnerUseCases() {
               </p>
             </div>
             <div className="use-case-card">
-              <div className="use-case-card__icon">&#128176;</div>
+              <div className="use-case-card__icon"><Icon name="payments" /></div>
               <h3 className="use-case-card__title">Financial Advisors</h3>
               <p className="use-case-card__description">
                 Gain visibility into the physical asset portion of client wealth that traditional
@@ -61,7 +62,7 @@ export default function PartnerUseCases() {
           <h2 className="cta-band__title">See how it works for your practice</h2>
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

@@ -344,8 +344,8 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 
 ### PR C: Icons
 
-- [ ] `Icon.tsx` plus the license texts; the swap; the chevrons; and the mapping table in the PR description.
-- [ ] Screenshots of the pages that have icons. The arrow is now an icon, not the fallback font's glyph.
+- [x] `Icon.tsx` plus the license texts; the swap; the chevrons; and the mapping table in the PR description.
+- [x] Screenshots of the pages that have icons. The arrow is now an icon, not the fallback font's glyph.
 
 ## Acceptance Criteria
 

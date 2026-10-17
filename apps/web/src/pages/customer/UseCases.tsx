@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function CustomerUseCases() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/customer" className="page-header__back">&larr; Back to For Families</Link>
+          <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
           <h1 className="page-header__title">Use Cases</h1>
           <p className="page-header__subtitle">
             See how families use HeirDock to bring clarity to what they own.
@@ -124,7 +125,7 @@ export default function CustomerUseCases() {
           </p>
           <div className="cta-band__actions">
             <Link to="/contact" className="btn btn--primary btn--lg">
-              Get in Touch &rarr;
+              Get in Touch <Icon name="arrowForward" />
             </Link>
           </div>
         </div>

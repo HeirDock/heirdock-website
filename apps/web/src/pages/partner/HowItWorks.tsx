@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import Icon from "../../components/Icon";
 
 export default function PartnerHowItWorks() {
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back">&larr; Back to For Professionals</Link>
+          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">How It Works for Partners</h1>
           <p className="page-header__subtitle">
             From registration to client service - a streamlined workflow for professionals.
@@ -60,7 +61,7 @@ export default function PartnerHowItWorks() {
           <h3>Ready to streamline your workflow?</h3>
           <div className="mt-xl">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
-              Request a Demo &rarr;
+              Request a Demo <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
