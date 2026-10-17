@@ -52,7 +52,7 @@ export default function PartnerPricing() {
             </div>
 
             <div className="pricing-tier pricing-tier--featured">
-              <div className="pricing-tier__badge">Most Popular</div>
+              <div className="pricing-tier__label">Most popular</div>
               <div className="pricing-tier__icon">&#127942;</div>
               <div className="pricing-tier__name">Growing Agency</div>
               <p className="pricing-tier__description">

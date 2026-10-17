@@ -167,10 +167,10 @@ export default function CustomerFeatures() {
             Have questions about HeirDock's features? We'd love to hear from you.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--white btn--lg">
+            <Link to="/contact" className="btn btn--primary btn--lg">
               Get in Touch &rarr;
             </Link>
-            <Link to="/customer/pricing" className="btn btn--outline btn--lg" style={{ borderColor: "white", color: "white" }}>
+            <Link to="/customer/pricing" className="btn btn--outline btn--lg">
               View Pricing
             </Link>
           </div>

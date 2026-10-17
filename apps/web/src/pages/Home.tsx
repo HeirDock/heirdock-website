@@ -29,7 +29,7 @@ export default function Home() {
       <section className="section section--white">
         <div className="container">
           <h2 className="section__title">
-            How <span className="text-navy-light">HeirDock</span> Works
+            How <span className="text-brand-highlight">HeirDock</span> Works
           </h2>
           <p className="section__subtitle">
             Everything you need to organize what you own - with the future in mind.
@@ -106,7 +106,7 @@ export default function Home() {
                 When important items aren't documented, families and insurers are often left
                 reconstructing value after something has already gone wrong.
               </p>
-              <p className="font-bold text-navy">
+              <p className="font-bold text-brand">
                 HeirDock brings clarity and structure to this overlooked part of household wealth.
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
             Get started – It only takes a few minutes to start organizing what you have.
           </p>
           <div className="cta-band__actions">
-            <Link to="/about" className="btn btn--white btn--lg">
+            <Link to="/about" className="btn btn--primary btn--lg">
               Learn More &rarr;
             </Link>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
       <section className="section section--white">
         <div className="container">
           <h2 className="section__title">
-            Why Choose <span className="text-navy-light">HeirDock</span>?
+            Why Choose <span className="text-brand-highlight">HeirDock</span>?
           </h2>
           <div className="benefit-section">
             <div>

@@ -16,10 +16,25 @@ const routes = Object.keys(pageMeta);
 
 // ── Head tag generation ─────────────────────────────────────────────
 
-function buildHeadTags(routePath: string): string {
+// The Latin Inter subset covers every page, so it is preloaded instead of
+// waiting for the CSS to be parsed. Its URL is read from the client build's
+// output (content-hashed), so it can never point at a file that isn't
+// deployed; a missing file fails the build.
+function findLatinFont(clientDir: string): string {
+  const file = fs
+    .readdirSync(path.join(clientDir, "assets"))
+    .find((name) => /^inter-latin-wght-normal-[\w-]+\.woff2$/.test(name));
+  if (!file) {
+    throw new Error("prerender: Inter latin font not found in dist/client/assets");
+  }
+  return `/assets/${file}`;
+}
+
+function buildHeadTags(routePath: string, fontHref: string): string {
+  const fontPreload = `<link rel="preload" href="${fontHref}" as="font" type="font/woff2" crossorigin />`;
   const meta = pageMeta[routePath];
   if (!meta) {
-    return `<title>HeirDock</title>`;
+    return [`<title>HeirDock</title>`, fontPreload].join("\n    ");
   }
 
   const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
@@ -46,6 +61,7 @@ function buildHeadTags(routePath: string): string {
     `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
     `<meta name="twitter:image" content="${ogImage}" />`,
     `<meta name="twitter:image:alt" content="HeirDock — Know what you own. Protect what matters." />`,
+    fontPreload,
   ];
 
   if (shouldNoindex) {
@@ -67,6 +83,7 @@ function prerender() {
     path.join(clientDir, "index.html"),
     "utf-8"
   );
+  const fontHref = findLatinFont(clientDir);
 
   for (const routePath of routes) {
     const appHtml = renderToString(
@@ -75,7 +92,7 @@ function prerender() {
       </StaticRouter>
     );
 
-    const headTags = buildHeadTags(routePath);
+    const headTags = buildHeadTags(routePath, fontHref);
 
     const html = template
       .replace("<!--head-tags-->", headTags)

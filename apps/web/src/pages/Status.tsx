@@ -18,9 +18,9 @@ export default function Status() {
             display: "inline-flex",
             alignItems: "center",
             gap: "var(--space-md)",
-            background: "var(--color-success-light)",
+            background: "var(--color-success-soft-bg)",
             padding: "var(--space-lg) var(--space-2xl)",
-            borderRadius: "var(--border-radius-lg)",
+            borderRadius: "var(--radius-md)",
             marginBottom: "var(--space-2xl)",
           }}>
             <span style={{ color: "var(--color-success)", fontSize: "var(--text-2xl)" }}>&#9679;</span>
@@ -51,7 +51,7 @@ export default function Status() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   padding: "var(--space-md) 0",
-                  borderBottom: "1px solid var(--color-border-light)",
+                  borderBottom: "1px solid var(--color-divider)",
                 }}>
                   <span style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)" }}>
                     {service}

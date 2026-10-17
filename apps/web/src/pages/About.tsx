@@ -23,7 +23,7 @@ export default function About() {
             everyday items that quietly add up. Most of it lives in closets, basements, storage units, or memory -
             undocumented, undervalued, and hard for anyone else to make sense of later.
           </p>
-          <p className="text-teal" style={{ fontWeight: 500, fontSize: "var(--text-md)" }}>
+          <p className="text-brand" style={{ fontWeight: 500, fontSize: "var(--text-md)" }}>
             HeirDock gives you a simple way to capture clarity over time.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function About() {
       {/* Who HeirDock Is For */}
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title" style={{ color: "var(--color-navy)" }}>Who HeirDock Is For</h2>
+          <h2 className="section__title">Who HeirDock Is For</h2>
           <p className="section__subtitle">HeirDock is designed for people who:</p>
           <div className="audience-grid">
             <div className="audience-card">
@@ -91,7 +91,7 @@ export default function About() {
       {/* What Makes HeirDock Different */}
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title" style={{ color: "var(--color-navy)" }}>What Makes HeirDock Different</h2>
+          <h2 className="section__title">What Makes HeirDock Different</h2>
           <div className="diff-grid" style={{ maxWidth: "720px", margin: "0 auto" }}>
             <div className="diff-card">
               <div className="diff-card__label">It's not a to-do list</div>
@@ -129,7 +129,7 @@ export default function About() {
       {/* Why Choose HeirDock (Feature Cards) */}
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title" style={{ color: "var(--color-navy)" }}>Why Choose HeirDock?</h2>
+          <h2 className="section__title">Why Choose HeirDock?</h2>
           <div className="feature-grid">
             <div className="feature-card">
               <div className="feature-card__icon">&#128161;</div>

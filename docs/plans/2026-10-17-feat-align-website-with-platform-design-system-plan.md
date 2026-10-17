@@ -317,16 +317,16 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 
 ### PR A: Restyle
 
-- [ ] Take before screenshots (ad-hoc Playwright, not committed): 27 routes at 1440px, plus Home, customer and partner Landing, Pricing, Contact and Invite at 375px. Also the app's login page, for the handoff comparison.
-- [ ] Fonts: package, import, preload with the hash assert, and the fallback face.
-- [ ] Rewrite `tokens.css` (both layers) and do the one-shot rename across all CSS and TSX `var()` uses.
-- [ ] `base.css`: body, headings, links and the prose exception, `:focus-visible`, reduced motion, buttons.
-- [ ] `components.css`: everything in the component spec.
-- [ ] Page edits the new colors force: CTA bands use `btn--primary` (9 pages); partner `Landing.tsx` uses `.hero--light`; `.text-navy-light` becomes `.text-brand-highlight`; the `Nav.tsx` scroll code is removed and the logo becomes a class.
-- [ ] `site.webmanifest`: `theme_color` `#456E9A`, `background_color` `#F9F7F4`. Add `<meta name="theme-color">`. The manifest's one-year cache is accepted, since it only affects an installed PWA.
-- [ ] CLAUDE.md: replace the hex values in "Brand Guidelines" with **rules**. Tokens only; values in `tokens.css`, upstream in the platform JSON; no chips or pills; no hover underline; brand-highlight for large text only. Correct the font line, the footer color, the new lint command, and "26 routes" → 27.
+- [x] Take before screenshots (ad-hoc Playwright, not committed): 27 routes at 1440px, plus Home, customer and partner Landing, Pricing, Contact and Invite at 375px. Also the app's login page, for the handoff comparison.
+- [x] Fonts: package, import, preload with the hash assert, and the fallback face.
+- [x] Rewrite `tokens.css` (both layers) and do the one-shot rename across all CSS and TSX `var()` uses.
+- [x] `base.css`: body, headings, links and the prose exception, `:focus-visible`, reduced motion, buttons.
+- [x] `components.css`: everything in the component spec.
+- [x] Page edits the new colors force: CTA bands use `btn--primary` (9 pages); partner `Landing.tsx` uses `.hero--light`; `.text-navy-light` becomes `.text-brand-highlight`; the `Nav.tsx` scroll code is removed and the logo becomes a class.
+- [x] `site.webmanifest`: `theme_color` `#456E9A`, `background_color` `#F9F7F4`. Add `<meta name="theme-color">`. The manifest's one-year cache is accepted, since it only affects an installed PWA.
+- [x] CLAUDE.md: replace the hex values in "Brand Guidelines" with **rules**. Tokens only; values in `tokens.css`, upstream in the platform JSON; no chips or pills; no hover underline; brand-highlight for large text only. Correct the font line, the footer color, the new lint command, and "26 routes" → 27.
 - [ ] **Owner checkpoint:** a local preview of Home, customer Landing, Pricing and Contact. The heading weight change (700 → 500/600) is the biggest shift.
-- [ ] Take after screenshots at the same set. Do a keyboard pass on Home, Contact, Invite, Pricing and the open mobile nav. Check in DevTools that Inter Variable is the rendered font. Compare the site nav and buttons with app.heirdock.com/login.
+- [x] Take after screenshots at the same set. Do a keyboard pass on Home, Contact, Invite, Pricing and the open mobile nav. Check in DevTools that Inter Variable is the rendered font. Compare the site nav and buttons with app.heirdock.com/login.
 
 ### PR B: Cleanup + guard (no visual change)
 

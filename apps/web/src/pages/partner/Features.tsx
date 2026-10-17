@@ -75,7 +75,7 @@ export default function PartnerFeatures() {
             Schedule a personalized demo for your practice.
           </p>
           <div className="cta-band__actions">
-            <Link to="/partner/demo" className="btn btn--white btn--lg">
+            <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo &rarr;
             </Link>
           </div>

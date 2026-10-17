@@ -16,21 +16,32 @@ body {
   font-family: var(--font-primary);
   font-size: var(--text-base);
   color: var(--color-text-primary);
-  background: var(--color-bg-warm);
-  line-height: 1.65;
+  background: var(--color-bg);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
+/* Typography: platform weights and tracking (em, so it scales with the
+   larger marketing sizes; h1 -0.5px and h2 -0.3px at the app's sizes). */
 h1, h2, h3, h4, h5 {
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-text-primary);
 }
 
-h1 { font-size: var(--text-4xl); }
-h2 { font-size: var(--text-3xl); }
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.016em;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.0125em;
+}
+
 h3 { font-size: var(--text-2xl); }
 h4 { font-size: var(--text-xl); }
 h5 { font-size: var(--text-lg); }
@@ -44,15 +55,29 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* Links never underline on hover (platform rule); they fade instead. */
 a {
-  color: var(--color-navy);
+  color: var(--color-primary);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: opacity var(--duration-fast) var(--ease-default);
 }
 
 a:hover {
-  color: var(--color-navy-dark);
+  opacity: 0.8;
+}
+
+/* Links inside running text stay underlined: color alone can't mark them
+   (WCAG 1.4.1). This is a permanent underline, not a hover one. */
+p a,
+.legal-content a,
+.legal-stub a {
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 img {
@@ -85,27 +110,8 @@ ul, ol {
   padding: var(--space-3xl) 0;
 }
 
-.section--warm {
-  background: var(--color-bg-cream);
-}
-
 .section--white {
-  background: var(--color-bg-white);
-}
-
-.section--light-blue {
-  background: var(--color-bg-light-blue);
-}
-
-.section--navy {
-  background: var(--color-navy);
-  color: var(--color-bg-white);
-}
-
-.section--navy h2,
-.section--navy h3,
-.section--navy p {
-  color: var(--color-bg-white);
+  background: var(--color-surface);
 }
 
 /* Section headings */
@@ -122,79 +128,83 @@ ul, ol {
   margin: 0 auto var(--space-3xl);
 }
 
-/* Buttons */
+/* Buttons: the app's shape (8px radius, weight 500, 1px border, no shadow,
+   no uppercase). The app fixes buttons at 40px; --lg is a marketing size. */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--border-radius);
+  min-height: 40px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-sm);
   font-family: var(--font-primary);
-  font-size: var(--text-base);
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.25;
   text-decoration: none;
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: all var(--transition-base);
-  line-height: 1.4;
+  border: 1px solid transparent;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-default);
 }
 
 .btn:hover {
-  text-decoration: none;
+  opacity: 1;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .btn--primary {
-  background: var(--color-navy);
-  color: var(--color-bg-white);
-  border-color: var(--color-navy);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .btn--primary:hover {
-  background: var(--color-navy-dark);
-  border-color: var(--color-navy-dark);
-  color: var(--color-bg-white);
+  background: var(--color-primary-hover);
 }
 
+.btn--primary:active {
+  background: var(--color-primary-active);
+}
+
+/* Surface fill rather than transparent: the app only sets outlined buttons on
+   white, and on the pale hero/CTA tint a transparent one nearly vanishes. */
 .btn--outline {
-  background: transparent;
-  color: var(--color-navy);
-  border-color: var(--color-navy);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-border);
 }
 
 .btn--outline:hover {
-  background: var(--color-navy);
-  color: var(--color-bg-white);
-}
-
-.btn--white {
-  background: var(--color-bg-white);
-  color: var(--color-navy);
-  border-color: var(--color-bg-white);
-}
-
-.btn--white:hover {
-  background: var(--color-bg-cream);
-  border-color: var(--color-bg-cream);
+  background: var(--color-surface-2);
+  border-color: var(--color-text-disabled);
 }
 
 .btn--lg {
-  padding: 1rem 2rem;
-  font-size: var(--text-md);
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: var(--text-base);
 }
 
 .btn--sm {
-  padding: 0.5rem 1.25rem;
-  font-size: var(--text-sm);
+  min-height: 32px;
+  padding: 0 10px;
 }
 
 /* Utility */
 .text-center { text-align: center; }
 .text-muted { color: var(--color-text-muted); }
-.text-navy { color: var(--color-navy); }
-.text-navy-light { color: var(--color-navy-light); }
-.text-teal { color: var(--color-teal); }
+.text-brand { color: var(--color-primary); }
+/* The logo blue: 3.45:1 on white, so only on text 24px and up. */
+.text-brand-highlight { color: var(--color-brand-highlight); }
 .text-italic { font-style: italic; }
-.font-bold { font-weight: 700; }
+.font-bold { font-weight: 600; }
 
 .sr-only {
   position: absolute;
@@ -225,4 +235,19 @@ ul, ol {
 
   .section { padding: var(--space-3xl) 0; }
   .container { padding: 0 var(--space-md); }
+}
+
+/* Same rule as the app's baseline: honor the OS reduced-motion setting. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

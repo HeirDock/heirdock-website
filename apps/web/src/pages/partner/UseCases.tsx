@@ -60,7 +60,7 @@ export default function PartnerUseCases() {
         <div className="container">
           <h2 className="cta-band__title">See how it works for your practice</h2>
           <div className="cta-band__actions">
-            <Link to="/partner/demo" className="btn btn--white btn--lg">
+            <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo &rarr;
             </Link>
           </div>

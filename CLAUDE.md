@@ -16,8 +16,10 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 
 ## Brand Guidelines
 
-- **Colors:** Navy (#1B3A5C), Gold (#C4892B), Warm cream (#F7F5F2), Footer blue-gray (#7A9AB5)
-- **Font:** Inter (Regular 400, Medium 500, Bold 700) — self-hosted WOFF2
+- **Design system:** The site mirrors the HeirDock platform's design system (`heirdock-platform/docs/design/design-system.json`, as rendered by the app's `materialTheme.js`). Color, radius, shadow and motion values live only in `apps/web/src/styles/tokens.css`; its marked design-system block records the platform commits it was copied from. Change values there, never inline.
+- **Colors:** Use tokens, never raw hex/rgb in components or pages. The primary is the platform's `--color-primary`. Headings use `--color-text-primary`, not a brand color. `--color-brand-highlight` (the logo blue) is for text 24px and up only (3.45:1). Teal (`--color-secondary`) is decorative: never under white text, never as body text.
+- **Components:** No chips, pills or badges. Links never underline on hover (they fade); links inside running text stay underlined. Clickable cards use `.card--link` (tint and primary border on hover, no lift). Every interactive element keeps the global `:focus-visible` ring.
+- **Font:** Inter variable (weights 100-900) from `@fontsource-variable/inter`, bundled and content-hashed by Vite; the latin subset is preloaded by the prerender. Headings: h1 600, h2-h4 500.
 - **Tone:** Calm, warm, unhurried. No urgency patterns, no alarming language.
 - **Terminology:** Use "Item" not "asset," "Estate Transition" not "death mode," "Trusted Participant" not "heir"
 
@@ -34,7 +36,7 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 `npm run build` runs three steps:
 1. `build:client` — Vite client build → `dist/client/` (JS, CSS, index.html template)
 2. `build:server` — Vite SSR build → `dist/server/` (Node.js prerender script)
-3. `prerender` — Runs `dist/server/entry-server.js` which renders all 26 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
+3. `prerender` — Runs `dist/server/entry-server.js` which renders all 27 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
 
 Final output for deployment: `dist/client/` (all HTML + assets)
 

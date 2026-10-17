@@ -86,7 +86,7 @@ export default function CustomerHowItWorks() {
             We'd love to tell you more about how HeirDock can help your household.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--white btn--lg">
+            <Link to="/contact" className="btn btn--primary btn--lg">
               Get in Touch &rarr;
             </Link>
           </div>
