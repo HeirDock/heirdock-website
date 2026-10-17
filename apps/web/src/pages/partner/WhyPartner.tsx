@@ -77,7 +77,7 @@ export default function WhyPartner() {
             Start your free 60-day pilot and see the difference organized client data makes.
           </p>
           <div className="cta-band__actions">
-            <Link to="/partner/demo" className="btn btn--white btn--lg">
+            <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo &rarr;
             </Link>
           </div>

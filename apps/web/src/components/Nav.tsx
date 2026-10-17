@@ -4,15 +4,8 @@ import logoUrl from "../assets/images/heirdock-logo.png";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -40,10 +33,10 @@ export default function Nav() {
     location.pathname === path || location.pathname.startsWith(path + "/");
 
   return (
-    <nav ref={navRef} className={`site-nav${scrolled ? " site-nav--scrolled" : ""}`}>
+    <nav ref={navRef} className="site-nav">
       <div className="container">
         <Link to="/" className="site-nav__logo">
-          <img src={logoUrl} alt="HeirDock" style={{ height: "60px", width: "auto" }} />
+          <img src={logoUrl} alt="HeirDock" />
         </Link>
 
         <div className="site-nav__links">

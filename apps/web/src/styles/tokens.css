@@ -1,44 +1,100 @@
 :root {
-  /* Colors — Brand */
-  --color-navy: #1b3a5c;
-  --color-navy-dark: #142c47;
-  --color-navy-light: #5a8ec2;
-  --color-gold: #c4892b;
-  --color-gold-light: #deb05e;
-  --color-teal: #5bada0;
-  --color-teal-light: #edf8f6;
+  /* BEGIN design-system ------------------------------------------------
+     Mirrors the HeirDock platform so the site and app read as one product.
+     Source (light mode):
+       heirdock-platform/docs/design/design-system.json  @ 38cf745d
+       heirdock-platform/apps/web/src/styles/materialTheme.js @ fe37265e
+     Names follow the JSON paths (brand.primaryHover -> --color-primary-hover,
+     states.success.softBg -> --color-success-soft-bg). Values marked
+     "theme-only" exist in materialTheme.js but not in the JSON; keep them on
+     a re-sync. This is the only block with raw colors; dark mode later means
+     overriding this block with color.dark. */
 
-  /* Colors — Backgrounds */
-  --color-bg-warm: #f7f5f2;
-  --color-bg-white: #ffffff;
-  --color-bg-cream: #faf8f6;
-  --color-bg-light-blue: #f0f6fc;
+  /* Brand */
+  --color-primary: #456e9a;
+  --color-primary-hover: #3a5e84;
+  --color-primary-active: #2e4e70;
+  --color-primary-light: #edf3fa; /* theme-only */
+  --color-on-primary: #ffffff;
+  /* Secondary (sage teal) fails AA under white text (2.65:1) and as body
+     text (#3f8278 is 4.49:1): decorative fills and borders only. */
+  --color-secondary: #5bada0;
+  --color-secondary-hover: #3f8278;
+  --color-secondary-light: #edf8f6;
+  --color-accent: #deb05e;
+  --color-accent-hover: #cfa04e;
+  --color-accent-light: #fff8ec;
 
-  /* Colors — Text */
+  /* Neutrals */
+  --color-bg: #f9f7f4;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbfaf8;
+  --color-surface-3: #f0ede8;
+  --color-border: #e2ddd6;
+  --color-divider: #e8e4de;
+  --color-action-hover: rgba(0, 0, 0, 0.03); /* theme-only: row/card hover tint */
+
+  /* Text */
   --color-text-primary: #1a1714;
   --color-text-secondary: #4a4540;
-  --color-text-muted: #7a756f;
+  --color-text-muted: #6b665f;
+  --color-text-disabled: #aaa69f;
+  --color-text-on-dark: #ffffff;
 
-  /* Colors — UI */
-  --color-border: #e8e4e0;
-  --color-border-light: #f0ece8;
-  --color-footer-bg: #2c3e50;
-  --color-hero-bg: #e8f0f8;
-  --color-cta-bg: #3b7dd8;
-  --color-cta-bg-dark: #2c6cc4;
+  /* States */
   --color-success: #40926a;
-  --color-success-light: #ebf5ef;
+  --color-success-soft-bg: #ebf5ef;
+  --color-success-soft-fg: #1a5c36;
   --color-warning: #b8940e;
+  --color-warning-soft-bg: #fff8e7;
+  --color-warning-soft-fg: #7a5a08;
   --color-danger: #d4584c;
+  --color-danger-soft-bg: #fbeae8;
+  --color-danger-soft-fg: #8b2920;
+  --color-info: #456e9a;
+  --color-info-soft-bg: #edf3fa;
+  --color-info-soft-fg: #3a6e9e;
 
-  /* Colors — Shadows */
-  --shadow-xs: 0 1px 2px rgba(55, 48, 40, 0.06);
-  --shadow-sm: 0 2px 4px rgba(55, 48, 40, 0.08);
-  --shadow-md: 0 4px 12px rgba(55, 48, 40, 0.1);
-  --shadow-lg: 0 8px 24px rgba(55, 48, 40, 0.12);
+  /* Site-only: the logo blue (design-system dataViz[0]). 3.45:1 on white, so
+     text at 24px and up only. */
+  --color-brand-highlight: #5a8ec2;
 
-  /* Typography */
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03); /* theme-only */
+
+  /* Shape */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --ease-default: cubic-bezier(0.2, 0, 0, 1);
+
+  /* END design-system -------------------------------------------------- */
+
+  /* Site component tokens: decisions about where design-system colors go.
+     They reference the block above and never hold raw values. */
+  --hero-bg: var(--color-primary-light);
+  --cta-band-bg: var(--color-primary-light);
+  /* Dark mode needs its own value: the dark primaryActive is a light blue. */
+  --footer-bg: var(--color-primary-active);
+  /* Footer secondary text: 75% white is 5.69:1 on --footer-bg. */
+  --footer-text-secondary: color-mix(in srgb, var(--color-text-on-dark) 75%, transparent);
+  --footer-rule: color-mix(in srgb, var(--color-text-on-dark) 15%, transparent);
+  /* Set to --color-text-on-dark on dark surfaces; descendants inherit it. */
+  --focus-ring: var(--color-primary);
+
+  /* Typography. Display sizes stay larger than the app's type scale, which
+     is sized for dense UI; weights and tracking follow the platform. */
+  --font-primary: "Inter Variable", "Inter Fallback", system-ui, -apple-system,
     sans-serif;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -49,9 +105,8 @@
   --text-2xl: 2rem;
   --text-3xl: 2.5rem;
   --text-4xl: 3rem;
-  --text-5xl: 3.5rem;
 
-  /* Spacing */
+  /* Spacing (design-system spacing.scale, plus 96/128 for marketing sections) */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -62,16 +117,8 @@
   --space-4xl: 6rem;
   --space-5xl: 8rem;
 
-  /* Layout */
+  /* Layout. Breakpoints can't be custom properties (they don't work inside
+     @media): the site uses max-width 1023px (tablet) and 767px (phone). */
   --max-width: 1200px;
   --max-width-narrow: 720px;
-  --border-radius: 8px;
-  --border-radius-sm: 6px;
-  --border-radius-lg: 12px;
-  --border-radius-xl: 16px;
-
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
 }

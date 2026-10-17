@@ -114,22 +114,22 @@ export default function CustomerLanding() {
         <div className="container">
           <h2 className="section__title">Explore</h2>
           <div className="feature-grid">
-            <Link to="/customer/features" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/customer/features" className="feature-card card--link">
               <div className="feature-card__icon">&#9889;</div>
               <div className="feature-card__title">Features</div>
               <p className="feature-card__description">AI identification, valuations, family sharing, vault, coverage insights, and more.</p>
             </Link>
-            <Link to="/customer/pricing" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/customer/pricing" className="feature-card card--link">
               <div className="feature-card__icon">&#128176;</div>
               <div className="feature-card__title">Pricing</div>
               <p className="feature-card__description">Simple, transparent plans from $50/year. 30-day free trial on all plans.</p>
             </Link>
-            <Link to="/customer/use-cases" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/customer/use-cases" className="feature-card card--link">
               <div className="feature-card__icon">&#127968;</div>
               <div className="feature-card__title">Use Cases</div>
               <p className="feature-card__description">Insurance readiness, estate planning, disaster recovery, and moving.</p>
             </Link>
-            <Link to="/customer/how-it-works" className="feature-card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to="/customer/how-it-works" className="feature-card card--link">
               <div className="feature-card__icon">&#128736;</div>
               <div className="feature-card__title">How It Works</div>
               <p className="feature-card__description">Four simple steps to organize your household - at your own pace.</p>
@@ -146,7 +146,7 @@ export default function CustomerLanding() {
             It only takes a few minutes to create your household record and begin cataloging.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--white btn--lg">
+            <Link to="/contact" className="btn btn--primary btn--lg">
               Get in Touch &rarr;
             </Link>
           </div>

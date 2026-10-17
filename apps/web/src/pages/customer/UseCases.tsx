@@ -123,7 +123,7 @@ export default function CustomerUseCases() {
             Whatever your reason, HeirDock gives you clarity and control.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--white btn--lg">
+            <Link to="/contact" className="btn btn--primary btn--lg">
               Get in Touch &rarr;
             </Link>
           </div>
