@@ -46,13 +46,18 @@ jobs:
         env:
           VITE_NOINDEX: ${{ inputs.environment == 'staging' && 'true' || 'false' }}
 
-      - name: Deploy static assets to S3
+      # The order of the next four steps is what keeps a deploy (or a rollback)
+      # free of downtime: new hashed assets go up first with nothing deleted,
+      # then the HTML that references them, then the CDN purge. Stale assets
+      # are pruned only after the invalidation has finished, so live HTML never
+      # points at a deleted file. The build is one JS and one CSS bundle with no
+      # lazy chunks, so a tab still open on the old HTML already holds its assets.
+      - name: Upload static assets to S3
         run: |
           aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
             --exclude "*.html" \
             --exclude "*.json" \
-            --cache-control "max-age=31536000,public" \
-            --delete
+            --cache-control "max-age=31536000,public"
 
       - name: Deploy HTML files to S3
         run: |
@@ -64,6 +69,22 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation \
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
             --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
+            --paths "/*" \
+            --query Invalidation.Id \
+            --output text)
+          # Polls every 20s for up to 10 min. If it times out the new site is
+          # already live; the job fails before pruning, which only leaves stale
+          # assets in the bucket until the next deploy.
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id "$INVALIDATION_ID"
+
+      - name: Prune stale assets from S3
+        run: |
+          aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
+            --exclude "*.html" \
+            --exclude "*.json" \
+            --cache-control "max-age=31536000,public" \
+            --delete
