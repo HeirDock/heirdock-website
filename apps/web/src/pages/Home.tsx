@@ -168,35 +168,35 @@ export default function Home() {
               <div className="benefit-mockup__header">Household Assets</div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon" style={{ background: "#fef3e2" }}>&#9201;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--accent">&#9201;</div>
                   <div>
                     <div className="benefit-mockup__name">Vintage Watch</div>
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
                   </div>
                 </div>
                 <div>
-                  <span style={{ color: "#6b8e6b", fontWeight: 500, fontSize: "0.8rem" }}>Emma</span>
+                  <span className="benefit-mockup__owner">Emma</span>
                   {" "}
                   <span className="benefit-mockup__status benefit-mockup__status--assigned">&#10003; Assigned</span>
                 </div>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon" style={{ background: "#e8f0f8" }}>&#128218;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--primary">&#128218;</div>
                   <div>
                     <div className="benefit-mockup__name">Baseball Card Collection</div>
                     <div className="benefit-mockup__category">Collectibles</div>
                   </div>
                 </div>
                 <div>
-                  <span style={{ color: "#6b8e6b", fontWeight: 500, fontSize: "0.8rem" }}>Jack</span>
+                  <span className="benefit-mockup__owner">Jack</span>
                   {" "}
                   <span className="benefit-mockup__status benefit-mockup__status--assigned">&#10003; Assigned</span>
                 </div>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
-                  <div className="benefit-mockup__icon" style={{ background: "#fce4ec" }}>&#128142;</div>
+                  <div className="benefit-mockup__icon benefit-mockup__icon--secondary">&#128142;</div>
                   <div>
                     <div className="benefit-mockup__name">Gold Ring</div>
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
