@@ -191,6 +191,7 @@ ul, ol {
 .text-center { text-align: center; }
 .text-muted { color: var(--color-text-muted); }
 .text-navy { color: var(--color-navy); }
+.text-navy-light { color: var(--color-navy-light); }
 .text-teal { color: var(--color-teal); }
 .text-italic { font-style: italic; }
 .font-bold { font-weight: 700; }
