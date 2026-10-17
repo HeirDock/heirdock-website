@@ -90,7 +90,7 @@ export default function Security() {
       <section className="section section--white">
         <div className="container container--narrow text-center">
           <h2 className="section__title">Your data, your control</h2>
-          <p style={{ fontSize: "var(--text-md)", color: "var(--color-text-secondary)", marginTop: "var(--space-lg)" }}>
+          <p className="text-md mt-lg">
             HeirDock is built on a principle of household sovereignty. You own your data.
             You control who sees it. You can export or delete it at any time.
             We never sell your information and never share it without your explicit consent.

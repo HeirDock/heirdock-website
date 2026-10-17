@@ -101,7 +101,7 @@ export default function CustomerLanding() {
               </p>
             </div>
           </div>
-          <div style={{ marginTop: "var(--space-2xl)" }}>
+          <div className="mt-2xl">
             <Link to="/customer/how-it-works" className="btn btn--outline">
               Learn more about how it works &rarr;
             </Link>

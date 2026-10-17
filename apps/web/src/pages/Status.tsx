@@ -14,57 +14,28 @@ export default function Status() {
 
       <section className="section section--white">
         <div className="container container--narrow text-center">
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "var(--space-md)",
-            background: "var(--color-success-soft-bg)",
-            padding: "var(--space-lg) var(--space-2xl)",
-            borderRadius: "var(--radius-md)",
-            marginBottom: "var(--space-2xl)",
-          }}>
-            <span style={{ color: "var(--color-success)", fontSize: "var(--text-2xl)" }}>&#9679;</span>
-            <span style={{ fontWeight: 600, fontSize: "var(--text-xl)", color: "var(--color-success)" }}>
-              All Systems Operational
-            </span>
+          <div className="status-banner">
+            <span className="status-banner__dot">&#9679;</span>
+            <span className="status-banner__text">All Systems Operational</span>
           </div>
 
-          <div style={{ marginTop: "var(--space-2xl)" }}>
-            <div style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-              textAlign: "left",
-              maxWidth: "480px",
-              margin: "0 auto",
-            }}>
-              {[
-                "Web Application",
-                "API Services",
-                "AI Processing",
-                "Database",
-                "File Storage",
-                "Email Delivery",
-              ].map((service) => (
-                <div key={service} style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "var(--space-md) 0",
-                  borderBottom: "1px solid var(--color-divider)",
-                }}>
-                  <span style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)" }}>
-                    {service}
-                  </span>
-                  <span style={{ fontSize: "var(--text-sm)", color: "var(--color-success)", fontWeight: 500 }}>
-                    Operational
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="status-list">
+            {[
+              "Web Application",
+              "API Services",
+              "AI Processing",
+              "Database",
+              "File Storage",
+              "Email Delivery",
+            ].map((service) => (
+              <div key={service} className="status-list__row">
+                <span className="status-list__name">{service}</span>
+                <span className="status-list__state">Operational</span>
+              </div>
+            ))}
           </div>
 
-          <p style={{ marginTop: "var(--space-3xl)", fontSize: "var(--text-sm)", color: "var(--color-text-muted)" }}>
+          <p className="mt-3xl text-sm text-muted">
             For urgent issues, please use our <Link to="/contact">contact form</Link>.
           </p>
         </div>

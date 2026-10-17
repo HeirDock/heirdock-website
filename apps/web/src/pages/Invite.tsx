@@ -43,7 +43,7 @@ export default function Invite() {
                 <div className="form__message form__message--success">
                   <div className="invite-success__icon">&#10003;</div>
                   <strong>You're on the list!</strong>
-                  <p style={{ marginTop: "var(--space-md)" }}>
+                  <p className="mt-md">
                     Thank you for your interest in HeirDock. We'll reach out when
                     your invitation is ready. Keep an eye on your inbox.
                   </p>
@@ -93,7 +93,7 @@ export default function Invite() {
                     {status === "submitting" ? "Submitting..." : "Request Invite \u2192"}
                   </button>
 
-                  <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>
+                  <p className="fine-print">
                     This site is protected by reCAPTCHA and the Google{" "}
                     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
                       Privacy Policy
