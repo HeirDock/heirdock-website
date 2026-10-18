@@ -8,7 +8,6 @@ export default function Home() {
       {/* Hero */}
       <section className="hero hero--light">
         <div className="container">
-          <HeroVideo />
           <h1 className="hero__title">Know what you own. Protect what matters.</h1>
           <p className="hero__subtitle">
             HeirDock helps households identify, organize, value, and manage
@@ -23,6 +22,7 @@ export default function Home() {
               Sign In
             </a>
           </div>
+          <HeroVideo />
         </div>
       </section>
 

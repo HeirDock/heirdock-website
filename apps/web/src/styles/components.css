@@ -236,7 +236,7 @@
 
 .hero-video {
   max-width: 880px;
-  margin: 0 auto var(--space-2xl);
+  margin: var(--space-md) auto 0;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
   overflow: hidden;
