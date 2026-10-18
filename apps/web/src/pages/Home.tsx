@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="hero hero--light">
+      <section className="hero hero--light hero--with-video">
         <div className="container">
           <HeroVideo />
           <h1 className="hero__title">Know what you own. Protect what matters.</h1>
