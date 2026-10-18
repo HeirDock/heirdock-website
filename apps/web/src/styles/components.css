@@ -235,8 +235,13 @@
 }
 
 .hero-video {
-  max-width: 880px;
-  margin: var(--space-md) auto 0;
+  /* Sized from the window height so the video, headline and subtitle all fit
+     above the fold: the reserve is the nav, the top padding, the gap and the
+     headline and subtitle below. Never under 320px wide, never over 880px. */
+  --hero-video-reserve: 19.5rem;
+  width: min(100%, max(320px, min(880px, calc((100vh - var(--hero-video-reserve)) * 16 / 9))));
+  width: min(100%, max(320px, min(880px, calc((100svh - var(--hero-video-reserve)) * 16 / 9))));
+  margin: 0 auto var(--space-lg);
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -276,6 +281,10 @@
   .hero__title {
     font-size: var(--text-xl);
   }
+}
+
+.hero--with-video {
+  padding-top: var(--space-2xl);
 }
 
 /* ========================================
