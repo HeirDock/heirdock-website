@@ -38,3 +38,6 @@ yarn-error.log*
 
 # Vite
 node_modules/.vite/
+
+# Claude Code (personal permissions)
+.claude/settings.local.json
