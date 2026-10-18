@@ -39,7 +39,10 @@ function buildHeadTags(routePath: string, fontHref: string): string {
 
   const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
   const shouldNoindex = noindex || meta.noindex;
-  const ogImage = `${SITE_URL}/og-image.png`;
+  // public/ files are cached for a year: a new image needs a new name.
+  const ogImage = `${SITE_URL}/og-image-v2.png`;
+  const ogImageAlt =
+    'HeirDock: "Know what you own. Protect what matters." beside a photo of an antique pocket watch';
 
   const tags = [
     `<title>${meta.title}</title>`,
@@ -54,13 +57,13 @@ function buildHeadTags(routePath: string, fontHref: string): string {
     `<meta property="og:image" content="${ogImage}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="HeirDock — Know what you own. Protect what matters." />`,
+    `<meta property="og:image:alt" content="${escapeAttr(ogImageAlt)}" />`,
     // Twitter
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
     `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
     `<meta name="twitter:image" content="${ogImage}" />`,
-    `<meta name="twitter:image:alt" content="HeirDock — Know what you own. Protect what matters." />`,
+    `<meta name="twitter:image:alt" content="${escapeAttr(ogImageAlt)}" />`,
     fontPreload,
   ];
 
