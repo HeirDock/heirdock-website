@@ -21,7 +21,8 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 - **Components:** No chips, pills or badges. Links never underline on hover (they fade); links inside running text stay underlined. Clickable cards use `.card--link` (tint and primary border on hover, no lift). Every interactive element keeps the global `:focus-visible` ring.
 - **Font:** Inter variable (weights 100-900) from `@fontsource-variable/inter`, bundled and content-hashed by Vite; the latin subset is preloaded by the prerender. Headings: h1 600, h2-h4 500.
 - **Tone:** Calm, warm, unhurried. No urgency patterns, no alarming language.
-- **Terminology:** Use "Item" not "asset," "Estate Transition" not "death mode," "Trusted Participant" not "heir"
+- **AI:** Say it sparingly. The site uses "AI" twice: the Security page's "Responsible AI" card and the FAQ answer on how identification works. Elsewhere, name what the feature does (identification, valuation).
+- **Terminology:** "Estate Transition" not "death mode," "Trusted Participant" not "heir". "Asset" is fine in site copy (household assets, asset records); "Item" is the app's word for one thing someone owns.
 
 ## Commands
 
