@@ -313,7 +313,7 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 - [x] Upload HTML/JSON with no-cache (unchanged).
 - [x] Invalidate, then wait: `ID=$(aws cloudfront create-invalidation … --query Invalidation.Id --output text)` followed by `aws cloudfront wait invalidation-completed --distribution-id … --id "$ID"`. The deploy role already allows `cloudfront:GetInvalidation` (`infra/terraform/modules/iam/main.tf:80`).
 - [x] Prune: re-run the asset sync with `--delete` (same excludes and cache-control) to remove stale hashed files. Old tabs are safe, because the build is a single JS bundle and a single CSS bundle with no lazy chunks, so an open tab already holds its assets.
-- [ ] Verify on staging (owner-approved tag): load the site continuously during the deploy. There should be no unstyled responses, and the stale `index-*.js`/`.css` should be gone afterwards.
+- [x] Verify on staging (owner-approved tag): load the site continuously during the deploy. There should be no unstyled responses, and the stale `index-*.js`/`.css` should be gone afterwards.
 
 ### PR A: Restyle
 
@@ -325,7 +325,7 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 - [x] Page edits the new colors force: CTA bands use `btn--primary` (9 pages); partner `Landing.tsx` uses `.hero--light`; `.text-navy-light` becomes `.text-brand-highlight`; the `Nav.tsx` scroll code is removed and the logo becomes a class.
 - [x] `site.webmanifest`: `theme_color` `#456E9A`, `background_color` `#F9F7F4`. Add `<meta name="theme-color">`. The manifest's one-year cache is accepted, since it only affects an installed PWA.
 - [x] CLAUDE.md: replace the hex values in "Brand Guidelines" with **rules**. Tokens only; values in `tokens.css`, upstream in the platform JSON; no chips or pills; no hover underline; brand-highlight for large text only. Correct the font line, the footer color, the new lint command, and "26 routes" → 27.
-- [ ] **Owner checkpoint:** a local preview of Home, customer Landing, Pricing and Contact. The heading weight change (700 → 500/600) is the biggest shift.
+- [x] **Owner checkpoint:** a local preview of Home, customer Landing, Pricing and Contact. The heading weight change (700 → 500/600) is the biggest shift.
 - [x] Take after screenshots at the same set. Do a keyboard pass on Home, Contact, Invite, Pricing and the open mobile nav. Check in DevTools that Inter Variable is the rendered font. Compare the site nav and buttons with app.heirdock.com/login.
 
 ### PR B: Cleanup + guard (no visual change)
@@ -349,17 +349,17 @@ Add a guard to the existing `npm run lint`, so `ci.yml` doesn't change:
 
 ## Acceptance Criteria
 
-- [ ] No `#1B3A5C`, `#3B7DD8`, `#2C3E50` or `#142C47` in `src/`, `index.html` or `site.webmanifest`. No color literals outside `tokens.css`, enforced by `npm run lint` in CI.
-- [ ] No inline presentational styles. Any remaining `style` is dynamic and has a stated reason.
-- [ ] Inter Variable renders site-wide from hashed, self-hosted files. The Latin file is preloaded. There is no layout shift beyond the fallback's metric match.
-- [ ] No chips, pills or badges, and no hover underlines. Prose links are underlined.
-- [ ] CTA bands and all heroes use the pale tint, and the footer is `#2E4E70`.
-- [ ] The emoji and arrows are Material Outlined SVGs that use `currentColor`.
-- [ ] Every text/background pair meets WCAG AA (4.5:1, or 3:1 for ≥24px or ≥18.66px bold). Brand-highlight is used only at ≥24px.
-- [ ] A visible focus ring on every interactive element. Reduced motion disables transitions; the PR #3 hero video behavior is unchanged.
-- [ ] The prerendered HTML matches the hydrated render, including the footer year.
-- [ ] Deploys and rollbacks never serve HTML that points at deleted assets.
-- [ ] `noindex` stays on the legal stubs and staging. Lint, typecheck and build are green.
+- [x] No `#1B3A5C`, `#3B7DD8`, `#2C3E50` or `#142C47` in `src/`, `index.html` or `site.webmanifest`. No color literals outside `tokens.css`, enforced by `npm run lint` in CI.
+- [x] No inline presentational styles. Any remaining `style` is dynamic and has a stated reason.
+- [x] Inter Variable renders site-wide from hashed, self-hosted files. The Latin file is preloaded. There is no layout shift beyond the fallback's metric match.
+- [x] No chips, pills or badges, and no hover underlines. Prose links are underlined.
+- [x] CTA bands and all heroes use the pale tint, and the footer is `#2E4E70`.
+- [x] The emoji and arrows are Material Outlined SVGs that use `currentColor`.
+- [x] Every text/background pair meets WCAG AA (4.5:1, or 3:1 for ≥24px or ≥18.66px bold). Brand-highlight is used only at ≥24px.
+- [x] A visible focus ring on every interactive element. Reduced motion disables transitions; the PR #3 hero video behavior is unchanged.
+- [x] The prerendered HTML matches the hydrated render, including the footer year.
+- [x] Deploys and rollbacks never serve HTML that points at deleted assets.
+- [x] `noindex` stays on the legal stubs and staging. Lint, typecheck and build are green.
 
 ## Risks
 
