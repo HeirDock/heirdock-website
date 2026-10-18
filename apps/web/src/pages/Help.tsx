@@ -32,9 +32,9 @@ export default function Help() {
             </Link>
             <Link to="/customer/features" className="feature-card card--link">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">AI &amp; Valuation <Icon name="chevronRight" className="card__chevron" /></div>
+              <div className="feature-card__title">Identification &amp; Valuation <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">
-                Understand how AI Identify works, how market valuations are calculated, and how to improve results.
+                Understand how item identification works, how market valuations are calculated, and how to improve results.
               </p>
             </Link>
             <Link to="/faq" className="feature-card card--link">

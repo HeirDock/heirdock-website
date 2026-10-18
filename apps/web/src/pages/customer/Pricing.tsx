@@ -22,7 +22,7 @@ export default function CustomerPricing() {
           <div className="feature-grid mb-4xl">
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">AI Identify &amp; Valuation</div>
+              <div className="feature-card__title">Identification &amp; Valuation</div>
               <p className="feature-card__description">
                 Photo-based item recognition, market value estimates, and automatic high-value detection.
               </p>

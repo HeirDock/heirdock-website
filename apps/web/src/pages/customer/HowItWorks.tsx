@@ -33,7 +33,7 @@ export default function CustomerHowItWorks() {
               <div className="step-card__number">2</div>
               <h3>Catalog your items</h3>
               <p className="mt-md">
-                Use the guided wizard to add items one at a time. Take a photo and let AI Identify
+                Use the guided wizard to add items one at a time. Take a photo and HeirDock will
                 recognize the item, suggest a category, and estimate market value using real comparable
                 sales data. Add details like purchase date, serial numbers, or receipts as evidence.
               </p>

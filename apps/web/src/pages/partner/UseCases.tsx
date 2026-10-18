@@ -39,7 +39,7 @@ export default function PartnerUseCases() {
               <div className="use-case-card__icon"><Icon name="search" /></div>
               <h3 className="use-case-card__title">Appraisers</h3>
               <p className="use-case-card__description">
-                Start appraisals with structured baseline data - photos, categories, AI-generated
+                Start appraisals with structured baseline data - photos, categories,
                 market comparables, and client-provided context. Reduce on-site time and deliver
                 more thorough valuations with better documentation.
               </p>

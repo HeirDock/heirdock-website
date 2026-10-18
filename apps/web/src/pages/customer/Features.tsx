@@ -9,19 +9,19 @@ export default function CustomerFeatures() {
           <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
           <h1 className="page-header__title">Features</h1>
           <p className="page-header__subtitle">
-            Everything you need to catalog, protect, and pass on what matters - powered by AI.
+            Everything you need to catalog, protect, and pass on what matters.
           </p>
         </div>
       </section>
 
-      {/* AI Identify */}
+      {/* Photo identification */}
       <section className="section section--white">
         <div className="container">
           <div className="feature-section">
             <div className="feature-section__content">
-              <h3>AI Identify</h3>
+              <h3>Identify from a photo</h3>
               <p>
-                Take a photo of any item and let HeirDock's AI recognize it instantly. It suggests
+                Take a photo of any item and HeirDock will recognize it. It suggests
                 a name, category, and relevant details - saving you time and effort on every entry.
               </p>
               <p>
@@ -29,7 +29,7 @@ export default function CustomerFeatures() {
                 The more you use it, the smarter it gets about your household.
               </p>
             </div>
-            <div className="feature-section__image">AI Identify Preview</div>
+            <div className="feature-section__image">Photo identification preview</div>
           </div>
         </div>
       </section>

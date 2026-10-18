@@ -31,22 +31,22 @@ export const pageMeta: Record<string, PageMeta> = {
   "/faq": {
     title: "HeirDock - FAQ",
     description:
-      "Answers to common questions about HeirDock - getting started, pricing, security, AI features, family sharing, and more.",
+      "Answers to common questions about HeirDock - getting started, pricing, security, identification, family sharing, and more.",
   },
   "/help": {
     title: "HeirDock - Help Center",
     description:
-      "Find help and support resources for using HeirDock. Browse guides on asset management, AI features, sharing, and security.",
+      "Find help and support resources for using HeirDock. Browse guides on asset management, identification and valuation, sharing, and security.",
   },
   "/status": {
     title: "HeirDock - System Status",
     description:
-      "Check the current operational status of HeirDock services including the web application, API, AI processing, and more.",
+      "Check the current operational status of HeirDock services including the web application, API, identification and valuation, and more.",
   },
   "/invite": {
     title: "HeirDock - Request Early Access",
     description:
-      "HeirDock is invite-only. Request early access to organize, value, and protect your household assets with AI-powered tools.",
+      "HeirDock is invite-only. Request early access to organize, value, and protect your household assets.",
   },
   "/customer": {
     title: "HeirDock - For Families",
@@ -61,7 +61,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/customer/features": {
     title: "HeirDock - Features",
     description:
-      "AI-powered item identification, market valuations, evidence capture, family sharing, vault storage, coverage insights, and estate planning.",
+      "Item identification from photos, market valuations, evidence capture, family sharing, vault storage, coverage insights, and estate planning.",
   },
   "/customer/pricing": {
     title: "HeirDock - Pricing",
