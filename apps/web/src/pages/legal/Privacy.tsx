@@ -85,25 +85,25 @@ export default function Privacy() {
           </p>
           <ul>
             <li>
-              <strong>To manage your waitlist request</strong> — processing and
+              <strong>To manage your waitlist request</strong>: processing and
               responding to your early access signup.
             </li>
             <li>
-              <strong>To respond to your inquiries</strong> — replying to
+              <strong>To respond to your inquiries</strong>: replying to
               messages you send through our contact form.
             </li>
             <li>
-              <strong>To send you updates</strong> — if you signed up for early
+              <strong>To send you updates</strong>: if you signed up for early
               access, we may send you product updates and launch announcements.
               You can unsubscribe at any time.
             </li>
             <li>
-              <strong>To maintain and secure the Website</strong> — using server
+              <strong>To maintain and secure the Website</strong>: using server
               logs to monitor for security threats, troubleshoot issues, and
               ensure the Website functions properly.
             </li>
             <li>
-              <strong>To comply with legal obligations</strong> — responding to
+              <strong>To comply with legal obligations</strong>: responding to
               lawful requests from authorities or as otherwise required by
               applicable law.
             </li>
