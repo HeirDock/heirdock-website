@@ -40,7 +40,7 @@ function buildHeadTags(routePath: string, fontHref: string): string {
   const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
   const shouldNoindex = noindex || meta.noindex;
   // public/ files are cached for a year: a new image needs a new name.
-  const ogImage = `${SITE_URL}/og-image-v2.png`;
+  const ogImage = `${SITE_URL}/og-image-v3.png`;
   const ogImageAlt =
     'HeirDock: "Know what you own. Protect what matters." beside a photo of an antique pocket watch';
 
