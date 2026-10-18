@@ -46,9 +46,9 @@ export default function Home() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">AI helps identify and estimate value</div>
+              <div className="feature-card__title">Identify items and estimate value</div>
               <p className="feature-card__description">
-                HeirDock uses AI to help identify items and suggest potential
+                HeirDock helps identify items and suggest potential
                 market value - no research required.
               </p>
             </div>
@@ -145,7 +145,7 @@ export default function Home() {
                 </div>
                 <div className="benefit-list__item">
                   <span className="benefit-list__check"><Icon name="check" /></span>
-                  AI-powered understanding
+                  Identifies items for you
                 </div>
                 <div className="benefit-list__item">
                   <span className="benefit-list__check"><Icon name="check" /></span>

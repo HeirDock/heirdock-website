@@ -10,7 +10,7 @@ const faqs: FaqItemData[] = [
   {
     question: "What is HeirDock?",
     answer:
-      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Using photos, natural language, and AI, it creates a living record of what you own.",
+      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Using photos and natural language, it creates a living record of what you own.",
   },
   {
     question: "Who is HeirDock for?",
@@ -23,9 +23,9 @@ const faqs: FaqItemData[] = [
       "No. HeirDock is designed for gradual use. Add items whenever it's convenient - there's no pressure to finish, and the tool grows with you over time.",
   },
   {
-    question: "How does the AI identification work?",
+    question: "How does item identification work?",
     answer:
-      "Simply take a photo of an item, and HeirDock's AI will help identify it, suggest a category, and estimate potential market value based on real comparable sales data.",
+      "Take a photo of an item, and HeirDock uses AI to help identify it, suggest a category, and estimate potential market value based on real comparable sales data.",
   },
   {
     question: "Can I share my records with family members?",

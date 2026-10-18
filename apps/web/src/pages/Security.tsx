@@ -80,7 +80,7 @@ export default function Security() {
               <div className="feature-card__icon"><Icon name="smartToy" /></div>
               <div className="feature-card__title">Responsible AI</div>
               <p className="feature-card__description">
-                AI features like identification and valuation run in isolated, secure environments.
+                Identification and valuation run in isolated, secure environments.
                 Your data is never used to train models and is not shared with third parties.
               </p>
             </div>

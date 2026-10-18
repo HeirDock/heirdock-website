@@ -36,7 +36,7 @@ export default function About() {
           <div className="callout callout--gray">
             <p>
               HeirDock is a secure digital application you can use online, designed to work comfortably on
-              both desktop and mobile devices. Using photos, natural language, and AI, HeirDock helps you
+              both desktop and mobile devices. Using photos and natural language, HeirDock helps you
               identify items, record context, understand potential value, and keep everything in one clear,
               living record. You can add details gradually, update things when life changes, and take action
               only if and when it makes sense - sell, donate, share, or simply leave clear information
@@ -142,7 +142,7 @@ export default function About() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">AI that does the heavy lifting</div>
+              <div className="feature-card__title">Identification and valuation, done for you</div>
               <p className="feature-card__description">
                 Identify items and estimate potential value using real market
                 data, with no research required.

@@ -39,9 +39,9 @@ export default function CustomerLanding() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">AI-powered insights</div>
+              <div className="feature-card__title">Identification and valuation</div>
               <p className="feature-card__description">
-                Get instant identification and market valuations based on real comparable sales.
+                Get item identification and market valuations based on real comparable sales.
                 No research required on your part.
               </p>
             </div>
@@ -84,7 +84,7 @@ export default function CustomerLanding() {
               <div className="step-card__number">2</div>
               <div className="step-card__title">Catalog items</div>
               <p className="step-card__description">
-                Photograph or describe items. AI helps identify them and estimate value.
+                Photograph or describe items. HeirDock helps identify them and estimate value.
               </p>
             </div>
             <div className="step-card">
@@ -118,7 +118,7 @@ export default function CustomerLanding() {
             <Link to="/customer/features" className="feature-card card--link">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">Features <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">AI identification, valuations, family sharing, vault, coverage insights, and more.</p>
+              <p className="feature-card__description">Identification, valuations, family sharing, vault, coverage insights, and more.</p>
             </Link>
             <Link to="/customer/pricing" className="feature-card card--link">
               <div className="feature-card__icon"><Icon name="payments" /></div>

@@ -23,7 +23,7 @@ export default function Status() {
             {[
               "Web Application",
               "API Services",
-              "AI Processing",
+              "Identification & Valuation",
               "Database",
               "File Storage",
               "Email Delivery",
