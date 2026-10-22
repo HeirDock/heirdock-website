@@ -69,6 +69,11 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="text-center mt-2xl">
+            <Link to="/customer/features" className="btn btn--outline">
+              See more features <Icon name="arrowForward" />
+            </Link>
+          </div>
         </div>
       </section>
 
