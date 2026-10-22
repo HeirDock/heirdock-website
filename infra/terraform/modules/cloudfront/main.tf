@@ -7,6 +7,15 @@ resource "aws_cloudfront_function" "url_routing" {
       var request = event.request;
       var uri = request.uri;
 
+      // Retired pages: permanent redirect to where their content now lives
+      if (uri === '/customer/how-it-works' || uri === '/customer/how-it-works/') {
+        return {
+          statusCode: 301,
+          statusDescription: 'Moved Permanently',
+          headers: { location: { value: '/customer#how-it-works' } }
+        };
+      }
+
       // If URI has a file extension, serve as-is
       if (uri.includes('.')) {
         return request;

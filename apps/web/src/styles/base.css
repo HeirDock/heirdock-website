@@ -9,6 +9,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* In-page anchors land below the 64px sticky nav. */
+  scroll-padding-top: 64px;
   -webkit-text-size-adjust: 100%;
 }
 
