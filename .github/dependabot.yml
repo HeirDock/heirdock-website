@@ -1,0 +1,43 @@
+# Dependency updates as PRs. CI installs with --ignore-scripts, so a PR's
+# new packages never run install scripts.
+#
+# cooldown: routine updates wait 7 days after a release is published, so a
+# hijacked version is usually caught and pulled before we'd pick it up (the
+# 2026 keyv/cacheable worm versions were live for about a day). Security
+# updates skip the cooldown and arrive as soon as an advisory is published.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /apps/web
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    groups:
+      web-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: npm
+    directory: /infra/lambda/contact-form
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    groups:
+      lambda-minor-and-patch:
+        update-types: [minor, patch]
+
+  # Actions are pinned to commit SHAs; Dependabot updates the SHA and the
+  # version comment together.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
