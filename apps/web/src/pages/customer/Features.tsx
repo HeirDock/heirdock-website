@@ -128,14 +128,15 @@ export default function CustomerFeatures() {
                 to document everything thoroughly.
               </p>
             </div>
-            <div className="app-card" role="img" aria-label="Example: a ring's photos and its receipt, appraisal and certificate">
+            <div className="app-card" role="img" aria-label="Example: a ring's six photos and its receipt, appraisal and certificate">
               <div className="app-card__title">Diamond Engagement Ring</div>
               <div className="app-card__subtitle">Jewelry &amp; Accessories</div>
+              <div className="app-label app-label--split app-label--spaced"><span>Photos</span><span className="app-muted">6 photos</span></div>
               <div className="app-photos">
                 <div className="app-tile app-tile--secondary"><Icon name="diamond" /></div>
-                <div className="app-tile app-tile--secondary" />
-                <div className="app-tile app-tile--primary" />
-                <div className="app-tile app-tile--neutral">+3</div>
+                <div className="app-tile app-tile--primary"><Icon name="diamond" /></div>
+                <div className="app-tile app-tile--accent"><Icon name="diamond" /></div>
+                <div className="app-tile app-tile--secondary"><Icon name="diamond" /></div>
               </div>
               <div className="app-label">Attachments</div>
               <div className="app-rows">

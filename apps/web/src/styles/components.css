@@ -1525,12 +1525,6 @@
   color: var(--color-secondary-hover);
 }
 
-.app-tile--neutral {
-  background: var(--color-surface-3);
-  color: var(--color-text-muted);
-  font-size: var(--text-xs);
-}
-
 /* Identify from a photo */
 .app-suggest {
   display: flex;
@@ -1644,7 +1638,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-sm);
-  margin: var(--space-md) 0;
+  margin-bottom: var(--space-lg);
 }
 
 .app-tile {
