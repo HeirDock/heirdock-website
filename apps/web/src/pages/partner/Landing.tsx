@@ -72,7 +72,7 @@ export default function PartnerLanding() {
               <div className="feature-card__icon"><Icon name="balance" /></div>
               <div className="feature-card__title">Estate Planners</div>
               <p className="feature-card__description">
-                Access organized asset records, distribution plans, and successor designations
+                Access organized asset records, distribution plans, and Steward and beneficiary designations
                 to support complete estate planning.
               </p>
             </div>
@@ -92,6 +92,11 @@ export default function PartnerLanding() {
                 building from scratch.
               </p>
             </div>
+          </div>
+          <div className="text-center mt-2xl">
+            <Link to="/partner/features" className="btn btn--outline">
+              See more features <Icon name="arrowForward" />
+            </Link>
           </div>
         </div>
       </section>
