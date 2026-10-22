@@ -28,6 +28,8 @@ h1, h2, h3, h4, h5 {
   line-height: 1.25;
   font-weight: 500;
   color: var(--color-text-primary);
+  /* Even line lengths, so a heading never ends on one stranded word. */
+  text-wrap: balance;
 }
 
 h1 {
@@ -49,6 +51,8 @@ h5 { font-size: var(--text-lg); }
 p {
   margin-bottom: var(--space-md);
   color: var(--color-text-secondary);
+  /* Avoids a single word on a paragraph's last line where supported. */
+  text-wrap: pretty;
 }
 
 p:last-child {
