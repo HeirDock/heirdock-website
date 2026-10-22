@@ -23,32 +23,65 @@ export default function PartnerLanding() {
         </div>
       </section>
 
-      {/* The Problem */}
-      <section className="section section--white">
+      {/* The challenge: each moment without a record, beside what HeirDock changes */}
+      <section className="section section--md section--white">
         <div className="container">
           <h2 className="section__title">The challenge professionals face</h2>
-          <div className="problem-section">
-            <div className="problem-section__narrative">
-              <p>
-                Your clients own valuable physical assets - collectibles, jewelry, heirlooms, artwork,
-                and everyday items - but most can't articulate what they have or what it's worth.
-              </p>
-              <p>
-                Without organized documentation, insurance coverage has gaps, estate plans are
-                incomplete, and appraisals start from scratch every time. You're left working
-                with incomplete information.
-              </p>
+          <p className="section__subtitle challenge__subtitle">
+            Your clients own valuable things - collectibles, jewelry, heirlooms, artwork - but
+            few can say exactly what they have or what it's worth.
+          </p>
+          <div className="challenge-compare">
+            <div className="challenge-compare__head" aria-hidden="true">
+              <div>Without a shared record</div>
+              <div className="challenge-compare__head-with">With HeirDock</div>
             </div>
-            <div className="problem-section__sidebar">
-              <h4>Sound Familiar?</h4>
-              <ul>
-                <li>Clients can't produce a home asset record for coverage review</li>
-                <li>Estate settlements stall over undocumented personal property</li>
-                <li>Claims are delayed by missing documentation</li>
-                <li>Appraisals lack structured baseline data</li>
-              </ul>
-            </div>
+            <ul className="challenge-compare__list">
+            <li className="challenge-compare__row">
+              <div className="challenge-compare__without">
+                <h3 className="challenge-compare__moment">Coverage reviews</h3>
+                <p>Clients can't list what they own, so reviews start from a blank page.</p>
+              </div>
+              <div className="challenge-compare__with">
+                <span className="challenge-compare__with-label">With HeirDock</span>
+                <p>Clients share an organized record of what they own and what it's worth.</p>
+              </div>
+            </li>
+            <li className="challenge-compare__row">
+              <div className="challenge-compare__without">
+                <h3 className="challenge-compare__moment">Claims</h3>
+                <p>Claims wait on receipts, photos and serial numbers.</p>
+              </div>
+              <div className="challenge-compare__with">
+                <span className="challenge-compare__with-label">With HeirDock</span>
+                <p>Photos, receipts and serial numbers are already attached to each item.</p>
+              </div>
+            </li>
+            <li className="challenge-compare__row">
+              <div className="challenge-compare__without">
+                <h3 className="challenge-compare__moment">Estate settlements</h3>
+                <p>Settlements slow down over belongings nobody documented.</p>
+              </div>
+              <div className="challenge-compare__with">
+                <span className="challenge-compare__with-label">With HeirDock</span>
+                <p>Beneficiaries, wishes and the story behind each item are written down.</p>
+              </div>
+            </li>
+            <li className="challenge-compare__row">
+              <div className="challenge-compare__without">
+                <h3 className="challenge-compare__moment">Appraisals</h3>
+                <p>Every appraisal starts from scratch.</p>
+              </div>
+              <div className="challenge-compare__with">
+                <span className="challenge-compare__with-label">With HeirDock</span>
+                <p>Photos, serial numbers and past values are already in one place.</p>
+              </div>
+            </li>
+            </ul>
           </div>
+          <p className="challenge-compare__closing">
+            Complete information, shared on your client's terms.
+          </p>
         </div>
       </section>
 

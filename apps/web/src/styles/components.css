@@ -403,72 +403,150 @@
 }
 
 /* ========================================
-   Problem Section (two-column narrative)
+   Challenge compare (partner landing)
+   Each row: a moment without a record, beside what HeirDock changes.
    ======================================== */
 
-.problem-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
+.challenge__subtitle {
+  max-width: 700px;
   margin-bottom: var(--space-2xl);
 }
 
-.problem-section__narrative p {
-  font-size: var(--text-md);
-  line-height: 1.75;
-  color: var(--color-text-secondary);
+.challenge-compare {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
-.problem-section__sidebar h4 {
+.challenge-compare__head,
+.challenge-compare__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.challenge-compare__head > div {
+  padding: var(--space-md) var(--space-xl);
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.problem-section__sidebar ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+.challenge-compare__head > .challenge-compare__head-with,
+.challenge-compare__with {
+  background: var(--color-primary-light);
+  border-left: 1px solid var(--color-border);
 }
 
-.problem-section__sidebar li {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  padding-left: var(--space-lg);
-  position: relative;
+.challenge-compare__head > .challenge-compare__head-with {
+  color: var(--color-primary);
+  border-bottom-color: var(--gap-tint-rule);
+}
+
+.challenge-compare__without,
+.challenge-compare__with {
+  padding: var(--space-md) var(--space-xl);
+}
+
+.challenge-compare__without {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.challenge-compare__with {
+  border-bottom: 1px solid var(--gap-tint-rule);
+  /* Lines the answer up with the problem text, below the moment's name. */
+  padding-top: calc(var(--space-md) + 1.125rem);
+}
+
+.challenge-compare__row:last-child > div {
+  border-bottom: none;
+  padding-bottom: 1.25rem;
+}
+
+.challenge-compare__moment {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.challenge-compare__row p {
+  margin-bottom: 0;
   line-height: 1.5;
 }
 
-.problem-section__sidebar li::before {
-  content: "•";
+.challenge-compare__with p {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Read out on desktop (the column header is hidden from screen readers);
+   shown on phones, where each answer stacks under its problem. */
+.challenge-compare__with-label {
   position: absolute;
-  left: 0;
-  color: var(--color-primary);
-  font-weight: 600;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
-.problem-section__callout {
-  grid-column: 1 / -1;
+.challenge-compare__closing {
+  margin: var(--space-xl) 0 0;
   text-align: center;
-  padding: var(--space-xl) 0;
-}
-
-.problem-section__callout .text-italic {
   font-size: var(--text-md);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
-}
-
-.problem-section__callout .font-bold {
-  font-size: var(--text-md);
+  font-weight: 500;
   color: var(--color-primary);
 }
 
 @media (max-width: 767px) {
-  .problem-section {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+  .challenge-compare__head {
+    display: none;
+  }
+
+  .challenge-compare__row {
+    display: block;
+    padding: var(--space-md) 1.25rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .challenge-compare__row:last-child {
+    border-bottom: none;
+  }
+
+  .challenge-compare__without,
+  .challenge-compare__row:last-child > div {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .challenge-compare__with,
+  .challenge-compare__row:last-child > .challenge-compare__with {
+    margin-top: var(--space-sm);
+    padding: var(--space-sm) 0.875rem;
+    border: none;
+    border-radius: var(--radius-sm);
+  }
+
+  .challenge-compare__with-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    margin-bottom: 2px;
+  }
+
+  .challenge-compare__closing {
+    font-size: var(--text-base);
   }
 }
 
