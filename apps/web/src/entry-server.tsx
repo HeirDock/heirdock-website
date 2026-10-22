@@ -115,6 +115,28 @@ function prerender() {
     console.log(`pre-rendered: ${routePath} -> ${path.relative(clientDir, filePath)}`);
   }
 
+  // The 404 page. CloudFront serves /404.html (as a 404) for any path S3
+  // can't find; "/404" matches no route, so App renders NotFound.
+  const notFoundHtml = template
+    .replace(
+      "<!--head-tags-->",
+      [
+        `<title>HeirDock - Page Not Found</title>`,
+        `<link rel="preload" href="${fontHref}" as="font" type="font/woff2" crossorigin />`,
+        `<meta name="robots" content="noindex, nofollow" />`,
+      ].join("\n    ")
+    )
+    .replace(
+      "<!--app-html-->",
+      renderToString(
+        <StaticRouter location="/404">
+          <App />
+        </StaticRouter>
+      )
+    );
+  fs.writeFileSync(path.join(clientDir, "404.html"), notFoundHtml);
+  console.log("pre-rendered: 404 page -> 404.html");
+
   // Clean up server bundle
   const serverDir = path.resolve(__dirname, "../server");
   fs.rmSync(serverDir, { recursive: true, force: true });
