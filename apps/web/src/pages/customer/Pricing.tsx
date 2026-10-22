@@ -29,7 +29,7 @@ export default function CustomerPricing() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="attachFile" /></div>
-              <div className="feature-card__title">Evidence Capture</div>
+              <div className="feature-card__title">Photos and Attachments</div>
               <p className="feature-card__description">
                 Photos, serial numbers, receipts, and documents for every item.
               </p>
@@ -78,9 +78,9 @@ export default function CustomerPricing() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="mail" /></div>
-              <div className="feature-card__title">Estate Transition</div>
+              <div className="feature-card__title">Stewardship and Care Mode</div>
               <p className="feature-card__description">
-                Designate successors, create distribution plans, and leave legacy messages for loved ones.
+                Name a Steward, a Care Steward and beneficiaries, record who each item is for, and add its story.
               </p>
             </div>
             <div className="feature-card">
@@ -92,9 +92,9 @@ export default function CustomerPricing() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="editNote" /></div>
-              <div className="feature-card__title">Guided Catalog Wizard</div>
+              <div className="feature-card__title">Quick Add and Detailed Add</div>
               <p className="feature-card__description">
-                Step-by-step guidance to add items quickly and thoroughly.
+                Add several items from photos at once, or one at a time with every detail.
               </p>
             </div>
             <div className="feature-card">

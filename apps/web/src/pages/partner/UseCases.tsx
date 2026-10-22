@@ -22,8 +22,8 @@ export default function PartnerUseCases() {
               <h3 className="use-case-card__title">Insurance Agents</h3>
               <p className="use-case-card__description">
                 Review client household inventories to ensure adequate coverage. Identify high-value items
-                that may need riders or additional policies. When claims arise, access organized documentation
-                with photos, serial numbers, and valuations to accelerate the process.
+                that may need riders or additional policies. With the household's permission, update policies
+                and start claims, backed by organized photos, serial numbers, and valuations.
               </p>
             </div>
             <div className="use-case-card">
@@ -31,7 +31,7 @@ export default function PartnerUseCases() {
               <h3 className="use-case-card__title">Estate Planners</h3>
               <p className="use-case-card__description">
                 Access structured asset records and distribution plans to support comprehensive estate planning.
-                See successor designations, legacy messages, and item-level assignment preferences.
+                See Steward and beneficiary designations, the stories behind items, and item-level assignment preferences.
                 Export documentation for trust and estate documents.
               </p>
             </div>

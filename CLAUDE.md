@@ -22,7 +22,7 @@ Static marketing website for HeirDock (heirdock.com). 27 pages across four secti
 - **Font:** Inter variable (weights 100-900) from `@fontsource-variable/inter`, bundled and content-hashed by Vite; the latin subset is preloaded by the prerender. Headings: h1 600, h2-h4 500.
 - **Tone:** Calm, warm, unhurried. No urgency patterns, no alarming language.
 - **AI:** Say it sparingly. The site uses "AI" twice: the Security page's "Responsible AI" card and the FAQ answer on how identification works. Elsewhere, name what the feature does (identification, valuation).
-- **Terminology:** "Estate Transition" not "death mode," "Trusted Participant" not "heir". "Asset" is fine in site copy (household assets, asset records); "Item" is the app's word for one thing someone owns.
+- **Terminology:** Match the app's names: "Stewardship" (after the account holder's passing) and "Care Mode" (when they can't manage things themselves), never "death mode" or "Estate Transition"; "Trusted Participant" not "heir". Access levels are Viewer, Contributor and Full Access; Steward, Care Steward and Beneficiary are designations, not access levels. "Asset" is fine in site copy (household assets, asset records); "Item" is the app's word for one thing someone owns.
 
 ## Commands
 

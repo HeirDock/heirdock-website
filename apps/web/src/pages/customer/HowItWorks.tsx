@@ -33,9 +33,9 @@ export default function CustomerHowItWorks() {
               <div className="step-card__number">2</div>
               <h3>Catalog your items</h3>
               <p className="mt-md">
-                Use the guided wizard to add items one at a time. Take a photo and HeirDock will
-                recognize the item, suggest a category, and estimate market value using real comparable
-                sales data. Add details like purchase date, serial numbers, or receipts as evidence.
+                Use Quick Add to photograph several items at once, or Detailed Add to record one item
+                thoroughly. HeirDock recognizes each item, suggests a category, and estimates market value
+                using real comparable sales data. Add details like purchase date, serial numbers, or receipts.
               </p>
               <p>
                 There's no rush - add items whenever it's convenient. Five items today,
@@ -49,17 +49,17 @@ export default function CustomerHowItWorks() {
               <h3>Organize and share</h3>
               <p className="mt-md">
                 Assign items to people, add stories and context, organize into collections, and
-                invite Trusted Participants to view or contribute. Use roles to control access:
+                invite Trusted Participants to view or contribute. Choose what each person can do:
               </p>
               <ul className="step-list__bullets">
                 <li>
-                  <strong>Viewers</strong> can see items assigned to them
+                  <strong>Viewers</strong> can see what you share with them
                 </li>
                 <li>
                   <strong>Contributors</strong> can help catalog and add items
                 </li>
                 <li>
-                  <strong>Stewards</strong> have elevated access for estate planning
+                  <strong>Full Access</strong> lets someone manage the household alongside you
                 </li>
               </ul>
             </div>

@@ -13,6 +13,11 @@ const faqs: FaqItemData[] = [
       "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Using photos and natural language, it creates a living record of what you own.",
   },
   {
+    question: "Is there a mobile app?",
+    answer:
+      "Yes. The HeirDock app is available for iPhone and Android, so you can add items with your phone's camera wherever they are. You can also use HeirDock in any web browser - your household record is the same everywhere.",
+  },
+  {
     question: "Who is HeirDock for?",
     answer:
       "HeirDock is designed for anyone who has accumulated belongings over a lifetime and wants clarity without complexity - especially those preparing for life transitions like downsizing, estate planning, or supporting aging parents.",
@@ -30,22 +35,22 @@ const faqs: FaqItemData[] = [
   {
     question: "Can I share my records with family members?",
     answer:
-      "Yes. You can invite Trusted Participants with role-based access - Viewers can see assigned items, Contributors can help catalog, and Stewards have elevated access for estate planning purposes.",
+      "Yes. You can invite Trusted Participants and choose what each person can do - Viewers can see what you share, Contributors can help catalog, and Full Access lets someone manage alongside you. You can also name a Steward to look after your household record if you're no longer able to.",
   },
   {
     question: "Can professionals access my records?",
     answer:
-      "Only with your explicit consent. You can grant read-only access to professional partners like insurance agents, estate planners, or appraisers through the Partner Portal.",
+      "Only with your consent. You choose which professionals can see your household - like an insurance agent, estate planner, or appraiser - whether they see everything or one collection, and for how long. You can preview exactly what they see, and remove access at any time.",
   },
   {
     question: "Can I upgrade or downgrade my plan at any time?",
     answer:
-      "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.",
+      "Yes. Upgrades take effect right away, and we prorate the difference. A downgrade takes effect at the end of your current billing period, as long as your household fits within the new plan's item limit.",
   },
   {
     question: "What happens when my free trial ends?",
     answer:
-      "Your 30-day free trial will automatically convert to the Basic plan unless you choose to upgrade. All your data remains safe and accessible.",
+      "If you've added a payment method, your plan simply continues. If not, your household record stays fully editable for 30 more days so you can decide. After that it becomes read-only for 12 months - you can still view and export everything, or subscribe again at any time.",
   },
   {
     question: "Is my data secure?",
@@ -55,7 +60,7 @@ const faqs: FaqItemData[] = [
   {
     question: "Can I cancel my subscription?",
     answer:
-      "Yes, you can cancel your subscription at any time from your account settings. You'll retain access to paid features until the end of your current billing period.",
+      "Yes, you can cancel at any time from your account settings. Your plan stays active until the end of the current billing period, and your household record stays fully editable for 30 days after that. It then becomes read-only for 12 months, while you can still export it or subscribe again, and after that it is archived.",
   },
 ];
 

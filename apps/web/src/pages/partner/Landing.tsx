@@ -114,7 +114,7 @@ export default function PartnerLanding() {
             <Link to="/partner/pricing" className="feature-card card--link">
               <div className="feature-card__icon"><Icon name="payments" /></div>
               <div className="feature-card__title">Pricing <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">Flexible plans from Solo to Enterprise. Start with a free 60-day pilot.</p>
+              <p className="feature-card__description">Free for professionals, with member pricing for the clients you invite.</p>
             </Link>
             <Link to="/partner/use-cases" className="feature-card card--link">
               <div className="feature-card__icon"><Icon name="work" /></div>

@@ -23,6 +23,7 @@ export default function Home() {
               Sign In
             </a>
           </div>
+          <p className="hero__note">Available for iPhone and Android, and in any web browser.</p>
         </div>
       </section>
 
@@ -131,40 +132,15 @@ export default function Home() {
       </section>
 
       {/* Why Choose HeirDock */}
-      <section className="section section--white">
+      <section className="section section--md section--white">
         <div className="container">
           <h2 className="section__title">
             Why Choose <span className="text-brand-highlight">HeirDock</span>?
           </h2>
+          <p className="section__subtitle benefit-section__subtitle">
+            Start small and keep a clear record of what matters, for you and the people you trust.
+          </p>
           <div className="benefit-section">
-            <div>
-              <div className="benefit-list">
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Simple and intuitive
-                </div>
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Identifies items for you
-                </div>
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Organize gradually
-                </div>
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Private and secure
-                </div>
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Clear records when needed
-                </div>
-                <div className="benefit-list__item">
-                  <span className="benefit-list__check"><Icon name="check" /></span>
-                  Confidence through clarity
-                </div>
-              </div>
-            </div>
             <div className="benefit-mockup">
               <div className="benefit-mockup__header">Household Assets</div>
               <div className="benefit-mockup__item">
@@ -175,11 +151,7 @@ export default function Home() {
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
                   </div>
                 </div>
-                <div>
-                  <span className="benefit-mockup__owner">Emma</span>
-                  {" "}
-                  <span className="benefit-mockup__status benefit-mockup__status--assigned"><Icon name="check" /> Assigned</span>
-                </div>
+                <span className="benefit-mockup__status benefit-mockup__status--assigned">Emma · Assigned</span>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
@@ -189,11 +161,7 @@ export default function Home() {
                     <div className="benefit-mockup__category">Collectibles</div>
                   </div>
                 </div>
-                <div>
-                  <span className="benefit-mockup__owner">Jack</span>
-                  {" "}
-                  <span className="benefit-mockup__status benefit-mockup__status--assigned"><Icon name="check" /> Assigned</span>
-                </div>
+                <span className="benefit-mockup__status benefit-mockup__status--assigned">Jack · Assigned</span>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
@@ -204,6 +172,26 @@ export default function Home() {
                   </div>
                 </div>
                 <span className="benefit-mockup__status benefit-mockup__status--unassigned">Unassigned</span>
+              </div>
+            </div>
+            <div className="benefit-notes">
+              <div className="benefit-notes__item">
+                <h3 className="benefit-notes__title">Identifies items for you</h3>
+                <p className="benefit-notes__text">
+                  Take a photo and HeirDock suggests what it is and what it may be worth.
+                </p>
+              </div>
+              <div className="benefit-notes__item">
+                <h3 className="benefit-notes__title">Organize gradually</h3>
+                <p className="benefit-notes__text">
+                  Start with a few things that matter. Add more whenever you like.
+                </p>
+              </div>
+              <div className="benefit-notes__item">
+                <h3 className="benefit-notes__title">Private and secure</h3>
+                <p className="benefit-notes__text">
+                  You decide who can see your household, and what they can do.
+                </p>
               </div>
             </div>
           </div>

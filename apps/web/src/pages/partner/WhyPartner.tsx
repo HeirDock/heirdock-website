@@ -30,7 +30,7 @@ export default function WhyPartner() {
               <div className="feature-card__icon"><Icon name="trendingUp" /></div>
               <div className="feature-card__title">Improve documentation quality</div>
               <p className="feature-card__description">
-                Photos, serial numbers, valuations, and evidence - all organized and accessible
+                Photos, serial numbers, valuations, and attachments - all organized and accessible
                 through the Partner Portal. Better data means better outcomes for your clients.
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function WhyPartner() {
               <div className="feature-card__icon"><Icon name="taskAlt" /></div>
               <div className="feature-card__title">Easy to get started</div>
               <p className="feature-card__description">
-                60-day free pilot. No technical setup required. Start with a single client
+                No cost to your practice and no technical setup. Start with a single client
                 and expand at your own pace.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function WhyPartner() {
         <div className="container">
           <h2 className="cta-band__title">Ready to differentiate your practice?</h2>
           <p className="cta-band__subtitle">
-            Start your free 60-day pilot and see the difference organized client data makes.
+            Talk with us and see the difference organized client data makes.
           </p>
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">

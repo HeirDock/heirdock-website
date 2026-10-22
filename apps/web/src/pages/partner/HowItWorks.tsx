@@ -42,7 +42,7 @@ export default function PartnerHowItWorks() {
               <div className="step-card__number">4</div>
               <div className="step-card__title">Access records</div>
               <p className="step-card__description">
-                View consented client household records with read-only access to items, evidence, and valuations.
+                See the client records each household chooses to share - items, attachments, and valuations - and work on them together with flags and notes.
               </p>
             </div>
             <div className="step-card">

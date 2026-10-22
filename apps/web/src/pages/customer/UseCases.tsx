@@ -31,7 +31,7 @@ export default function CustomerUseCases() {
                 gaps before you need to file a claim.
               </p>
               <p>
-                When something does happen, your evidence library and organized records
+                When something does happen, your photos, attachments, and organized records
                 make the claims process dramatically faster and more complete.
               </p>
             </div>
@@ -53,8 +53,8 @@ export default function CustomerUseCases() {
               </p>
               <p>
                 <strong>How HeirDock helps:</strong> Create a living record that captures not just what you own,
-                but who it should go to and why. Designate successors, leave legacy messages, and create
-                distribution plans that your Steward can access when needed.
+                but who it should go to and why. Name a Steward and beneficiaries, add the story behind
+                each item, and know your Steward will have what they need when the time comes.
               </p>
               <p>
                 Share structured exports with estate attorneys to simplify the planning process.
