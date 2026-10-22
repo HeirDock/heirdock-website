@@ -41,16 +41,16 @@ export default function Home() {
               <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Capture your household assets</div>
               <p className="feature-card__description">
-                Take a photo or describe an item to document the belongings that matter -
-                furniture, collectibles, jewelry, heirlooms, and everyday valuables.
+                Take a photo or describe an item to record what matters - furniture,
+                jewelry, collectibles, and heirlooms.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">Identify items and estimate value</div>
               <p className="feature-card__description">
-                HeirDock helps identify items and suggest potential
-                market value - no research required.
+                HeirDock helps identify each item and suggests a potential market
+                value, so there's no research for you to do.
               </p>
             </div>
             <div className="feature-card">
@@ -65,8 +65,8 @@ export default function Home() {
               <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Export your household record</div>
               <p className="feature-card__description">
-                Generate a comprehensive summary of your household assets -
-                ready for insurance, estate planning, or family reference.
+                Generate a summary of your household assets, ready for insurance,
+                estate planning, or family reference.
               </p>
             </div>
           </div>
