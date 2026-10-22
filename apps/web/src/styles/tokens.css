@@ -85,6 +85,8 @@
      They reference the block above and never hold raw values. */
   --hero-bg: var(--color-primary-light);
   --cta-band-bg: var(--color-primary-light);
+  /* Rules inside the tinted "Often undocumented" column on the home page. */
+  --gap-tint-rule: color-mix(in srgb, var(--color-primary) 10%, var(--color-primary-light));
   /* Dark mode needs its own value: the dark primaryActive is a light blue. */
   --footer-bg: var(--color-primary-active);
   /* Footer secondary text: 75% white is 5.69:1 on --footer-bg. */
