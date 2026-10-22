@@ -23,7 +23,6 @@ export default function Home() {
               Sign In
             </a>
           </div>
-          <p className="hero__note">Available for iPhone and Android, and in any web browser.</p>
         </div>
       </section>
 
@@ -179,13 +178,13 @@ export default function Home() {
               <div className="benefit-notes__item">
                 <h3 className="benefit-notes__title">Organize gradually</h3>
                 <p className="benefit-notes__text">
-                  Start with a few things that matter. Add more whenever you like.
+                  Start with a few things that matter, and add more whenever it suits you.
                 </p>
               </div>
               <div className="benefit-notes__item">
                 <h3 className="benefit-notes__title">Private and secure</h3>
                 <p className="benefit-notes__text">
-                  You decide who can see your household, and what they can do.
+                  You decide who can see your household, and exactly what each person can do.
                 </p>
               </div>
             </div>

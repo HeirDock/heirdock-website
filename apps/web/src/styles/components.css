@@ -237,12 +237,6 @@
   margin-bottom: var(--space-xl);
 }
 
-.hero__note {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-top: calc(-1 * var(--space-md));
-}
-
 .hero-video {
   /* Sized from the window height so the video, headline and subtitle all fit
      above the fold: the reserve is the nav, the top padding, the gap and the
