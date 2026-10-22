@@ -12,6 +12,9 @@ resource "aws_s3_bucket_versioning" "frontend" {
 resource "aws_s3_bucket_server_side_encryption_configuration" "frontend" {
   bucket = aws_s3_bucket.frontend.id
   rule {
+    # AWS blocks SSE-C (customer-provided keys) on new buckets by default;
+    # declaring it keeps Terraform from removing that protection.
+    blocked_encryption_types = ["SSE-C"]
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
     }
@@ -41,6 +44,9 @@ resource "aws_s3_bucket_versioning" "logs" {
 resource "aws_s3_bucket_server_side_encryption_configuration" "logs" {
   bucket = aws_s3_bucket.logs.id
   rule {
+    # AWS blocks SSE-C (customer-provided keys) on new buckets by default;
+    # declaring it keeps Terraform from removing that protection.
+    blocked_encryption_types = ["SSE-C"]
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
     }
