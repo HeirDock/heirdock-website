@@ -41,16 +41,16 @@ export default function Home() {
               <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Capture your household assets</div>
               <p className="feature-card__description">
-                Take a photo or describe an item to document the belongings that matter -
-                furniture, collectibles, jewelry, heirlooms, and everyday valuables.
+                Take a photo or describe an item to record what matters - furniture,
+                jewelry, collectibles, and heirlooms.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">Identify items and estimate value</div>
               <p className="feature-card__description">
-                HeirDock helps identify items and suggest potential
-                market value - no research required.
+                HeirDock helps identify each item and suggests a potential market
+                value, so there's no research for you to do.
               </p>
             </div>
             <div className="feature-card">
@@ -65,8 +65,8 @@ export default function Home() {
               <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Export your household record</div>
               <p className="feature-card__description">
-                Generate a comprehensive summary of your household assets -
-                ready for insurance, estate planning, or family reference.
+                Generate a summary of your household assets, ready for insurance,
+                estate planning, or family reference.
               </p>
             </div>
           </div>
@@ -74,45 +74,40 @@ export default function Home() {
       </section>
 
       {/* The Hidden Asset Gap */}
-      <section className="section">
+      <section className="section section--md">
         <div className="container">
           <h2 className="section__title">The Hidden Asset Gap in Every Household</h2>
-          <p className="section__subtitle">
+          <p className="section__subtitle gap-compare__subtitle">
             A major portion of household wealth is still invisible.
           </p>
 
-          <div className="problem-section">
-            <div className="problem-section__narrative">
-              <p>
-                Families have systems for financial accounts,
-                investments, real estate, and insurance.
-              </p>
-              <p>
-                But the physical assets inside the home - collectibles,
-                jewelry, heirlooms, artwork, memorabilia, and everyday
-                valuables - often remain undocumented and difficult
-                to manage.
-              </p>
-            </div>
-            <div className="problem-section__sidebar">
-              <h4>Why This Matters</h4>
-              <ul>
-                <li>Some items are worth far more than families realize</li>
-                <li>Documentation matters for insurance and claims</li>
-                <li>Organization reduces chaos during life transitions</li>
-                <li>Context helps families pass things down more clearly</li>
+          <div className="gap-compare">
+            <div className="gap-compare__col">
+              <h3 className="gap-compare__label">Usually documented</h3>
+              <ul className="gap-compare__list">
+                <li>Bank and investment accounts</li>
+                <li>Retirement savings</li>
+                <li>Real estate</li>
+                <li>Insurance policies</li>
               </ul>
             </div>
-            <div className="problem-section__callout">
-              <p className="text-italic">
-                When important items aren't documented, families and insurers are often left
-                reconstructing value after something has already gone wrong.
-              </p>
-              <p className="font-bold text-brand">
-                HeirDock brings clarity and structure to this overlooked part of household wealth.
-              </p>
+            <div className="gap-compare__col gap-compare__col--missing">
+              <h3 className="gap-compare__label">Often undocumented</h3>
+              <ul className="gap-compare__list">
+                <li>Jewelry and watches</li>
+                <li>Art and collectibles</li>
+                <li>Heirlooms and memorabilia</li>
+                <li>Everyday valuables</li>
+              </ul>
             </div>
           </div>
+          <p className="gap-compare__reasons">
+            Some of these things are worth far more than families realize. A clear record
+            helps with insurance claims, life transitions, and passing things down.
+          </p>
+          <p className="gap-compare__closing">
+            HeirDock brings clarity and structure to this overlooked part of household wealth.
+          </p>
         </div>
       </section>
 
