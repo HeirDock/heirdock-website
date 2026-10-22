@@ -23,7 +23,6 @@ export default function Home() {
               Sign In
             </a>
           </div>
-          <p className="hero__note">Available for iPhone and Android, and in any web browser.</p>
         </div>
       </section>
 
