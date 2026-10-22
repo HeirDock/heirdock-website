@@ -1,0 +1,6 @@
+# Terraform files are LF everywhere. The CloudFront function's code is a
+# heredoc in a .tf file, so a CRLF checkout (core.autocrlf on Windows)
+# changes the deployed function's bytes and shows up as drift.
+*.tf      text eol=lf
+*.tfvars  text eol=lf
+*.hcl     text eol=lf
