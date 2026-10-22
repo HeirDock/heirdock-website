@@ -119,6 +119,11 @@ ul, ol {
   padding: var(--space-3xl) 0;
 }
 
+/* Pair with .section: the tablet and phone .section paddings still apply. */
+.section--md {
+  padding: var(--space-4xl) 0;
+}
+
 .section--white {
   background: var(--color-surface);
 }

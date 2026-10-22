@@ -27,7 +27,7 @@ export default function Help() {
               <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Asset Management <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">
-                Learn how to add items, upload evidence, organize with collections and tags, and manage your catalog.
+                Learn how to add items, upload photos and attachments, organize with collections and tags, and manage your catalog.
               </p>
             </Link>
             <Link to="/customer/features" className="feature-card card--link">

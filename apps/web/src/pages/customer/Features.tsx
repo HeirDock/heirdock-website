@@ -26,7 +26,7 @@ export default function CustomerFeatures() {
               </p>
               <p>
                 Works with furniture, jewelry, collectibles, artwork, electronics, tools, and more.
-                The more you use it, the smarter it gets about your household.
+                Add several things at once with Quick Add, or take your time with Detailed Add.
               </p>
             </div>
             <div className="feature-section__image">Photo identification preview</div>
@@ -46,8 +46,8 @@ export default function CustomerFeatures() {
                 no appraisal needed for everyday items.
               </p>
               <p>
-                Valuations update over time as market conditions change, giving you an evolving
-                picture of your household wealth.
+                Add an appraisal or your own estimate alongside it, see how each value changes
+                over time, and get a gentle reminder when a high-value item is due for a fresh look.
               </p>
             </div>
             <div className="feature-section__image">Valuation Preview</div>
@@ -55,23 +55,23 @@ export default function CustomerFeatures() {
         </div>
       </section>
 
-      {/* Evidence Capture */}
+      {/* Photos and Attachments */}
       <section className="section section--white">
         <div className="container">
           <div className="feature-section">
             <div className="feature-section__content">
-              <h3>Evidence Capture</h3>
+              <h3>Photos and Attachments</h3>
               <p>
                 Upload photos, serial numbers, receipts, and documents for any item. Build a
-                comprehensive evidence library that supports insurance claims, estate planning,
-                and family records.
+                complete record that supports insurance claims, estate planning, and family
+                records.
               </p>
               <p>
                 Multiple photos per item, version history, and organized storage make it easy
                 to document everything thoroughly.
               </p>
             </div>
-            <div className="feature-section__image">Evidence Preview</div>
+            <div className="feature-section__image">Attachments Preview</div>
           </div>
         </div>
       </section>
@@ -83,9 +83,9 @@ export default function CustomerFeatures() {
             <div className="feature-section__content">
               <h3>Family Sharing</h3>
               <p>
-                Invite Trusted Participants with role-based access. Viewers can see items
-                assigned to them. Contributors can help catalog and organize. Stewards have
-                elevated access for estate planning and management.
+                Invite Trusted Participants and choose what each person can do. Viewers can see
+                what you share with them. Contributors can help catalog and organize. Full Access
+                lets someone manage the household alongside you.
               </p>
               <p>
                 Everyone sees only what they need to - with clear controls over sharing
@@ -126,12 +126,12 @@ export default function CustomerFeatures() {
               <h3>Coverage Insights</h3>
               <p>
                 Link insurance policies to your items and let HeirDock analyze potential
-                coverage gaps. Get nudges when high-value items may need additional coverage
-                or documentation.
+                coverage gaps. See when high-value items may need additional coverage or
+                documentation.
               </p>
               <p>
-                When it's time to file a claim, your organized records and evidence library
-                make the process smoother and faster.
+                When it's time to file a claim, track it in HeirDock alongside the organized
+                records and attachments that support it.
               </p>
             </div>
             <div className="feature-section__image">Coverage Preview</div>
@@ -146,13 +146,15 @@ export default function CustomerFeatures() {
             <div className="feature-section__content">
               <h3>Estate Planning</h3>
               <p>
-                Designate successors for your items, create distribution plans, and leave
-                legacy messages for the people who matter. HeirDock helps you organize your
-                wishes clearly - so your family doesn't have to guess.
+                Name a Steward and beneficiaries, decide who each item is meant for, and add the
+                story behind it. HeirDock helps you record your wishes clearly - so your family
+                doesn't have to guess.
               </p>
               <p>
-                Export structured reports for estate attorneys, financial advisors, or family
-                conversations.
+                If you're ever unable to manage things yourself, Care Mode lets your Care Steward
+                look after your household record. Stewardship gives your Steward what they need
+                when the time comes. Export structured reports for estate attorneys, financial
+                advisors, or family conversations.
               </p>
             </div>
             <div className="feature-section__image">Estate Preview</div>

@@ -22,15 +22,15 @@ export default function PartnerFeatures() {
               <div className="feature-card__title">Client Workspace</div>
               <p className="feature-card__description">
                 A dedicated workspace for each client with organized access to their household record,
-                items, evidence, and valuations. Everything you need in one place.
+                items, attachments, and valuations. Everything you need in one place.
               </p>
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Document Sharing</div>
               <p className="feature-card__description">
-                Access client-consented documents, photos, and records. Download evidence
-                libraries and structured exports for your workflows.
+                Access client-consented documents, photos, and records. Download attachments
+                and structured exports for your workflows.
               </p>
             </div>
             <div className="feature-card">

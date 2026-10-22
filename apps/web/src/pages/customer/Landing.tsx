@@ -49,8 +49,8 @@ export default function CustomerLanding() {
               <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Share with family</div>
               <p className="feature-card__description">
-                Invite Trusted Participants with role-based access. Viewers can see, Contributors can help
-                catalog, and Stewards can manage.
+                Invite Trusted Participants and choose what each person can do. Viewers can see,
+                Contributors can help catalog, and Full Access can manage.
               </p>
             </div>
             <div className="feature-card">

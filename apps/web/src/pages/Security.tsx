@@ -17,9 +17,9 @@ export default function Security() {
           <div className="feature-grid">
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="lock" /></div>
-              <div className="feature-card__title">End-to-end encryption</div>
+              <div className="feature-card__title">Encryption</div>
               <p className="feature-card__description">
-                All data - at rest and in transit. Vault documents are individually
+                All data is encrypted in transit and at rest. Vault documents are individually
                 encrypted with dedicated keys for an additional layer of protection.
               </p>
             </div>
@@ -30,6 +30,15 @@ export default function Security() {
                 Strict data isolation ensures households can only access their own information.
                 Role-based permissions let you control exactly what each family member, executor,
                 or advisor can see and do.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-card__icon"><Icon name="shield" /></div>
+              <div className="feature-card__title">Account protection</div>
+              <p className="feature-card__description">
+                Two-step verification, an extra check before your Vault opens, and a list of
+                signed-in devices you can sign out of at any time. Uploaded files are scanned
+                for malware, and location data is removed from your photos.
               </p>
             </div>
             <div className="feature-card">
@@ -55,8 +64,8 @@ export default function Security() {
               <div className="feature-card__title">Privacy by design</div>
               <p className="feature-card__description">
                 Our platform is built with GDPR and CCPA principles in mind - including
-                data export, correction, and deletion. Partners only access information
-                with explicit household approval.
+                data export, correction, and deletion of your account. Professionals only
+                see what you choose to share, for as long as you choose.
               </p>
             </div>
             <div className="feature-card">
@@ -64,16 +73,9 @@ export default function Security() {
               <div className="feature-card__title">Infrastructure Security</div>
               <p className="feature-card__description">
                 Hosted on secure cloud infrastructure with layered defenses - threat detection,
-                traffic protection, credential protection, and audit logging. Every deployment
-                is automatically scanned for vulnerabilities.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">Availability</div>
-              <p className="feature-card__description">
-                Built for reliability with redundant infrastructure, automated failover,
-                and continuous monitoring to keep your data accessible when you need it.
+                traffic protection, and credential protection. Every deployment is scanned for
+                vulnerabilities, and redundant systems with continuous monitoring keep your
+                records available when you need them.
               </p>
             </div>
             <div className="feature-card">
@@ -81,7 +83,8 @@ export default function Security() {
               <div className="feature-card__title">Responsible AI</div>
               <p className="feature-card__description">
                 Identification and valuation run in isolated, secure environments.
-                Your data is never used to train models and is not shared with third parties.
+                Your data is never used to train models, never sold, and shared only with the
+                service providers that help run HeirDock.
               </p>
             </div>
           </div>
@@ -95,7 +98,8 @@ export default function Security() {
           <p className="text-md mt-lg">
             HeirDock is built on a principle of household sovereignty. You own your data.
             You control who sees it. You can export or delete it at any time.
-            We never sell your information and never share it without your explicit consent.
+            We never sell your information, and family members and professionals see only
+            what you choose to share.
           </p>
         </div>
       </section>
