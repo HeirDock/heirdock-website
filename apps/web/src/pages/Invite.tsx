@@ -123,7 +123,6 @@ export default function Invite() {
                 <ul className="invite-info-card__list">
                   <li>We review requests in the order they're received</li>
                   <li>You'll receive an email when your invite is ready</li>
-                  <li>Early access includes all features at no cost during the preview</li>
                 </ul>
               </div>
 
