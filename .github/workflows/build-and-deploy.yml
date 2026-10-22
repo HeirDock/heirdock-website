@@ -20,21 +20,18 @@ jobs:
       run:
         working-directory: apps/web
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v6
-        with:
-          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/heirdock-website-${{ inputs.environment }}-github-deploy
-          aws-region: ${{ vars.AWS_REGION }}
-
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: apps/web/package-lock.json
 
-      - run: npm ci
+      # Install scripts stay off (the build needs none) and AWS credentials are
+      # only configured after install and build, so dependency code never runs
+      # with them in reach - the path npm worms use to steal cloud credentials.
+      - run: npm ci --ignore-scripts
 
       - name: Build
         run: |
@@ -45,6 +42,12 @@ jobs:
           fi
         env:
           VITE_NOINDEX: ${{ inputs.environment == 'staging' && 'true' || 'false' }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/heirdock-website-${{ inputs.environment }}-github-deploy
+          aws-region: ${{ vars.AWS_REGION }}
 
       # The order of the next four steps is what keeps a deploy (or a rollback)
       # free of downtime: new hashed assets go up first with nothing deleted,
