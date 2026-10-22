@@ -61,12 +61,12 @@ export const pageMeta: Record<string, PageMeta> = {
   "/customer/features": {
     title: "HeirDock - Features",
     description:
-      "Item identification from photos, market valuations, evidence capture, family sharing, vault storage, coverage insights, and estate planning.",
+      "Item identification from photos, market valuations, photos and attachments, family sharing, vault storage, coverage insights, and estate planning.",
   },
   "/customer/pricing": {
     title: "HeirDock - Pricing",
     description:
-      "Simple, transparent pricing for HeirDock. Basic $50/year, Plus $100/year, Family $150/year. 30-day free trial on all plans.",
+      "Simple, transparent pricing for HeirDock. Essentials $50/year, Plus $100/year, Complete $150/year. 30-day free trial on all plans.",
   },
   "/customer/use-cases": {
     title: "HeirDock - Use Cases",
@@ -91,7 +91,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/partner/pricing": {
     title: "HeirDock - Partner Pricing",
     description:
-      "Flexible partner plans from Solo to Enterprise. Start with a free 60-day pilot. Pricing scales with your practice.",
+      "HeirDock is free for professionals, and the clients you invite can receive member pricing.",
   },
   "/partner/use-cases": {
     title: "HeirDock - Partner Use Cases",
