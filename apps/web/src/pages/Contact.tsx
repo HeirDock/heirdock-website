@@ -39,7 +39,7 @@ export default function Contact() {
           {status === "success" ? (
             <div className="form__message form__message--success">
               <strong>Message sent!</strong> Thank you for reaching out. We'll get back to you within
-              1–2 business days.
+              24 hours, and usually much sooner.
               <div className="mt-lg">
                 <button onClick={reset} className="btn btn--outline btn--sm">
                   Send another message
