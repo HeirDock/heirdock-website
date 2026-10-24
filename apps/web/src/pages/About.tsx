@@ -114,81 +114,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why Choose HeirDock (Feature Cards) */}
-      <section className="section">
-        <div className="container">
-          <h2 className="section__title">Why Choose HeirDock?</h2>
-          <div className="feature-grid">
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="lightbulb" /></div>
-              <div className="feature-card__title">Clarity without complexity</div>
-              <p className="feature-card__description">
-                Understand what you own - without turning it into another
-                task or ongoing responsibility.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">Identification and valuation, done for you</div>
-              <p className="feature-card__description">
-                Identify items and estimate potential value using real market
-                data, with no research required.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="trackChanges" /></div>
-              <div className="feature-card__title">Built for real life</div>
-              <p className="feature-card__description">
-                Add items gradually, update them over time, and take action only if
-                and when it makes sense.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="lock" /></div>
-              <div className="feature-card__title">Your information, protected</div>
-              <p className="feature-card__description">
-                Private, secure cloud storage with clear controls over what's shared
-                and with whom.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="shield" /></div>
-              <div className="feature-card__title">Know you're covered</div>
-              <p className="feature-card__description">
-                Understand what you have and whether your insurance coverage
-                matches - before you need to file a claim.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="description" /></div>
-              <div className="feature-card__title">Clear records when needed</div>
-              <p className="feature-card__description">
-                Generate clean, organized reports to share with family or
-                professionals - without managing legal workflows.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="handshake" /></div>
-              <div className="feature-card__title">Share with professionals</div>
-              <p className="feature-card__description">
-                Give your insurance agent, estate planner, or financial advisor
-                access to the records they need to serve you better.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="spa" /></div>
-              <div className="feature-card__title">A calm foundation for the future</div>
-              <p className="feature-card__description">
-                Reduce uncertainty, avoid burden later, and gain peace of mind
-                through understanding - not urgency.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Ready CTA */}
-      <section className="section section--white text-center">
+      <section className="section text-center">
         <div className="container">
           <h3>Ready to get started?</h3>
           <div className="mt-xl">

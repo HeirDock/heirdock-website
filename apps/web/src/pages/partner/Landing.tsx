@@ -16,9 +16,9 @@ export default function PartnerLanding() {
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo <Icon name="arrowForward" />
             </Link>
-            <Link to="/partner/why-partner" className="btn btn--outline btn--lg">
-              Why Partner?
-            </Link>
+            <a href="#how-it-works" className="btn btn--outline btn--lg">
+              How It Works
+            </a>
           </div>
         </div>
       </section>
@@ -85,79 +85,46 @@ export default function PartnerLanding() {
         </div>
       </section>
 
-      {/* Partner Types */}
-      <section className="section">
-        <div className="container">
-          <h2 className="section__title">Built for your practice</h2>
+      {/* How it works */}
+      <section className="section" id="how-it-works">
+        <div className="container text-center">
+          <h2 className="section__title">How it works</h2>
           <p className="section__subtitle">
-            HeirDock's Partner Portal serves professionals across industries.
+            From registration to working on a client's record together.
           </p>
-          <div className="feature-grid">
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="assignment" /></div>
-              <div className="feature-card__title">Insurance Agents</div>
-              <p className="feature-card__description">
-                Improve coverage accuracy, streamline claims documentation, and identify gaps
-                before they become problems.
+          <div className="step-grid">
+            <div className="step-card">
+              <div className="step-card__number">1</div>
+              <div className="step-card__title">Register</div>
+              <p className="step-card__description">
+                Create your partner account and set up your organization profile.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="balance" /></div>
-              <div className="feature-card__title">Estate Planners</div>
-              <p className="feature-card__description">
-                Access organized asset records, distribution plans, and Steward and beneficiary designations
-                to support complete estate planning.
+            <div className="step-card">
+              <div className="step-card__number">2</div>
+              <div className="step-card__title">Get verified</div>
+              <p className="step-card__description">
+                HeirDock reviews and verifies every firm before the Partner Portal opens.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="payments" /></div>
-              <div className="feature-card__title">Financial Advisors</div>
-              <p className="feature-card__description">
-                Gain a complete picture of client wealth - including the physical assets that
-                traditional financial tools miss.
+            <div className="step-card">
+              <div className="step-card__number">3</div>
+              <div className="step-card__title">Invite clients</div>
+              <p className="step-card__description">
+                Invite existing clients, or welcome new ones, with your practice's name and logo.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="search" /></div>
-              <div className="feature-card__title">Appraisers</div>
-              <p className="feature-card__description">
-                Start with structured baseline data, photos, and market comparables rather than
-                building from scratch.
+            <div className="step-card">
+              <div className="step-card__number">4</div>
+              <div className="step-card__title">Work together</div>
+              <p className="step-card__description">
+                See what each household chooses to share, and work on it with them using flags and notes.
               </p>
             </div>
           </div>
-          <div className="text-center mt-2xl">
+          <div className="mt-2xl">
             <Link to="/partner/features" className="btn btn--outline">
-              See more features <Icon name="arrowForward" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Explore More */}
-      <section className="section section--white">
-        <div className="container">
-          <h2 className="section__title">Learn more</h2>
-          <div className="feature-grid">
-            <Link to="/partner/how-it-works" className="feature-card card--link">
-              <div className="feature-card__icon"><Icon name="build" /></div>
-              <div className="feature-card__title">How It Works <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">See the 5-step partner workflow from registration to client service.</p>
-            </Link>
-            <Link to="/partner/features" className="feature-card card--link">
-              <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">Partner Features <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">Client workspaces, document sharing, analytics, and team management.</p>
-            </Link>
-            <Link to="/partner/pricing" className="feature-card card--link">
-              <div className="feature-card__icon"><Icon name="payments" /></div>
-              <div className="feature-card__title">Pricing <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">Free for professionals, with member pricing for the clients you work with.</p>
-            </Link>
-            <Link to="/partner/use-cases" className="feature-card card--link">
-              <div className="feature-card__icon"><Icon name="work" /></div>
-              <div className="feature-card__title">Use Cases <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">How insurance agents, estate planners, and appraisers use HeirDock.</p>
+              See all features <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
@@ -173,6 +140,9 @@ export default function PartnerLanding() {
           <div className="cta-band__actions">
             <Link to="/partner/demo" className="btn btn--primary btn--lg">
               Request a Demo <Icon name="arrowForward" />
+            </Link>
+            <Link to="/partner/pricing" className="btn btn--outline btn--lg">
+              View Pricing
             </Link>
           </div>
         </div>

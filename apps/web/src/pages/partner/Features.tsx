@@ -70,7 +70,7 @@ export default function PartnerFeatures() {
       </section>
 
       {/* Built for your practice */}
-      <section className="section">
+      <section id="practice" className="section">
         <div className="container">
           <h2 className="section__title">Built for your practice</h2>
           <p className="section__subtitle practice__subtitle">

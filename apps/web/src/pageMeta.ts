@@ -33,25 +33,10 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Answers to common questions about HeirDock - getting started, pricing, security, identification, family sharing, and more.",
   },
-  "/help": {
-    title: "HeirDock - Help Center",
-    description:
-      "Find help and support resources for using HeirDock. Browse guides on asset management, identification and valuation, sharing, and security.",
-  },
-  "/status": {
-    title: "HeirDock - System Status",
-    description:
-      "Check the current operational status of HeirDock services including the web application, API, identification and valuation, and more.",
-  },
   "/invite": {
     title: "HeirDock - Request Early Access",
     description:
       "HeirDock is invite-only. Request early access to organize, value, and protect your household assets.",
-  },
-  "/customer": {
-    title: "HeirDock - For Families",
-    description:
-      "Organize your household assets, protect what matters, and create a living record for your family with HeirDock.",
   },
   "/customer/features": {
     title: "HeirDock - Features",
@@ -73,11 +58,6 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Household asset intelligence for insurance agents, estate planners, appraisers, and financial advisors. Help clients with complete data.",
   },
-  "/partner/how-it-works": {
-    title: "HeirDock - Partner How It Works",
-    description:
-      "Register, get verified, invite clients, access organized household records, and deliver better professional service.",
-  },
   "/partner/features": {
     title: "HeirDock - Partner Features",
     description:
@@ -87,16 +67,6 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "HeirDock - Partner Pricing",
     description:
       "HeirDock is free for professionals, and the clients you work with can receive member pricing.",
-  },
-  "/partner/use-cases": {
-    title: "HeirDock - Partner Use Cases",
-    description:
-      "How insurance agents, estate planners, appraisers, and financial advisors use HeirDock to serve clients better.",
-  },
-  "/partner/why-partner": {
-    title: "HeirDock - Why Partner",
-    description:
-      "Reduce client friction, improve documentation quality, strengthen trust, and unlock revenue opportunities with HeirDock's partner program.",
   },
   "/partner/demo": {
     title: "HeirDock - Request a Demo",

@@ -27,7 +27,7 @@ export default function Home() {
       </section>
 
       {/* How HeirDock Works */}
-      <section className="section section--white">
+      <section className="section section--white" id="how-it-works">
         <div className="container">
           <h2 className="section__title">
             How <span className="text-brand-highlight">HeirDock</span> Works
@@ -197,31 +197,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Dual Path */}
+      {/* For professionals */}
       <section className="section">
-        <div className="container">
-          <div className="dual-path">
-            <div className="dual-path__card">
-              <h3>For Families</h3>
-              <p>
-                Organize your household, protect what matters, and create a clear
-                record of everything you own.
-              </p>
-              <Link to="/customer" className="btn btn--primary">
-                Learn More <Icon name="arrowForward" />
-              </Link>
-            </div>
-            <div className="dual-path__card">
-              <h3>For Professionals</h3>
-              <p>
-                Help your clients document household assets with
-                structured, accessible records.
-              </p>
-              <Link to="/partner" className="btn btn--outline">
-                Partner With Us <Icon name="arrowForward" />
-              </Link>
-            </div>
-          </div>
+        <div className="container text-center">
+          <h2 className="section__title">For professionals</h2>
+          <p className="section__subtitle">
+            Help your clients document household assets with structured, accessible records,
+            shared on their terms.
+          </p>
+          <Link to="/partner" className="btn btn--outline">
+            Partner With Us <Icon name="arrowForward" />
+          </Link>
         </div>
       </section>
     </>

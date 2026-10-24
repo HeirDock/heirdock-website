@@ -26,21 +26,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/help</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://heirdock.com/status</loc>
-    <priority>0.3</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://heirdock.com/customer</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://heirdock.com/customer/features</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -61,11 +46,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/partner/how-it-works</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://heirdock.com/partner/features</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -73,16 +53,6 @@
   <url>
     <loc>https://heirdock.com/partner/pricing</loc>
     <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://heirdock.com/partner/use-cases</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://heirdock.com/partner/why-partner</loc>
-    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>

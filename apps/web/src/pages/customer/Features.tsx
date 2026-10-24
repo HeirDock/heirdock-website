@@ -23,7 +23,7 @@ export default function CustomerFeatures() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
+          <Link to="/" className="page-header__back"><Icon name="arrowBack" /> Back to Home</Link>
           <h1 className="page-header__title">Features</h1>
           <p className="page-header__subtitle">
             Everything you need to catalog, protect, and pass on what matters.

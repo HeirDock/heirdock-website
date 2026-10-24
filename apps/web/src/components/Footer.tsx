@@ -19,10 +19,11 @@ export default function Footer() {
           <div>
             <div className="site-footer__links">
               <Link to="/about">What is HeirDock?</Link>
-              <Link to="/customer">For Families</Link>
+              <Link to="/customer/features">Features</Link>
+              <Link to="/customer/use-cases">Use Cases</Link>
               <Link to="/customer/pricing">Pricing</Link>
+              <Link to="/partner">For Professionals</Link>
               <Link to="/faq">FAQ</Link>
-              <a href="https://support.heirdock.com" target="_blank" rel="noopener noreferrer">Support Center</a>
             </div>
           </div>
 

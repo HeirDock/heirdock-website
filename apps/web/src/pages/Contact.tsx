@@ -108,8 +108,7 @@ export default function Contact() {
           <div className="page-aside">
             <p className="text-sm text-muted">
               For answers to common questions, visit our{" "}
-              <Link to="/faq">FAQ</Link> or{" "}
-              <Link to="/help">Help Center</Link>.
+              <Link to="/faq">FAQ</Link>.
             </p>
           </div>
         </div>

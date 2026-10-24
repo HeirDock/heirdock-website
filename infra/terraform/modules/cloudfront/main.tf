@@ -8,11 +8,21 @@ resource "aws_cloudfront_function" "url_routing" {
       var uri = request.uri;
 
       // Retired pages: permanent redirect to where their content now lives
-      if (uri === '/customer/how-it-works' || uri === '/customer/how-it-works/') {
+      var retired = {
+        '/customer': '/',
+        '/customer/how-it-works': '/#how-it-works',
+        '/partner/how-it-works': '/partner#how-it-works',
+        '/partner/use-cases': '/partner/features#practice',
+        '/partner/why-partner': '/partner',
+        '/help': '/faq',
+        '/status': 'https://status.heirdock.com'
+      };
+      var path = uri.length > 1 && uri.endsWith('/') ? uri.slice(0, -1) : uri;
+      if (retired[path]) {
         return {
           statusCode: 301,
           statusDescription: 'Moved Permanently',
-          headers: { location: { value: '/customer#how-it-works' } }
+          headers: { location: { value: retired[path] } }
         };
       }
 
