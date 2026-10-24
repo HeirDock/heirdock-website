@@ -898,19 +898,91 @@
   margin: 6% 0 0 -3%;
 }
 
+/* A current iPhone: a thin, even bezel, large continuous corners, a slim
+   metal edge, the Dynamic Island and a status bar. Sizes are relative to
+   the phone's width (container units), so it holds at every size. */
 .screen-phone {
+  container-type: inline-size;
+  position: relative;
   flex: 0 0 40%;
-  padding: 4%;
+  padding: 1.8%;
   background: var(--device-frame);
-  border-radius: 36px;
-  box-shadow: var(--shadow-lg);
+  border-radius: 17% / 8%;
+  box-shadow:
+    0 0 0 1.5px var(--device-edge),
+    0 0 0 2.5px var(--device-frame),
+    var(--shadow-lg);
+}
+
+/* Side buttons: action and volume on the left, power on the right. */
+.screen-phone::before,
+.screen-phone::after {
+  content: "";
+  position: absolute;
+  width: 1.4%;
+  background: var(--device-edge);
+}
+
+/* One strip, painted as three buttons: action, volume up, volume down. */
+.screen-phone::before {
+  left: -2.6%;
+  top: 17%;
+  height: 25%;
+  border-radius: 2px 0 0 2px;
+  background: linear-gradient(
+    var(--device-edge) 0 16%,
+    transparent 16% 34%,
+    var(--device-edge) 34% 64%,
+    transparent 64% 70%,
+    var(--device-edge) 70% 100%
+  );
+}
+
+.screen-phone::after {
+  right: -2.6%;
+  top: 27%;
+  height: 11%;
+  border-radius: 0 2px 2px 0;
 }
 
 .screen-phone__screen {
-  aspect-ratio: 230 / 464;
+  position: relative;
+  aspect-ratio: 393 / 852;
   overflow: hidden;
   background: var(--color-bg);
-  border-radius: 26px;
+  border-radius: 15.5% / 7.2%;
+}
+
+/* The Dynamic Island, over the status bar. */
+.screen-phone__screen::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 2.6cqi;
+  left: 50%;
+  width: 31%;
+  height: 9cqi;
+  transform: translateX(-50%);
+  background: var(--device-frame);
+  border-radius: 999px;
+}
+
+.screen-phone__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 14cqi;
+  padding: 1.5cqi 9cqi 0 11cqi;
+  font-size: 4.2cqi;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.screen-phone__status svg {
+  display: block;
+  width: 17cqi;
+  height: auto;
 }
 
 .screen-phone__screen img {

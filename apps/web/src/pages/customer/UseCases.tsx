@@ -217,6 +217,20 @@ export default function CustomerUseCases() {
             <div className="screen-stack screen-stack--moving screen-stack--tint-sage">
               <div className="screen-phone">
                 <div className="screen-phone__screen">
+                  {/* Status bar: the time, then signal, Wi-Fi and battery. */}
+                  <div className="screen-phone__status" aria-hidden="true">
+                    <span>9:41</span>
+                    <svg viewBox="0 0 68 14" fill="currentColor" focusable="false">
+                      <rect x="0" y="9" width="3.2" height="4" rx="1" />
+                      <rect x="5" y="6.5" width="3.2" height="6.5" rx="1" />
+                      <rect x="10" y="4" width="3.2" height="9" rx="1" />
+                      <rect x="15" y="1.5" width="3.2" height="11.5" rx="1" />
+                      <path d="M31 12.6a1.6 1.6 0 1 1 0-.01zM26.4 8.3a6.6 6.6 0 0 1 9.2 0l-1.4 1.4a4.6 4.6 0 0 0-6.4 0zM23.6 5.5a10.6 10.6 0 0 1 14.8 0L37 6.9a8.6 8.6 0 0 0-12 0z" />
+                      <rect x="44" y="1.5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" strokeWidth="1.2" opacity=".45" />
+                      <rect x="46" y="3.5" width="17" height="7" rx="1.8" />
+                      <path d="M66.4 5.4v3.2a1.6 1.6 0 0 0 0-3.2z" opacity=".45" />
+                    </svg>
+                  </div>
                   <img
                     src={roomUrl}
                     width={540}

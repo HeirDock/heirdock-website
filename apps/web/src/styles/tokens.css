@@ -104,6 +104,8 @@
   --drawing-line-on-panel: color-mix(in srgb, var(--color-text-on-dark) 90%, var(--color-primary-active));
   /* The bezel around phone screenshots. */
   --device-frame: var(--color-text-primary);
+  /* The phone's slim metal edge and buttons. */
+  --device-edge: color-mix(in srgb, var(--color-text-primary) 55%, var(--color-surface-3));
   /* Set to --color-text-on-dark on dark surfaces; descendants inherit it. */
   --focus-ring: var(--color-primary);
 
