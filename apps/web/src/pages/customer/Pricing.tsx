@@ -11,6 +11,9 @@ export default function CustomerPricing() {
             Every plan includes every feature. Plans differ only by how many properties,
             collections, and assets you manage.
           </p>
+          <Link to="/customer/features#all-features" className="page-header__link">
+            See everything every plan includes <Icon name="arrowForward" />
+          </Link>
         </div>
       </section>
 
@@ -117,9 +120,6 @@ export default function CustomerPricing() {
             </Link>
             <p className="text-muted mt-md text-sm">
               Start with the 30-day free trial on any plan. Upgrade, downgrade, or cancel at any time.
-            </p>
-            <p className="mt-md">
-              <Link to="/customer/features#all-features">See everything every plan includes</Link>
             </p>
           </div>
         </div>
