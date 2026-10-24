@@ -1695,6 +1695,11 @@
   margin: var(--space-3xl) auto 0;
 }
 
+/* Straight after the buttons (no note line), leave room for the arc above. */
+.hero-brand__actions + .hero-brand__media {
+  margin-top: calc(var(--space-3xl) + var(--space-xl));
+}
+
 /* Wider than the video, so the ring frames it rather than hiding behind it. */
 .hero-brand__arc {
   position: absolute;
