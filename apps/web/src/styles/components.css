@@ -300,25 +300,6 @@
   }
 }
 
-.hero--with-video {
-  padding-top: var(--space-2xl);
-}
-
-/* A quiet way to the film further down the page: present, never the main
-   call to action. */
-.hero__film-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-top: var(--space-lg);
-  font-size: var(--text-sm);
-  font-weight: 500;
-}
-
-.hero__film-link .icon {
-  font-size: var(--text-lg);
-}
-
 /* The 30-second film on Home: framed like the hero loop, with the player's
    own controls. */
 .film {
@@ -594,103 +575,6 @@
   }
 
   .challenge-compare__closing {
-    font-size: var(--text-base);
-  }
-}
-
-/* ========================================
-   Gap Compare (documented vs undocumented card)
-   ======================================== */
-
-.gap-compare__subtitle {
-  margin-bottom: var(--space-2xl);
-}
-
-.gap-compare {
-  max-width: 880px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.gap-compare__col {
-  padding: 1.75rem var(--space-xl);
-}
-
-.gap-compare__col--missing {
-  background: var(--color-primary-light);
-  border-left: 1px solid var(--color-border);
-}
-
-.gap-compare__label {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-xs);
-}
-
-.gap-compare__col--missing .gap-compare__label {
-  color: var(--color-primary);
-}
-
-.gap-compare__list li {
-  padding: 0.875rem 0;
-  border-bottom: 1px solid var(--color-divider);
-  color: var(--color-text-secondary);
-}
-
-.gap-compare__list li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.gap-compare__col--missing .gap-compare__list li {
-  border-bottom-color: var(--gap-tint-rule);
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-
-.gap-compare__col--missing .gap-compare__list li:last-child {
-  border-bottom: none;
-}
-
-.gap-compare__reasons {
-  max-width: 720px;
-  margin: var(--space-xl) auto var(--space-sm);
-  text-align: center;
-  font-size: var(--text-md);
-  line-height: 1.6;
-}
-
-.gap-compare__closing {
-  margin-bottom: 0;
-  text-align: center;
-  font-size: var(--text-md);
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-@media (max-width: 767px) {
-  .gap-compare {
-    grid-template-columns: 1fr;
-  }
-
-  .gap-compare__col {
-    padding: var(--space-lg) 1.25rem;
-  }
-
-  .gap-compare__col--missing {
-    border-left: none;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .gap-compare__reasons,
-  .gap-compare__closing {
     font-size: var(--text-base);
   }
 }
@@ -1864,5 +1748,514 @@
   .invite-page {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
+  }
+}
+
+/* ========================================
+   Visual refresh: brand panels, drawings and glyphs
+   Deep navy panels, gold highlights and the logo's gold ring (as an arc or
+   arch). Spec: the "Visual refresh" page on the design canvas.
+   ======================================== */
+
+/* Small uppercase label above a heading. */
+.eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+/* Buttons that sit on a navy panel. Gold is the one call to action that is
+   not navy: on navy, a navy button would disappear. Ink on gold is 8.9:1. */
+.btn--gold {
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.btn--gold:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn--on-panel {
+  background: transparent;
+  color: var(--on-panel-text);
+  border-color: color-mix(in srgb, var(--color-text-on-dark) 55%, transparent);
+}
+
+.btn--on-panel:hover {
+  background: color-mix(in srgb, var(--color-text-on-dark) 10%, transparent);
+}
+
+/* A rounded deep-navy panel. Focus rings turn white inside it. */
+.brand-panel {
+  --focus-ring: var(--color-text-on-dark);
+  background: var(--brand-panel-bg);
+  color: var(--on-panel-text);
+  border-radius: calc(var(--radius-lg) * 2);
+}
+
+/* The logo's gold ring as an arc. It draws itself once, unless the viewer
+   has asked for reduced motion. */
+.gold-arc {
+  display: block;
+  overflow: visible;
+}
+
+.gold-arc path {
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gold-arc path {
+    stroke-dasharray: 1400;
+    animation: gold-arc-draw 1.8s var(--ease-default) 0.3s both;
+  }
+}
+
+@keyframes gold-arc-draw {
+  from { stroke-dashoffset: 1400; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Line drawings (components/Drawing.tsx) */
+.drawing {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.drawing--light {
+  --drawing-line: var(--color-primary);
+  --drawing-surface: var(--color-surface);
+}
+
+.drawing--tint {
+  --drawing-line: var(--color-primary);
+  --drawing-surface: var(--color-accent-light);
+}
+
+.drawing--navy {
+  --drawing-line: var(--drawing-line-on-panel);
+  --drawing-surface: var(--brand-panel-bg);
+}
+
+.drawing__line { stroke: var(--drawing-line); }
+.drawing__accent { stroke: var(--color-accent); }
+.drawing__accent-fill { fill: var(--color-accent); }
+.drawing__surface { fill: var(--drawing-surface); }
+.drawing__surface-line { stroke: var(--drawing-surface); }
+
+/* Warm light through the open door. */
+.drawing__glow {
+  fill: var(--color-accent);
+  fill-opacity: 0.85;
+}
+
+/* Duotone glyphs (components/BrandGlyph.tsx) */
+.glyph {
+  display: block;
+  width: 1.375em;
+  height: 1.375em;
+  flex-shrink: 0;
+}
+
+.glyph__main { fill: var(--color-primary); }
+.glyph__main-line { stroke: var(--color-primary); }
+.glyph__accent { fill: var(--color-accent); }
+.glyph__accent-line { stroke: var(--color-accent); }
+.glyph__cut { fill: var(--color-surface); }
+.glyph__cut-line { stroke: var(--color-surface); }
+
+/* ---------- Home: hero ---------- */
+
+.hero-brand {
+  --hero-overhang: 140px;
+  padding: var(--space-md) var(--space-md) calc(var(--hero-overhang) + var(--space-xl));
+  /* The arc reaches past the video's sides; clip it sideways only, so the
+     video can still overhang the panel downwards. */
+  overflow-x: clip;
+}
+
+.hero-brand__panel {
+  padding: var(--space-4xl) var(--space-xl) 0;
+  text-align: center;
+}
+
+.hero-brand__title {
+  max-width: 880px;
+  margin: 0 auto var(--space-lg);
+  font-size: clamp(2.375rem, 3.2vw + 1rem, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--on-panel-text);
+}
+
+.hero-brand__accent {
+  display: block;
+  color: var(--color-accent);
+}
+
+.hero-brand__subtitle {
+  max-width: 640px;
+  margin: 0 auto var(--space-xl);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--on-panel-muted);
+}
+
+.hero-brand__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.hero-brand__note {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-xl);
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--on-panel-faint);
+}
+
+.hero-brand__film {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 500;
+  color: var(--on-panel-text);
+}
+
+.hero-brand__film .icon {
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+}
+
+/* The loop rises out of the panel: it overhangs the panel's bottom edge by
+   --hero-overhang, framed by the gold arc behind it. */
+.hero-brand__media {
+  position: relative;
+  max-width: 880px;
+  margin: var(--space-3xl) auto calc(-1 * var(--hero-overhang));
+}
+
+/* Wider than the video, so the ring frames it rather than hiding behind it. */
+.hero-brand__arc {
+  position: absolute;
+  top: -72px;
+  left: 50%;
+  width: 118%;
+  transform: translateX(-50%);
+}
+
+.hero-brand__media .hero-video {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--color-text-primary) 22%, transparent),
+    var(--shadow-md);
+}
+
+/* ---------- Home: trust row ---------- */
+
+.trust-row {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.trust-row__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-md) var(--space-xl);
+  padding: var(--space-lg) 0;
+}
+
+.trust-row__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary-active);
+}
+
+/* ---------- Home: how it works ---------- */
+
+.step-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.step-tile {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) * 1.5);
+  padding: var(--space-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.step-tile__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  border-radius: var(--radius-lg);
+  font-size: 2.5rem;
+}
+
+.step-tile__art--navy { background: var(--color-primary-light); }
+.step-tile__art--gold { background: var(--color-accent-light); }
+.step-tile__art--sage { background: var(--color-secondary-light); }
+
+.step-tile__body {
+  padding: var(--space-lg) var(--space-sm) var(--space-sm);
+}
+
+.step-tile__number {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--eyebrow);
+}
+
+.step-tile__title {
+  margin: var(--space-xs) 0 var(--space-sm);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.step-tile__text {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Home: hidden asset gap ---------- */
+
+.asset-gap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: var(--space-lg);
+}
+
+.asset-gap__panel {
+  border-radius: calc(var(--radius-lg) * 1.75);
+  padding: var(--space-2xl);
+}
+
+.asset-gap__panel--plain {
+  background: var(--color-bg);
+}
+
+.asset-gap__panel--brand {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-lg);
+}
+
+.asset-gap__label {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.asset-gap__panel--brand .asset-gap__label {
+  color: var(--color-accent);
+}
+
+.asset-gap__list {
+  margin-top: var(--space-sm);
+}
+
+.asset-gap__list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.asset-gap__panel--brand .asset-gap__list li {
+  border-bottom-color: var(--on-panel-rule);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--on-panel-text);
+}
+
+.asset-gap__drawing {
+  width: 210px;
+}
+
+.asset-gap__closing {
+  max-width: 720px;
+  margin: var(--space-2xl) auto 0;
+  text-align: center;
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Home: story band ---------- */
+
+.story-band {
+  background: var(--color-accent-light);
+}
+
+.story-band__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.story-band__drawing {
+  width: min(340px, 100%);
+  margin: 0 auto;
+}
+
+.story-band__text p {
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.story-band__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+}
+
+/* ---------- Home: closing call to action ---------- */
+
+.closing-cta {
+  padding: var(--space-4xl) var(--space-md);
+  background: var(--color-surface);
+}
+
+.closing-cta__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4xl) var(--space-3xl);
+}
+
+.closing-cta__title {
+  color: var(--on-panel-text);
+}
+
+.closing-cta__text {
+  max-width: 520px;
+  margin: var(--space-md) 0 var(--space-xl);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--on-panel-muted);
+}
+
+.closing-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.closing-cta__drawing {
+  width: 240px;
+  justify-self: center;
+}
+
+/* ---------- Home: responsive ---------- */
+
+@media (max-width: 1023px) {
+  .step-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-brand {
+    --hero-overhang: 56px;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .hero-brand__panel {
+    padding: var(--space-3xl) var(--space-md) 0;
+  }
+
+  .hero-brand__actions .btn {
+    width: 100%;
+  }
+
+  .hero-brand__arc {
+    top: -28px;
+    width: 112%;
+  }
+
+  .trust-row__list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .step-tiles,
+  .asset-gap,
+  .story-band__inner,
+  .closing-cta__panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .asset-gap__panel {
+    padding: var(--space-xl);
+  }
+
+  .asset-gap__panel--brand {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .asset-gap__drawing {
+    width: 160px;
+    justify-self: center;
+  }
+
+  .story-band__inner {
+    gap: var(--space-xl);
+  }
+
+  .closing-cta {
+    padding: var(--space-2xl) var(--space-sm);
+  }
+
+  .closing-cta__panel {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+  }
+
+  .closing-cta__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .closing-cta__actions {
+    justify-content: center;
+  }
+
+  .closing-cta__drawing {
+    width: 170px;
   }
 }

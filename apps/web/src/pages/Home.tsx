@@ -1,77 +1,112 @@
 import { Link } from "react-router-dom";
+import BrandGlyph from "../components/BrandGlyph";
+import Drawing from "../components/Drawing";
 import HeroVideo from "../components/HeroVideo";
 import Icon from "../components/Icon";
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="hero hero--light hero--with-video">
-        <div className="container">
-          <HeroVideo />
-          <h1 className="hero__title">Know what you own. Protect what matters.</h1>
-          <p className="hero__subtitle">
-            HeirDock helps households identify, organize, value, and manage
-            the physical assets in their lives - from heirlooms and collectibles to
-            jewelry, art, and everyday valuables.
+      {/* Hero: a deep navy panel; the loop rises out of it, framed by the gold arc. */}
+      <section className="hero-brand">
+        <div className="brand-panel hero-brand__panel">
+          <h1 className="hero-brand__title">
+            Know what you own.
+            <span className="hero-brand__accent">Protect what matters.</span>
+          </h1>
+          <p className="hero-brand__subtitle">
+            HeirDock helps households identify, organize, value, and manage the things in
+            their lives - from heirlooms and collectibles to jewelry, art, and everyday valuables.
           </p>
-          <div className="hero__actions">
-            <Link to="/invite" className="btn btn--primary btn--lg">
+          <div className="hero-brand__actions">
+            <Link to="/invite" className="btn btn--gold btn--lg">
               Request Early Access <Icon name="arrowForward" />
             </Link>
-            <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
+            <a href="https://app.heirdock.com/login" className="btn btn--on-panel btn--lg">
               Sign In
             </a>
           </div>
-          <a href="#film" className="hero__film-link">
-            <Icon name="playCircle" /> Watch the 30-second film
-          </a>
+          <div className="hero-brand__note">
+            <span>On iPhone, Android and the web</span>
+            <a href="#film" className="hero-brand__film">
+              <Icon name="playCircle" /> Watch the 30-second film
+            </a>
+          </div>
+          <div className="hero-brand__media">
+            <svg className="gold-arc hero-brand__arc" viewBox="0 0 800 400" aria-hidden="true" focusable="false">
+              <path d="M10 400a390 390 0 0 1 780 0" />
+            </svg>
+            <HeroVideo />
+          </div>
         </div>
       </section>
 
-      {/* How HeirDock Works */}
-      <section className="section section--white" id="how-it-works">
+      {/* Trust row */}
+      <section className="trust-row" aria-label="Why households trust HeirDock">
         <div className="container">
-          <h2 className="section__title">
-            How <span className="text-brand-highlight">HeirDock</span> Works
-          </h2>
+          <ul className="trust-row__list">
+            <li className="trust-row__item"><BrandGlyph name="phone" /> iPhone, Android and the web</li>
+            <li className="trust-row__item"><BrandGlyph name="lock" /> An encrypted Vault for documents</li>
+            <li className="trust-row__item"><BrandGlyph name="eye" /> You decide who sees what</li>
+            <li className="trust-row__item"><BrandGlyph name="shield" /> Your data is never sold</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="section" id="how-it-works">
+        <div className="container">
+          <span className="eyebrow text-center">How it works</span>
+          <h2 className="section__title">Start in minutes. Keep it for a lifetime.</h2>
           <p className="section__subtitle">
-            Everything you need to organize what you own - with the future in mind.
+            Add a few things that matter today, and more whenever it suits you.
           </p>
-          <div className="feature-grid">
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="attachFile" /></div>
-              <div className="feature-card__title">Capture your household assets</div>
-              <p className="feature-card__description">
-                Take a photo of an item to record what matters - furniture,
-                jewelry, collectibles, and heirlooms.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">Identify items and estimate value</div>
-              <p className="feature-card__description">
-                HeirDock helps identify each item and suggests a potential market
-                value, so there's no research for you to do.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="editNote" /></div>
-              <div className="feature-card__title">Add context and preferences</div>
-              <p className="feature-card__description">
-                Record who items belong to, add memories and context, assign
-                stories, wishes, or future plans for each item.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="description" /></div>
-              <div className="feature-card__title">Export your household record</div>
-              <p className="feature-card__description">
-                Generate a summary of your household assets, ready for insurance,
-                estate planning, or family reference.
-              </p>
-            </div>
-          </div>
+          <ol className="step-tiles">
+            <li className="step-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="camera" /></div>
+              <div className="step-tile__body">
+                <div className="step-tile__number">01</div>
+                <h3 className="step-tile__title">Capture your household</h3>
+                <p className="step-tile__text">
+                  Take a photo of an item to record what matters - furniture, jewelry,
+                  collectibles, and heirlooms.
+                </p>
+              </div>
+            </li>
+            <li className="step-tile">
+              <div className="step-tile__art step-tile__art--gold"><BrandGlyph name="tag" /></div>
+              <div className="step-tile__body">
+                <div className="step-tile__number">02</div>
+                <h3 className="step-tile__title">Identify and value</h3>
+                <p className="step-tile__text">
+                  HeirDock suggests what each item is and what it may be worth, so there&apos;s
+                  no research for you to do.
+                </p>
+              </div>
+            </li>
+            <li className="step-tile">
+              <div className="step-tile__art step-tile__art--sage"><BrandGlyph name="people" /></div>
+              <div className="step-tile__body">
+                <div className="step-tile__number">03</div>
+                <h3 className="step-tile__title">Add the story</h3>
+                <p className="step-tile__text">
+                  Record who items are meant for, the memories behind them, and your
+                  wishes for each one.
+                </p>
+              </div>
+            </li>
+            <li className="step-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="document" /></div>
+              <div className="step-tile__body">
+                <div className="step-tile__number">04</div>
+                <h3 className="step-tile__title">Keep a clear record</h3>
+                <p className="step-tile__text">
+                  Export your household record for insurance, estate planning, or the
+                  family, whenever you need it.
+                </p>
+              </div>
+            </li>
+          </ol>
           <div className="text-center mt-2xl">
             <Link to="/customer/features" className="btn btn--outline">
               See more features <Icon name="arrowForward" />
@@ -80,40 +115,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Hidden Asset Gap */}
-      <section className="section section--md">
+      {/* The hidden asset gap */}
+      <section className="section section--white">
         <div className="container">
-          <h2 className="section__title">The Hidden Asset Gap in Every Household</h2>
-          <p className="section__subtitle gap-compare__subtitle">
-            A major portion of household wealth is still invisible.
-          </p>
-
-          <div className="gap-compare">
-            <div className="gap-compare__col">
-              <h3 className="gap-compare__label">Usually documented</h3>
-              <ul className="gap-compare__list">
+          <span className="eyebrow text-center">The hidden asset gap</span>
+          <h2 className="section__title">
+            Some of what you own is on paper. Much of it isn&apos;t.
+          </h2>
+          <div className="asset-gap mt-2xl">
+            <div className="asset-gap__panel asset-gap__panel--plain">
+              <h3 className="asset-gap__label">Usually documented</h3>
+              <ul className="asset-gap__list">
                 <li>Bank and investment accounts</li>
                 <li>Retirement savings</li>
                 <li>Real estate</li>
                 <li>Insurance policies</li>
               </ul>
             </div>
-            <div className="gap-compare__col gap-compare__col--missing">
-              <h3 className="gap-compare__label">Often undocumented</h3>
-              <ul className="gap-compare__list">
-                <li>Jewelry and watches</li>
-                <li>Art and collectibles</li>
-                <li>Heirlooms and memorabilia</li>
-                <li>Everyday valuables</li>
-              </ul>
+            <div className="asset-gap__panel brand-panel asset-gap__panel--brand">
+              <div>
+                <h3 className="asset-gap__label">Often undocumented</h3>
+                <ul className="asset-gap__list">
+                  <li>Jewelry and watches</li>
+                  <li>Art and collectibles</li>
+                  <li>Heirlooms and memorabilia</li>
+                  <li>Everyday valuables</li>
+                </ul>
+              </div>
+              <div className="asset-gap__drawing">
+                <Drawing name="keepsake" tone="navy" motion="swing" />
+              </div>
             </div>
           </div>
-          <p className="gap-compare__reasons">
-            Some of these things are worth far more than families realize. A clear record
-            helps with insurance claims, life transitions, and passing things down.
-          </p>
-          <p className="gap-compare__closing">
-            HeirDock brings clarity and structure to this overlooked part of household wealth.
+          <p className="asset-gap__closing">
+            A clear record helps with insurance claims, life transitions, and passing things
+            down. HeirDock brings structure to this overlooked part of household wealth.
           </p>
         </div>
       </section>
@@ -122,8 +158,9 @@ export default function Home() {
           keeps its 4.3 MB off the page until someone presses play; the poster is
           a chosen frame, not frame one. -v1 names are the cache-buster (see
           HeroVideo). */}
-      <section className="section section--white" id="film">
+      <section className="section" id="film">
         <div className="container">
+          <span className="eyebrow text-center">The film</span>
           <h2 className="section__title">See HeirDock in 30 seconds</h2>
           <p className="section__subtitle">
             A short film about the things we keep, and the stories that make them matter.
@@ -147,21 +184,6 @@ export default function Home() {
                 default
               />
             </video>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Band */}
-      <section className="cta-band">
-        <div className="container">
-          <h2 className="cta-band__title">Plan with purpose. Preserve what matters.</h2>
-          <p className="cta-band__subtitle">
-            Get started – It only takes a few minutes to start organizing what you have.
-          </p>
-          <div className="cta-band__actions">
-            <Link to="/customer/features" className="btn btn--primary btn--lg">
-              Learn More <Icon name="arrowForward" />
-            </Link>
           </div>
         </div>
       </section>
@@ -233,6 +255,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Story band: the keepsake's lid opens once, as it scrolls into view. */}
+      <section className="section story-band">
+        <div className="container">
+          <div className="story-band__inner">
+            <div className="story-band__drawing">
+              <Drawing name="keepsake" tone="tint" motion="open" />
+            </div>
+            <div className="story-band__text">
+              <span className="eyebrow">For the people who come after</span>
+              <h2>Pass things on with the story intact</h2>
+              <p className="mt-md">
+                Record who each piece is meant for, and why, in your own words. Name a Steward
+                for the household, and give your family a clear record when the time comes.
+              </p>
+              <Link to="/customer/use-cases#estate" className="story-band__link">
+                How estate planning works <Icon name="arrowForward" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* For professionals */}
       <section className="section">
         <div className="container text-center">
@@ -244,6 +288,29 @@ export default function Home() {
           <Link to="/partner" className="btn btn--outline">
             Partner With Us <Icon name="arrowForward" />
           </Link>
+        </div>
+      </section>
+
+      {/* Closing call to action */}
+      <section className="closing-cta">
+        <div className="brand-panel closing-cta__panel">
+          <div>
+            <h2 className="closing-cta__title">Start your household record</h2>
+            <p className="closing-cta__text">
+              Begin with a few things that matter. HeirDock grows with you, at your own pace.
+            </p>
+            <div className="closing-cta__actions">
+              <Link to="/invite" className="btn btn--gold btn--lg">
+                Request Early Access <Icon name="arrowForward" />
+              </Link>
+              <Link to="/customer/pricing" className="btn btn--on-panel btn--lg">
+                View Pricing
+              </Link>
+            </div>
+          </div>
+          <div className="closing-cta__drawing">
+            <Drawing name="frontDoor" tone="navy" />
+          </div>
         </div>
       </section>
     </>
