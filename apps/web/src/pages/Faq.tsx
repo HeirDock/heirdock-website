@@ -28,10 +28,8 @@ function matches(item: FaqItem, query: string) {
   return normalize([item.question, ...item.answer].join(" ")).includes(query);
 }
 
-function FaqQuestion({ item, forceOpen }: { item: FaqItem; forceOpen: boolean }) {
-  const [open, setOpen] = useState(false);
+function FaqQuestion({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boolean; onToggle: () => void }) {
   const id = useId();
-  const isOpen = open || forceOpen;
 
   return (
     <div className={`faq-item${isOpen ? " faq-item--open" : ""}`}>
@@ -39,7 +37,7 @@ function FaqQuestion({ item, forceOpen }: { item: FaqItem; forceOpen: boolean })
         <button
           id={`${id}-q`}
           className="faq-item__question"
-          onClick={() => setOpen(!isOpen)}
+          onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={`${id}-a`}
         >
@@ -63,9 +61,24 @@ function FaqQuestion({ item, forceOpen }: { item: FaqItem; forceOpen: boolean })
   );
 }
 
+// Each topic remembers which of its answers are open, so one button can open
+// or close them all. While searching, every match is shown open.
 function Topic({ topic, audience, tint, items, searching }: {
   topic: FaqTopic; audience: string; tint: string; items: FaqItem[]; searching: boolean;
 }) {
+  const [open, setOpen] = useState<Set<string>>(() => new Set());
+  const allOpen = items.every((item) => open.has(item.question));
+
+  const toggle = (question: string) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(question)) next.delete(question);
+      else next.add(question);
+      return next;
+    });
+  const toggleAll = () =>
+    setOpen(allOpen ? new Set() : new Set(items.map((item) => item.question)));
+
   return (
     <section className="faq-topic" id={topic.id} aria-labelledby={`${topic.id}-title`}>
       <div className="faq-topic__head">
@@ -74,10 +87,26 @@ function Topic({ topic, audience, tint, items, searching }: {
           <span className="eyebrow">{audience}</span>
           <h2 className="faq-topic__title" id={`${topic.id}-title`}>{topic.title}</h2>
         </div>
+        {!searching && (
+          <button
+            type="button"
+            className={`faq-topic__toggle${allOpen ? " faq-topic__toggle--open" : ""}`}
+            onClick={toggleAll}
+            aria-label={`${allOpen ? "Collapse" : "Expand"} all answers in ${topic.title}`}
+          >
+            {allOpen ? "Collapse all" : "Expand all"}
+            <span className="faq-topic__toggle-icon" aria-hidden="true"><Icon name="expandMore" /></span>
+          </button>
+        )}
       </div>
       <div className="faq-list">
         {items.map((item) => (
-          <FaqQuestion key={item.question} item={item} forceOpen={searching} />
+          <FaqQuestion
+            key={item.question}
+            item={item}
+            isOpen={searching || open.has(item.question)}
+            onToggle={() => toggle(item.question)}
+          />
         ))}
       </div>
     </section>
