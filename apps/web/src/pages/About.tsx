@@ -114,21 +114,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* In One Sentence */}
-      <section className="section--sm">
-        <div className="container container--narrow">
-          <div className="callout">
-            <div className="callout__title">In One Sentence</div>
-            <p>
-              HeirDock helps people understand what they own, why it matters, and
-              what options they have - without turning it into another job.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose HeirDock (Feature Cards) */}
-      <section className="section section--white">
+      <section className="section">
         <div className="container">
           <h2 className="section__title">Why Choose HeirDock?</h2>
           <div className="feature-grid">
@@ -201,7 +188,7 @@ export default function About() {
       </section>
 
       {/* Ready CTA */}
-      <section className="section text-center">
+      <section className="section section--white text-center">
         <div className="container">
           <h3>Ready to get started?</h3>
           <div className="mt-xl">
