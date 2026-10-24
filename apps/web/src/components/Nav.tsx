@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoUrl from "../assets/images/heirdock-logo.png";
+import logoUrl from "../assets/images/heirdock-horizontal-color.svg";
 import Icon from "./Icon";
 
 export default function Nav() {
@@ -37,7 +37,7 @@ export default function Nav() {
     <nav ref={navRef} className="site-nav">
       <div className="container">
         <Link to="/" className="site-nav__logo">
-          <img src={logoUrl} alt="HeirDock" />
+          <img src={logoUrl} alt="HeirDock" width="173" height="38" />
         </Link>
 
         <div className="site-nav__links">
