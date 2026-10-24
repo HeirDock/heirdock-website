@@ -6,7 +6,7 @@ export default function PartnerLanding() {
     <>
       {/* Hero */}
       <section className="hero-brand hero-brand--plain">
-        <div className="brand-panel hero-brand__panel">
+        <div className="hero-brand__panel">
           <h1 className="hero-brand__title">
             Household Asset Intelligence
             <span className="hero-brand__accent">for Your Clients</span>
@@ -19,7 +19,7 @@ export default function PartnerLanding() {
             <Link to="/partner/demo" className="btn btn--gold btn--lg">
               Request a Demo <Icon name="arrowForward" />
             </Link>
-            <a href="#how-it-works" className="btn btn--on-panel btn--lg">
+            <a href="#how-it-works" className="btn btn--outline btn--lg">
               How It Works
             </a>
           </div>
