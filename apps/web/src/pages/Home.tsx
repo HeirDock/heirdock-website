@@ -168,6 +168,10 @@ export default function Home() {
             <video
               className="film__media"
               controls
+              /* No Download item in the menu and no "Save video as" on right-click.
+                 This hides the obvious routes; the file itself stays public. */
+              controlsList="nodownload"
+              onContextMenu={(e) => e.preventDefault()}
               preload="none"
               playsInline
               poster="/media/heirdock-intro-30s-poster-v1.jpg"
