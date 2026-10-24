@@ -459,12 +459,11 @@ export default function CustomerFeatures() {
             <div className="feature-matrix__group">
               <h3 className="feature-matrix__title">Security</h3>
               <ul className="feature-matrix__list">
-                <li>An encrypted Vault with per-document keys and version history</li>
                 <li>Multi-factor authentication</li>
                 <li>Sign out of any device, any time</li>
                 <li>An optional extra check before Vault documents open</li>
-                <li>Location data removed from your photos</li>
-                <li>Your data is never sold</li>
+                <li>Export or delete all your data at any time</li>
+                <li>Your data is never sold or used for AI training</li>
               </ul>
             </div>
             <div className="feature-matrix__group">
