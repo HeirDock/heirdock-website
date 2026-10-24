@@ -158,11 +158,13 @@
   opacity: 1;
 }
 
+/* The heading sits on the same 1.75 rhythm as the links below it, so the
+   gap under it matches the gap between links. */
 .site-footer__heading {
   font-size: var(--text-base);
   font-weight: 500;
+  line-height: 1.75;
   color: var(--color-text-on-dark);
-  margin-bottom: var(--space-lg);
 }
 
 /* Single-spaced: no gap between links. A 1.75 line-height keeps each link
