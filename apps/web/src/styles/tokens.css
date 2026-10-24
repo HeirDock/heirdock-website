@@ -92,6 +92,8 @@
   /* Footer secondary text: 75% white is 5.69:1 on --footer-bg. */
   --footer-text-secondary: color-mix(in srgb, var(--color-text-on-dark) 75%, transparent);
   --footer-rule: color-mix(in srgb, var(--color-text-on-dark) 15%, transparent);
+  /* The bezel around phone screenshots. */
+  --device-frame: var(--color-text-primary);
   /* Set to --color-text-on-dark on dark surfaces; descendants inherit it. */
   --focus-ring: var(--color-primary);
 
