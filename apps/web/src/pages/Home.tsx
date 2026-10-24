@@ -23,6 +23,9 @@ export default function Home() {
               Sign In
             </a>
           </div>
+          <a href="#film" className="hero__film-link">
+            <Icon name="playCircle" /> Watch the 30-second film
+          </a>
         </div>
       </section>
 
@@ -112,6 +115,39 @@ export default function Home() {
           <p className="gap-compare__closing">
             HeirDock brings clarity and structure to this overlooked part of household wealth.
           </p>
+        </div>
+      </section>
+
+      {/* The 30-second film: behind a click, with sound and captions. preload="none"
+          keeps its 4.3 MB off the page until someone presses play; the poster is
+          a chosen frame, not frame one. -v1 names are the cache-buster (see
+          HeroVideo). */}
+      <section className="section section--white" id="film">
+        <div className="container">
+          <h2 className="section__title">See HeirDock in 30 seconds</h2>
+          <p className="section__subtitle">
+            A short film about the things we keep, and the stories that make them matter.
+          </p>
+          <div className="film">
+            <video
+              className="film__media"
+              controls
+              preload="none"
+              playsInline
+              poster="/media/heirdock-intro-30s-poster-v1.jpg"
+              width={1280}
+              height={720}
+            >
+              <source src="/media/heirdock-intro-30s-v1.mp4" type="video/mp4" />
+              <track
+                kind="captions"
+                srcLang="en"
+                label="English"
+                src="/media/heirdock-intro-30s.en.vtt"
+                default
+              />
+            </video>
+          </div>
         </div>
       </section>
 
