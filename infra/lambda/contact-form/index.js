@@ -33,9 +33,8 @@ function escapeHtml(str) {
     .replace(/'/g, "&#39;");
 }
 
-// The access form's choices, as offered on the page.
+// The access form's practice types, as offered on the page.
 const PRACTICE_TYPES = ["Insurance", "Estate Planning", "Appraisal", "Wealth & Banking", "Corporate Trustee", "Property Manager", "Other"];
-const CLIENT_COUNTS = ["", "1-10", "11-50", "51-200", "200+"];
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
@@ -156,7 +155,7 @@ exports.handler = async (event) => {
       `;
       textBody = `Invite Request\nName: ${name}\nEmail: ${email}\nInterest:\n${message || "(none)"}`;
     } else if (isAccess) {
-      if (!company || company.length > 200 || !PRACTICE_TYPES.includes(role) || !CLIENT_COUNTS.includes(clientCount)) {
+      if (!company || company.length > 200 || !PRACTICE_TYPES.includes(role)) {
         return { statusCode: 400, headers, body: JSON.stringify({ error: "Practice name and type are required" }) };
       }
       subject = `HeirDock Professional Access Request: ${name} (${company})`;
@@ -166,14 +165,13 @@ exports.handler = async (event) => {
         <p><strong>Email:</strong> ${h.email}</p>
         <p><strong>Practice:</strong> ${h.company}</p>
         <p><strong>Type of practice:</strong> ${h.role}</p>
-        <p><strong>Client households:</strong> ${h.clientCount || "N/A"}</p>
         ${message ? `<p><strong>Message:</strong></p><p>${h.message}</p>` : "<p><em>No message.</em></p>"}
         <hr>
         <p style="color: #999; font-size: 12px;">
           reCAPTCHA score: ${recaptchaResult.score} | Sent from heirdock.com professional access form
         </p>
       `;
-      textBody = `Professional Access Request\nName: ${name}\nEmail: ${email}\nPractice: ${company}\nType: ${role}\nClients: ${clientCount}\nMessage:\n${message || "(none)"}`;
+      textBody = `Professional Access Request\nName: ${name}\nEmail: ${email}\nPractice: ${company}\nType: ${role}\nMessage:\n${message || "(none)"}`;
     } else if (isDemo) {
       subject = `HeirDock Demo Request: ${name} (${company || "N/A"})`;
       htmlBody = `

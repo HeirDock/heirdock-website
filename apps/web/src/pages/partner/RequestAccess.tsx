@@ -21,7 +21,6 @@ export default function RequestAccess() {
       email: data.get("email") as string,
       company: data.get("company") as string,
       role: data.get("role") as string,
-      clientCount: data.get("clientCount") as string,
       message: data.get("message") as string || "",
       _phone: data.get("_phone") as string,
     });
@@ -102,24 +101,10 @@ export default function RequestAccess() {
                   </div>
 
                   <div className="form__field">
-                    <label htmlFor="clientCount" className="form__label">
-                      Number of Client Households <span className="form__optional">(optional)</span>
-                    </label>
-                    <select id="clientCount" name="clientCount" className="form__select">
-                      <option value="">Select range</option>
-                      <option value="1-10">1–10</option>
-                      <option value="11-50">11–50</option>
-                      <option value="51-200">51–200</option>
-                      <option value="200+">200+</option>
-                    </select>
-                  </div>
-
-                  <div className="form__field">
                     <label htmlFor="message" className="form__label">
                       Anything we should know? <span className="form__optional">(optional)</span>
                     </label>
                     <textarea id="message" name="message" className="form__textarea"
-                      placeholder="How you'd like to work with your clients' household records, or how you heard about us."
                       rows={4} maxLength={2000} />
                   </div>
 
