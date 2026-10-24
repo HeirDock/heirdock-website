@@ -19,7 +19,8 @@
 }
 
 .site-nav__logo img {
-  height: 44px;
+  display: block;
+  height: 34px;
   width: auto;
 }
 
@@ -138,7 +139,7 @@
 
 .site-footer__logo img {
   width: auto;
-  height: 76px; /* the file is 100px tall with padding; 76px is three-quarters size */
+  height: 52px;
 }
 
 .site-footer__social {
