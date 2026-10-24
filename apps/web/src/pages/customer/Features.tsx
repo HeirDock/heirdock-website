@@ -50,7 +50,7 @@ export default function CustomerFeatures() {
             </div>
             <div className="app-card" role="img" aria-label="Example: a photo of a gold pocket watch, with a suggested name, category and estimated value">
               <div className="app-suggest">
-                <img className="app-suggest__photo" src={identifyPhotoUrl} width={357} height={436} alt="" decoding="async" />
+                <img className="app-suggest__photo" src={identifyPhotoUrl} width={491} height={600} alt="" decoding="async" />
                 <div className="app-suggest__fields">
                   <div className="app-label">Suggested from your photo</div>
                   <div className="app-field">
