@@ -30,9 +30,6 @@ export default function PartnerLanding() {
               How It Works
             </a>
           </div>
-          <div className="hero-brand__note">
-            <span>Free for professionals</span>
-          </div>
           <div className="hero-brand__media portal-stack">
             <svg className="gold-arc hero-brand__arc" viewBox="0 0 800 400" aria-hidden="true" focusable="false">
               <path d="M10 400a390 390 0 0 1 780 0" />
@@ -59,7 +56,6 @@ export default function PartnerLanding() {
       <section className="trust-row" aria-label="Why professionals trust HeirDock">
         <div className="container">
           <ul className="trust-row__list">
-            <li className="trust-row__item"><BrandGlyph name="tag" /> Free for professionals</li>
             <li className="trust-row__item"><BrandGlyph name="shield" /> Every firm reviewed and verified</li>
             <li className="trust-row__item"><BrandGlyph name="eye" /> Clients choose what you see</li>
             <li className="trust-row__item"><BrandGlyph name="lock" /> Every access is logged</li>
