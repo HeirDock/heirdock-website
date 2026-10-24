@@ -304,6 +304,40 @@
   padding-top: var(--space-2xl);
 }
 
+/* A quiet way to the film further down the page: present, never the main
+   call to action. */
+.hero__film-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.hero__film-link .icon {
+  font-size: var(--text-lg);
+}
+
+/* The 30-second film on Home: framed like the hero loop, with the player's
+   own controls. */
+.film {
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-primary-active);
+}
+
+.film__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ========================================
    Feature Card / Grid
    ======================================== */
