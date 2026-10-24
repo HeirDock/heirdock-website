@@ -123,7 +123,7 @@ export default function Home() {
             Get started – It only takes a few minutes to start organizing what you have.
           </p>
           <div className="cta-band__actions">
-            <Link to="/about" className="btn btn--primary btn--lg">
+            <Link to="/customer/features" className="btn btn--primary btn--lg">
               Learn More <Icon name="arrowForward" />
             </Link>
           </div>

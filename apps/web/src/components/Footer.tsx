@@ -19,7 +19,6 @@ export default function Footer() {
           <div>
             <div className="site-footer__heading">Product</div>
             <div className="site-footer__links">
-              <Link to="/about">What is HeirDock?</Link>
               <Link to="/customer/features">Features</Link>
               <Link to="/customer/use-cases">Use Cases</Link>
               <Link to="/customer/pricing">Pricing</Link>

@@ -9,6 +9,7 @@ resource "aws_cloudfront_function" "url_routing" {
 
       // Retired pages: permanent redirect to where their content now lives
       var retired = {
+        '/about': '/',
         '/customer': '/',
         '/customer/how-it-works': '/#how-it-works',
         '/partner/how-it-works': '/partner#how-it-works',

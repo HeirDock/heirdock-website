@@ -13,11 +13,6 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "HeirDock helps households identify, organize, value, and manage physical assets - from heirlooms and collectibles to jewelry, art, and everyday valuables.",
   },
-  "/about": {
-    title: "HeirDock - About",
-    description:
-      "HeirDock helps people organize and understand what they own - without turning it into another ongoing task. A calm, useful tool that grows with you.",
-  },
   "/contact": {
     title: "HeirDock - Contact",
     description:

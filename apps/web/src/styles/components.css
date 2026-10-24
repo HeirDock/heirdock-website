@@ -67,8 +67,7 @@
   display: none;
 }
 
-/* Six menu links need about 900px; below that, the menu button takes over. */
-@media (max-width: 899px) {
+@media (max-width: 767px) {
   .site-nav__links,
   .site-nav__actions {
     display: none;
@@ -811,115 +810,6 @@
     border-left: none;
     border-top: 1px solid var(--color-divider);
   }
-}
-
-/* ========================================
-   Differentiator Grid (2x2)
-   ======================================== */
-
-.diff-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-.diff-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-lg);
-}
-
-.diff-card__label {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-sm);
-  font-style: italic;
-}
-
-.diff-card__statement {
-  font-size: var(--text-md);
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-
-@media (max-width: 767px) {
-  .diff-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
-   Audience Grid (who it's for)
-   ======================================== */
-
-.audience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-.audience-card {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-lg);
-}
-
-.audience-card__icon {
-  color: var(--color-primary);
-  font-size: var(--text-xl);
-  flex-shrink: 0;
-}
-
-.audience-card__text {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-}
-
-@media (max-width: 767px) {
-  .audience-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
-   Callout Box
-   ======================================== */
-
-/* Teal stays decorative (a border and a tint): white text on teal is only
-   2.65:1, so the text here is dark. */
-.callout {
-  background: var(--color-secondary-light);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-secondary);
-  border-radius: var(--radius-md);
-  padding: var(--space-2xl) var(--space-3xl);
-  text-align: center;
-}
-
-.callout--light {
-  border-color: transparent;
-}
-
-.callout--gray {
-  background: var(--color-surface-2);
-  color: var(--color-text-secondary);
-  border-color: var(--color-border);
-}
-
-.callout p {
-  font-size: var(--text-md);
-  line-height: 1.7;
-  color: inherit;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* ========================================
