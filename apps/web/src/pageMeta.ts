@@ -61,7 +61,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/professional/pricing": {
     title: "HeirDock - Partner Pricing",
     description:
-      "HeirDock is free for professionals, and the clients you work with can receive member pricing.",
+      "Member pricing for the clients you work with, invitations in your practice's name, and every practice reviewed before it connects with clients.",
   },
   "/professional/request-access": {
     title: "HeirDock - Request Access for Your Practice",
