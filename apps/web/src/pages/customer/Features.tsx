@@ -449,11 +449,11 @@ export default function CustomerFeatures() {
             <div className="feature-matrix__group">
               <h3 className="feature-matrix__title">Professionals</h3>
               <ul className="feature-matrix__list">
-                <li>Share with professionals: a summary, the assets list or full item detail</li>
-                <li>Share everything or one collection, with an optional end date</li>
-                <li>See exactly what a professional sees</li>
-                <li>Let an insurance professional update policies and start claims, if you choose</li>
-                <li>Stop sharing at any time</li>
+                <li>Works with your insurance agent, estate planner, appraiser, wealth advisor, trustee and property manager</li>
+                <li>You choose what each one sees and for how long, preview their view, and stop sharing at any time</li>
+                <li>One up-to-date record for all of them, instead of explaining what you own again and again</li>
+                <li>Coverage that matches what you own, and help with a claim if you allow it</li>
+                <li>Estate plans that reflect your wishes, and appraisals that start from your photos and records</li>
               </ul>
             </div>
             <div className="feature-matrix__group">
