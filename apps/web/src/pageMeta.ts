@@ -26,7 +26,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/faq": {
     title: "HeirDock - FAQ",
     description:
-      "Answers to common questions about HeirDock - getting started, pricing, security, identification, family sharing, and more.",
+      "Plain answers about HeirDock for households and professionals: getting started, value, family and estate plans, insurance, plans, privacy, security and support.",
   },
   "/invite": {
     title: "HeirDock - Request Early Access",
@@ -62,6 +62,11 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "HeirDock - Partner Pricing",
     description:
       "HeirDock is free for professionals, and the clients you work with can receive member pricing.",
+  },
+  "/professional/request-access": {
+    title: "HeirDock - Request Access for Your Practice",
+    description:
+      "Request access to HeirDock's Partner Portal for your practice. Work from your clients' household records, with their consent.",
   },
   "/professional/demo": {
     title: "HeirDock - Request a Demo",

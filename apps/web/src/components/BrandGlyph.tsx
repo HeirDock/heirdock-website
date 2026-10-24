@@ -5,9 +5,9 @@ import type { ReactElement } from "react";
 // text beside each glyph carries the meaning. Colours come from .glyph__* in
 // components.css; size with font-size or width on .glyph.
 
-type Name = "camera" | "tag" | "people" | "document" | "phone" | "lock" | "eye" | "shield" | "house" | "box";
+export type GlyphName = "camera" | "tag" | "people" | "document" | "phone" | "lock" | "eye" | "shield" | "house" | "box" | "briefcase";
 
-const GLYPHS: Record<Name, ReactElement> = {
+const GLYPHS: Record<GlyphName, ReactElement> = {
   camera: (
     <>
       <path className="glyph__main" d="M4 7h3l1.6-2h6.8L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" />
@@ -75,9 +75,16 @@ const GLYPHS: Record<Name, ReactElement> = {
       <path className="glyph__accent-line" d="M7.5 6.2 16.5 10.7v3" strokeWidth="2" strokeLinecap="round" />
     </>
   ),
+  briefcase: (
+    <>
+      <path className="glyph__main-line" d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7" strokeWidth="2" />
+      <rect className="glyph__main" x="3" y="7" width="18" height="13" rx="2" />
+      <rect className="glyph__accent" x="10" y="11.5" width="4" height="3" rx="0.8" />
+    </>
+  ),
 };
 
-export default function BrandGlyph({ name, className = "" }: { name: Name; className?: string }) {
+export default function BrandGlyph({ name, className = "" }: { name: GlyphName; className?: string }) {
   return (
     <svg className={`glyph${className ? ` ${className}` : ""}`} viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       {GLYPHS[name]}

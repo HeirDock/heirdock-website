@@ -11,6 +11,7 @@ import PartnerLanding from "./pages/partner/Landing";
 import PartnerFeatures from "./pages/partner/Features";
 import PartnerPricing from "./pages/partner/Pricing";
 import Demo from "./pages/partner/Demo";
+import RequestAccess from "./pages/partner/RequestAccess";
 import Terms from "./pages/legal/Terms";
 import Privacy from "./pages/legal/Privacy";
 import Cookies from "./pages/legal/Cookies";
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="professional/features" element={<PartnerFeatures />} />
         <Route path="professional/pricing" element={<PartnerPricing />} />
         <Route path="professional/demo" element={<Demo />} />
+        <Route path="professional/request-access" element={<RequestAccess />} />
 
         {/* Legal */}
         <Route path="legal/terms" element={<Terms />} />

@@ -19,16 +19,16 @@ export default function PartnerLanding() {
             <span className="hero-brand__accent">for Your Clients</span>
           </h1>
           <p className="hero-brand__subtitle">
-            Help your clients document, organize, and understand their physical assets -
+            Help your clients document, organize, and understand their physical assets,
             so you can deliver better service with complete information.
           </p>
           <div className="hero-brand__actions">
-            <Link to="/professional/demo" className="btn btn--gold btn--lg">
-              Request a Demo <Icon name="arrowForward" />
+            <Link to="/professional/request-access" className="btn btn--gold btn--lg">
+              Request Access <Icon name="arrowForward" />
             </Link>
-            <a href="#how-it-works" className="btn btn--outline btn--lg">
-              How It Works
-            </a>
+            <Link to="/professional/demo" className="btn btn--outline btn--lg">
+              Request a Demo
+            </Link>
           </div>
           <div className="hero-brand__media portal-stack">
             <svg className="gold-arc hero-brand__arc" viewBox="0 0 800 400" aria-hidden="true" focusable="false">
@@ -182,14 +182,14 @@ export default function PartnerLanding() {
           <div>
             <h2 className="closing-cta__title">See how HeirDock works for your practice</h2>
             <p className="closing-cta__text">
-              Schedule a demo to explore the Partner Portal and learn how it fits your practice.
+              Request access for your practice, or book a demo to explore the Partner Portal first.
             </p>
             <div className="closing-cta__actions">
-              <Link to="/professional/demo" className="btn btn--gold btn--lg">
-                Request a Demo <Icon name="arrowForward" />
+              <Link to="/professional/request-access" className="btn btn--gold btn--lg">
+                Request Access <Icon name="arrowForward" />
               </Link>
-              <Link to="/professional/pricing" className="btn btn--on-panel btn--lg">
-                View Pricing
+              <Link to="/professional/demo" className="btn btn--on-panel btn--lg">
+                Request a Demo
               </Link>
             </div>
           </div>

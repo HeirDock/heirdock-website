@@ -32,6 +32,7 @@ export default function Footer() {
               <Link to="/professional">Overview</Link>
               <Link to="/professional/features">Partner Features</Link>
               <Link to="/professional/pricing">Partner Pricing</Link>
+              <Link to="/professional/request-access">Request Access</Link>
               <Link to="/professional/demo">Request a Demo</Link>
             </div>
           </div>
