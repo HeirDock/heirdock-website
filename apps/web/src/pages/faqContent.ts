@@ -502,6 +502,13 @@ export const faqAudiences: FaqAudience[] = [
               "Yes. Everything a professional views or changes is recorded in an audit log, and your practice's admins can review your team's activity. Clients see every change made to their policies and claims.",
             ],
           },
+          {
+            question: "How does HeirDock approach security standards?",
+            answer: [
+              "HeirDock is designed around the SOC 2 Type II criteria for security, availability and confidentiality. That includes encryption in transit and at rest, multi-factor sign-in for every professional, strict separation between clients and firms, and an append-only audit log.",
+            ],
+            link: { to: "/security", label: "How we protect data" },
+          },
         ],
       },
     ],
