@@ -393,8 +393,8 @@ export default function CustomerFeatures() {
                 <li>Detailed Add: one item, with every detail</li>
                 <li>Suggested name, category, condition and value from a photo</li>
                 <li>Photos, receipts, serial numbers and documents on each item</li>
-                <li>Properties, rooms and storage spots</li>
-                <li>Collections and custom tags</li>
+                <li>Properties, rooms, collections and custom tags</li>
+                <li>Apps for iPhone and Android, and any web browser</li>
               </ul>
             </div>
             <div className="feature-matrix__group">
@@ -418,13 +418,12 @@ export default function CustomerFeatures() {
               </ul>
             </div>
             <div className="feature-matrix__group">
-              <h3 className="feature-matrix__title">Protect</h3>
+              <h3 className="feature-matrix__title">Insurance</h3>
               <ul className="feature-matrix__list">
                 <li>Coverage Insights: covered, valued and provable</li>
+                <li>A clear next step for each coverage gap</li>
                 <li>Insurance policies linked to the items they cover</li>
                 <li>Start and track claims, and download them as PDFs</li>
-                <li>An encrypted Vault with per-document keys and version history</li>
-                <li>Multi-factor authentication and a list of signed-in devices</li>
               </ul>
             </div>
             <div className="feature-matrix__group">
@@ -439,15 +438,43 @@ export default function CustomerFeatures() {
               </ul>
             </div>
             <div className="feature-matrix__group">
-              <h3 className="feature-matrix__title">Share and report</h3>
+              <h3 className="feature-matrix__title">Reports</h3>
+              <ul className="feature-matrix__list">
+                <li>Full Assets Export as PDF or CSV</li>
+                <li>Beneficiary Assignment Report</li>
+                <li>Reports for an item, a property or a collection</li>
+                <li>Financial Analysis by person, collection, property and category</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Professionals</h3>
               <ul className="feature-matrix__list">
                 <li>Share with professionals: a summary, the assets list or full item detail</li>
                 <li>Share everything or one collection, with an optional end date</li>
                 <li>See exactly what a professional sees</li>
-                <li>Full Assets Export as PDF or CSV</li>
-                <li>Beneficiary Assignment Report</li>
-                <li>Reports for an item, a property or a collection</li>
-                <li>Apps for iPhone and Android, and any web browser</li>
+                <li>Let an insurance professional update policies and start claims, if you choose</li>
+                <li>Stop sharing at any time</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Security</h3>
+              <ul className="feature-matrix__list">
+                <li>An encrypted Vault with per-document keys and version history</li>
+                <li>Multi-factor authentication</li>
+                <li>Sign out of any device, any time</li>
+                <li>An optional extra check before Vault documents open</li>
+                <li>Location data removed from your photos</li>
+                <li>Your data is never sold</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Support</h3>
+              <ul className="feature-matrix__list">
+                <li>Help and support inside the app</li>
+                <li>A reply from our team within 1–2 business days</li>
+                <li>The same support on every plan</li>
+                <li>Answers to common questions in the FAQ</li>
+                <li>Service updates on our status page</li>
               </ul>
             </div>
           </div>

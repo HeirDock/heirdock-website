@@ -1222,7 +1222,9 @@
   margin-bottom: var(--space-sm);
 }
 
+/* "pretty" keeps a lone word off the last line of a wrapped item. */
 .feature-matrix__list li {
+  text-wrap: pretty;
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--color-divider);
   font-size: var(--text-sm);
