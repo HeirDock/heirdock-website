@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none" role="img" aria-label="A front door standing open, with warm light inside">
+  <path d="M28 286 V160 a122 122 0 0 1 244 0 V286" stroke="#E8C06E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M100 268 V150 H200 V268" stroke="#A0D0F2" stroke-width="3" stroke-linejoin="round" fill="#E8C06E" fill-opacity=".85"/>
+  <path d="M100 150 V136 H200 V150" stroke="#A0D0F2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M104 268 V150 H196 V268" stroke="#A0D0F2" stroke-width="3" stroke-linejoin="round" fill="#1A222C"><animate attributeName="d" dur="2s" fill="freeze" calcMode="spline" keyTimes="0;0.3;1" keySplines="0 0 1 1;0.2 0 0 1" values="M104 268 V150 H196 V268;M104 268 V150 H196 V268;M104 268 V150 L162 160 V262"/></path>
+  <circle cx="152" cy="212" r="3.6" fill="#E8C06E"/>
+  <path d="M84 268 H216" stroke="#A0D0F2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M118 278 H182" stroke="#E8C06E" stroke-width="5" stroke-linecap="round"/>
+  <path d="M230 268 h28 l-4 -22 h-20z" stroke="#A0D0F2" stroke-width="3" stroke-linejoin="round" fill="#1A222C"/>
+  <path d="M244 246 c-2 -14 -12 -18 -18 -26 M244 246 c1 -16 8 -24 16 -30 M244 246 c0 -12 -2 -22 0 -34" stroke="#A0D0F2" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="232" cy="219" r="4" fill="#E8C06E"/><circle cx="260" cy="214" r="4" fill="#E8C06E"/>
+</svg>
