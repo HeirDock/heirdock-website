@@ -45,8 +45,8 @@ export default function PartnerFeatures() {
               <div className="feature-card__icon"><Icon name="trendingUp" /></div>
               <div className="feature-card__title">Analytics Dashboard</div>
               <p className="feature-card__description">
-                Track client engagement, documentation progress, and portfolio-level insights
-                across all your managed households.
+                See portfolio health, upcoming renewals, claims, and client engagement
+                across all the households you work with.
               </p>
             </div>
             <div className="feature-card">
@@ -124,7 +124,7 @@ export default function PartnerFeatures() {
             </p>
             <div className="control-levels__grid">
               <div className="control-levels__item">
-                <h4 className="control-levels__name">No access</h4>
+                <h4 className="control-levels__name">Not shared</h4>
                 <p>Nothing is shared until they choose to, and sharing can end whenever they like.</p>
               </div>
               <div className="control-levels__item">
@@ -132,11 +132,11 @@ export default function PartnerFeatures() {
                 <p>Totals and breakdowns, with no list of individual items.</p>
               </div>
               <div className="control-levels__item">
-                <h4 className="control-levels__name">Summary and assets list</h4>
+                <h4 className="control-levels__name">Summary + Assets list</h4>
                 <p>Adds the item list: name, category, property and value.</p>
               </div>
               <div className="control-levels__item">
-                <h4 className="control-levels__name">Full item detail</h4>
+                <h4 className="control-levels__name">Full Item detail</h4>
                 <p>Each item's page, with only the details they pick: photos, values, documents and more.</p>
               </div>
             </div>

@@ -24,7 +24,7 @@ export default function CustomerPricing() {
               <div className="feature-card__icon"><Icon name="bolt" /></div>
               <div className="feature-card__title">Identification &amp; Valuation</div>
               <p className="feature-card__description">
-                Photo-based item recognition, market value estimates, and automatic high-value detection.
+                Photo-based item recognition, market value estimates, and recommendations for high-value items.
               </p>
             </div>
             <div className="feature-card">
@@ -59,7 +59,7 @@ export default function CustomerPricing() {
               <div className="feature-card__icon"><Icon name="description" /></div>
               <div className="feature-card__title">Export &amp; Reports</div>
               <p className="feature-card__description">
-                Home Asset Snapshots, item documentation PDFs, and structured reports for professionals.
+                A full assets export, item and property reports, a beneficiary report, and financial analysis.
               </p>
             </div>
             <div className="feature-card">
@@ -73,7 +73,7 @@ export default function CustomerPricing() {
               <div className="feature-card__icon"><Icon name="localOffer" /></div>
               <div className="feature-card__title">Tags, Stories &amp; Collections</div>
               <p className="feature-card__description">
-                Organize items with custom tags, personal stories, and collections that can be assigned to trusts.
+                Organize items with custom tags, personal stories, and collections, with a trust as beneficiary if you like.
               </p>
             </div>
             <div className="feature-card">
@@ -85,9 +85,9 @@ export default function CustomerPricing() {
             </div>
             <div className="feature-card">
               <div className="feature-card__icon"><Icon name="calendarMonth" /></div>
-              <div className="feature-card__title">Annual Review Prompts</div>
+              <div className="feature-card__title">Asset Reviews</div>
               <p className="feature-card__description">
-                Gentle reminders to keep your household record current and up to date.
+                Gentle reminders to check your record is still accurate, timed to suit each kind of item.
               </p>
             </div>
             <div className="feature-card">
@@ -101,7 +101,7 @@ export default function CustomerPricing() {
               <div className="feature-card__icon"><Icon name="add" /></div>
               <div className="feature-card__title">And Many More</div>
               <p className="feature-card__description">
-                Guided wizards, annual review prompts, exceptional support, and more - every feature included with every plan.
+                Step-by-step setup, maintenance tracking, exceptional support, and more - every feature included with every plan.
               </p>
             </div>
           </div>

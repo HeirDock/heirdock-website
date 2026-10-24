@@ -76,7 +76,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/partner/how-it-works": {
     title: "HeirDock - Partner How It Works",
     description:
-      "Register, verify credentials, invite clients, access organized household records, and deliver better professional service.",
+      "Register, get verified, invite clients, access organized household records, and deliver better professional service.",
   },
   "/partner/features": {
     title: "HeirDock - Partner Features",
@@ -86,7 +86,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/partner/pricing": {
     title: "HeirDock - Partner Pricing",
     description:
-      "HeirDock is free for professionals, and the clients you invite can receive member pricing.",
+      "HeirDock is free for professionals, and the clients you work with can receive member pricing.",
   },
   "/partner/use-cases": {
     title: "HeirDock - Partner Use Cases",

@@ -36,8 +36,8 @@ export default function Security() {
               <div className="feature-card__icon"><Icon name="shield" /></div>
               <div className="feature-card__title">Account protection</div>
               <p className="feature-card__description">
-                Two-step verification, an extra check before your Vault opens, and a list of
-                signed-in devices you can sign out of at any time. Uploaded files are scanned
+                Multi-factor authentication, an optional extra check before Vault documents open, and a
+                list of signed-in devices you can sign out of at any time. Vault uploads are scanned
                 for malware, and location data is removed from your photos.
               </p>
             </div>

@@ -40,7 +40,7 @@ export default function Home() {
               <div className="feature-card__icon"><Icon name="attachFile" /></div>
               <div className="feature-card__title">Capture your household assets</div>
               <p className="feature-card__description">
-                Take a photo or describe an item to record what matters - furniture,
+                Take a photo of an item to record what matters - furniture,
                 jewelry, collectibles, and heirlooms.
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function Home() {
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
                   </div>
                 </div>
-                <span className="benefit-mockup__status benefit-mockup__status--assigned">Emma · Assigned</span>
+                <span className="benefit-mockup__status benefit-mockup__status--assigned">For Emma</span>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
@@ -160,7 +160,7 @@ export default function Home() {
                     <div className="benefit-mockup__category">Collectibles</div>
                   </div>
                 </div>
-                <span className="benefit-mockup__status benefit-mockup__status--assigned">Jack · Assigned</span>
+                <span className="benefit-mockup__status benefit-mockup__status--assigned">For Jack</span>
               </div>
               <div className="benefit-mockup__item">
                 <div className="benefit-mockup__item-info">
@@ -170,7 +170,7 @@ export default function Home() {
                     <div className="benefit-mockup__category">Jewelry &amp; Accessories</div>
                   </div>
                 </div>
-                <span className="benefit-mockup__status benefit-mockup__status--unassigned">Unassigned</span>
+                <span className="benefit-mockup__status benefit-mockup__status--unassigned">Undecided</span>
               </div>
             </div>
             <div className="benefit-notes">

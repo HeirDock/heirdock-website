@@ -36,7 +36,7 @@ export default function About() {
           <div className="callout callout--gray">
             <p>
               HeirDock is a secure app for iPhone and Android that also works in any web browser, so you
-              can add things from your phone and review them on a larger screen. Using photos and natural language, HeirDock helps you
+              can add things from your phone and review them on a larger screen. Starting from a photo, HeirDock helps you
               identify items, record context, understand potential value, and keep everything in one clear,
               living record. You can add details gradually, update things when life changes, and take action
               only if and when it makes sense - sell, donate, share, or simply leave clear information
