@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import BrandGlyph from "../../components/BrandGlyph";
+import Drawing from "../../components/Drawing";
 import Icon from "../../components/Icon";
 import readinessUrl from "../../assets/images/use-cases/uc1-readiness.webp";
 import coveredUrl from "../../assets/images/use-cases/uc1-covered.webp";
@@ -15,12 +17,52 @@ import intentionPickerUrl from "../../assets/images/use-cases/uc4-intention-pick
 export default function CustomerUseCases() {
   return (
     <>
-      <section className="page-header">
-        <div className="container">
-          <h1 className="page-header__title">Use Cases</h1>
-          <p className="page-header__subtitle">
-            See how families use HeirDock to bring clarity to what they own.
+      {/* Hero: four ways in, one per use case below */}
+      <section className="hero-brand hero-brand--plain">
+        <div className="hero-brand__panel">
+          <span className="eyebrow">Use cases</span>
+          <h1 className="hero-brand__title">
+            A clear record
+            <span className="hero-brand__accent">for the moments that matter.</span>
+          </h1>
+          <p className="hero-brand__subtitle">
+            Insurance claims, estate plans, the unexpected and the next move: four times a
+            household record makes all the difference.
           </p>
+          <div className="case-tiles">
+            <a href="#insurance" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="shield" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Insurance readiness</h2>
+                <p className="step-tile__text">Know you&apos;re covered before you need to be.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#estate" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--gold"><BrandGlyph name="people" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Estate planning</h2>
+                <p className="step-tile__text">Pass things on with the story intact.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#disaster" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--sage"><BrandGlyph name="house" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Disaster recovery</h2>
+                <p className="step-tile__text">Your record is safe, even when your home isn&apos;t.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#moving" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="box" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Moving and downsizing</h2>
+                <p className="step-tile__text">Decide what stays, what goes, and who it goes to.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -29,7 +71,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Insurance readiness</div>
+              <div className="eyebrow">Insurance readiness</div>
               <h3>Know you're covered before you need to be</h3>
               <p>
                 Most families can't produce a complete record of what they own when it's time to
@@ -44,7 +86,7 @@ export default function CustomerUseCases() {
                 which pieces are due for a fresh appraisal.
               </p>
             </div>
-            <div className="screen-stack screen-stack--insurance">
+            <div className="screen-stack screen-stack--insurance screen-stack--tint-sage">
               <img
                 className="screen-shot"
                 src={readinessUrl}
@@ -73,7 +115,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Estate planning</div>
+              <div className="eyebrow">Estate planning</div>
               <h3>Pass things on with the story intact</h3>
               <p>
                 Families often don't know the full scope of what a loved one owns, and the stories
@@ -88,7 +130,7 @@ export default function CustomerUseCases() {
                 Share a Beneficiary Assignment Report with your estate attorney to make planning simpler.
               </p>
             </div>
-            <div className="screen-stack screen-stack--estate">
+            <div className="screen-stack screen-stack--estate screen-stack--tint-gold">
               <img
                 className="screen-shot"
                 src={designationsUrl}
@@ -117,7 +159,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Disaster recovery</div>
+              <div className="eyebrow">Disaster recovery</div>
               <h3>Your record is safe, even when your home isn't</h3>
               <p>
                 After a fire, flood, or burglary, it's hard to remember everything you owned, let
@@ -131,7 +173,7 @@ export default function CustomerUseCases() {
                 download it as a PDF for your insurer.
               </p>
             </div>
-            <div className="screen-stack screen-stack--recovery">
+            <div className="screen-stack screen-stack--recovery screen-stack--tint-navy">
               <img
                 className="screen-shot"
                 src={claimUrl}
@@ -160,7 +202,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Moving and downsizing</div>
+              <div className="eyebrow">Moving and downsizing</div>
               <h3>Decide what stays, what goes, and who it goes to</h3>
               <p>
                 Downsizing means deciding what happens to a lifetime of belongings, often on a deadline
@@ -172,7 +214,7 @@ export default function CustomerUseCases() {
                 everyone can see the plan before moving day.
               </p>
             </div>
-            <div className="screen-stack screen-stack--moving">
+            <div className="screen-stack screen-stack--moving screen-stack--tint-sage">
               <div className="screen-phone">
                 <div className="screen-phone__screen">
                   <img
@@ -199,17 +241,25 @@ export default function CustomerUseCases() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="cta-band">
-        <div className="container">
-          <h2 className="cta-band__title">Start building your household record</h2>
-          <p className="cta-band__subtitle">
-            Whatever your reason, HeirDock gives you clarity and control.
-          </p>
-          <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--primary btn--lg">
-              Get in Touch <Icon name="arrowForward" />
-            </Link>
+      {/* Closing call to action */}
+      <section className="closing-cta">
+        <div className="brand-panel closing-cta__panel">
+          <div>
+            <h2 className="closing-cta__title">Start building your household record</h2>
+            <p className="closing-cta__text">
+              Whatever brings you here, HeirDock gives you clarity and control, at your own pace.
+            </p>
+            <div className="closing-cta__actions">
+              <Link to="/invite" className="btn btn--gold btn--lg">
+                Request Early Access <Icon name="arrowForward" />
+              </Link>
+              <Link to="/customer/pricing" className="btn btn--on-panel btn--lg">
+                View Pricing
+              </Link>
+            </div>
+          </div>
+          <div className="closing-cta__drawing">
+            <Drawing name="frontDoor" tone="navy" />
           </div>
         </div>
       </section>
