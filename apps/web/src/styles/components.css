@@ -1485,11 +1485,6 @@
   margin-bottom: var(--space-xs);
 }
 
-.app-tile--accent {
-  background: var(--color-accent-light);
-  color: var(--color-accent-active);
-}
-
 /* Identify from a photo */
 .app-suggest {
   display: flex;
@@ -1498,13 +1493,12 @@
 }
 
 .app-suggest__photo {
+  display: block;
   width: 148px;
+  height: auto;
   flex-shrink: 0;
+  object-fit: cover;
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
 }
 
 .app-suggest__fields {
@@ -1566,6 +1560,7 @@
   .app-suggest__photo {
     width: 100%;
     aspect-ratio: 16 / 9;
+    object-position: center 60%;
   }
 }
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import identifyPhotoUrl from "../../assets/images/features/identify-watch.webp";
 import valuationUrl from "../../assets/images/features/valuation.webp";
 import photosUrl from "../../assets/images/features/photos.webp";
 import documentsUrl from "../../assets/images/features/documents.webp";
@@ -16,8 +17,9 @@ import reportsUrl from "../../assets/images/features/reports.webp";
 import financialUrl from "../../assets/images/features/financial.webp";
 
 // Each feature sits beside real screens from the app, captured on a demo
-// household with made-up data. "Identify from a photo" keeps a drawn mockup
-// (.app-card, role="img" with one summary) until a Quick Add capture exists.
+// household with made-up data. "Identify from a photo" is a drawn card around
+// the demo watch photo (.app-card, role="img" with one summary) until a Quick
+// Add capture exists.
 export default function CustomerFeatures() {
   return (
     <>
@@ -48,22 +50,22 @@ export default function CustomerFeatures() {
                 Add several things at once with Quick Add, or take your time with Detailed Add.
               </p>
             </div>
-            <div className="app-card" role="img" aria-label="Example: a photo of a pocket watch with a suggested name, category and estimated value">
+            <div className="app-card" role="img" aria-label="Example: a photo of a gold pocket watch, with a suggested name, category and estimated value">
               <div className="app-suggest">
-                <div className="app-suggest__photo app-tile--accent"><Icon name="watch" /></div>
+                <img className="app-suggest__photo" src={identifyPhotoUrl} width={491} height={600} alt="" decoding="async" />
                 <div className="app-suggest__fields">
                   <div className="app-label">Suggested from your photo</div>
                   <div className="app-field">
                     <div className="app-field__label">Name</div>
-                    <div className="app-field__value">Waltham Pocket Watch, Gold-Filled</div>
+                    <div className="app-field__value">Gold Pocket Watch, circa 1890</div>
                   </div>
                   <div className="app-field">
                     <div className="app-field__label">Category</div>
-                    <div className="app-field__value">Jewelry &amp; Accessories</div>
+                    <div className="app-field__value">Watches</div>
                   </div>
                   <div className="app-field">
                     <div className="app-field__label">Estimated value</div>
-                    <div className="app-field__value">$900 - $1,400</div>
+                    <div className="app-field__value">$4,000 - $5,000</div>
                   </div>
                 </div>
               </div>
