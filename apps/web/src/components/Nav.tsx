@@ -37,7 +37,7 @@ export default function Nav() {
     <nav ref={navRef} className="site-nav">
       <div className="container">
         <Link to="/" className="site-nav__logo">
-          <img src={logoUrl} alt="HeirDock" width="164" height="38" />
+          <img src={logoUrl} alt="HeirDock" width="173" height="38" />
         </Link>
 
         <div className="site-nav__links">

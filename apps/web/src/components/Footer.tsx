@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <div className="site-footer__logo">
-              <img src={logoDarkUrl} alt="HeirDock" width="215" height="50" />
+              <img src={logoDarkUrl} alt="HeirDock" width="219" height="48" />
             </div>
             <p>
               HeirDock helps people bring clarity to what they own, creating a living
