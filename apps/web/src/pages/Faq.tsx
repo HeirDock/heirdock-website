@@ -10,7 +10,7 @@ const faqs: FaqItemData[] = [
   {
     question: "What is HeirDock?",
     answer:
-      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Using photos and natural language, it creates a living record of what you own.",
+      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Starting from a photo of each item, it creates a living record of what you own.",
   },
   {
     question: "Is there a mobile app?",
@@ -35,7 +35,7 @@ const faqs: FaqItemData[] = [
   {
     question: "Can I share my records with family members?",
     answer:
-      "Yes. You can invite Trusted Participants and choose what each person can do - Viewers can see what you share, Contributors can help catalog, and Full Access lets someone manage alongside you. You can also name a Steward to look after your household record if you're no longer able to.",
+      "Yes. You can invite Trusted Participants and choose what each person can do. Give someone Shared Access to the collections you pick - as a Viewer, a Contributor who helps catalog, or with Full Access to that collection - or make a trusted person a Manager who helps run the household with you. You can also name a Steward to look after your household record if you're no longer able to.",
   },
   {
     question: "Can professionals access my records?",
@@ -45,7 +45,7 @@ const faqs: FaqItemData[] = [
   {
     question: "Can I upgrade or downgrade my plan at any time?",
     answer:
-      "Yes. Upgrades take effect right away, and we prorate the difference. A downgrade takes effect at the end of your current billing period, as long as your household fits within the new plan's item limit.",
+      "Yes. Upgrades take effect right away, and we prorate the difference. A downgrade takes effect at the end of your current billing period, as long as your household fits within the new plan's limits for properties, collections, and items.",
   },
   {
     question: "What happens when my free trial ends?",

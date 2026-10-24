@@ -33,8 +33,8 @@ export default function CustomerLanding() {
               <div className="feature-card__icon"><Icon name="photoCamera" /></div>
               <div className="feature-card__title">Capture with ease</div>
               <p className="feature-card__description">
-                Take a photo or describe an item. HeirDock handles the rest - identifying, categorizing,
-                and organizing your belongings automatically.
+                Take a photo of an item. HeirDock handles the rest - suggesting a name, category,
+                and estimated value for you to confirm.
               </p>
             </div>
             <div className="feature-card">
@@ -49,8 +49,8 @@ export default function CustomerLanding() {
               <div className="feature-card__icon"><Icon name="group" /></div>
               <div className="feature-card__title">Share with family</div>
               <p className="feature-card__description">
-                Invite Trusted Participants and choose what each person can do. Viewers can see,
-                Contributors can help catalog, and Full Access can manage.
+                Invite Trusted Participants and share just the collections you choose - to view,
+                to help catalog, or with Full Access. A Manager can help run it all.
               </p>
             </div>
             <div className="feature-card">
@@ -84,7 +84,7 @@ export default function CustomerLanding() {
               <div className="step-card__number">2</div>
               <div className="step-card__title">Catalog items</div>
               <p className="step-card__description">
-                Photograph or describe items. HeirDock helps identify them and estimate value.
+                Photograph your items. HeirDock helps identify them and estimate value.
                 No rush: five items today, five more next weekend.
               </p>
             </div>

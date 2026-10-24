@@ -124,7 +124,7 @@ export default function CustomerFeatures() {
                 records.
               </p>
               <p>
-                Multiple photos per item, version history, and organized storage make it easy
+                Multiple photos per item, documents kept with the item they belong to, and organized storage make it easy
                 to document everything thoroughly.
               </p>
             </div>
@@ -201,31 +201,32 @@ export default function CustomerFeatures() {
             <div className="feature-section__content">
               <h3>Family Sharing</h3>
               <p>
-                Invite Trusted Participants and choose what each person can do. Viewers can see
-                what you share with them. Contributors can help catalog and organize. Full Access
-                lets someone manage the household alongside you.
+                Invite Trusted Participants and choose what each person can do. A Manager helps
+                run the household alongside you. Everyone else gets Shared Access to just the
+                collections you choose - as a Viewer, a Contributor who helps catalog, or with
+                Full Access to that collection.
               </p>
               <p>
                 Everyone sees only what they need to - with clear controls over sharing
                 and permissions.
               </p>
             </div>
-            <div className="app-card" role="img" aria-label="Example: three Trusted Participants with Full Access, Contributor and Viewer access">
+            <div className="app-card" role="img" aria-label="Example: three Trusted Participants - a Manager, and two people with Shared Access to one collection each">
               <div className="app-label app-label--split"><span>Trusted Participants</span><span className="app-link">Invite</span></div>
               <div className="app-rows">
                 <div className="app-person">
                   <div className="app-avatar app-avatar--accent">EW</div>
                   <div className="app-person__name"><div className="app-strong">Emma Whitfield</div><div className="app-card__subtitle">Daughter</div></div>
-                  <div className="app-strong">Full Access</div>
+                  <div className="app-strong">Manager</div>
                 </div>
                 <div className="app-person">
                   <div className="app-avatar app-avatar--primary">JW</div>
-                  <div className="app-person__name"><div className="app-strong">Jack Whitfield</div><div className="app-card__subtitle">Son</div></div>
+                  <div className="app-person__name"><div className="app-strong">Jack Whitfield</div><div className="app-card__subtitle">Son · Photos &amp; Heirlooms</div></div>
                   <div className="app-strong">Contributor</div>
                 </div>
                 <div className="app-person">
                   <div className="app-avatar app-avatar--secondary">RA</div>
-                  <div className="app-person__name"><div className="app-strong">Ruth Alvarez</div><div className="app-card__subtitle">Sister · Jewelry collection only</div></div>
+                  <div className="app-person__name"><div className="app-strong">Ruth Alvarez</div><div className="app-card__subtitle">Sister · Jewelry</div></div>
                   <div className="app-strong">Viewer</div>
                 </div>
               </div>
@@ -251,13 +252,13 @@ export default function CustomerFeatures() {
               </p>
             </div>
             <div className="app-card" role="img" aria-label="Example: a will, a deed and an insurance policy stored in the Vault">
-              <div className="app-label app-label--split"><span>Vault</span><span className="app-muted">Shared with Emma (Full Access)</span></div>
+              <div className="app-label app-label--split"><span>Vault</span><span className="app-muted">Shared one document at a time</span></div>
               <div className="app-rows">
                 <div className="app-doc"><span className="app-doc__icon"><Icon name="lock" /></span><span className="app-strong">Last will and testament</span><span className="app-muted">PDF</span></div>
                 <div className="app-doc"><span className="app-doc__icon"><Icon name="lock" /></span><span className="app-strong">Deed - Lake House</span><span className="app-muted">PDF</span></div>
                 <div className="app-doc"><span className="app-doc__icon"><Icon name="lock" /></span><span className="app-strong">Homeowners policy 2026</span><span className="app-muted">PDF</span></div>
               </div>
-              <div className="app-note">You confirm it's you each time the Vault opens.</div>
+              <div className="app-note">Optionally, confirm it's you before a document opens.</div>
             </div>
           </div>
         </div>
@@ -350,11 +351,11 @@ export default function CustomerFeatures() {
                   <div className="app-muted">PDF · CSV</div>
                 </div>
                 <div className="app-report">
-                  <div><div className="app-card__title">Beneficiary Assignment Report</div><div className="app-card__subtitle">Every assignment, designation and Distribution Plan</div></div>
+                  <div><div className="app-card__title">Beneficiary Assignment Report</div><div className="app-card__subtitle">Who each item is meant for, and every designation</div></div>
                   <div className="app-muted">PDF</div>
                 </div>
                 <div className="app-report">
-                  <div><div className="app-card__title">Financial Analysis</div><div className="app-card__subtitle">Estimated value with a likely range, by person, collection, property and category</div></div>
+                  <div><div className="app-card__title">Financial Analysis</div><div className="app-card__subtitle">Estimated value with a plausible range, by person, collection, property and category</div></div>
                   <div className="app-muted">PDF</div>
                 </div>
               </div>

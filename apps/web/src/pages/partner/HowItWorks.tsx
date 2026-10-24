@@ -28,7 +28,7 @@ export default function PartnerHowItWorks() {
               <div className="step-card__number">2</div>
               <div className="step-card__title">Get verified</div>
               <p className="step-card__description">
-                Verify your professional credentials to unlock full Partner Portal access.
+                HeirDock reviews and verifies every firm before the Partner Portal opens.
               </p>
             </div>
             <div className="step-card">

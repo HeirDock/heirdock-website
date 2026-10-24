@@ -1424,15 +1424,125 @@
   margin-bottom: var(--space-lg);
 }
 
-.feature-section__image {
-  background: var(--color-primary-light);
-  border-radius: var(--radius-md);
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
+/* Copy beside real app screens: the screens get the wider column. */
+.feature-section--media {
+  grid-template-columns: 5fr 7fr;
+}
+
+.feature-section__eyebrow {
+  margin-bottom: var(--space-sm);
   font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+/* ========================================
+   App screens (.screen-stack)
+   Real screenshots: one main screen with a smaller card overlapping it.
+   Offsets are percentages of the stack's width, so the overlap holds at
+   every size.
+   ======================================== */
+
+.screen-stack {
+  position: relative;
+}
+
+.screen-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.screen-stack__float {
+  position: relative;
+  z-index: 1;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg), var(--shadow-md);
+}
+
+/* Insurance: the Covered card sits under the readiness legend, to the right. */
+.screen-stack--insurance .screen-stack__float {
+  width: 48%;
+  margin: -2% 4% 0 auto;
+}
+
+/* Estate: the Intentions card covers the empty foot of the Care Steward card. */
+.screen-stack--estate > .screen-shot:first-child {
+  width: 81%;
+}
+
+.screen-stack--estate .screen-stack__float {
+  width: 62%;
+  margin: -9.5% 0 0 auto;
+}
+
+/* Recovery: the Documents card covers the claim's blank fields. */
+.screen-stack--recovery > .screen-shot:first-child {
+  width: 88%;
+}
+
+.screen-stack--recovery .screen-stack__float {
+  width: 47%;
+  margin: -8% 0 0 auto;
+}
+
+/* Moving: a phone beside the intention picker. */
+.screen-stack--moving {
+  display: flex;
+  align-items: flex-start;
+}
+
+.screen-stack--moving .screen-stack__float {
+  width: 57%;
+  margin: 6% 0 0 -3%;
+}
+
+.screen-phone {
+  flex: 0 0 40%;
+  padding: 4%;
+  background: var(--device-frame);
+  border-radius: 36px;
+  box-shadow: var(--shadow-lg);
+}
+
+.screen-phone__screen {
+  aspect-ratio: 230 / 464;
+  overflow: hidden;
+  background: var(--color-bg);
+  border-radius: 26px;
+}
+
+.screen-phone__screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* On phones the stack is narrow: larger overlapping cards stay legible. */
+@media (max-width: 767px) {
+  .screen-stack--insurance .screen-stack__float {
+    width: 64%;
+    margin-right: 0;
+  }
+
+  .screen-stack--estate > .screen-shot:first-child,
+  .screen-stack--recovery > .screen-shot:first-child {
+    width: 92%;
+  }
+
+  .screen-stack--estate .screen-stack__float,
+  .screen-stack--recovery .screen-stack__float {
+    width: 72%;
+  }
+
+  /* Wider here, so it overlaps less and leaves "Add another beneficiary" clear. */
+  .screen-stack--estate .screen-stack__float {
+    margin-top: -4%;
+  }
 }
 
 @media (max-width: 767px) {

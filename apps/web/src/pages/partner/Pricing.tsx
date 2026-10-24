@@ -9,7 +9,7 @@ export default function PartnerPricing() {
           <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Partner Pricing</h1>
           <p className="page-header__subtitle">
-            HeirDock is free for professionals. The clients you invite can receive member pricing.
+            HeirDock is free for professionals. The clients you work with can receive member pricing.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function PartnerPricing() {
               <div className="feature-card__icon"><Icon name="handshake" /></div>
               <div className="feature-card__title">Member pricing for your clients</div>
               <p className="feature-card__description">
-                Clients you invite can receive a member price on their HeirDock plan, which we
+                Clients connected to your practice can receive a member price on their HeirDock plan, which we
                 arrange with you for your practice. It can be as low as free.
               </p>
             </div>

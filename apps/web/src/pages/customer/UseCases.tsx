@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import readinessUrl from "../../assets/images/use-cases/uc1-readiness.webp";
+import coveredUrl from "../../assets/images/use-cases/uc1-covered.webp";
+import designationsUrl from "../../assets/images/use-cases/uc2-designations.webp";
+import intentionsUrl from "../../assets/images/use-cases/uc2-intentions.webp";
+import claimUrl from "../../assets/images/use-cases/uc3-claim.webp";
+import documentsUrl from "../../assets/images/use-cases/uc3-documents.webp";
+import roomUrl from "../../assets/images/use-cases/uc4-room-mobile.webp";
+import intentionPickerUrl from "../../assets/images/use-cases/uc4-intention-picker.webp";
 
+// Each use case sits beside real screens from the app, captured on a demo
+// household with made-up data. Images are 2x their displayed size; width and
+// height are the files' own, so the browser reserves the right space.
 export default function CustomerUseCases() {
   return (
     <>
@@ -17,25 +28,43 @@ export default function CustomerUseCases() {
       {/* Insurance Readiness */}
       <section className="section section--white" id="insurance">
         <div className="container">
-          <div className="feature-section">
+          <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <h3>Insurance Readiness</h3>
+              <div className="feature-section__eyebrow">Insurance readiness</div>
+              <h3>Know you're covered before you need to be</h3>
               <p>
-                <strong>The problem:</strong> Most families can't produce a complete asset record when filing
-                an insurance claim. After a fire, flood, or theft, they're left trying to reconstruct
-                what was lost from memory.
+                Most families can't produce a complete record of what they own when it's time to
+                file a claim. After a fire, flood, or theft, they're left reconstructing it from memory.
               </p>
               <p>
-                <strong>How HeirDock helps:</strong> Build a documented asset record with photos, serial numbers,
-                valuations, and receipts. Link insurance policies to items. Get Coverage Insights that identify
-                gaps before you need to file a claim.
+                Coverage Insights shows how much of your household is claim-ready: on a policy, with a
+                current value, and with the photos and receipts to prove it.
               </p>
               <p>
-                When something does happen, your photos, attachments, and organized records
-                make the claims process dramatically faster and more complete.
+                Each gap comes with a clear next step, like which jewelry to schedule on your policy or
+                which pieces are due for a fresh appraisal.
               </p>
             </div>
-            <div className="feature-section__image">Insurance Preview</div>
+            <div className="screen-stack screen-stack--insurance">
+              <img
+                className="screen-shot"
+                src={readinessUrl}
+                width={1300}
+                height={392}
+                loading="lazy"
+                decoding="async"
+                alt="Coverage Insights in the app: 60% claim-ready, with the value that is ready, needs attention, or is not on a policy"
+              />
+              <img
+                className="screen-shot screen-stack__float"
+                src={coveredUrl}
+                width={700}
+                height={622}
+                loading="lazy"
+                decoding="async"
+                alt="The Covered card: 94% on a policy, listing jewelry that exceeds the unscheduled limit and items not on any policy"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -43,24 +72,43 @@ export default function CustomerUseCases() {
       {/* Estate Planning */}
       <section className="section" id="estate">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
+          <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <h3>Estate Planning</h3>
+              <div className="feature-section__eyebrow">Estate planning</div>
+              <h3>Pass things on with the story intact</h3>
               <p>
-                <strong>The problem:</strong> Families often don't know the full scope of what a loved
-                one owns until it's too late. Estate settlements stall because there's no organized record
-                of personal property.
+                Families often don't know the full scope of what a loved one owns, and the stories
+                behind the most meaningful pieces are easily lost.
               </p>
               <p>
-                <strong>How HeirDock helps:</strong> Create a living record that captures not just what you own,
-                but who it should go to and why. Name a Steward and beneficiaries, add the story behind
-                each item, and know your Steward will have what they need when the time comes.
+                Name a Steward and an Alternate to look after the household, a Care Steward for when
+                you need a hand, and beneficiaries - a person, a group, or a trust. For any item,
+                record your intention, who it's meant for, and why, in your own words.
               </p>
               <p>
-                Share structured exports with estate attorneys to simplify the planning process.
+                Share a Beneficiary Assignment Report with your estate attorney to make planning simpler.
               </p>
             </div>
-            <div className="feature-section__image">Estate Preview</div>
+            <div className="screen-stack screen-stack--estate">
+              <img
+                className="screen-shot"
+                src={designationsUrl}
+                width={1240}
+                height={1032}
+                loading="lazy"
+                decoding="async"
+                alt="Household Designations in the app: a Steward, an Alternate Steward, a Care Steward, and beneficiaries including a family trust"
+              />
+              <img
+                className="screen-shot screen-stack__float"
+                src={intentionsUrl}
+                width={900}
+                height={296}
+                loading="lazy"
+                decoding="async"
+                alt="An item's intention: Gift, intended for a family member, with a personal note"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -68,24 +116,42 @@ export default function CustomerUseCases() {
       {/* Disaster Recovery */}
       <section className="section section--white" id="disaster">
         <div className="container">
-          <div className="feature-section">
+          <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <h3>Disaster Recovery</h3>
+              <div className="feature-section__eyebrow">Disaster recovery</div>
+              <h3>Your record is safe, even when your home isn't</h3>
               <p>
-                <strong>The problem:</strong> Natural disasters, fires, and floods can destroy a
-                household's physical possessions in minutes. Without documentation, families struggle
-                to account for what was lost.
+                After a fire, flood, or burglary, it's hard to remember everything you owned, let
+                alone prove it.
               </p>
               <p>
-                <strong>How HeirDock helps:</strong> Your household record lives securely in the cloud,
-                independent of your physical home. Photos, valuations, serial numbers, and insurance
-                information are all preserved and accessible from any device.
+                Your photos, values, appraisals and receipts are stored in HeirDock, not in the house.
               </p>
               <p>
-                Recovery starts with knowing what you had. HeirDock gives you that foundation.
+                Start a claim from your policy, describe what happened, attach the affected items, and
+                download it as a PDF for your insurer.
               </p>
             </div>
-            <div className="feature-section__image">Recovery Preview</div>
+            <div className="screen-stack screen-stack--recovery">
+              <img
+                className="screen-shot"
+                src={claimUrl}
+                width={1240}
+                height={765}
+                loading="lazy"
+                decoding="async"
+                alt="A claim in the app: Basement flood - washer supply line, with cause of loss, narrative and date of loss"
+              />
+              <img
+                className="screen-shot screen-stack__float"
+                src={documentsUrl}
+                width={728}
+                height={362}
+                loading="lazy"
+                decoding="async"
+                alt="An item's documents: an appraisal report and a service receipt"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -93,25 +159,43 @@ export default function CustomerUseCases() {
       {/* Moving & Downsizing */}
       <section className="section" id="moving">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
+          <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <h3>Moving &amp; Downsizing</h3>
+              <div className="feature-section__eyebrow">Moving and downsizing</div>
+              <h3>Decide what stays, what goes, and who it goes to</h3>
               <p>
-                <strong>The problem:</strong> Relocating or downsizing means making decisions about
-                hundreds of items. Without a clear picture of what you have and what it's worth,
-                the process becomes overwhelming.
+                Downsizing means deciding what happens to a lifetime of belongings, often on a deadline
+                and with the whole family weighing in.
               </p>
               <p>
-                <strong>How HeirDock helps:</strong> See everything you own in one organized view.
-                Use valuations to decide what to keep, sell, donate, or pass on. Assign items to
-                family members and track decisions clearly.
-              </p>
-              <p>
-                Whether you're moving across the country or simplifying your home, HeirDock brings
-                order to the process.
+                Go room by room and set an intention for each item: Keep, Sell, Gift, Donate, or
+                Undecided for now. Note who a gift is for, and share the collection with family so
+                everyone can see the plan before moving day.
               </p>
             </div>
-            <div className="feature-section__image">Moving Preview</div>
+            <div className="screen-stack screen-stack--moving">
+              <div className="screen-phone">
+                <div className="screen-phone__screen">
+                  <img
+                    src={roomUrl}
+                    width={540}
+                    height={1062}
+                    loading="lazy"
+                    decoding="async"
+                    alt="The Living Room on a phone: eight items with photos, categories and values"
+                  />
+                </div>
+              </div>
+              <img
+                className="screen-shot screen-stack__float"
+                src={intentionPickerUrl}
+                width={888}
+                height={1064}
+                loading="lazy"
+                decoding="async"
+                alt="Change intention: Keep, Sell, Gift, Donate or Undecided, each with a short description"
+              />
+            </div>
           </div>
         </div>
       </section>
