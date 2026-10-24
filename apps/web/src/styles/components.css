@@ -121,7 +121,7 @@
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
   gap: var(--space-3xl);
   margin-bottom: var(--space-3xl);
 }
@@ -139,6 +139,7 @@
 
 .site-footer__logo img {
   width: auto;
+  height: 76px; /* the file is 100px tall with padding; 76px is three-quarters size */
 }
 
 .site-footer__social {
@@ -190,6 +191,17 @@
   text-align: center;
   color: var(--footer-text-secondary);
   font-size: var(--text-sm);
+}
+
+/* Tablets: the brand takes its own row above the three link columns. */
+@media (max-width: 1023px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 767px) {
