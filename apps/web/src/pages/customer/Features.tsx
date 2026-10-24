@@ -469,11 +469,10 @@ export default function CustomerFeatures() {
             <div className="feature-matrix__group">
               <h3 className="feature-matrix__title">Support</h3>
               <ul className="feature-matrix__list">
-                <li>Help and support inside the app</li>
-                <li>A reply from our team within 1–2 business days</li>
+                <li>A Support Center inside the app</li>
+                <li>24/7 email support</li>
+                <li>Phone support</li>
                 <li>The same support on every plan</li>
-                <li>Answers to common questions in the FAQ</li>
-                <li>Service updates on our status page</li>
               </ul>
             </div>
           </div>
