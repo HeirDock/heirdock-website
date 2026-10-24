@@ -7,9 +7,9 @@ import Icon from "../components/Icon";
 export default function Home() {
   return (
     <>
-      {/* Hero: a deep navy panel; the loop rises out of it, framed by the gold arc. */}
+      {/* Hero: a light panel; the loop sits inside it, under the gold arc. */}
       <section className="hero-brand">
-        <div className="brand-panel hero-brand__panel">
+        <div className="hero-brand__panel">
           <h1 className="hero-brand__title">
             Know what you own.
             <span className="hero-brand__accent">Protect what matters.</span>
@@ -22,14 +22,14 @@ export default function Home() {
             <Link to="/invite" className="btn btn--gold btn--lg">
               Request Early Access <Icon name="arrowForward" />
             </Link>
-            <a href="https://app.heirdock.com/login" className="btn btn--on-panel btn--lg">
+            <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
               Sign In
             </a>
           </div>
           <div className="hero-brand__note">
             <span>On iPhone, Android and the web</span>
             <a href="#film" className="hero-brand__film">
-              <Icon name="playCircle" /> Watch the 30-second film
+              <Icon name="playCircle" /> Watch more
             </a>
           </div>
           <div className="hero-brand__media">
@@ -160,10 +160,9 @@ export default function Home() {
           HeroVideo). */}
       <section className="section" id="film">
         <div className="container">
-          <span className="eyebrow text-center">The film</span>
           <h2 className="section__title">See HeirDock in 30 seconds</h2>
           <p className="section__subtitle">
-            A short film about the things we keep, and the stories that make them matter.
+            The things we keep, and the stories that make them matter.
           </p>
           <div className="film">
             <video
