@@ -119,7 +119,7 @@ export default function CustomerPricing() {
               Start with the 30-day free trial on any plan. Upgrade, downgrade, or cancel at any time.
             </p>
             <p className="mt-md">
-              <Link to="/customer/features">See everything every plan includes</Link>
+              <Link to="/customer/features#all-features">See everything every plan includes</Link>
             </p>
           </div>
         </div>

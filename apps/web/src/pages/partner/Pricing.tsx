@@ -6,7 +6,6 @@ export default function PartnerPricing() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Partner Pricing</h1>
           <p className="page-header__subtitle">
             HeirDock is free for professionals. The clients you work with can receive member pricing.
