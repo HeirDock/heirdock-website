@@ -1846,8 +1846,8 @@
 }
 
 /* ---------- Section pattern: a tint block behind each set of screens ----------
-   A rounded block in navy, sage or gold tint sits behind the screenshots,
-   with a small gold arc as the signature. On reversed rows it mirrors. */
+   A rounded block in navy, sage or gold tint sits behind the screenshots.
+   On reversed rows it mirrors. */
 .screen-stack--tint-navy { --stack-tint: var(--color-primary-light); }
 .screen-stack--tint-sage { --stack-tint: var(--color-secondary-light); }
 .screen-stack--tint-gold { --stack-tint: var(--color-accent-light); }
@@ -1869,32 +1869,10 @@
   border-radius: calc(var(--radius-lg) * 2);
 }
 
-.screen-stack--tint-navy::after,
-.screen-stack--tint-sage::after,
-.screen-stack--tint-gold::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -10%;
-  right: 3%;
-  width: 120px;
-  height: 60px;
-  border: 3px solid var(--color-accent);
-  border-bottom: 0;
-  border-radius: 120px 120px 0 0;
-}
-
 .feature-section--reverse .screen-stack--tint-navy::before,
 .feature-section--reverse .screen-stack--tint-sage::before,
 .feature-section--reverse .screen-stack--tint-gold::before {
   inset: -7% -7% -7% 14%;
-}
-
-.feature-section--reverse .screen-stack--tint-navy::after,
-.feature-section--reverse .screen-stack--tint-sage::after,
-.feature-section--reverse .screen-stack--tint-gold::after {
-  right: auto;
-  left: 3%;
 }
 
 @media (max-width: 767px) {
@@ -1905,13 +1883,6 @@
   .feature-section--reverse .screen-stack--tint-sage::before,
   .feature-section--reverse .screen-stack--tint-gold::before {
     inset: -3% 4% -3% -3%;
-  }
-
-  .screen-stack--tint-navy::after,
-  .screen-stack--tint-sage::after,
-  .screen-stack--tint-gold::after {
-    width: 80px;
-    height: 40px;
   }
 
   .cta-band {
