@@ -12,9 +12,9 @@ resource "aws_cloudfront_function" "url_routing" {
         '/about': '/',
         '/customer': '/',
         '/customer/how-it-works': '/#how-it-works',
-        '/partner/how-it-works': '/partner#how-it-works',
-        '/partner/use-cases': '/partner/features#practice',
-        '/partner/why-partner': '/partner',
+        '/partner/how-it-works': '/professional#how-it-works',
+        '/partner/use-cases': '/professional/features#practice',
+        '/partner/why-partner': '/professional',
         '/help': '/faq',
         '/status': 'https://status.heirdock.com'
       };
@@ -24,6 +24,15 @@ resource "aws_cloudfront_function" "url_routing" {
           statusCode: 301,
           statusDescription: 'Moved Permanently',
           headers: { location: { value: retired[path] } }
+        };
+      }
+
+      // The For Professionals section moved from /partner to /professional.
+      if (path === '/partner' || path.indexOf('/partner/') === 0) {
+        return {
+          statusCode: 301,
+          statusDescription: 'Moved Permanently',
+          headers: { location: { value: '/professional' + path.slice(8) } }
         };
       }
 

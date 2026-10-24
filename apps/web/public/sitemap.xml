@@ -36,22 +36,22 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/partner</loc>
+    <loc>https://heirdock.com/professional</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/partner/features</loc>
+    <loc>https://heirdock.com/professional/features</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/partner/pricing</loc>
+    <loc>https://heirdock.com/professional/pricing</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://heirdock.com/partner/demo</loc>
+    <loc>https://heirdock.com/professional/demo</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>

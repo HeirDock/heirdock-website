@@ -23,7 +23,7 @@ export default function PartnerLanding() {
             so you can deliver better service with complete information.
           </p>
           <div className="hero-brand__actions">
-            <Link to="/partner/demo" className="btn btn--gold btn--lg">
+            <Link to="/professional/demo" className="btn btn--gold btn--lg">
               Request a Demo <Icon name="arrowForward" />
             </Link>
             <a href="#how-it-works" className="btn btn--outline btn--lg">
@@ -142,7 +142,7 @@ export default function PartnerLanding() {
             </li>
           </ol>
           <div className="text-center mt-2xl">
-            <Link to="/partner/features" className="btn btn--outline">
+            <Link to="/professional/features" className="btn btn--outline">
               See all partner features <Icon name="arrowForward" />
             </Link>
           </div>
@@ -161,7 +161,7 @@ export default function PartnerLanding() {
                 item detail, for everything or one collection, for as long as they choose. They
                 can preview your view, and every access is logged.
               </p>
-              <Link to="/partner/features" className="story-band__link">
+              <Link to="/professional/features" className="story-band__link">
                 See partner features <Icon name="arrowForward" />
               </Link>
             </div>
@@ -189,10 +189,10 @@ export default function PartnerLanding() {
               Schedule a demo to explore the Partner Portal and learn how it fits your practice.
             </p>
             <div className="closing-cta__actions">
-              <Link to="/partner/demo" className="btn btn--gold btn--lg">
+              <Link to="/professional/demo" className="btn btn--gold btn--lg">
                 Request a Demo <Icon name="arrowForward" />
               </Link>
-              <Link to="/partner/pricing" className="btn btn--on-panel btn--lg">
+              <Link to="/professional/pricing" className="btn btn--on-panel btn--lg">
                 View Pricing
               </Link>
             </div>

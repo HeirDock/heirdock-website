@@ -50,7 +50,7 @@ export default function PartnerPricing() {
           <p className="text-muted mt-md mb-xl">
             Every practice is different. Let's talk about what works for your clients.
           </p>
-          <Link to="/partner/demo" className="btn btn--primary">
+          <Link to="/professional/demo" className="btn btn--primary">
             Schedule a Conversation <Icon name="arrowForward" />
           </Link>
         </div>

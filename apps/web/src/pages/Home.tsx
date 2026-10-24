@@ -217,7 +217,7 @@ export default function Home() {
             Help your clients document household assets with structured, accessible records,
             shared on their terms.
           </p>
-          <Link to="/partner" className="btn btn--outline">
+          <Link to="/professional" className="btn btn--outline">
             Partner With Us <Icon name="arrowForward" />
           </Link>
         </div>
