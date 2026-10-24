@@ -169,11 +169,14 @@ export default function PartnerFeatures() {
         <div className="container">
           <h2 className="cta-band__title">See these features in action</h2>
           <p className="cta-band__subtitle">
-            Schedule a personalized demo for your practice.
+            Request access for your practice, or schedule a personalized demo.
           </p>
           <div className="cta-band__actions">
-            <Link to="/professional/demo" className="btn btn--gold btn--lg">
-              Request a Demo <Icon name="arrowForward" />
+            <Link to="/professional/request-access" className="btn btn--gold btn--lg">
+              Request Access <Icon name="arrowForward" />
+            </Link>
+            <Link to="/professional/demo" className="btn btn--on-panel btn--lg">
+              Request a Demo
             </Link>
           </div>
         </div>

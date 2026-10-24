@@ -8,7 +8,7 @@ export default function PartnerPricing() {
         <div className="container">
           <h1 className="page-header__title">Partner Pricing</h1>
           <p className="page-header__subtitle">
-            HeirDock is free for professionals. The clients you work with can receive member pricing.
+            The clients you work with can receive member pricing on their HeirDock plan.
           </p>
         </div>
       </section>
@@ -17,11 +17,11 @@ export default function PartnerPricing() {
         <div className="container">
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="payments" /></div>
-              <div className="feature-card__title">No cost to your practice</div>
+              <div className="feature-card__icon"><Icon name="verifiedUser" /></div>
+              <div className="feature-card__title">Every practice reviewed</div>
               <p className="feature-card__description">
-                Professionals use HeirDock free. There are no seats to buy and no
-                per-client fees.
+                We review each practice before it connects with clients, so households know
+                who they&apos;re sharing with.
               </p>
             </div>
             <div className="feature-card">
@@ -29,7 +29,7 @@ export default function PartnerPricing() {
               <div className="feature-card__title">Member pricing for your clients</div>
               <p className="feature-card__description">
                 Clients connected to your practice can receive a member price on their HeirDock plan, which we
-                arrange with you for your practice. It can be as low as free.
+                arrange with you for your practice.
               </p>
             </div>
             <div className="feature-card">
@@ -50,9 +50,14 @@ export default function PartnerPricing() {
           <p className="text-muted mt-md mb-xl">
             Every practice is different. Let's talk about what works for your clients.
           </p>
-          <Link to="/professional/demo" className="btn btn--primary">
-            Schedule a Conversation <Icon name="arrowForward" />
-          </Link>
+          <div className="cta-band__actions">
+            <Link to="/professional/request-access" className="btn btn--primary">
+              Request Access <Icon name="arrowForward" />
+            </Link>
+            <Link to="/professional/demo" className="btn btn--outline">
+              Schedule a Conversation
+            </Link>
+          </div>
         </div>
       </section>
     </>

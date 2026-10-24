@@ -9,7 +9,7 @@ interface FormState {
 }
 
 interface SubmitData {
-  formType: "contact" | "demo" | "invite";
+  formType: "contact" | "demo" | "invite" | "access";
   name: string;
   email: string;
   message: string;

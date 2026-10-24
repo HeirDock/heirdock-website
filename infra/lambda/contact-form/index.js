@@ -63,6 +63,9 @@ exports.handler = async (event) => {
     const formType = body.formType || "contact";
     const isDemo = formType === "demo";
     const isInvite = formType === "invite";
+    // A practice asking for Partner Portal access: the demo form's fields, with an optional message.
+    const isAccess = formType === "access";
+    const isPractice = isDemo || isAccess;
 
     // Input validation
     const name = stripHtml(body.name || "");
@@ -76,7 +79,7 @@ exports.handler = async (event) => {
     if (!email || !isValidEmail(email)) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: "Valid email is required" }) };
     }
-    if (isInvite) {
+    if (isInvite || isAccess) {
       if (message.length > 2000) {
         return { statusCode: 400, headers, body: JSON.stringify({ error: "Message is too long (max 2000 characters)" }) };
       }
@@ -88,10 +91,10 @@ exports.handler = async (event) => {
     }
 
     // Demo form additional fields
-    const company = isDemo ? stripHtml(body.company || "") : "";
-    const role = isDemo ? stripHtml(body.role || "") : "";
-    const clientCount = isDemo ? stripHtml(body.clientCount || "") : "";
-    const inquiryType = !isDemo ? stripHtml(body.inquiryType || "General") : "";
+    const company = isPractice ? stripHtml(body.company || "") : "";
+    const role = isPractice ? stripHtml(body.role || "") : "";
+    const clientCount = isPractice ? stripHtml(body.clientCount || "") : "";
+    const inquiryType = !isPractice ? stripHtml(body.inquiryType || "General") : "";
 
     // Verify reCAPTCHA (bypass only allowed in staging via env var)
     let recaptchaResult = { success: true, score: 1.0, action: "staging-bypass" };
@@ -126,6 +129,25 @@ exports.handler = async (event) => {
         </p>
       `;
       textBody = `Invite Request\nName: ${name}\nEmail: ${email}\nInterest:\n${message || "(none)"}`;
+    } else if (isAccess) {
+      if (!company || company.length > 200 || !role) {
+        return { statusCode: 400, headers, body: JSON.stringify({ error: "Practice name and type are required" }) };
+      }
+      subject = `HeirDock Professional Access Request: ${name} (${company})`;
+      htmlBody = `
+        <h2>New Professional Access Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Practice:</strong> ${company}</p>
+        <p><strong>Type of practice:</strong> ${role}</p>
+        <p><strong>Client households:</strong> ${clientCount || "N/A"}</p>
+        ${message ? `<p><strong>Message:</strong></p><p>${message.replace(/\n/g, "<br>")}</p>` : "<p><em>No message.</em></p>"}
+        <hr>
+        <p style="color: #999; font-size: 12px;">
+          reCAPTCHA score: ${recaptchaResult.score} | Sent from heirdock.com professional access form
+        </p>
+      `;
+      textBody = `Professional Access Request\nName: ${name}\nEmail: ${email}\nPractice: ${company}\nType: ${role}\nClients: ${clientCount}\nMessage:\n${message || "(none)"}`;
     } else if (isDemo) {
       subject = `HeirDock Demo Request: ${name} (${company || "N/A"})`;
       htmlBody = `

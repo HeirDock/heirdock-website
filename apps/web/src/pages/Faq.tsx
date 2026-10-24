@@ -1,114 +1,280 @@
-import { useState, useId } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import BrandGlyph from "../components/BrandGlyph";
+import Drawing from "../components/Drawing";
 import Icon from "../components/Icon";
+import markUrl from "../assets/images/heirdock-mark-small-color.svg";
+import { faqAudiences, type FaqItem, type FaqTopic } from "./faqContent";
 
-interface FaqItemData {
-  question: string;
-  answer: string;
+// Questions by audience (About HeirDock, households, professionals), each
+// audience split into topics. The topic list beside the questions follows the
+// reader down the page; on phones it becomes a "Jump to a topic" picker.
+// Search filters the questions as you type. All answers are in the HTML, so
+// they're indexed and readable without JavaScript.
+
+const TINTS = ["navy", "gold", "sage"] as const;
+
+const AUDIENCE_TILES = [
+  { id: "about", text: "What HeirDock is, the company behind it, and how to get help.", tint: "navy" },
+  { id: "households", text: "Getting started, value, family, estate plans, insurance, plans and privacy.", tint: "gold" },
+  { id: "professionals", text: "How it works for your practice, client consent, inviting clients and security.", tint: "sage" },
+] as const;
+
+function normalize(text: string) {
+  return text.toLowerCase().replace(/\s+/g, " ").trim();
 }
 
-const faqs: FaqItemData[] = [
-  {
-    question: "What is HeirDock?",
-    answer:
-      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Starting from a photo of each item, it creates a living record of what you own. It isn't financial software or a to-do list: no accounts, no budgets, and nothing you have to finish.",
-  },
-  {
-    question: "Is there a mobile app?",
-    answer:
-      "Yes. The HeirDock app is available for iPhone and Android, so you can add items with your phone's camera wherever they are. You can also use HeirDock in any web browser - your household record is the same everywhere.",
-  },
-  {
-    question: "Who is HeirDock for?",
-    answer:
-      "HeirDock is designed for anyone who has accumulated belongings over a lifetime and wants clarity without complexity - especially those preparing for life transitions like downsizing, estate planning, or supporting aging parents.",
-  },
-  {
-    question: "Do I need to catalog everything at once?",
-    answer:
-      "No. HeirDock is designed for gradual use. Add items whenever it's convenient - there's no pressure to finish, and the tool grows with you over time.",
-  },
-  {
-    question: "How does item identification work?",
-    answer:
-      "Take a photo of an item, and HeirDock uses AI to help identify it, suggest a category, and estimate potential market value based on real comparable sales data.",
-  },
-  {
-    question: "Can I share my records with family members?",
-    answer:
-      "Yes. You can invite Trusted Participants and choose what each person can do. Give someone Shared Access to the collections you pick - as a Viewer, a Contributor who helps catalog, or with Full Access to that collection - or make a trusted person a Manager who helps run the household with you. You can also name a Steward to look after your household record if you're no longer able to.",
-  },
-  {
-    question: "Can professionals access my records?",
-    answer:
-      "Only with your consent. You choose which professionals can see your household - like an insurance agent, estate planner, or appraiser - whether they see everything or one collection, and for how long. You can preview exactly what they see, and remove access at any time.",
-  },
-  {
-    question: "Can I upgrade or downgrade my plan at any time?",
-    answer:
-      "Yes. Upgrades take effect right away, and we prorate the difference. A downgrade takes effect at the end of your current billing period, as long as your household fits within the new plan's limits for properties, collections, and items.",
-  },
-  {
-    question: "What happens when my free trial ends?",
-    answer:
-      "If you've added a payment method, your plan simply continues. If not, your household record stays fully editable for 30 more days so you can decide. After that it becomes read-only for 12 months - you can still view and export everything, or subscribe again at any time.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Absolutely. We use industry-standard encryption for your Digital Vault entries and follow best practices for data security and privacy.",
-  },
-  {
-    question: "Can I cancel my subscription?",
-    answer:
-      "Yes, you can cancel at any time from your account settings. Your plan stays active until the end of the current billing period, and your household record stays fully editable for 30 days after that. It then becomes read-only for 12 months, while you can still export it or subscribe again, and after that it is archived.",
-  },
-];
+function matches(item: FaqItem, query: string) {
+  return normalize([item.question, ...item.answer].join(" ")).includes(query);
+}
 
-function FaqItem({ item, index }: { item: FaqItemData; index: number }) {
+function FaqQuestion({ item, forceOpen }: { item: FaqItem; forceOpen: boolean }) {
   const [open, setOpen] = useState(false);
   const id = useId();
-  const questionId = `faq-q-${id}-${index}`;
-  const answerId = `faq-a-${id}-${index}`;
+  const isOpen = open || forceOpen;
 
   return (
-    <div className={`faq-item${open ? " faq-item--open" : ""}`}>
-      <button
-        id={questionId}
-        className="faq-item__question"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-controls={answerId}
-      >
-        {item.question}
-        <span className="faq-item__chevron" aria-hidden="true"><Icon name="expandMore" /></span>
-      </button>
-      <div
-        id={answerId}
-        className="faq-item__answer"
-        role="region"
-        aria-labelledby={questionId}
-      >
-        <p>{item.answer}</p>
+    <div className={`faq-item${isOpen ? " faq-item--open" : ""}`}>
+      <h3 className="faq-item__heading">
+        <button
+          id={`${id}-q`}
+          className="faq-item__question"
+          onClick={() => setOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={`${id}-a`}
+        >
+          {item.question}
+          <span className="faq-item__chevron" aria-hidden="true"><Icon name="expandMore" /></span>
+        </button>
+      </h3>
+      <div id={`${id}-a`} className="faq-item__answer" role="region" aria-labelledby={`${id}-q`}>
+        <div className="faq-item__answer-inner">
+          {item.answer.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          {item.link && (
+            <Link to={item.link.to} className="faq-item__link">
+              {item.link.label} <Icon name="arrowForward" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
+function Topic({ topic, audience, tint, items, searching }: {
+  topic: FaqTopic; audience: string; tint: string; items: FaqItem[]; searching: boolean;
+}) {
+  return (
+    <section className="faq-topic" id={topic.id} aria-labelledby={`${topic.id}-title`}>
+      <div className="faq-topic__head">
+        <div className={`faq-topic__icon faq-topic__icon--${tint}`}><BrandGlyph name={topic.icon} /></div>
+        <div>
+          <span className="eyebrow">{audience}</span>
+          <h2 className="faq-topic__title" id={`${topic.id}-title`}>{topic.title}</h2>
+        </div>
+      </div>
+      <div className="faq-list">
+        {items.map((item) => (
+          <FaqQuestion key={item.question} item={item} forceOpen={searching} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// FAQPage structured data for search results. It is built from our own static
+// content above, never from user input, and "<" is escaped so it can't close
+// the script element.
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqAudiences.flatMap((audience) =>
+    audience.topics.flatMap((topic) =>
+      topic.items.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer.join(" ") },
+      })),
+    ),
+  ),
+}).replace(/</g, "\\u003c");
+
 export default function Faq() {
+  const [query, setQuery] = useState("");
+  const [active, setActive] = useState(faqAudiences[0]?.topics[0]?.id ?? "");
+  const q = normalize(query);
+  const searching = q.length > 1;
+
+  const filtered = useMemo(
+    () =>
+      faqAudiences.map((audience) => ({
+        ...audience,
+        topics: audience.topics.map((topic) => ({
+          topic,
+          items: searching ? topic.items.filter((item) => matches(item, q)) : topic.items,
+        })),
+      })),
+    [q, searching],
+  );
+  const matchCount = filtered.reduce(
+    (n, audience) => n + audience.topics.reduce((m, t) => m + t.items.length, 0), 0);
+
+  // Mark the topic being read in the side list.
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>(".faq-topic");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const first = entries.find((e) => e.isIntersecting);
+        if (first) setActive(first.target.id);
+      },
+      { rootMargin: "-20% 0px -70% 0px" },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [searching]);
+
+  const jumpTo = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    window.history.replaceState(null, "", `#${id}`);
+  };
+
+  let tintIndex = 0;
+
   return (
     <>
-      <section className="page-header">
-        <div className="container">
-          <h1 className="page-header__title">Frequently Asked Questions</h1>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
+
+      <section className="hero-brand hero-brand--plain">
+        <div className="hero-brand__panel">
+          <span className="eyebrow">Frequently asked questions</span>
+          <h1 className="hero-brand__title">Questions, answered plainly.</h1>
+          <p className="hero-brand__subtitle">
+            For households keeping a record of what they own, and for the professionals they work with.
+          </p>
+
+          <div className="faq-search">
+            <label htmlFor="faq-search" className="sr-only">Search questions</label>
+            <span className="faq-search__icon" aria-hidden="true"><Icon name="search" /></span>
+            <input
+              id="faq-search"
+              type="search"
+              className="faq-search__input"
+              placeholder="Search questions"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <p className="faq-search__status" aria-live="polite">
+            {searching && (matchCount === 1 ? "1 question matches" : `${matchCount} questions match`)}
+          </p>
+
+          <div className="case-tiles case-tiles--three">
+            {AUDIENCE_TILES.map((tile) => {
+              const audience = faqAudiences.find((a) => a.id === tile.id)!;
+              return (
+                <a key={tile.id} href={`#${audience.topics[0]?.id ?? ""}`} className="step-tile case-tile">
+                  <div className={`step-tile__art step-tile__art--${tile.tint}`}>
+                    {tile.id === "about"
+                      ? <img src={markUrl} alt="" className="faq-mark" width={72} height={46} />
+                      : <BrandGlyph name={tile.id === "households" ? "camera" : "briefcase"} />}
+                  </div>
+                  <div className="step-tile__body">
+                    <h2 className="step-tile__title">{audience.title}</h2>
+                    <p className="step-tile__text">{tile.text}</p>
+                    <span className="case-tile__more">
+                      {audience.topics.length} topics <Icon name="arrowForward" />
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       <section className="section section--white">
-        <div className="container">
-          <div className="faq-list" role="list">
-            {faqs.map((faq, i) => (
-              <FaqItem key={i} item={faq} index={i} />
+        <div className="container faq-layout">
+          <nav className="faq-nav" aria-label="FAQ topics">
+            {faqAudiences.map((audience) => (
+              <div key={audience.id} className="faq-nav__group">
+                <span className="faq-nav__audience">{audience.title}</span>
+                {audience.topics.map((topic) => (
+                  <a
+                    key={topic.id}
+                    href={`#${topic.id}`}
+                    className={`faq-nav__link${active === topic.id ? " faq-nav__link--active" : ""}`}
+                    aria-current={active === topic.id ? "true" : undefined}
+                  >
+                    {topic.title}
+                  </a>
+                ))}
+              </div>
             ))}
+          </nav>
+
+          <div className="faq-jump">
+            <label htmlFor="faq-jump" className="faq-jump__label">Jump to a topic</label>
+            <select
+              id="faq-jump"
+              className="form__select"
+              value={active}
+              onChange={(e) => { setActive(e.target.value); jumpTo(e.target.value); }}
+            >
+              {faqAudiences.map((audience) => (
+                <optgroup key={audience.id} label={audience.title}>
+                  {audience.topics.map((topic) => (
+                    <option key={topic.id} value={topic.id}>{topic.title}</option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+          </div>
+
+          <div className="faq-topics">
+            {filtered.map((audience) =>
+              audience.topics.map(({ topic, items }) => {
+                const tint = TINTS[tintIndex++ % TINTS.length] ?? "navy";
+                return items.length ? (
+                  <Topic key={topic.id} topic={topic} audience={audience.title} tint={tint}
+                    items={items} searching={searching} />
+                ) : null;
+              }),
+            )}
+            {searching && matchCount === 0 && (
+              <div className="faq-empty">
+                <p>No questions match &ldquo;{query.trim()}&rdquo;.</p>
+                <p>Try another word, or <Link to="/contact">ask us directly</Link>.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="closing-cta">
+        <div className="brand-panel closing-cta__panel">
+          <div>
+            <h2 className="closing-cta__title">Still have a question?</h2>
+            <p className="closing-cta__text">
+              We&apos;re happy to help. Send us a note, or if you&apos;re a professional, book a short
+              conversation about your practice.
+            </p>
+            <div className="closing-cta__actions">
+              <Link to="/contact" className="btn btn--gold btn--lg">
+                Contact Us <Icon name="arrowForward" />
+              </Link>
+              <Link to="/professional/demo" className="btn btn--on-panel btn--lg">
+                Request a Demo
+              </Link>
+            </div>
+          </div>
+          <div className="closing-cta__drawing">
+            <Drawing name="frontDoor" tone="navy" />
           </div>
         </div>
       </section>
