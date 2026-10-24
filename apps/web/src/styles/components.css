@@ -1125,26 +1125,6 @@
   }
 }
 
-/* Vertical, left-aligned steps (customer How It Works) */
-.step-list__item {
-  margin-bottom: var(--space-4xl);
-}
-
-.step-list__item .step-card__number {
-  margin: 0 0 var(--space-lg);
-}
-
-.step-list__bullets {
-  padding-left: var(--space-xl);
-  margin-top: var(--space-md);
-}
-
-.step-list__bullets li {
-  margin-bottom: var(--space-sm);
-  list-style: disc;
-  color: var(--color-text-secondary);
-}
-
 /* ========================================
    Status Page
    ======================================== */

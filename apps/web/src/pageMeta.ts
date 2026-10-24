@@ -53,11 +53,6 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Organize your household assets, protect what matters, and create a living record for your family with HeirDock.",
   },
-  "/customer/how-it-works": {
-    title: "HeirDock - How It Works",
-    description:
-      "Learn how HeirDock helps you catalog, organize, and protect your household assets in four simple steps - at your own pace.",
-  },
   "/customer/features": {
     title: "HeirDock - Features",
     description:

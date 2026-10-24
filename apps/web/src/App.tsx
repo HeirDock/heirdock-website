@@ -8,7 +8,6 @@ import Faq from "./pages/Faq";
 import Help from "./pages/Help";
 import Status from "./pages/Status";
 import CustomerLanding from "./pages/customer/Landing";
-import CustomerHowItWorks from "./pages/customer/HowItWorks";
 import CustomerFeatures from "./pages/customer/Features";
 import CustomerPricing from "./pages/customer/Pricing";
 import CustomerUseCases from "./pages/customer/UseCases";
@@ -45,7 +44,6 @@ export default function App() {
 
         {/* Customer */}
         <Route path="customer" element={<CustomerLanding />} />
-        <Route path="customer/how-it-works" element={<CustomerHowItWorks />} />
         <Route path="customer/features" element={<CustomerFeatures />} />
         <Route path="customer/pricing" element={<CustomerPricing />} />
         <Route path="customer/use-cases" element={<CustomerUseCases />} />

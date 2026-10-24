@@ -14,9 +14,9 @@ export default function CustomerLanding() {
             Start building your household record today.
           </p>
           <div className="hero__actions">
-            <Link to="/customer/how-it-works" className="btn btn--primary btn--lg">
+            <a href="#how-it-works" className="btn btn--primary btn--lg">
               See How It Works <Icon name="arrowForward" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -65,8 +65,8 @@ export default function CustomerLanding() {
         </div>
       </section>
 
-      {/* How It Works Preview */}
-      <section className="section">
+      {/* How It Works */}
+      <section className="section" id="how-it-works">
         <div className="container text-center">
           <h2 className="section__title">How it works</h2>
           <p className="section__subtitle">
@@ -85,6 +85,7 @@ export default function CustomerLanding() {
               <div className="step-card__title">Catalog items</div>
               <p className="step-card__description">
                 Photograph or describe items. HeirDock helps identify them and estimate value.
+                No rush: five items today, five more next weekend.
               </p>
             </div>
             <div className="step-card">
@@ -103,8 +104,8 @@ export default function CustomerLanding() {
             </div>
           </div>
           <div className="mt-2xl">
-            <Link to="/customer/how-it-works" className="btn btn--outline">
-              Learn more about how it works <Icon name="arrowForward" />
+            <Link to="/customer/features" className="btn btn--outline">
+              See all features <Icon name="arrowForward" />
             </Link>
           </div>
         </div>
@@ -129,11 +130,6 @@ export default function CustomerLanding() {
               <div className="feature-card__icon"><Icon name="home" /></div>
               <div className="feature-card__title">Use Cases <Icon name="chevronRight" className="card__chevron" /></div>
               <p className="feature-card__description">Insurance readiness, estate planning, disaster recovery, and moving.</p>
-            </Link>
-            <Link to="/customer/how-it-works" className="feature-card card--link">
-              <div className="feature-card__icon"><Icon name="build" /></div>
-              <div className="feature-card__title">How It Works <Icon name="chevronRight" className="card__chevron" /></div>
-              <p className="feature-card__description">Four simple steps to organize your household - at your own pace.</p>
             </Link>
           </div>
         </div>
