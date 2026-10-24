@@ -29,10 +29,10 @@ export default function Footer() {
           <div>
             <div className="site-footer__heading">For Professionals</div>
             <div className="site-footer__links">
-              <Link to="/partner">Overview</Link>
-              <Link to="/partner/features">Partner Features</Link>
-              <Link to="/partner/pricing">Partner Pricing</Link>
-              <Link to="/partner/demo">Request a Demo</Link>
+              <Link to="/professional">Overview</Link>
+              <Link to="/professional/features">Partner Features</Link>
+              <Link to="/professional/pricing">Partner Pricing</Link>
+              <Link to="/professional/demo">Request a Demo</Link>
             </div>
           </div>
 

@@ -48,22 +48,22 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "How families use HeirDock for insurance readiness, estate planning, disaster recovery, and moving or downsizing.",
   },
-  "/partner": {
+  "/professional": {
     title: "HeirDock - For Professionals",
     description:
       "Household asset intelligence for insurance agents, estate planners, appraisers, and financial advisors. Help clients with complete data.",
   },
-  "/partner/features": {
+  "/professional/features": {
     title: "HeirDock - Partner Features",
     description:
       "Client workspace management, document sharing, coverage gap analysis, analytics dashboard, team management, and consent-based access.",
   },
-  "/partner/pricing": {
+  "/professional/pricing": {
     title: "HeirDock - Partner Pricing",
     description:
       "HeirDock is free for professionals, and the clients you work with can receive member pricing.",
   },
-  "/partner/demo": {
+  "/professional/demo": {
     title: "HeirDock - Request a Demo",
     description:
       "Schedule a personalized demo of HeirDock's Partner Portal. See how it fits your professional practice.",

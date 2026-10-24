@@ -60,8 +60,8 @@ export default function Nav() {
             Pricing
           </Link>
           <Link
-            to="/partner"
-            className={`site-nav__link${isActive("/partner") ? " site-nav__link--active" : ""}`}
+            to="/professional"
+            className={`site-nav__link${isActive("/professional") ? " site-nav__link--active" : ""}`}
           >
             For Professionals
           </Link>
@@ -93,7 +93,7 @@ export default function Nav() {
         <Link to="/customer/features" className="site-nav__link">Features</Link>
         <Link to="/customer/use-cases" className="site-nav__link">Use Cases</Link>
         <Link to="/customer/pricing" className="site-nav__link">Pricing</Link>
-        <Link to="/partner" className="site-nav__link">For Professionals</Link>
+        <Link to="/professional" className="site-nav__link">For Professionals</Link>
         <Link to="/faq" className="site-nav__link">FAQ</Link>
         <Link to="/contact" className="site-nav__link">Contact</Link>
         <a href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</a>

@@ -38,10 +38,10 @@ export default function App() {
         <Route path="customer/use-cases" element={<CustomerUseCases />} />
 
         {/* Partner */}
-        <Route path="partner" element={<PartnerLanding />} />
-        <Route path="partner/features" element={<PartnerFeatures />} />
-        <Route path="partner/pricing" element={<PartnerPricing />} />
-        <Route path="partner/demo" element={<Demo />} />
+        <Route path="professional" element={<PartnerLanding />} />
+        <Route path="professional/features" element={<PartnerFeatures />} />
+        <Route path="professional/pricing" element={<PartnerPricing />} />
+        <Route path="professional/demo" element={<Demo />} />
 
         {/* Legal */}
         <Route path="legal/terms" element={<Terms />} />
