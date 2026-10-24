@@ -470,7 +470,7 @@ export default function CustomerFeatures() {
               <h3 className="feature-matrix__title">Support</h3>
               <ul className="feature-matrix__list">
                 <li>A Support Center inside the app</li>
-                <li>24/7 email support, with a reply within 24 hours</li>
+                <li>24/7 email support</li>
                 <li>Phone support, through the Support Center</li>
                 <li>The same support on every plan</li>
               </ul>

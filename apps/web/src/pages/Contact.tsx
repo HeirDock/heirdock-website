@@ -38,8 +38,7 @@ export default function Contact() {
         <div className="container container--narrow">
           {status === "success" ? (
             <div className="form__message form__message--success">
-              <strong>Message sent!</strong> Thank you for reaching out. We'll get back to you within
-              24 hours, and usually much sooner.
+              <strong>Message sent!</strong> Thank you for reaching out.
               <div className="mt-lg">
                 <button onClick={reset} className="btn btn--outline btn--sm">
                   Send another message
