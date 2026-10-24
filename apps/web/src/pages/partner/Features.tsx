@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import toolWorkspaceUrl from "../../assets/images/partner/tool-workspace.webp";
+import toolCoverageUrl from "../../assets/images/partner/tool-coverage.webp";
+import toolPoliciesUrl from "../../assets/images/partner/tool-policies.webp";
+import toolAnalyticsUrl from "../../assets/images/partner/tool-analytics.webp";
+import toolTeamUrl from "../../assets/images/partner/tool-team.webp";
+import toolConsentUrl from "../../assets/images/partner/tool-consent.webp";
 
 export default function PartnerFeatures() {
   return (
@@ -13,56 +19,69 @@ export default function PartnerFeatures() {
         </div>
       </section>
 
-      <section className="section section--white">
+      {/* Tools: real Partner Portal screens on tints */}
+      <section className="section">
         <div className="container">
-          <div className="feature-grid">
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="work" /></div>
-              <div className="feature-card__title">Client Workspace</div>
-              <p className="feature-card__description">
-                A dedicated workspace for each client with organized access to their household record,
-                items, attachments, and valuations. Everything you need in one place.
-              </p>
+          <span className="eyebrow text-center">Partner Portal</span>
+          <h2 className="section__title">Tools for your whole practice</h2>
+          <p className="section__subtitle">
+            Everything you need to serve the households you work with - and only what each one
+            chooses to share.
+          </p>
+          <div className="tool-cards">
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--navy">
+                <div className="tool-card__frame">
+                  <img src={toolWorkspaceUrl} width={760} height={352} loading="lazy" decoding="async" alt="A client workspace in the Partner Portal, with Summary, Assets and Policies & Claims tabs" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Client workspaces</h3>
+              <p className="tool-card__text">A workspace for every client: their summary, assets, and policies and claims, as far as they share.</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="description" /></div>
-              <div className="feature-card__title">Document Sharing</div>
-              <p className="feature-card__description">
-                Access client-consented documents, photos, and records. Download attachments
-                and structured exports for your workflows.
-              </p>
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--sage">
+                <div className="tool-card__frame">
+                  <img src={toolCoverageUrl} width={760} height={292} loading="lazy" decoding="async" alt="Coverage for a client: how much is covered and how much is valued" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Coverage at a glance</h3>
+              <p className="tool-card__text">See what&apos;s claim-ready, what isn&apos;t on a policy, and where limits fall short of values.</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="barChart" /></div>
-              <div className="feature-card__title">Coverage Gap Analysis</div>
-              <p className="feature-card__description">
-                See where client insurance coverage may fall short based on documented items
-                and their estimated values. Proactively address gaps.
-              </p>
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--gold">
+                <div className="tool-card__frame">
+                  <img src={toolPoliciesUrl} width={760} height={312} loading="lazy" decoding="async" alt="Claims opened each month across a practice's clients" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Policies and claims</h3>
+              <p className="tool-card__text">With the household&apos;s permission, add or update their policies and start a claim. They see every change.</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="trendingUp" /></div>
-              <div className="feature-card__title">Analytics Dashboard</div>
-              <p className="feature-card__description">
-                See portfolio health, upcoming renewals, claims, and client engagement
-                across all the households you work with.
-              </p>
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--navy">
+                <div className="tool-card__frame">
+                  <img src={toolAnalyticsUrl} width={704} height={440} loading="lazy" decoding="async" alt="Clients over time, growing across the year" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Portfolio analytics</h3>
+              <p className="tool-card__text">Portfolio health, renewals, claims performance and engagement, across every client.</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="group" /></div>
-              <div className="feature-card__title">Team Management</div>
-              <p className="feature-card__description">
-                Add team members to your partner organization with role-based permissions.
-                Assign clients to team members and manage workload.
-              </p>
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--sage">
+                <div className="tool-card__frame">
+                  <img src={toolTeamUrl} width={760} height={380} loading="lazy" decoding="async" alt="A practice's team members and their roles" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Team management</h3>
+              <p className="tool-card__text">Admins and team members with clear permissions. Assign each client to the right person.</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="lock" /></div>
-              <div className="feature-card__title">Consent-Based Access</div>
-              <p className="feature-card__description">
-                All client data access is consent-based and audited. Clients control
-                what you can see, and every access is logged.
-              </p>
+            <div className="tool-card">
+              <div className="tool-card__thumb tool-card__thumb--gold">
+                <div className="tool-card__frame">
+                  <img src={toolConsentUrl} width={720} height={476} loading="lazy" decoding="async" alt="What a client shares: each collection and its sharing level" />
+                </div>
+              </div>
+              <h3 className="tool-card__title">Built on consent</h3>
+              <p className="tool-card__text">Clients choose what you see and for how long, and every access is logged.</p>
             </div>
           </div>
         </div>

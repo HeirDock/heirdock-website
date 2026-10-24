@@ -1832,6 +1832,74 @@
   width: 170px;
 }
 
+/* Professional features: tool cards, each with a real Partner Portal screen
+   on a tint (navy, sage, gold). */
+.tool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+}
+
+.tool-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-lg) * 1.5);
+  padding: var(--space-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.tool-card__thumb {
+  height: 200px;
+  padding: var(--space-md) var(--space-md) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tool-card__thumb--navy { background: var(--color-primary-light); }
+.tool-card__thumb--sage { background: var(--color-secondary-light); }
+.tool-card__thumb--gold { background: var(--color-accent-light); }
+
+.tool-card__frame {
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-text-primary) 10%, transparent);
+}
+
+/* Full width; anything taller than the thumb is cut at the bottom. */
+.tool-card__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tool-card__title {
+  margin: var(--space-lg) var(--space-sm) var(--space-xs);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tool-card__text {
+  margin: 0 var(--space-sm) var(--space-sm);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1023px) {
+  .tool-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .tool-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ---------- Home: trust row ---------- */
 
 .trust-row {
