@@ -390,11 +390,20 @@
    CTA Band
    ======================================== */
 
+/* The closing call to action on interior pages: a deep navy panel inset on
+   white, like Home's closing panel. Its buttons are gold and light. */
 .cta-band {
-  background: var(--cta-band-bg);
-  color: var(--color-text-primary);
-  padding: var(--space-4xl) 0;
+  padding: var(--space-4xl) var(--space-md);
+  background: var(--color-surface);
   text-align: center;
+}
+
+.cta-band > .container {
+  --focus-ring: var(--color-text-on-dark);
+  max-width: 1200px;
+  padding: var(--space-4xl) var(--space-xl);
+  background: var(--brand-panel-bg);
+  border-radius: calc(var(--radius-lg) * 2);
 }
 
 .cta-band__title {
@@ -402,12 +411,12 @@
   font-weight: 500;
   letter-spacing: -0.0125em;
   margin-bottom: var(--space-md);
-  color: var(--color-text-primary);
+  color: var(--on-panel-text);
 }
 
 .cta-band__subtitle {
   font-size: var(--text-md);
-  color: var(--color-text-secondary);
+  color: var(--on-panel-muted);
   margin-bottom: var(--space-2xl);
   max-width: 560px;
   margin-left: auto;
@@ -586,6 +595,18 @@
 .page-header {
   text-align: center;
   padding: var(--space-4xl) 0 var(--space-2xl);
+}
+
+/* The logo's gold ring, small, above every interior page title. */
+.page-header .container::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 36px;
+  margin: 0 auto var(--space-lg);
+  border: 3px solid var(--color-accent);
+  border-bottom: 0;
+  border-radius: 72px 72px 0 0;
 }
 
 .page-header__title {
@@ -955,13 +976,6 @@
 /* Copy beside real app screens: the screens get the wider column. */
 .feature-section--media {
   grid-template-columns: 5fr 7fr;
-}
-
-.feature-section__eyebrow {
-  margin-bottom: var(--space-sm);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-primary);
 }
 
 /* ========================================
@@ -1812,6 +1826,93 @@
   border-radius: var(--radius-lg);
   box-shadow: 0 24px 48px color-mix(in srgb, var(--color-text-primary) 22%, transparent),
     var(--shadow-md);
+}
+
+/* A brand hero without media (partner landing). */
+.hero-brand--plain {
+  padding-bottom: var(--space-xl);
+}
+
+.hero-brand--plain .hero-brand__panel {
+  padding-bottom: var(--space-4xl);
+}
+
+/* ---------- Section pattern: a tint block behind each set of screens ----------
+   A rounded block in navy, sage or gold tint sits behind the screenshots,
+   with a small gold arc as the signature. On reversed rows it mirrors. */
+.screen-stack--tint-navy { --stack-tint: var(--color-primary-light); }
+.screen-stack--tint-sage { --stack-tint: var(--color-secondary-light); }
+.screen-stack--tint-gold { --stack-tint: var(--color-accent-light); }
+
+.screen-stack--tint-navy,
+.screen-stack--tint-sage,
+.screen-stack--tint-gold {
+  isolation: isolate;
+}
+
+.screen-stack--tint-navy::before,
+.screen-stack--tint-sage::before,
+.screen-stack--tint-gold::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -7% 14% -7% -7%;
+  background: var(--stack-tint);
+  border-radius: calc(var(--radius-lg) * 2);
+}
+
+.screen-stack--tint-navy::after,
+.screen-stack--tint-sage::after,
+.screen-stack--tint-gold::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10%;
+  right: 3%;
+  width: 120px;
+  height: 60px;
+  border: 3px solid var(--color-accent);
+  border-bottom: 0;
+  border-radius: 120px 120px 0 0;
+}
+
+.feature-section--reverse .screen-stack--tint-navy::before,
+.feature-section--reverse .screen-stack--tint-sage::before,
+.feature-section--reverse .screen-stack--tint-gold::before {
+  inset: -7% -7% -7% 14%;
+}
+
+.feature-section--reverse .screen-stack--tint-navy::after,
+.feature-section--reverse .screen-stack--tint-sage::after,
+.feature-section--reverse .screen-stack--tint-gold::after {
+  right: auto;
+  left: 3%;
+}
+
+@media (max-width: 767px) {
+  .screen-stack--tint-navy::before,
+  .screen-stack--tint-sage::before,
+  .screen-stack--tint-gold::before,
+  .feature-section--reverse .screen-stack--tint-navy::before,
+  .feature-section--reverse .screen-stack--tint-sage::before,
+  .feature-section--reverse .screen-stack--tint-gold::before {
+    inset: -3% 4% -3% -3%;
+  }
+
+  .screen-stack--tint-navy::after,
+  .screen-stack--tint-sage::after,
+  .screen-stack--tint-gold::after {
+    width: 80px;
+    height: 40px;
+  }
+
+  .cta-band {
+    padding: var(--space-2xl) var(--space-sm);
+  }
+
+  .cta-band > .container {
+    padding: var(--space-2xl) var(--space-lg);
+  }
 }
 
 /* ---------- Home: trust row ---------- */

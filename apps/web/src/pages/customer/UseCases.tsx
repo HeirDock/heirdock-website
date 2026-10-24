@@ -29,7 +29,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Insurance readiness</div>
+              <div className="eyebrow">Insurance readiness</div>
               <h3>Know you're covered before you need to be</h3>
               <p>
                 Most families can't produce a complete record of what they own when it's time to
@@ -44,7 +44,7 @@ export default function CustomerUseCases() {
                 which pieces are due for a fresh appraisal.
               </p>
             </div>
-            <div className="screen-stack screen-stack--insurance">
+            <div className="screen-stack screen-stack--insurance screen-stack--tint-sage">
               <img
                 className="screen-shot"
                 src={readinessUrl}
@@ -73,7 +73,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Estate planning</div>
+              <div className="eyebrow">Estate planning</div>
               <h3>Pass things on with the story intact</h3>
               <p>
                 Families often don't know the full scope of what a loved one owns, and the stories
@@ -88,7 +88,7 @@ export default function CustomerUseCases() {
                 Share a Beneficiary Assignment Report with your estate attorney to make planning simpler.
               </p>
             </div>
-            <div className="screen-stack screen-stack--estate">
+            <div className="screen-stack screen-stack--estate screen-stack--tint-gold">
               <img
                 className="screen-shot"
                 src={designationsUrl}
@@ -117,7 +117,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Disaster recovery</div>
+              <div className="eyebrow">Disaster recovery</div>
               <h3>Your record is safe, even when your home isn't</h3>
               <p>
                 After a fire, flood, or burglary, it's hard to remember everything you owned, let
@@ -131,7 +131,7 @@ export default function CustomerUseCases() {
                 download it as a PDF for your insurer.
               </p>
             </div>
-            <div className="screen-stack screen-stack--recovery">
+            <div className="screen-stack screen-stack--recovery screen-stack--tint-navy">
               <img
                 className="screen-shot"
                 src={claimUrl}
@@ -160,7 +160,7 @@ export default function CustomerUseCases() {
         <div className="container">
           <div className="feature-section feature-section--media feature-section--reverse">
             <div className="feature-section__content">
-              <div className="feature-section__eyebrow">Moving and downsizing</div>
+              <div className="eyebrow">Moving and downsizing</div>
               <h3>Decide what stays, what goes, and who it goes to</h3>
               <p>
                 Downsizing means deciding what happens to a lifetime of belongings, often on a deadline
@@ -172,7 +172,7 @@ export default function CustomerUseCases() {
                 everyone can see the plan before moving day.
               </p>
             </div>
-            <div className="screen-stack screen-stack--moving">
+            <div className="screen-stack screen-stack--moving screen-stack--tint-sage">
               <div className="screen-phone">
                 <div className="screen-phone__screen">
                   <img
@@ -207,7 +207,7 @@ export default function CustomerUseCases() {
             Whatever your reason, HeirDock gives you clarity and control.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--primary btn--lg">
+            <Link to="/contact" className="btn btn--gold btn--lg">
               Get in Touch <Icon name="arrowForward" />
             </Link>
           </div>

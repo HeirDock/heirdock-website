@@ -81,8 +81,8 @@ export default function CustomerFeatures() {
       {/* Market Valuation */}
       <section className="section">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media feature-section--reverse">
+            <div className="feature-section__content">
               <h3>Market Valuation</h3>
               <p>
                 Get automatic market value estimates based on real comparable sales data.
@@ -94,7 +94,7 @@ export default function CustomerFeatures() {
                 over time, and get a gentle reminder when a high-value item is due for a fresh look.
               </p>
             </div>
-            <div className="screen-stack screen-stack--valuation">
+            <div className="screen-stack screen-stack--valuation screen-stack--tint-navy">
               <img
                 className="screen-shot"
                 src={valuationUrl}
@@ -112,8 +112,8 @@ export default function CustomerFeatures() {
       {/* Photos and Attachments */}
       <section className="section section--white">
         <div className="container">
-          <div className="feature-section">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media">
+            <div className="feature-section__content">
               <h3>Photos and Attachments</h3>
               <p>
                 Upload photos, serial numbers, receipts, and documents for any item. Build a
@@ -125,7 +125,7 @@ export default function CustomerFeatures() {
                 to document everything thoroughly.
               </p>
             </div>
-            <div className="screen-stack screen-stack--photos">
+            <div className="screen-stack screen-stack--photos screen-stack--tint-sage">
               <img
                 className="screen-shot"
                 src={photosUrl}
@@ -152,8 +152,8 @@ export default function CustomerFeatures() {
       {/* Maintenance, Tasks and Warranties */}
       <section className="section">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media feature-section--reverse">
+            <div className="feature-section__content">
               <h3>Maintenance, Tasks and Warranties</h3>
               <p>
                 Set recurring tasks - tune the piano every six months, service the furnace each
@@ -166,7 +166,7 @@ export default function CustomerFeatures() {
                 and passing it on.
               </p>
             </div>
-            <div className="screen-stack screen-stack--maintenance">
+            <div className="screen-stack screen-stack--maintenance screen-stack--tint-gold">
               <img
                 className="screen-shot"
                 src={maintenanceUrl}
@@ -193,8 +193,8 @@ export default function CustomerFeatures() {
       {/* Family Sharing */}
       <section className="section section--white">
         <div className="container">
-          <div className="feature-section">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media">
+            <div className="feature-section__content">
               <h3>Family Sharing</h3>
               <p>
                 Invite Trusted Participants and choose what each person can do. A Manager helps
@@ -207,7 +207,7 @@ export default function CustomerFeatures() {
                 and permissions.
               </p>
             </div>
-            <div className="screen-stack screen-stack--sharing">
+            <div className="screen-stack screen-stack--sharing screen-stack--tint-navy">
               <img
                 className="screen-shot"
                 src={peopleUrl}
@@ -234,8 +234,8 @@ export default function CustomerFeatures() {
       {/* Vault Storage */}
       <section className="section">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media feature-section--reverse">
+            <div className="feature-section__content">
               <h3>Vault Storage</h3>
               <p>
                 Store your most sensitive documents in the encrypted Vault - wills, deeds,
@@ -247,7 +247,7 @@ export default function CustomerFeatures() {
                 can view Vault contents.
               </p>
             </div>
-            <div className="screen-stack screen-stack--vault">
+            <div className="screen-stack screen-stack--vault screen-stack--tint-sage">
               <img
                 className="screen-shot"
                 src={vaultUrl}
@@ -265,8 +265,8 @@ export default function CustomerFeatures() {
       {/* Coverage Insights */}
       <section className="section section--white">
         <div className="container">
-          <div className="feature-section">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media">
+            <div className="feature-section__content">
               <h3>Coverage Insights</h3>
               <p>
                 Link insurance policies to your items and let HeirDock analyze potential
@@ -278,7 +278,7 @@ export default function CustomerFeatures() {
                 records and attachments that support it.
               </p>
             </div>
-            <div className="screen-stack screen-stack--insurance">
+            <div className="screen-stack screen-stack--insurance screen-stack--tint-gold">
               <img
                 className="screen-shot"
                 src={readinessUrl}
@@ -305,8 +305,8 @@ export default function CustomerFeatures() {
       {/* Estate Planning */}
       <section className="section">
         <div className="container">
-          <div className="feature-section feature-section--reverse">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media feature-section--reverse">
+            <div className="feature-section__content">
               <h3>Estate Planning</h3>
               <p>
                 Name a Steward and beneficiaries, decide who each item is meant for, and add the
@@ -319,7 +319,7 @@ export default function CustomerFeatures() {
                 when the time comes.
               </p>
             </div>
-            <div className="screen-stack screen-stack--estate">
+            <div className="screen-stack screen-stack--estate screen-stack--tint-navy">
               <img
                 className="screen-shot"
                 src={designationsUrl}
@@ -346,8 +346,8 @@ export default function CustomerFeatures() {
       {/* Reports */}
       <section className="section section--white">
         <div className="container">
-          <div className="feature-section">
-            <div className="feature-section__content feature-section--media">
+          <div className="feature-section feature-section--media">
+            <div className="feature-section__content">
               <h3>Reports</h3>
               <p>
                 Turn your household record into a document when you need one: a full list of
@@ -358,7 +358,7 @@ export default function CustomerFeatures() {
                 Export as PDF or CSV, for everything or just one property or collection.
               </p>
             </div>
-            <div className="screen-stack screen-stack--reports">
+            <div className="screen-stack screen-stack--reports screen-stack--tint-sage">
               <img
                 className="screen-shot"
                 src={reportsUrl}
@@ -489,10 +489,10 @@ export default function CustomerFeatures() {
             Have questions about HeirDock's features? We'd love to hear from you.
           </p>
           <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--primary btn--lg">
+            <Link to="/contact" className="btn btn--gold btn--lg">
               Get in Touch <Icon name="arrowForward" />
             </Link>
-            <Link to="/customer/pricing" className="btn btn--outline btn--lg">
+            <Link to="/customer/pricing" className="btn btn--on-panel btn--lg">
               View Pricing
             </Link>
           </div>

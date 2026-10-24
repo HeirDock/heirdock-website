@@ -5,18 +5,21 @@ export default function PartnerLanding() {
   return (
     <>
       {/* Hero */}
-      <section className="hero hero--light">
-        <div className="container">
-          <h1 className="hero__title">Household Asset Intelligence for Your Clients</h1>
-          <p className="hero__subtitle">
+      <section className="hero-brand hero-brand--plain">
+        <div className="brand-panel hero-brand__panel">
+          <h1 className="hero-brand__title">
+            Household Asset Intelligence
+            <span className="hero-brand__accent">for Your Clients</span>
+          </h1>
+          <p className="hero-brand__subtitle">
             Help your clients document, organize, and understand their physical assets -
             so you can deliver better service with complete information.
           </p>
-          <div className="hero__actions">
-            <Link to="/partner/demo" className="btn btn--primary btn--lg">
+          <div className="hero-brand__actions">
+            <Link to="/partner/demo" className="btn btn--gold btn--lg">
               Request a Demo <Icon name="arrowForward" />
             </Link>
-            <a href="#how-it-works" className="btn btn--outline btn--lg">
+            <a href="#how-it-works" className="btn btn--on-panel btn--lg">
               How It Works
             </a>
           </div>
@@ -138,10 +141,10 @@ export default function PartnerLanding() {
             Schedule a demo to explore the Partner Portal and learn how it fits your practice.
           </p>
           <div className="cta-band__actions">
-            <Link to="/partner/demo" className="btn btn--primary btn--lg">
+            <Link to="/partner/demo" className="btn btn--gold btn--lg">
               Request a Demo <Icon name="arrowForward" />
             </Link>
-            <Link to="/partner/pricing" className="btn btn--outline btn--lg">
+            <Link to="/partner/pricing" className="btn btn--on-panel btn--lg">
               View Pricing
             </Link>
           </div>
