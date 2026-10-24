@@ -120,7 +120,7 @@
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
   gap: var(--space-3xl);
   margin-bottom: var(--space-3xl);
 }
@@ -138,6 +138,7 @@
 
 .site-footer__logo img {
   width: auto;
+  height: 76px; /* the file is 100px tall with padding; 76px is three-quarters size */
 }
 
 .site-footer__social {
@@ -156,11 +157,13 @@
   opacity: 1;
 }
 
+/* The heading sits on the same 1.75 rhythm as the links below it, so the
+   gap under it matches the gap between links. */
 .site-footer__heading {
   font-size: var(--text-base);
   font-weight: 500;
+  line-height: 1.75;
   color: var(--color-text-on-dark);
-  margin-bottom: var(--space-lg);
 }
 
 /* Single-spaced: no gap between links. A 1.75 line-height keeps each link
@@ -189,6 +192,17 @@
   text-align: center;
   color: var(--footer-text-secondary);
   font-size: var(--text-sm);
+}
+
+/* Tablets: the brand takes its own row above the three link columns. */
+@media (max-width: 1023px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 767px) {
@@ -799,141 +813,12 @@
 }
 
 /* ========================================
-   Differentiator Grid (2x2)
-   ======================================== */
-
-.diff-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-.diff-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-lg);
-}
-
-.diff-card__label {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-sm);
-  font-style: italic;
-}
-
-.diff-card__statement {
-  font-size: var(--text-md);
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-
-@media (max-width: 767px) {
-  .diff-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
-   Audience Grid (who it's for)
-   ======================================== */
-
-.audience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-.audience-card {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-lg);
-}
-
-.audience-card__icon {
-  color: var(--color-primary);
-  font-size: var(--text-xl);
-  flex-shrink: 0;
-}
-
-.audience-card__text {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-}
-
-@media (max-width: 767px) {
-  .audience-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
-   Callout Box
-   ======================================== */
-
-/* Teal stays decorative (a border and a tint): white text on teal is only
-   2.65:1, so the text here is dark. */
-.callout {
-  background: var(--color-secondary-light);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-secondary);
-  border-radius: var(--radius-md);
-  padding: var(--space-2xl) var(--space-3xl);
-  text-align: center;
-}
-
-.callout--light {
-  border-color: transparent;
-}
-
-.callout--gray {
-  background: var(--color-surface-2);
-  color: var(--color-text-secondary);
-  border-color: var(--color-border);
-}
-
-.callout__title {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  margin-bottom: var(--space-md);
-}
-
-.callout p {
-  font-size: var(--text-md);
-  line-height: 1.7;
-  color: inherit;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ========================================
    Page Header (interior pages)
    ======================================== */
 
 .page-header {
   text-align: center;
   padding: var(--space-4xl) 0 var(--space-2xl);
-}
-
-.page-header__back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-xl);
-}
-
-.page-header__back:hover {
-  color: var(--color-primary);
-  opacity: 1;
 }
 
 .page-header__title {
@@ -948,6 +833,16 @@
   max-width: 640px;
   margin: 0 auto;
   line-height: 1.7;
+}
+
+/* A quiet in-page link under the subtitle (Features: jump to the full list). */
+.page-header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
 
 @media (max-width: 767px) {
@@ -1126,65 +1021,6 @@
 }
 
 /* ========================================
-   Status Page
-   ======================================== */
-
-.status-banner {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  background: var(--color-success-soft-bg);
-  padding: var(--space-lg) var(--space-2xl);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-2xl);
-}
-
-.status-banner__dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--color-success);
-  flex-shrink: 0;
-}
-
-/* Text on a state's soft background uses its soft-fg, as the app's alerts
-   do; the base green is only 3.4:1 here. */
-.status-banner__text {
-  font-weight: 600;
-  font-size: var(--text-xl);
-  color: var(--color-success-soft-fg);
-}
-
-.status-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  text-align: left;
-  max-width: 480px;
-  margin: var(--space-2xl) auto 0;
-}
-
-.status-list__row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-md) 0;
-  border-bottom: 1px solid var(--color-divider);
-}
-
-.status-list__name {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-}
-
-/* 14px text: the base green (3.79:1 on white) fails AA, the soft-fg passes. */
-.status-list__state {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-success-soft-fg);
-}
-
-/* ========================================
    FAQ Accordion
    ======================================== */
 
@@ -1256,39 +1092,6 @@
 }
 
 /* ========================================
-   Dual Path Section (For Families / For Professionals)
-   ======================================== */
-
-.dual-path {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-}
-
-.dual-path__card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-xl);
-  text-align: center;
-}
-
-.dual-path__card h3 {
-  margin-bottom: var(--space-md);
-}
-
-.dual-path__card p {
-  margin-bottom: var(--space-xl);
-}
-
-@media (max-width: 767px) {
-  .dual-path {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
    Legal Stub
    ======================================== */
 
@@ -1356,48 +1159,6 @@
 }
 
 /* ========================================
-   Use Case Section
-   ======================================== */
-
-.use-case-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-}
-
-.use-case-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-lg);
-}
-
-.use-case-card__icon {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-lg);
-  color: var(--color-primary);
-}
-
-.use-case-card__title {
-  font-size: var(--text-lg);
-  font-weight: 500;
-  margin-bottom: var(--space-md);
-}
-
-.use-case-card__description {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
-@media (max-width: 767px) {
-  .use-case-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================================
    Alternating Feature Sections
    ======================================== */
 
@@ -1434,6 +1195,57 @@
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-primary);
+}
+
+/* ========================================
+   Feature list (Features page)
+   Every feature by area, in a grid of plain lists: no checkmarks, since
+   every plan includes all of it.
+   ======================================== */
+
+.feature-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+}
+
+.feature-matrix__group {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.feature-matrix__title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+}
+
+/* "pretty" keeps a lone word off the last line of a wrapped item. */
+.feature-matrix__list li {
+  text-wrap: pretty;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.feature-matrix__list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .feature-matrix {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-matrix {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========================================

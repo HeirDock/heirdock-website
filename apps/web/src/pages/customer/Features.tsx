@@ -25,11 +25,13 @@ export default function CustomerFeatures() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
           <h1 className="page-header__title">Features</h1>
           <p className="page-header__subtitle">
             Everything you need to catalog, protect, and pass on what matters.
           </p>
+          <a href="#all-features" className="page-header__link">
+            See the full feature list <Icon name="expandMore" />
+          </a>
         </div>
       </section>
 
@@ -375,6 +377,105 @@ export default function CustomerFeatures() {
                 decoding="async"
                 alt="Financial Analysis: total estimated value with a plausible range"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Every feature, at a glance */}
+      <section className="section" id="all-features">
+        <div className="container">
+          <h2 className="section__title">Every feature, at a glance</h2>
+          <p className="section__subtitle">Included in every plan.</p>
+          <div className="feature-matrix">
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Catalog</h3>
+              <ul className="feature-matrix__list">
+                <li>Quick Add: several items from photos at once</li>
+                <li>Detailed Add: one item, with every detail</li>
+                <li>Suggested name, category, condition and value from a photo</li>
+                <li>Photos, receipts, serial numbers and documents on each item</li>
+                <li>Properties, rooms, collections and custom tags</li>
+                <li>Apps for iPhone and Android, and any web browser</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Value</h3>
+              <ul className="feature-matrix__list">
+                <li>Market estimates from comparable sales</li>
+                <li>Value over time, with appraisals and purchase price</li>
+                <li>Typical replacement range</li>
+                <li>A prompt when a high-value item is due for a fresh valuation</li>
+                <li>Financial Analysis with a plausible range</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Care</h3>
+              <ul className="feature-matrix__list">
+                <li>Recurring maintenance tasks</li>
+                <li>A maintenance log for each item and property</li>
+                <li>Warranties kept with the item they cover</li>
+                <li>Asset Reviews to confirm your record is still accurate</li>
+                <li>What's upcoming or overdue, in one place</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Insurance</h3>
+              <ul className="feature-matrix__list">
+                <li>Coverage Insights: covered, valued and provable</li>
+                <li>A clear next step for each coverage gap</li>
+                <li>Insurance policies linked to the items they cover</li>
+                <li>Start and track claims, and download them as PDFs</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Family and planning</h3>
+              <ul className="feature-matrix__list">
+                <li>Trusted Participants: Managers and Shared Access</li>
+                <li>Viewer, Contributor or Full Access for each collection</li>
+                <li>Steward, Alternate Steward, Care Steward and Beneficiaries</li>
+                <li>Intentions: Keep, Sell, Gift, Donate or Undecided</li>
+                <li>Stories, notes, Q&amp;A and provenance on each item</li>
+                <li>Stewardship and Care Mode</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Reports</h3>
+              <ul className="feature-matrix__list">
+                <li>Full Assets Export as PDF or CSV</li>
+                <li>Beneficiary Assignment Report</li>
+                <li>Reports for an item, a property or a collection</li>
+                <li>Financial Analysis by person, collection, property and category</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Professionals</h3>
+              <ul className="feature-matrix__list">
+                <li>Works with your insurance agent, estate planner, appraiser, wealth advisor, trustee and property manager</li>
+                <li>You choose what each one sees and for how long, preview their view, and stop sharing at any time</li>
+                <li>One up-to-date record for all of them, instead of explaining what you own again and again</li>
+                <li>Coverage that matches what you own, and help with a claim if you allow it</li>
+                <li>Estate plans that reflect your wishes, and appraisals that start from your photos and records</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Security</h3>
+              <ul className="feature-matrix__list">
+                <li>Multi-factor authentication</li>
+                <li>Sign out of any device, any time</li>
+                <li>An optional extra check before Vault documents open</li>
+                <li>Export or delete all your data at any time</li>
+                <li>Your data is never sold or used for AI training</li>
+              </ul>
+            </div>
+            <div className="feature-matrix__group">
+              <h3 className="feature-matrix__title">Support</h3>
+              <ul className="feature-matrix__list">
+                <li>A Support Center inside the app</li>
+                <li>24/7 email support</li>
+                <li>Phone support, through the Support Center</li>
+                <li>The same support on every plan</li>
+              </ul>
             </div>
           </div>
         </div>

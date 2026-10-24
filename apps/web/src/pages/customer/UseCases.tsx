@@ -17,7 +17,6 @@ export default function CustomerUseCases() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/customer" className="page-header__back"><Icon name="arrowBack" /> Back to For Families</Link>
           <h1 className="page-header__title">Use Cases</h1>
           <p className="page-header__subtitle">
             See how families use HeirDock to bring clarity to what they own.

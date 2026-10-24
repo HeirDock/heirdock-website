@@ -42,22 +42,28 @@ export default function Nav() {
 
         <div className="site-nav__links">
           <Link
-            to="/about"
-            className={`site-nav__link${isActive("/about") ? " site-nav__link--active" : ""}`}
+            to="/customer/features"
+            className={`site-nav__link${isActive("/customer/features") ? " site-nav__link--active" : ""}`}
           >
-            What is HeirDock?
+            Features
           </Link>
           <Link
-            to="/partner"
-            className={`site-nav__link${isActive("/partner") ? " site-nav__link--active" : ""}`}
+            to="/customer/use-cases"
+            className={`site-nav__link${isActive("/customer/use-cases") ? " site-nav__link--active" : ""}`}
           >
-            For Professionals
+            Use Cases
           </Link>
           <Link
             to="/customer/pricing"
             className={`site-nav__link${isActive("/customer/pricing") ? " site-nav__link--active" : ""}`}
           >
             Pricing
+          </Link>
+          <Link
+            to="/partner"
+            className={`site-nav__link${isActive("/partner") ? " site-nav__link--active" : ""}`}
+          >
+            For Professionals
           </Link>
           <Link
             to="/faq"
@@ -84,10 +90,10 @@ export default function Nav() {
       </div>
 
       <div className={`site-nav__mobile${mobileOpen ? " site-nav__mobile--open" : ""}`}>
-        <Link to="/about" className="site-nav__link">What is HeirDock?</Link>
-        <Link to="/customer" className="site-nav__link">For Families</Link>
-        <Link to="/partner" className="site-nav__link">For Professionals</Link>
+        <Link to="/customer/features" className="site-nav__link">Features</Link>
+        <Link to="/customer/use-cases" className="site-nav__link">Use Cases</Link>
         <Link to="/customer/pricing" className="site-nav__link">Pricing</Link>
+        <Link to="/partner" className="site-nav__link">For Professionals</Link>
         <Link to="/faq" className="site-nav__link">FAQ</Link>
         <Link to="/contact" className="site-nav__link">Contact</Link>
         <a href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</a>

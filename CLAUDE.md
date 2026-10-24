@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Static marketing website for HeirDock (heirdock.com). 26 pages across four sections: Global, Customer, Partner, and Legal stubs. Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
+Static marketing website for HeirDock (heirdock.com). 19 pages across four sections: Global, Customer, Partner, and Legal stubs. Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
 
 ## Tech Stack
 
@@ -21,7 +21,7 @@ Static marketing website for HeirDock (heirdock.com). 26 pages across four secti
 - **Components:** No chips, pills or badges. Links never underline on hover (they fade); links inside running text stay underlined. Clickable cards use `.card--link` (tint and primary border on hover, no lift). Every interactive element keeps the global `:focus-visible` ring.
 - **Font:** Inter variable (weights 100-900) from `@fontsource-variable/inter`, bundled and content-hashed by Vite; the latin subset is preloaded by the prerender. Headings: h1 600, h2-h4 500.
 - **Tone:** Calm, warm, unhurried. No urgency patterns, no alarming language.
-- **AI:** Say it sparingly. The site uses "AI" twice: the Security page's "Responsible AI" card and the FAQ answer on how identification works. Elsewhere, name what the feature does (identification, valuation).
+- **AI:** Say it sparingly. The site uses "AI" three times: the Security page's "Responsible AI" card, the FAQ answer on how identification works, and "never used for AI training" in the Features list's Security card. Elsewhere, name what the feature does (identification, valuation).
 - **Terminology:** Match the app's names: "Stewardship" (after the account holder's passing) and "Care Mode" (when they can't manage things themselves), never "death mode" or "Estate Transition"; "Trusted Participant" (everyone the account holder gives access to) not "heir", and never "Members". Household roles are Primary Account Holder (short "Account Holder", never "Owner"), Manager (manages the household on their behalf) and Shared Access (sees only what is shared with them). Access levels are Viewer, Contributor and Full Access, and apply per Collection or per Vault document, never to the whole household; Steward, Alternate Steward, Care Steward and Beneficiary are designations, not access levels. An item's plan is its "Intention" (Keep, Sell, Gift, Donate, Undecided) with "Intended For"; beneficiaries are named for the household or a collection, not per item. The app's product copy never says "AI". "Asset" is fine in site copy (household assets, asset records); "Item" is the app's word for one thing someone owns.
 
 ## Commands
@@ -37,7 +37,7 @@ Static marketing website for HeirDock (heirdock.com). 26 pages across four secti
 `npm run build` runs three steps:
 1. `build:client` — Vite client build → `dist/client/` (JS, CSS, index.html template)
 2. `build:server` — Vite SSR build → `dist/server/` (Node.js prerender script)
-3. `prerender` — Runs `dist/server/entry-server.js` which renders all 26 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
+3. `prerender` — Runs `dist/server/entry-server.js` which renders all 19 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
 
 Final output for deployment: `dist/client/` (all HTML + assets)
 
@@ -60,7 +60,7 @@ heirdock-website/
 ├── apps/web/           # React + Vite web app
 │   ├── src/
 │   │   ├── components/ # Reusable React components
-│   │   ├── pages/      # Page components (26 pages)
+│   │   ├── pages/      # Page components (19 pages)
 │   │   ├── styles/     # CSS files (tokens, base)
 │   │   ├── assets/     # Images, icons, fonts
 │   │   ├── App.tsx     # Route definitions

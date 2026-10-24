@@ -10,7 +10,7 @@ const faqs: FaqItemData[] = [
   {
     question: "What is HeirDock?",
     answer:
-      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Starting from a photo of each item, it creates a living record of what you own.",
+      "HeirDock is a secure digital application that helps you identify, organize, value, and manage the physical assets in your household. Starting from a photo of each item, it creates a living record of what you own. It isn't financial software or a to-do list: no accounts, no budgets, and nothing you have to finish.",
   },
   {
     question: "Is there a mobile app?",

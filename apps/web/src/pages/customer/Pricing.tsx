@@ -8,108 +8,14 @@ export default function CustomerPricing() {
         <div className="container">
           <h1 className="page-header__title">Choose Your Plan</h1>
           <p className="page-header__subtitle">
-            Start free and add features as you need them - at your own pace.
+            Every plan includes every feature. Plans differ only by how many properties,
+            collections, and assets you manage.
           </p>
         </div>
       </section>
 
       <section className="section section--white">
         <div className="container">
-          <h2 className="section__title">Every plan includes all features</h2>
-          <p className="section__subtitle">
-            Choose your plan based on how much space you need.
-          </p>
-          <div className="feature-grid mb-4xl">
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="bolt" /></div>
-              <div className="feature-card__title">Identification &amp; Valuation</div>
-              <p className="feature-card__description">
-                Photo-based item recognition, market value estimates, and recommendations for high-value items.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="attachFile" /></div>
-              <div className="feature-card__title">Photos and Attachments</div>
-              <p className="feature-card__description">
-                Photos, serial numbers, receipts, and documents for every item.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="lock" /></div>
-              <div className="feature-card__title">Vault Storage</div>
-              <p className="feature-card__description">
-                Bank-level encrypted storage for wills, deeds, insurance policies, and sensitive documents.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="group" /></div>
-              <div className="feature-card__title">Family &amp; Partner Sharing</div>
-              <p className="feature-card__description">
-                Invite family with role-based access, and share with professionals like insurance agents or estate planners to assist.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="assignment" /></div>
-              <div className="feature-card__title">Coverage Insights</div>
-              <p className="feature-card__description">
-                Link insurance policies to items and identify potential coverage gaps.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="description" /></div>
-              <div className="feature-card__title">Export &amp; Reports</div>
-              <p className="feature-card__description">
-                A full assets export, item and property reports, a beneficiary report, and financial analysis.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="chat" /></div>
-              <div className="feature-card__title">Exceptional Support</div>
-              <p className="feature-card__description">
-                We pride ourselves on providing amazing support to every customer, on every plan.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="localOffer" /></div>
-              <div className="feature-card__title">Tags, Stories &amp; Collections</div>
-              <p className="feature-card__description">
-                Organize items with custom tags, personal stories, and collections, with a trust as beneficiary if you like.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="mail" /></div>
-              <div className="feature-card__title">Stewardship and Care Mode</div>
-              <p className="feature-card__description">
-                Name a Steward, a Care Steward and beneficiaries, record who each item is for, and add its story.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="calendarMonth" /></div>
-              <div className="feature-card__title">Asset Reviews</div>
-              <p className="feature-card__description">
-                Gentle reminders to check your record is still accurate, timed to suit each kind of item.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="editNote" /></div>
-              <div className="feature-card__title">Quick Add and Detailed Add</div>
-              <p className="feature-card__description">
-                Add several items from photos at once, or one at a time with every detail.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-card__icon"><Icon name="add" /></div>
-              <div className="feature-card__title">And Many More</div>
-              <p className="feature-card__description">
-                Step-by-step setup, maintenance tracking, exceptional support, and more - every feature included with every plan.
-              </p>
-            </div>
-          </div>
-
-          <h2 className="section__title">Choose your plan</h2>
-          <p className="section__subtitle">
-            Plans differ only by how many properties, collections, and assets you can manage.
-          </p>
           <div className="pricing-grid">
             {/* Essentials */}
             <div className="pricing-tier">
@@ -211,6 +117,9 @@ export default function CustomerPricing() {
             </Link>
             <p className="text-muted mt-md text-sm">
               Start with the 30-day free trial on any plan. Upgrade, downgrade, or cancel at any time.
+            </p>
+            <p className="mt-md">
+              <Link to="/customer/features#all-features">See everything every plan includes</Link>
             </p>
           </div>
         </div>

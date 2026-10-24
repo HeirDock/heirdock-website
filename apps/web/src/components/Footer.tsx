@@ -8,31 +8,42 @@ export default function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <div className="site-footer__logo">
-              <img src={logoDarkUrl} alt="HeirDock" height="60" />
+              <img src={logoDarkUrl} alt="HeirDock" height="76" />
             </div>
             <p>
-              HeirDock helps people bring clarity to what they own -
-              creating a living record of their household assets.
+              HeirDock helps people bring clarity to what they own, creating a living
+              record of their household assets.
             </p>
           </div>
 
           <div>
+            <div className="site-footer__heading">Product</div>
             <div className="site-footer__links">
-              <Link to="/about">What is HeirDock?</Link>
-              <Link to="/customer">For Families</Link>
+              <Link to="/customer/features">Features</Link>
+              <Link to="/customer/use-cases">Use Cases</Link>
               <Link to="/customer/pricing">Pricing</Link>
               <Link to="/faq">FAQ</Link>
-              <a href="https://support.heirdock.com" target="_blank" rel="noopener noreferrer">Support Center</a>
             </div>
           </div>
 
           <div>
+            <div className="site-footer__heading">For Professionals</div>
             <div className="site-footer__links">
-              <Link to="/legal/privacy">Privacy Policy</Link>
-              <Link to="/legal/terms">Terms of Use</Link>
+              <Link to="/partner">Overview</Link>
+              <Link to="/partner/features">Partner Features</Link>
+              <Link to="/partner/pricing">Partner Pricing</Link>
+              <Link to="/partner/demo">Request a Demo</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="site-footer__heading">Company</div>
+            <div className="site-footer__links">
+              <Link to="/contact">Contact Us</Link>
               <Link to="/security">Data Security</Link>
               <a href="https://status.heirdock.com" target="_blank" rel="noopener noreferrer">System Status</a>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/legal/privacy">Privacy Policy</Link>
+              <Link to="/legal/terms">Terms of Use</Link>
             </div>
           </div>
         </div>

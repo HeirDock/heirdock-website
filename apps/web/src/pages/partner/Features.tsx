@@ -6,7 +6,6 @@ export default function PartnerFeatures() {
     <>
       <section className="page-header">
         <div className="container">
-          <Link to="/partner" className="page-header__back"><Icon name="arrowBack" /> Back to For Professionals</Link>
           <h1 className="page-header__title">Partner Features</h1>
           <p className="page-header__subtitle">
             Tools designed for professional workflows - built on top of your clients' household records.
@@ -70,7 +69,7 @@ export default function PartnerFeatures() {
       </section>
 
       {/* Built for your practice */}
-      <section className="section">
+      <section id="practice" className="section">
         <div className="container">
           <h2 className="section__title">Built for your practice</h2>
           <p className="section__subtitle practice__subtitle">

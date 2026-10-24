@@ -38,8 +38,7 @@ export default function Contact() {
         <div className="container container--narrow">
           {status === "success" ? (
             <div className="form__message form__message--success">
-              <strong>Message sent!</strong> Thank you for reaching out. We'll get back to you within
-              1–2 business days.
+              <strong>Message sent!</strong> Thank you for reaching out.
               <div className="mt-lg">
                 <button onClick={reset} className="btn btn--outline btn--sm">
                   Send another message
@@ -108,8 +107,7 @@ export default function Contact() {
           <div className="page-aside">
             <p className="text-sm text-muted">
               For answers to common questions, visit our{" "}
-              <Link to="/faq">FAQ</Link> or{" "}
-              <Link to="/help">Help Center</Link>.
+              <Link to="/faq">FAQ</Link>.
             </p>
           </div>
         </div>
