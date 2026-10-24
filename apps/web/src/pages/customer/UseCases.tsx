@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import BrandGlyph from "../../components/BrandGlyph";
+import Drawing from "../../components/Drawing";
 import Icon from "../../components/Icon";
 import readinessUrl from "../../assets/images/use-cases/uc1-readiness.webp";
 import coveredUrl from "../../assets/images/use-cases/uc1-covered.webp";
@@ -15,12 +17,52 @@ import intentionPickerUrl from "../../assets/images/use-cases/uc4-intention-pick
 export default function CustomerUseCases() {
   return (
     <>
-      <section className="page-header">
-        <div className="container">
-          <h1 className="page-header__title">Use Cases</h1>
-          <p className="page-header__subtitle">
-            See how families use HeirDock to bring clarity to what they own.
+      {/* Hero: four ways in, one per use case below */}
+      <section className="hero-brand hero-brand--plain">
+        <div className="hero-brand__panel">
+          <span className="eyebrow">Use cases</span>
+          <h1 className="hero-brand__title">
+            A clear record
+            <span className="hero-brand__accent">for the moments that matter.</span>
+          </h1>
+          <p className="hero-brand__subtitle">
+            Insurance claims, estate plans, the unexpected and the next move: four times a
+            household record makes all the difference.
           </p>
+          <div className="case-tiles">
+            <a href="#insurance" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="shield" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Insurance readiness</h2>
+                <p className="step-tile__text">Know you&apos;re covered before you need to be.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#estate" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--gold"><BrandGlyph name="people" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Estate planning</h2>
+                <p className="step-tile__text">Pass things on with the story intact.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#disaster" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--sage"><BrandGlyph name="house" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Disaster recovery</h2>
+                <p className="step-tile__text">Your record is safe, even when your home isn&apos;t.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+            <a href="#moving" className="step-tile case-tile">
+              <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="box" /></div>
+              <div className="step-tile__body">
+                <h2 className="step-tile__title">Moving and downsizing</h2>
+                <p className="step-tile__text">Decide what stays, what goes, and who it goes to.</p>
+                <span className="case-tile__more">Read more <Icon name="arrowForward" /></span>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -199,17 +241,25 @@ export default function CustomerUseCases() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="cta-band">
-        <div className="container">
-          <h2 className="cta-band__title">Start building your household record</h2>
-          <p className="cta-band__subtitle">
-            Whatever your reason, HeirDock gives you clarity and control.
-          </p>
-          <div className="cta-band__actions">
-            <Link to="/contact" className="btn btn--gold btn--lg">
-              Get in Touch <Icon name="arrowForward" />
-            </Link>
+      {/* Closing call to action */}
+      <section className="closing-cta">
+        <div className="brand-panel closing-cta__panel">
+          <div>
+            <h2 className="closing-cta__title">Start building your household record</h2>
+            <p className="closing-cta__text">
+              Whatever brings you here, HeirDock gives you clarity and control, at your own pace.
+            </p>
+            <div className="closing-cta__actions">
+              <Link to="/invite" className="btn btn--gold btn--lg">
+                Request Early Access <Icon name="arrowForward" />
+              </Link>
+              <Link to="/customer/pricing" className="btn btn--on-panel btn--lg">
+                View Pricing
+              </Link>
+            </div>
+          </div>
+          <div className="closing-cta__drawing">
+            <Drawing name="frontDoor" tone="navy" />
           </div>
         </div>
       </section>

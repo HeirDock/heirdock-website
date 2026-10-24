@@ -5,7 +5,7 @@ import type { ReactElement } from "react";
 // text beside each glyph carries the meaning. Colours come from .glyph__* in
 // components.css; size with font-size or width on .glyph.
 
-type Name = "camera" | "tag" | "people" | "document" | "phone" | "lock" | "eye" | "shield";
+type Name = "camera" | "tag" | "people" | "document" | "phone" | "lock" | "eye" | "shield" | "house" | "box";
 
 const GLYPHS: Record<Name, ReactElement> = {
   camera: (
@@ -59,6 +59,20 @@ const GLYPHS: Record<Name, ReactElement> = {
     <>
       <path className="glyph__main" d="M12 2.5l8 3v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10v-6z" />
       <path className="glyph__accent-line" d="M8.5 12l2.4 2.4 4.6-4.8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
+  house: (
+    <>
+      <path className="glyph__main" d="M3 11.2 12 3.5l9 7.7V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+      <rect className="glyph__cut" x="9.5" y="13.5" width="5" height="7.5" rx="0.6" />
+      <circle className="glyph__accent" cx="13.3" cy="17.3" r="0.9" />
+    </>
+  ),
+  box: (
+    <>
+      <path className="glyph__main" d="M3 8.5 12 4l9 4.5v10L12 23l-9-4.5z" />
+      <path className="glyph__cut-line" d="M3 8.5 12 13l9-4.5M12 13v10" strokeWidth="1.2" />
+      <path className="glyph__accent-line" d="M7.5 6.2 16.5 10.7v3" strokeWidth="2" strokeLinecap="round" />
     </>
   ),
 };

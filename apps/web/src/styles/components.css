@@ -441,154 +441,6 @@
 }
 
 /* ========================================
-   Challenge compare (partner landing)
-   Each row: a moment without a record, beside what HeirDock changes.
-   ======================================== */
-
-.challenge__subtitle {
-  max-width: 700px;
-  margin-bottom: var(--space-2xl);
-}
-
-.challenge-compare {
-  max-width: 960px;
-  margin: 0 auto;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.challenge-compare__head,
-.challenge-compare__row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.challenge-compare__head > div {
-  padding: var(--space-md) var(--space-xl);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.challenge-compare__head > .challenge-compare__head-with,
-.challenge-compare__with {
-  background: var(--color-primary-light);
-  border-left: 1px solid var(--color-border);
-}
-
-.challenge-compare__head > .challenge-compare__head-with {
-  color: var(--color-primary);
-  border-bottom-color: var(--gap-tint-rule);
-}
-
-.challenge-compare__without,
-.challenge-compare__with {
-  padding: var(--space-md) var(--space-xl);
-}
-
-.challenge-compare__without {
-  border-bottom: 1px solid var(--color-divider);
-}
-
-.challenge-compare__with {
-  border-bottom: 1px solid var(--gap-tint-rule);
-  /* Lines the answer up with the problem text, below the moment's name. */
-  padding-top: calc(var(--space-md) + 1.125rem);
-}
-
-.challenge-compare__row:last-child > div {
-  border-bottom: none;
-  padding-bottom: 1.25rem;
-}
-
-.challenge-compare__moment {
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--color-text-muted);
-  margin-bottom: 2px;
-}
-
-.challenge-compare__row p {
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-.challenge-compare__with p {
-  color: var(--color-text-primary);
-  font-weight: 500;
-}
-
-/* Read out on desktop (the column header is hidden from screen readers);
-   shown on phones, where each answer stacks under its problem. */
-.challenge-compare__with-label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
-.challenge-compare__closing {
-  margin: var(--space-xl) 0 0;
-  text-align: center;
-  font-size: var(--text-md);
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-@media (max-width: 767px) {
-  .challenge-compare__head {
-    display: none;
-  }
-
-  .challenge-compare__row {
-    display: block;
-    padding: var(--space-md) 1.25rem;
-    border-bottom: 1px solid var(--color-divider);
-  }
-
-  .challenge-compare__row:last-child {
-    border-bottom: none;
-  }
-
-  .challenge-compare__without,
-  .challenge-compare__row:last-child > div {
-    padding: 0;
-    border-bottom: none;
-  }
-
-  .challenge-compare__with,
-  .challenge-compare__row:last-child > .challenge-compare__with {
-    margin-top: var(--space-sm);
-    padding: var(--space-sm) 0.875rem;
-    border: none;
-    border-radius: var(--radius-sm);
-  }
-
-  .challenge-compare__with-label {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    display: block;
-    font-size: var(--text-xs);
-    color: var(--color-primary);
-    margin-bottom: 2px;
-  }
-
-  .challenge-compare__closing {
-    font-size: var(--text-base);
-  }
-}
-
-/* ========================================
    Page Header (interior pages)
    ======================================== */
 
@@ -757,54 +609,6 @@
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
-  }
-}
-
-/* ========================================
-   Step Card / Grid
-   ======================================== */
-
-.step-grid {
-  display: flex;
-  gap: var(--space-xl);
-  counter-reset: step;
-}
-
-.step-card {
-  flex: 1;
-  text-align: center;
-  counter-increment: step;
-}
-
-.step-card__number {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-  font-weight: 600;
-  font-size: var(--text-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-lg);
-}
-
-.step-card__title {
-  font-size: var(--text-lg);
-  font-weight: 500;
-  margin-bottom: var(--space-md);
-}
-
-.step-card__description {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
-@media (max-width: 767px) {
-  .step-grid {
-    flex-direction: column;
   }
 }
 
@@ -1894,6 +1698,68 @@
   }
 }
 
+/* Use Cases hero: four tiles, one per use case, each a link to its section. */
+.case-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  text-align: left;
+}
+
+.case-tile {
+  display: block;
+  color: var(--color-text-primary);
+  transition: border-color var(--duration-fast) var(--ease-default);
+}
+
+.case-tile:hover {
+  opacity: 1;
+  border-color: var(--color-primary);
+}
+
+.case-tile__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Partner hero: the client workspace, with the client's sharing card over
+   its lower left. Both stay inside the panel. */
+.portal-stack {
+  padding-bottom: 8%;
+}
+
+/* Centred under the arc; the card overlaps its lower left. */
+.portal-stack__main {
+  position: relative;
+  width: 72%;
+  margin: 0 auto;
+}
+
+.portal-stack__card {
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  width: 32%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg), var(--shadow-md);
+}
+
+/* The "With HeirDock" list runs longer than the asset gap's, so it is set
+   smaller, and the drawing beside it is narrower. */
+.asset-gap__panel--brand .asset-gap__list--compact li {
+  font-size: var(--text-md);
+}
+
+.asset-gap__drawing--small {
+  width: 170px;
+}
+
 /* ---------- Home: trust row ---------- */
 
 .trust-row {
@@ -2112,7 +1978,8 @@
 /* ---------- Home: responsive ---------- */
 
 @media (max-width: 1023px) {
-  .step-tiles {
+  .step-tiles,
+  .case-tiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2134,6 +2001,20 @@
   .hero-brand__arc {
     top: -28px;
     width: 112%;
+  }
+
+  .case-tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portal-stack__main {
+    width: 100%;
+  }
+
+  .portal-stack__card {
+    position: relative;
+    width: 70%;
+    margin: -12% 0 0 auto;
   }
 
   .trust-row__list {
