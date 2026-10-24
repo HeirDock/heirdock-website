@@ -1738,16 +1738,18 @@
 /* ---------- Home: hero ---------- */
 
 .hero-brand {
-  --hero-overhang: 140px;
-  padding: var(--space-md) var(--space-md) calc(var(--hero-overhang) + var(--space-xl));
-  /* The arc reaches past the video's sides; clip it sideways only, so the
-     video can still overhang the panel downwards. */
+  padding: var(--space-md) var(--space-md) var(--space-xl);
+  /* The arc reaches past the video's sides; clip it sideways. */
   overflow-x: clip;
 }
 
+/* A light panel by default (Home): the site's soft navy tint, ink headline,
+   and the darker gold (4.5:1 on the tint) for the second line. */
 .hero-brand__panel {
-  padding: var(--space-4xl) var(--space-xl) 0;
+  padding: var(--space-4xl) var(--space-xl) var(--space-3xl);
   text-align: center;
+  background: var(--hero-bg);
+  border-radius: calc(var(--radius-lg) * 2);
 }
 
 .hero-brand__title {
@@ -1756,12 +1758,12 @@
   font-size: clamp(2.375rem, 3.2vw + 1rem, 4rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: var(--on-panel-text);
+  color: var(--color-text-primary);
 }
 
 .hero-brand__accent {
   display: block;
-  color: var(--color-accent);
+  color: var(--color-accent-active);
 }
 
 .hero-brand__subtitle {
@@ -1769,7 +1771,7 @@
   margin: 0 auto var(--space-xl);
   font-size: var(--text-md);
   line-height: 1.7;
-  color: var(--on-panel-muted);
+  color: var(--color-text-secondary);
 }
 
 .hero-brand__actions {
@@ -1786,7 +1788,7 @@
   gap: var(--space-sm) var(--space-xl);
   margin-top: var(--space-lg);
   font-size: var(--text-sm);
-  color: var(--on-panel-faint);
+  color: var(--color-text-muted);
 }
 
 .hero-brand__film {
@@ -1794,20 +1796,27 @@
   align-items: center;
   gap: var(--space-xs);
   font-weight: 500;
-  color: var(--on-panel-text);
 }
 
 .hero-brand__film .icon {
   font-size: var(--text-lg);
-  color: var(--color-accent);
 }
 
-/* The loop rises out of the panel: it overhangs the panel's bottom edge by
-   --hero-overhang, framed by the gold arc behind it. */
+/* On a navy panel (the partner landing), the light-on-dark colours. */
+.hero-brand__panel.brand-panel {
+  background: var(--brand-panel-bg);
+}
+
+.brand-panel .hero-brand__title { color: var(--on-panel-text); }
+.brand-panel .hero-brand__accent { color: var(--color-accent); }
+.brand-panel .hero-brand__subtitle { color: var(--on-panel-muted); }
+.brand-panel .hero-brand__note { color: var(--on-panel-faint); }
+
+/* The loop sits inside the panel, with room below it, under the gold arc. */
 .hero-brand__media {
   position: relative;
   max-width: 880px;
-  margin: var(--space-3xl) auto calc(-1 * var(--hero-overhang));
+  margin: var(--space-3xl) auto 0;
 }
 
 /* Wider than the video, so the ring frames it rather than hiding behind it. */
@@ -1824,8 +1833,7 @@
   width: 100%;
   margin: 0;
   border-radius: var(--radius-lg);
-  box-shadow: 0 24px 48px color-mix(in srgb, var(--color-text-primary) 22%, transparent),
-    var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 /* A brand hero without media (partner landing). */
@@ -2140,13 +2148,12 @@
 
 @media (max-width: 767px) {
   .hero-brand {
-    --hero-overhang: 56px;
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
   }
 
   .hero-brand__panel {
-    padding: var(--space-3xl) var(--space-md) 0;
+    padding: var(--space-3xl) var(--space-md) var(--space-xl);
   }
 
   .hero-brand__actions .btn {
