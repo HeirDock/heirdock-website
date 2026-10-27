@@ -4,20 +4,20 @@ import logoUrl from "../assets/images/heirdock-horizontal-color.svg";
 import Icon from "./Icon";
 
 export default function Nav() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  // The mobile menu remembers the page it was opened on, so going to another
+  // page closes it without an extra render.
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const mobileOpen = openOn === location.pathname;
+  const setMobileOpen = (open: boolean) => setOpenOn(open ? location.pathname : null);
   const navRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
 
   // Close mobile menu on outside click
   useEffect(() => {
     if (!mobileOpen) return;
     const handleClick = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        setMobileOpen(false);
+        setOpenOn(null);
       }
     };
     document.addEventListener("mousedown", handleClick);
