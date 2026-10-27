@@ -6,7 +6,7 @@ Static marketing website for HeirDock (heirdock.com). 20 pages across four secti
 
 ## Tech Stack
 
-- **Frontend:** React 19, TypeScript 5.7, Vite 7
+- **Frontend:** React 19, TypeScript 6.0, Vite 8
 - **Styling:** Plain CSS with CSS custom properties (design tokens). No MUI, no Tailwind.
 - **Pre-rendering:** Custom prerender script (entry-server.tsx renders each route to static HTML at build time)
 - **Infrastructure:** AWS S3 + CloudFront, Terraform
