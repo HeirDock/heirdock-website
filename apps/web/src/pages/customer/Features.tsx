@@ -51,28 +51,32 @@ export default function CustomerFeatures() {
                 Add several things at once with Quick Add, or take your time with Detailed Add.
               </p>
             </div>
-            <div className="app-card" role="img" aria-label="Example: a photo of a gold pocket watch, with a suggested name, category and estimated value">
-              <div className="app-suggest">
-                <img className="app-suggest__photo" src={identifyPhotoUrl} width={491} height={600} alt="" decoding="async" />
-                <div className="app-suggest__fields">
-                  <div className="app-label">Suggested from your photo</div>
-                  <div className="app-field">
-                    <div className="app-field__label">Name</div>
-                    <div className="app-field__value">Gold Pocket Watch, circa 1890</div>
-                  </div>
-                  <div className="app-field">
-                    <div className="app-field__label">Category</div>
-                    <div className="app-field__value">Watches</div>
-                  </div>
-                  <div className="app-field">
-                    <div className="app-field__label">Estimated value</div>
-                    <div className="app-field__value">$4,000 - $5,000</div>
+            {/* On a tint block like the screenshots below, so it reads as a picture
+                of the app rather than buttons on this page. */}
+            <div className="screen-stack screen-stack--mockup screen-stack--tint-gold">
+              <div className="app-card" role="img" aria-label="Example: a photo of a gold pocket watch, with a suggested name, category and estimated value">
+                <div className="app-suggest">
+                  <img className="app-suggest__photo" src={identifyPhotoUrl} width={491} height={600} alt="" decoding="async" />
+                  <div className="app-suggest__fields">
+                    <div className="app-label">Suggested from your photo</div>
+                    <div className="app-field">
+                      <div className="app-field__label">Name</div>
+                      <div className="app-field__value">Gold Pocket Watch, circa 1890</div>
+                    </div>
+                    <div className="app-field">
+                      <div className="app-field__label">Category</div>
+                      <div className="app-field__value">Watches</div>
+                    </div>
+                    <div className="app-field">
+                      <div className="app-field__label">Estimated value</div>
+                      <div className="app-field__value">$4,000 - $5,000</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="app-actions">
-                <span className="app-button">Edit details</span>
-                <span className="app-button app-button--primary">Save item</span>
+                <div className="app-actions">
+                  <span className="app-button">Edit details</span>
+                  <span className="app-button app-button--primary">Save item</span>
+                </div>
               </div>
             </div>
           </div>
