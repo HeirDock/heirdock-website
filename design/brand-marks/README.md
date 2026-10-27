@@ -17,7 +17,7 @@ website's deep-navy panel, #2E4E70).
 |---|---|---|---|---|
 | The arch | The logo's gold ring | Shelter: the household | Heroes, line drawings, the ring above page titles | Body content and controls; more than twice on a screen |
 | The thread | The drawings' gold string and chain | In order; passed on | Steps, an item's history, getting started, the Stewardship hand-off | Decoration; two threads in one view; running through text |
-| The gold dot | The dot on the i | This one; yours; new | The active page or tab, list markers, new since your last visit, one headline's full stop | Numbers and statuses that need words |
+| The gold dot | The dot on the i | This one; yours; new | List markers, new since your last visit, one headline's full stop | Numbers and statuses that need words; the active menu link or tab |
 | The planks | The dock's boards | Structure; the way forward | Section dividers, empty states, loading | Panels that already have the arch |
 
 **Rejected:** corner brackets around images (the "posts", from the dock's front posts) and
@@ -63,13 +63,15 @@ Meaning is never colour alone: done has a check, next is hollow, every node has 
 
 | Use | Size | Placement |
 |---|---|---|
-| Active menu link or tab | 6px (web), 6-8px (mobile tab bar) | Centred 10px below the label; beside it in a stacked menu |
 | List marker | 6px | Centred on the first line, one spacing step before the text |
 | New since your last visit | 6-8px | After the label, with screen-reader text ("New") |
 | A headline's full stop | 0.16em, 0.05em after the last letter | One per page, on a statement, never after a question mark |
 
 Always the accent gold (#DEB05E light and navy, #E8C06E dark). One per group. A dot never
 holds a number; counts and statuses get words.
+
+Not on the active menu link or tab: next to a menu item a gold dot reads as a
+notification (Adam, 2026-10-27). The active item uses its selected style alone.
 
 ## The planks
 
@@ -90,7 +92,7 @@ Three boards narrowing upward, like the logo's dock (`planks-*.svg`).
   Home shows it twice (the watch panel and the closing door); its hero film has none.
 - Thread: How it works on Home and the professionals page (`.step-tiles--thread`); What to
   expect / What happens next on the two request pages (`.thread-list`).
-- Gold dot: the active menu link (`.site-nav__link--active`), the Features list markers
+- Gold dot: the Features list markers
   (`.feature-matrix__list`), the closing headlines of Home, Use Cases and the professionals
   page (`.gold-stop`).
 - Planks: `components/Planks.tsx`: dividers on Home, Features, Partner Features and
