@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { useContactForm } from "../../lib/useContactForm";
 import Icon from "../../components/Icon";
+import Drawing from "../../components/Drawing";
+import Planks from "../../components/Planks";
 
 export default function Demo() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -40,6 +42,7 @@ export default function Demo() {
         <div className="container container--narrow">
           {status === "success" ? (
             <div className="form__message form__message--success">
+              <div className="form__drawing"><Drawing name="letter" /></div>
               <strong>Demo request received!</strong> Thank you for your interest. A member of our
               team will be in touch within 1 business day to schedule your demo.
             </div>
@@ -106,7 +109,7 @@ export default function Demo() {
 
               <button type="submit" disabled={status === "submitting"}
                 className="btn btn--primary btn--lg form__submit">
-                {status === "submitting" ? "Submitting..." : <>Request Demo <Icon name="arrowForward" /></>}
+                {status === "submitting" ? <><Planks loading /> Submitting...</> : <>Request Demo <Icon name="arrowForward" /></>}
               </button>
 
               <p className="fine-print">

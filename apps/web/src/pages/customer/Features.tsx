@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import Planks from "../../components/Planks";
 import identifyPhotoUrl from "../../assets/images/features/identify-watch.webp";
 import valuationUrl from "../../assets/images/features/valuation.webp";
 import photosUrl from "../../assets/images/features/photos.webp";
@@ -385,6 +386,7 @@ export default function CustomerFeatures() {
       {/* Every feature, at a glance */}
       <section className="section" id="all-features">
         <div className="container">
+          <Planks className="planks--divider" />
           <h2 className="section__title">Every feature, at a glance</h2>
           <p className="section__subtitle">Included in every plan.</p>
           <div className="feature-matrix">

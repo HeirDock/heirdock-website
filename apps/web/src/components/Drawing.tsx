@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { ReactElement } from "react";
 
 // HeirDock's line drawings (source of truth: design/illustrations/drawings.py),
 // inline so their colours come from tokens: .drawing--light / --navy / --tint
@@ -6,14 +7,17 @@ import { useEffect, useRef, useState } from "react";
 //
 // Motion is opt-in per placement and never on the server: the prerender and
 // first paint are the still drawing. After hydration, and only when the
-// viewer has not asked for reduced motion, "swing" sways the keepsake's tag,
-// and "open" lifts the lid (or swings the door ajar) once, the first time the
+// viewer has not asked for reduced motion, "swing" sways the keepsake's tag
+// (or the pocket watch on its chain), and "open" lifts the lid (or swings the door ajar) once, the first time the
 // drawing scrolls into view.
 
 type Props = {
-  name: "keepsake" | "frontDoor";
+  name: "keepsake" | "frontDoor" | "valuables" | StillName;
   tone?: "light" | "navy" | "tint";
   motion?: "swing" | "open";
+  // The keepsake can stand on the planks instead of under the arch, so a page
+  // with several drawings doesn't repeat the arch three times.
+  frame?: "arch" | "planks";
   className?: string;
 };
 
@@ -25,6 +29,71 @@ const SEAM_SHUT = "M79 176 H221";
 const DOOR_AJAR = "M104 268 V150 L162 160 V262";
 const DOOR_SHUT = "M104 268 V150 H196 V268";
 const EASE = "0.2 0 0 1";
+// Three boards in place of the shelf line, narrowing upward like the logo's
+// dock, ends cut at 45 degrees; the view is cropped to the box and boards.
+const PLANKS = [
+  "66,274 234,274 228,268 72,268",
+  "50,286 250,286 244,280 56,280",
+  "34,298 266,298 260,292 40,292",
+];
+const PLANKS_VIEWBOX = "20 100 260 210";
+
+// Still drawings: an object under the arch, on the shelf line, no motion.
+type StillName = "strongbox" | "letter" | "lantern" | "clipboard";
+
+const STILLS: Record<StillName, ReactElement> = {
+  strongbox: (
+    <>
+      <rect className="drawing__line drawing__surface" x="88" y="146" width="124" height="114" rx="8" strokeWidth="3" />
+      <rect className="drawing__line" x="100" y="158" width="100" height="90" rx="4" strokeWidth="1.8" opacity=".55" />
+      <path className="drawing__line" d="M96 172 v12 M96 222 v12" strokeWidth="4" strokeLinecap="round" />
+      <circle className="drawing__line drawing__surface" cx="146" cy="203" r="22" strokeWidth="3" />
+      <path className="drawing__line" d="M146 189 v-3 M160 203 h3 M146 217 v3 M132 203 h-3" strokeWidth="1.8" strokeLinecap="round" opacity=".7" />
+      <circle className="drawing__accent-fill" cx="146" cy="203" r="6" />
+      <path className="drawing__accent" d="M146 181 v6" strokeWidth="2.4" strokeLinecap="round" />
+      <path className="drawing__line" d="M186 190 v26" strokeWidth="3" strokeLinecap="round" />
+      <path className="drawing__line" d="M104 260 v8 M196 260 v8" strokeWidth="5" strokeLinecap="round" />
+    </>
+  ),
+  letter: (
+    <>
+      <path className="drawing__line drawing__surface" d="M72 186 L150 128 L228 186" strokeWidth="3" strokeLinejoin="round" />
+      <rect className="drawing__line drawing__surface" x="94" y="146" width="112" height="96" rx="3" strokeWidth="3" />
+      <path className="drawing__line" d="M110 166 h66 M110 180 h80 M110 194 h58" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+      <path className="drawing__line drawing__surface" d="M72 186 L150 230 L228 186 V258 a6 6 0 0 1 -6 6 H78 a6 6 0 0 1 -6 -6 Z" strokeWidth="3" strokeLinejoin="round" />
+      <circle className="drawing__accent-fill" cx="150" cy="230" r="11" />
+      <circle className="drawing__surface-line" cx="150" cy="230" r="5" strokeWidth="1.6" opacity=".9" />
+    </>
+  ),
+  lantern: (
+    <>
+      <circle className="drawing__line" cx="150" cy="122" r="8" strokeWidth="3" />
+      <path className="drawing__line drawing__surface" d="M124 148 L134 132 H166 L176 148 Z" strokeWidth="3" strokeLinejoin="round" />
+      <rect className="drawing__line drawing__surface" x="118" y="148" width="64" height="104" rx="4" strokeWidth="3" />
+      <rect className="drawing__glow" x="128" y="158" width="44" height="84" rx="2" />
+      <path className="drawing__flame" d="M150 184 c-6 8 -8 14 -8 18 a8 8 0 0 0 16 0 c0 -4 -2 -10 -8 -18z" />
+      <path className="drawing__line" d="M150 210 v4" strokeWidth="1.8" strokeLinecap="round" />
+      <rect className="drawing__line drawing__surface" x="143" y="214" width="14" height="28" rx="2" strokeWidth="2.4" />
+      <path className="drawing__line drawing__surface" d="M112 252 H188 V262 a4 4 0 0 1 -4 4 H116 a4 4 0 0 1 -4 -4 Z" strokeWidth="3" strokeLinejoin="round" />
+    </>
+  ),
+  clipboard: (
+    <>
+      <rect className="drawing__line drawing__surface" x="96" y="112" width="108" height="150" rx="8" strokeWidth="3" />
+      <rect className="drawing__line" x="108" y="130" width="84" height="120" rx="2" strokeWidth="1.8" opacity=".55" />
+      <rect className="drawing__accent-fill" x="128" y="102" width="44" height="20" rx="6" />
+      <circle className="drawing__surface" cx="150" cy="110" r="3" />
+      <rect className="drawing__line" x="118" y="148" width="14" height="14" rx="3" strokeWidth="2" />
+      <path className="drawing__line" d="M121 155 l3 3 l5 -6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path className="drawing__line" d="M140 155 h40" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+      <rect className="drawing__line" x="118" y="176" width="14" height="14" rx="3" strokeWidth="2" />
+      <path className="drawing__line" d="M121 183 l3 3 l5 -6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path className="drawing__line" d="M140 183 h32" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+      <rect className="drawing__line" x="118" y="204" width="14" height="14" rx="3" strokeWidth="2" />
+      <path className="drawing__line" d="M140 211 h36" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+    </>
+  ),
+};
 
 function useMotionAllowed() {
   const [allowed, setAllowed] = useState(false);
@@ -38,7 +107,7 @@ function useMotionAllowed() {
   return allowed;
 }
 
-export default function Drawing({ name, tone = "light", motion, className = "" }: Props) {
+export default function Drawing({ name, tone = "light", motion, frame = "arch", className = "" }: Props) {
   const allowed = useMotionAllowed();
   const svgRef = useRef<SVGSVGElement>(null);
   const [played, setPlayed] = useState(false);
@@ -64,6 +133,56 @@ export default function Drawing({ name, tone = "light", motion, className = "" }
   const sways = allowed && (motion === "swing" || motion === "open");
   const classes = `drawing drawing--${tone}${className ? ` ${className}` : ""}`;
 
+  if (name in STILLS) {
+    return (
+      <svg className={classes} viewBox="0 0 300 300" fill="none" aria-hidden="true" focusable="false">
+        <path className="drawing__accent" d={ARCH} strokeWidth="3" strokeLinecap="round" />
+        {STILLS[name as StillName]}
+        <path className="drawing__line" d="M52 268 H248" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (name === "valuables") {
+    return (
+      <svg ref={svgRef} className={classes} viewBox="0 0 300 300" fill="none" aria-hidden="true" focusable="false">
+        <path className="drawing__accent" d={ARCH} strokeWidth="3" strokeLinecap="round" />
+        {/* the painting on its wire */}
+        <path className="drawing__line" d="M164 86 L188 72 L212 86" strokeWidth="1.8" strokeLinejoin="round" opacity=".55" />
+        <circle cx="188" cy="72" r="2.4" className="drawing__line-fill" />
+        <rect className="drawing__line drawing__surface" x="140" y="86" width="96" height="72" rx="3" strokeWidth="3" />
+        <rect className="drawing__line" x="148" y="94" width="80" height="56" rx="1.5" strokeWidth="1.8" opacity=".7" />
+        <path className="drawing__line" d="M154 142 q16 -18 32 -6 q12 -10 36 4" strokeWidth="1.8" strokeLinecap="round" opacity=".7" />
+        <circle className="drawing__line" cx="206" cy="110" r="5" strokeWidth="1.8" opacity=".7" />
+        {/* the pocket watch, hanging from its hook on a gold chain */}
+        <path className="drawing__line" d="M86 114 h14" strokeWidth="3" strokeLinecap="round" />
+        <g>
+          {sways && (
+            <animateTransform attributeName="transform" type="rotate" dur="6s" repeatCount="indefinite" calcMode="spline"
+              keyTimes="0;0.16;0.34;0.5;0.64;1"
+              keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0 0 1 1"
+              values="0 93 114;5 93 114;-4 93 114;2 93 114;0 93 114;0 93 114" />
+          )}
+          <path className="drawing__accent" d="M93 117 V158" strokeWidth="2.2" strokeLinecap="round" />
+          <circle className="drawing__line" cx="93" cy="165" r="6" strokeWidth="2.4" />
+          <rect className="drawing__line drawing__surface" x="89" y="171" width="8" height="7" rx="1.5" strokeWidth="2.4" />
+          <circle className="drawing__line drawing__surface" cx="93" cy="204" r="26" strokeWidth="3" />
+          <circle className="drawing__line" cx="93" cy="204" r="20" strokeWidth="1.8" opacity=".55" />
+          <path className="drawing__line" d="M93 188 v4 M109 204 h-4 M93 220 v-4 M77 204 h4" strokeWidth="1.8" strokeLinecap="round" opacity=".7" />
+          <path className="drawing__line" d="M93 204 V192 M93 204 l8 5" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="93" cy="204" r="2.2" className="drawing__line-fill" />
+        </g>
+        {/* the open ring box, its gold stone */}
+        <path className="drawing__line drawing__surface" d="M156 236 L160 200 Q161 195 166 195 H218 Q223 195 224 200 L228 236" strokeWidth="3" strokeLinejoin="round" />
+        <path className="drawing__line" d="M163 207 H221" strokeWidth="2" opacity=".55" />
+        <circle className="drawing__line" cx="192" cy="228" r="13" strokeWidth="3" />
+        <path className="drawing__accent-fill" d="M184 213 l8 -9 l8 9 l-8 8z" />
+        <rect className="drawing__line drawing__surface" x="152" y="234" width="80" height="32" rx="7" strokeWidth="3" />
+        <path className="drawing__line" d="M52 268 H248" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
   if (name === "frontDoor") {
     return (
       <svg ref={svgRef} className={classes} viewBox="0 0 300 300" fill="none" aria-hidden="true" focusable="false">
@@ -87,9 +206,10 @@ export default function Drawing({ name, tone = "light", motion, className = "" }
     );
   }
 
+  const onPlanks = frame === "planks";
   return (
-    <svg ref={svgRef} className={classes} viewBox="0 0 300 300" fill="none" aria-hidden="true" focusable="false">
-      <path className="drawing__accent" d={ARCH} strokeWidth="3" strokeLinecap="round" />
+    <svg ref={svgRef} className={classes} viewBox={onPlanks ? PLANKS_VIEWBOX : "0 0 300 300"} fill="none" aria-hidden="true" focusable="false">
+      {!onPlanks && <path className="drawing__accent" d={ARCH} strokeWidth="3" strokeLinecap="round" />}
       {/* lid, behind the keepsakes when open */}
       <path className="drawing__line drawing__surface" d={opens ? LID_SHUT : LID_OPEN} strokeWidth="3" strokeLinejoin="round">
         {opens && (
@@ -132,7 +252,11 @@ export default function Drawing({ name, tone = "light", motion, className = "" }
         <circle className="drawing__surface" cx="163" cy="224" r="2.2" />
         <path className="drawing__surface-line" d="M170 221 h18 M170 227 h12" strokeWidth="1.6" strokeLinecap="round" opacity=".9" />
       </g>
-      <path className="drawing__line" d="M52 268 H248" strokeWidth="3" strokeLinecap="round" />
+      {onPlanks ? (
+        PLANKS.map((points) => <polygon key={points} className="drawing__planks" points={points} />)
+      ) : (
+        <path className="drawing__line" d="M52 268 H248" strokeWidth="3" strokeLinecap="round" />
+      )}
     </svg>
   );
 }

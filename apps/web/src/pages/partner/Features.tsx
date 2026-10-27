@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import Planks from "../../components/Planks";
 import toolWorkspaceUrl from "../../assets/images/partner/tool-workspace.webp";
 import toolCoverageUrl from "../../assets/images/partner/tool-coverage.webp";
 import toolPoliciesUrl from "../../assets/images/partner/tool-policies.webp";
@@ -90,6 +91,7 @@ export default function PartnerFeatures() {
       {/* Built for your practice */}
       <section id="practice" className="section">
         <div className="container">
+          <Planks className="planks--divider" />
           <h2 className="section__title">Built for your practice</h2>
           <p className="section__subtitle practice__subtitle">
             Each professional sees the part of a household's record that matters to their

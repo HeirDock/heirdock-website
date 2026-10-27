@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../lib/useContactForm";
 import Icon from "../components/Icon";
+import Drawing from "../components/Drawing";
+import Planks from "../components/Planks";
 
 export default function Invite() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -42,7 +44,7 @@ export default function Invite() {
             <div className="invite-page__form-side">
               {status === "success" ? (
                 <div className="form__message form__message--success">
-                  <div className="invite-success__icon"><Icon name="check" /></div>
+                  <div className="form__drawing"><Drawing name="letter" /></div>
                   <strong>You're on the list!</strong>
                   <p className="mt-md">
                     Thank you for your interest in HeirDock. We'll reach out when
@@ -91,7 +93,7 @@ export default function Invite() {
 
                   <button type="submit" disabled={status === "submitting"}
                     className="btn btn--primary btn--lg form__submit">
-                    {status === "submitting" ? "Submitting..." : <>Request Invite <Icon name="arrowForward" /></>}
+                    {status === "submitting" ? <><Planks loading /> Submitting...</> : <>Request Invite <Icon name="arrowForward" /></>}
                   </button>
 
                   <p className="fine-print">
@@ -120,10 +122,11 @@ export default function Invite() {
 
               <div className="invite-info-card">
                 <h3 className="invite-info-card__title">What to expect</h3>
-                <ul className="invite-info-card__list">
+                <ol className="thread-list">
                   <li>We review requests in the order they're received</li>
                   <li>You'll receive an email when your invite is ready</li>
-                </ul>
+                  <li>Then sign in and start with a few things that matter</li>
+                </ol>
               </div>
 
               <div className="invite-info-card">

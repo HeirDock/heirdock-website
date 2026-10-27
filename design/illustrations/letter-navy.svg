@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none" role="img" aria-label="An opened envelope with a note and a gold seal">
+  <path d="M28 286 V160 a122 122 0 0 1 244 0 V286" stroke="#DEB05E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M72 186 L150 128 L228 186" stroke="#E8EEF5" stroke-width="3" stroke-linejoin="round" fill="#2E4E70"/>
+  <rect x="94" y="146" width="112" height="96" rx="3" stroke="#E8EEF5" stroke-width="3" fill="#2E4E70"/>
+  <path d="M110 166 h66 M110 180 h80 M110 194 h58" stroke="#E8EEF5" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+  <path d="M72 186 L150 230 L228 186 V258 a6 6 0 0 1 -6 6 H78 a6 6 0 0 1 -6 -6 Z" stroke="#E8EEF5" stroke-width="3" stroke-linejoin="round" fill="#2E4E70"/>
+  <circle cx="150" cy="230" r="11" fill="#DEB05E"/>
+  <circle cx="150" cy="230" r="5" stroke="#2E4E70" stroke-width="1.6" opacity=".9"/>
+  <path d="M52 268 H248" stroke="#E8EEF5" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../../lib/useContactForm";
 import Icon from "../../components/Icon";
+import Drawing from "../../components/Drawing";
+import Planks from "../../components/Planks";
 
 // The professional counterpart of /invite: a practice asks for access to the
 // Partner Portal. Practice types match the app's six professional types.
@@ -44,7 +46,7 @@ export default function RequestAccess() {
             <div className="invite-page__form-side">
               {status === "success" ? (
                 <div className="form__message form__message--success">
-                  <div className="invite-success__icon"><Icon name="check" /></div>
+                  <div className="form__drawing"><Drawing name="letter" /></div>
                   <strong>Request received.</strong>
                   <p className="mt-md">
                     Thank you for your interest in HeirDock. We&apos;ll be in touch about setting
@@ -110,7 +112,7 @@ export default function RequestAccess() {
 
                   <button type="submit" disabled={status === "submitting"}
                     className="btn btn--primary btn--lg form__submit">
-                    {status === "submitting" ? "Submitting..." : <>Request Access <Icon name="arrowForward" /></>}
+                    {status === "submitting" ? <><Planks loading /> Submitting...</> : <>Request Access <Icon name="arrowForward" /></>}
                   </button>
 
                   <p className="fine-print">
@@ -129,11 +131,11 @@ export default function RequestAccess() {
             <div className="invite-page__info-side">
               <div className="invite-info-card">
                 <h3 className="invite-info-card__title">What happens next</h3>
-                <ul className="invite-info-card__list">
+                <ol className="thread-list">
                   <li>We review every practice before it connects with clients</li>
                   <li>You&apos;ll receive an invitation to set up your Partner Portal</li>
                   <li>Then invite clients in your practice&apos;s name</li>
-                </ul>
+                </ol>
               </div>
 
               <div className="invite-info-card">
