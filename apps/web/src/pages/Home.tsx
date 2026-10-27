@@ -1,55 +1,65 @@
 import { Link } from "react-router-dom";
 import BrandGlyph from "../components/BrandGlyph";
 import Drawing from "../components/Drawing";
-import HeroVideo from "../components/HeroVideo";
 import Icon from "../components/Icon";
+import Planks from "../components/Planks";
 
 export default function Home() {
   return (
     <>
-      {/* Hero: a light panel; the loop sits inside it, under the gold arc. */}
+      {/* Hero: a light panel; the 30-second film sits inside it, as wide as the
+          headline. */}
       <section className="hero-brand">
         <div className="hero-brand__panel">
-          <h1 className="hero-brand__title">
-            Know what you own.
-            <span className="hero-brand__accent">Protect what matters.</span>
-          </h1>
-          <p className="hero-brand__subtitle">
-            HeirDock helps households identify, organize, value, and manage the things in
-            their lives - from heirlooms and collectibles to jewelry, art, and everyday valuables.
-          </p>
-          <div className="hero-brand__actions">
-            <Link to="/invite" className="btn btn--gold btn--lg">
-              Request Early Access <Icon name="arrowForward" />
-            </Link>
-            <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
-              Sign In
-            </a>
+          <div className="hero-brand__column">
+            <h1 className="hero-brand__title">
+              Know what you own.
+              <span className="hero-brand__accent">Protect what matters.</span>
+            </h1>
+            <p className="hero-brand__subtitle">
+              HeirDock helps households identify, organize, value, and manage the things in
+              their lives - from heirlooms and collectibles to jewelry, art, and everyday valuables.
+            </p>
+            <div className="hero-brand__actions">
+              <Link to="/invite" className="btn btn--gold btn--lg">
+                Request Early Access <Icon name="arrowForward" />
+              </Link>
+              <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
+                Sign In
+              </a>
+            </div>
+            {/* Behind a click, with sound and captions. preload="none" keeps its
+                4.3 MB off the page until someone presses play; the poster is a
+                chosen frame, not frame one. The -v1 in each filename is the
+                cache-buster: public/ files are not content-hashed and are served
+                with a one-year max-age, so a new cut must ship as -v2. */}
+            <div className="hero-brand__media">
+              <div className="film">
+                <video
+                  className="film__media"
+                  controls
+                  /* No Download item in the menu and no "Save video as" on right-click.
+                     This hides the obvious routes; the file itself stays public. */
+                  controlsList="nodownload"
+                  onContextMenu={(e) => e.preventDefault()}
+                  preload="none"
+                  playsInline
+                  poster="/media/heirdock-intro-30s-poster-v1.jpg"
+                  width={1280}
+                  height={720}
+                >
+                  <source src="/media/heirdock-intro-30s-v1.mp4" type="video/mp4" />
+                  <track
+                    kind="captions"
+                    srcLang="en"
+                    label="English"
+                    src="/media/heirdock-intro-30s.en.vtt"
+                    default
+                  />
+                </video>
+              </div>
+            </div>
           </div>
-          <div className="hero-brand__note">
-            <span>On iPhone, Android and the web</span>
-            <a href="#film" className="hero-brand__film">
-              <Icon name="playCircle" /> Watch more
-            </a>
-          </div>
-          <div className="hero-brand__media">
-            <svg className="gold-arc hero-brand__arc" viewBox="0 0 800 400" aria-hidden="true" focusable="false">
-              <path d="M10 400a390 390 0 0 1 780 0" />
-            </svg>
-            <HeroVideo />
-          </div>
-        </div>
-      </section>
-
-      {/* Trust row */}
-      <section className="trust-row" aria-label="Why households trust HeirDock">
-        <div className="container">
-          <ul className="trust-row__list">
-            <li className="trust-row__item"><BrandGlyph name="phone" /> iPhone, Android and the web</li>
-            <li className="trust-row__item"><BrandGlyph name="lock" /> An encrypted Vault for documents</li>
-            <li className="trust-row__item"><BrandGlyph name="eye" /> You decide who sees what</li>
-            <li className="trust-row__item"><BrandGlyph name="shield" /> Your data is never sold</li>
-          </ul>
         </div>
       </section>
 
@@ -61,11 +71,10 @@ export default function Home() {
           <p className="section__subtitle">
             Add a few things that matter today, and more whenever it suits you.
           </p>
-          <ol className="step-tiles">
+          <ol className="step-tiles step-tiles--thread">
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="camera" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">01</div>
                 <h3 className="step-tile__title">Capture your household</h3>
                 <p className="step-tile__text">
                   Take a photo of an item to record what matters - furniture, jewelry,
@@ -76,7 +85,6 @@ export default function Home() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--gold"><BrandGlyph name="tag" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">02</div>
                 <h3 className="step-tile__title">Identify and value</h3>
                 <p className="step-tile__text">
                   HeirDock suggests what each item is and what it may be worth, so there&apos;s
@@ -87,7 +95,6 @@ export default function Home() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--sage"><BrandGlyph name="people" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">03</div>
                 <h3 className="step-tile__title">Add the story</h3>
                 <p className="step-tile__text">
                   Record who items are meant for, the memories behind them, and your
@@ -98,7 +105,6 @@ export default function Home() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="document" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">04</div>
                 <h3 className="step-tile__title">Keep a clear record</h3>
                 <p className="step-tile__text">
                   Export your household record for insurance, estate planning, or the
@@ -143,7 +149,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="asset-gap__drawing">
-                <Drawing name="keepsake" tone="navy" motion="swing" />
+                <Drawing name="valuables" tone="navy" motion="swing" />
               </div>
             </div>
           </div>
@@ -154,49 +160,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The 30-second film: behind a click, with sound and captions. preload="none"
-          keeps its 4.3 MB off the page until someone presses play; the poster is
-          a chosen frame, not frame one. -v1 names are the cache-buster (see
-          HeroVideo). */}
-      <section className="section" id="film">
-        <div className="container">
-          <h2 className="section__title">See HeirDock in 30 seconds</h2>
-          <p className="section__subtitle">
-            The things we keep, and the stories that make them matter.
-          </p>
-          <div className="film">
-            <video
-              className="film__media"
-              controls
-              /* No Download item in the menu and no "Save video as" on right-click.
-                 This hides the obvious routes; the file itself stays public. */
-              controlsList="nodownload"
-              onContextMenu={(e) => e.preventDefault()}
-              preload="none"
-              playsInline
-              poster="/media/heirdock-intro-30s-poster-v1.jpg"
-              width={1280}
-              height={720}
-            >
-              <source src="/media/heirdock-intro-30s-v1.mp4" type="video/mp4" />
-              <track
-                kind="captions"
-                srcLang="en"
-                label="English"
-                src="/media/heirdock-intro-30s.en.vtt"
-                default
-              />
-            </video>
-          </div>
-        </div>
-      </section>
-
-      {/* Story band: the keepsake's lid opens once, as it scrolls into view. */}
+      {/* Story band: the keepsake on the planks (the arch is in the panels above
+          and below); its lid opens once, as it scrolls into view. */}
       <section className="section story-band">
         <div className="container">
           <div className="story-band__inner">
             <div className="story-band__drawing">
-              <Drawing name="keepsake" tone="tint" motion="open" />
+              <Drawing name="keepsake" tone="tint" motion="open" frame="planks" />
             </div>
             <div className="story-band__text">
               <span className="eyebrow">For the people who come after</span>
@@ -216,6 +186,7 @@ export default function Home() {
       {/* For professionals */}
       <section className="section">
         <div className="container text-center">
+          <Planks className="planks--divider" />
           <h2 className="section__title">For professionals</h2>
           <p className="section__subtitle">
             Help your clients document household assets with structured, accessible records,
@@ -231,7 +202,7 @@ export default function Home() {
       <section className="closing-cta">
         <div className="brand-panel closing-cta__panel">
           <div>
-            <h2 className="closing-cta__title">Start your household record</h2>
+            <h2 className="closing-cta__title">Start your household record<span className="gold-stop" aria-hidden="true" /></h2>
             <p className="closing-cta__text">
               Begin with a few things that matter. HeirDock grows with you, at your own pace.
             </p>

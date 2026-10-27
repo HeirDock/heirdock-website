@@ -91,7 +91,7 @@ export default function PartnerLanding() {
                 </ul>
               </div>
               <div className="asset-gap__drawing asset-gap__drawing--small">
-                <Drawing name="frontDoor" tone="navy" motion="open" />
+                <Drawing name="clipboard" tone="navy" />
               </div>
             </div>
           </div>
@@ -103,11 +103,10 @@ export default function PartnerLanding() {
         <div className="container">
           <span className="eyebrow text-center">How it works</span>
           <h2 className="section__title">From registration to working together</h2>
-          <ol className="step-tiles mt-2xl">
+          <ol className="step-tiles step-tiles--thread mt-2xl">
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="document" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">01</div>
                 <h3 className="step-tile__title">Register</h3>
                 <p className="step-tile__text">Create your partner account and set up your organization profile.</p>
               </div>
@@ -115,7 +114,6 @@ export default function PartnerLanding() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--gold"><BrandGlyph name="shield" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">02</div>
                 <h3 className="step-tile__title">Get verified</h3>
                 <p className="step-tile__text">HeirDock reviews and verifies every firm before the Partner Portal opens.</p>
               </div>
@@ -123,7 +121,6 @@ export default function PartnerLanding() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--sage"><BrandGlyph name="people" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">03</div>
                 <h3 className="step-tile__title">Invite clients</h3>
                 <p className="step-tile__text">Invite existing clients, or welcome new ones, with your practice&apos;s name and logo.</p>
               </div>
@@ -131,7 +128,6 @@ export default function PartnerLanding() {
             <li className="step-tile">
               <div className="step-tile__art step-tile__art--navy"><BrandGlyph name="eye" /></div>
               <div className="step-tile__body">
-                <div className="step-tile__number">04</div>
                 <h3 className="step-tile__title">Work together</h3>
                 <p className="step-tile__text">See what each household chooses to share, and work on it with them using flags and notes.</p>
               </div>
@@ -180,7 +176,7 @@ export default function PartnerLanding() {
       <section className="closing-cta">
         <div className="brand-panel closing-cta__panel">
           <div>
-            <h2 className="closing-cta__title">See how HeirDock works for your practice</h2>
+            <h2 className="closing-cta__title">See how HeirDock works for your practice<span className="gold-stop" aria-hidden="true" /></h2>
             <p className="closing-cta__text">
               Request access for your practice, or book a demo to explore the Partner Portal first.
             </p>

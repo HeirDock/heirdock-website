@@ -47,6 +47,23 @@
   opacity: 1;
 }
 
+/* The gold dot under the page you're on. */
+.site-nav__link--active {
+  position: relative;
+}
+
+.site-nav__link--active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+}
+
 .site-nav__actions {
   display: flex;
   align-items: center;
@@ -100,6 +117,15 @@
     font-size: var(--text-md);
     padding: var(--space-md) 0;
     border-bottom: 1px solid var(--color-divider);
+  }
+
+  /* In the stacked menu the dot follows the word instead. */
+  .site-nav__mobile .site-nav__link--active::after {
+    position: static;
+    display: inline-block;
+    margin-left: var(--space-sm);
+    vertical-align: middle;
+    transform: none;
   }
 
   .site-nav__mobile .btn {
@@ -252,30 +278,6 @@
   margin-bottom: var(--space-xl);
 }
 
-.hero-video {
-  /* Sized from the window height so the video, headline and subtitle all fit
-     above the fold: the reserve is the nav, the top padding, the gap and the
-     headline and subtitle below. Never under 320px wide, never over 880px. */
-  --hero-video-reserve: 19.5rem;
-  width: min(100%, max(320px, min(880px, calc((100vh - var(--hero-video-reserve)) * 16 / 9))));
-  width: min(100%, max(320px, min(880px, calc((100svh - var(--hero-video-reserve)) * 16 / 9))));
-  margin: 0 auto var(--space-lg);
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  /* Dark primary rather than transparent, so the frame that shows before the
-     first video frame decodes is brand colour, not a flash of background. */
-  background: var(--color-primary-active);
-}
-
-.hero-video__media {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .hero__scroll {
   display: block;
   margin: var(--space-xl) auto 0;
@@ -301,8 +303,7 @@
   }
 }
 
-/* The 30-second film on Home: framed like the hero loop, with the player's
-   own controls. */
+/* The 30-second film in the Home hero, with the player's own controls. */
 .film {
   max-width: 880px;
   margin: 0 auto;
@@ -310,6 +311,8 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  /* Dark primary rather than transparent, so the frame that shows before the
+     poster loads is brand colour, not a flash of background. */
   background: var(--color-primary-active);
 }
 
@@ -1116,11 +1119,24 @@
 
 /* "pretty" keeps a lone word off the last line of a wrapped item. */
 .feature-matrix__list li {
+  position: relative;
   text-wrap: pretty;
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-md);
   border-bottom: 1px solid var(--color-divider);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
+}
+
+/* The gold dot as the list marker, centred on the first line. */
+.feature-matrix__list li::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-sm) + 0.75em - 3px);
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 .feature-matrix__list li:last-child {
@@ -1737,18 +1753,10 @@
   margin-bottom: var(--space-xl);
 }
 
-.invite-success__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--color-success);
-  color: var(--color-text-on-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-xl);
-  font-weight: 600;
-  margin-bottom: var(--space-md);
+/* The letter drawing at the top of a "sent" message. */
+.form__drawing {
+  width: 140px;
+  margin: 0 auto var(--space-md);
 }
 
 .invite-info-card {
@@ -1774,20 +1782,46 @@
   margin-bottom: var(--space-sm);
 }
 
-.invite-info-card__list {
-  padding-left: var(--space-xl);
+/* The thread, running down: what happens next, in order. A gold node per
+   step, joined by the gold line to the next. */
+.thread-list {
+  --thread-dot: 12px;
+  --thread-dot-top: 0.45em;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.invite-info-card__list li {
-  list-style: disc;
+.thread-list li {
+  position: relative;
+  padding: 0 0 var(--space-md) var(--space-xl);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-sm);
   line-height: 1.6;
 }
 
-.invite-info-card__list li:last-child {
-  margin-bottom: 0;
+.thread-list li:last-child {
+  padding-bottom: 0;
+}
+
+.thread-list li::before {
+  content: "";
+  position: absolute;
+  top: var(--thread-dot-top);
+  left: 0;
+  width: var(--thread-dot);
+  height: var(--thread-dot);
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.thread-list li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--thread-dot-top) + var(--thread-dot));
+  bottom: calc(-1 * var(--thread-dot-top));
+  left: calc(var(--thread-dot) / 2 - 1px);
+  width: 2px;
+  background: var(--color-accent);
 }
 
 @media (max-width: 767px) {
@@ -1894,13 +1928,68 @@
 .drawing__line { stroke: var(--drawing-line); }
 .drawing__accent { stroke: var(--color-accent); }
 .drawing__accent-fill { fill: var(--color-accent); }
+.drawing__line-fill { fill: var(--drawing-line); }
+.drawing__planks { fill: var(--color-brand-highlight); }
+.drawing--navy .drawing__planks { fill: var(--drawing-line); }
 .drawing__surface { fill: var(--drawing-surface); }
 .drawing__surface-line { stroke: var(--drawing-surface); }
 
-/* Warm light through the open door. */
+/* Warm light through the open door, or a lantern's glass. */
 .drawing__glow {
   fill: var(--color-accent);
   fill-opacity: 0.85;
+}
+
+/* A candle flame: white on the gold glass, whatever the panel. */
+.drawing__flame { fill: var(--color-text-on-dark); }
+
+/* Brand motifs beside the arch (spec: the "HeirDock brand motifs" design
+   canvas). The thread joins steps in order; the gold dot marks "this one";
+   the planks give structure. One per component, and gold stays small. */
+
+/* The planks (components/Planks.tsx): the logo's dock boards. */
+.planks {
+  display: block;
+  fill: currentColor;
+}
+
+.planks--divider {
+  width: 48px;
+  height: auto;
+  margin: 0 auto var(--space-xl);
+  color: var(--color-brand-highlight);
+}
+
+/* Inside a button while a form sends: the boards light from the front back.
+   Under reduced motion the global rule cuts the animation, leaving them lit. */
+.planks--loading {
+  display: inline-block;
+  width: 1.4em;
+  height: auto;
+}
+
+.planks--loading .planks__board {
+  animation: planks-light 1.2s var(--ease-default) infinite backwards;
+}
+
+.planks--loading .planks__board:nth-child(2) { animation-delay: 0.2s; }
+.planks--loading .planks__board:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes planks-light {
+  0% { opacity: 0.3; }
+  20% { opacity: 1; }
+  60%,
+  100% { opacity: 0.3; }
+}
+
+/* The gold dot as one headline's full stop: once per page, on a statement. */
+.gold-stop {
+  display: inline-block;
+  width: 0.16em;
+  height: 0.16em;
+  margin-left: 0.05em;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 /* Duotone glyphs (components/BrandGlyph.tsx) */
@@ -1964,25 +2053,12 @@
   gap: var(--space-md);
 }
 
-.hero-brand__note {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-sm) var(--space-xl);
-  margin-top: var(--space-lg);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.hero-brand__film {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-weight: 500;
-}
-
-.hero-brand__film .icon {
-  font-size: var(--text-lg);
+/* Home: the column shrinks to the headline's longest line, and the film
+   fills it (see .hero-brand__column .hero-brand__media). */
+.hero-brand__column {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* On a navy panel (the partner landing), the light-on-dark colours. */
@@ -1993,18 +2069,22 @@
 .brand-panel .hero-brand__title { color: var(--on-panel-text); }
 .brand-panel .hero-brand__accent { color: var(--color-accent); }
 .brand-panel .hero-brand__subtitle { color: var(--on-panel-muted); }
-.brand-panel .hero-brand__note { color: var(--on-panel-faint); }
 
-/* The loop sits inside the panel, with room below it, under the gold arc. */
+/* The media sits inside the panel, under the gold arc, with room above it for
+   the arc. */
 .hero-brand__media {
   position: relative;
   max-width: 880px;
-  margin: var(--space-3xl) auto 0;
+  margin: calc(var(--space-3xl) + var(--space-xl)) auto 0;
 }
 
-/* Straight after the buttons (no note line), leave room for the arc above. */
-.hero-brand__actions + .hero-brand__media {
-  margin-top: calc(var(--space-3xl) + var(--space-xl));
+/* inline-size containment drops the film's own 1280px width out of the
+   column's sizing, so the headline sets the width and the film follows.
+   No arc on Home, so no extra room above it. */
+.hero-brand__column .hero-brand__media {
+  contain: inline-size;
+  max-width: none;
+  margin-top: var(--space-3xl);
 }
 
 /* Wider than the video, so the ring frames it rather than hiding behind it. */
@@ -2016,12 +2096,10 @@
   transform: translateX(-50%);
 }
 
-.hero-brand__media .hero-video {
+.hero-brand__media .film {
   position: relative;
-  width: 100%;
-  margin: 0;
+  max-width: none;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
 }
 
 /* A brand hero without media (partner landing). */
@@ -2261,6 +2339,51 @@
   font-size: 2.5rem;
 }
 
+/* The thread: a gold line joining the steps in order, with a numbered gold
+   node above each tile. The line is drawn while the steps sit in one row;
+   when they wrap, the nodes stay and the line goes. */
+.step-tiles--thread {
+  --thread-node: 36px;
+  --thread-room: calc(var(--thread-node) + var(--space-lg));
+  counter-reset: step;
+  padding-top: var(--thread-room);
+}
+
+.step-tiles--thread .step-tile {
+  position: relative;
+  counter-increment: step;
+}
+
+.step-tiles--thread .step-tile::before {
+  content: counter(step);
+  position: absolute;
+  top: calc(-1 * var(--thread-room));
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--thread-node);
+  height: var(--thread-node);
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transform: translateX(-50%);
+}
+
+/* From this node's centre to the next one's: a tile and a gap across. */
+.step-tiles--thread .step-tile:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--thread-node) / 2 - var(--thread-room) - 1px);
+  left: 50%;
+  width: calc(100% + var(--space-lg));
+  height: 2px;
+  background: var(--color-accent);
+}
+
 .step-tile__art--navy { background: var(--color-primary-light); }
 .step-tile__art--gold { background: var(--color-accent-light); }
 .step-tile__art--sage { background: var(--color-secondary-light); }
@@ -2374,6 +2497,12 @@
   margin: 0 auto;
 }
 
+/* 404: the lantern above the message. */
+.not-found__drawing {
+  width: 200px;
+  margin: 0 auto var(--space-lg);
+}
+
 .story-band__text p {
   font-size: var(--text-md);
   line-height: 1.7;
@@ -2434,6 +2563,15 @@
   .case-tiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Wrapped: room above every row for its nodes, and no line. */
+  .step-tiles--thread {
+    row-gap: calc(var(--thread-room) + var(--space-lg));
+  }
+
+  .step-tiles--thread .step-tile:not(:last-child)::after {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2472,6 +2610,16 @@
   .trust-row__list {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  /* One column: the thread runs down again, from each tile behind the next
+     node to the next tile. */
+  .step-tiles--thread .step-tile:not(:last-child)::after {
+    display: block;
+    top: 100%;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: calc(var(--thread-room) + var(--space-lg));
   }
 
   .step-tiles,

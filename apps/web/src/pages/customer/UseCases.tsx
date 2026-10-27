@@ -259,7 +259,7 @@ export default function CustomerUseCases() {
       <section className="closing-cta">
         <div className="brand-panel closing-cta__panel">
           <div>
-            <h2 className="closing-cta__title">Start building your household record</h2>
+            <h2 className="closing-cta__title">Start building your household record<span className="gold-stop" aria-hidden="true" /></h2>
             <p className="closing-cta__text">
               Whatever brings you here, HeirDock gives you clarity and control, at your own pace.
             </p>

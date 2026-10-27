@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../lib/useContactForm";
 import Icon from "../components/Icon";
+import Drawing from "../components/Drawing";
+import Planks from "../components/Planks";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -38,6 +40,7 @@ export default function Contact() {
         <div className="container container--narrow">
           {status === "success" ? (
             <div className="form__message form__message--success">
+              <div className="form__drawing"><Drawing name="letter" /></div>
               <strong>Message sent!</strong> Thank you for reaching out.
               <div className="mt-lg">
                 <button onClick={reset} className="btn btn--outline btn--sm">
@@ -89,7 +92,7 @@ export default function Contact() {
 
               <button type="submit" disabled={status === "submitting"}
                 className="btn btn--primary btn--lg form__submit">
-                {status === "submitting" ? "Sending..." : <>Send Message <Icon name="arrowForward" /></>}
+                {status === "submitting" ? <><Planks loading /> Sending...</> : <>Send Message <Icon name="arrowForward" /></>}
               </button>
 
               <p className="fine-print">

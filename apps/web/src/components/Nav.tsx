@@ -33,6 +33,9 @@ export default function Nav() {
   const isActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(path + "/");
 
+  const linkClass = (path: string) =>
+    `site-nav__link${isActive(path) ? " site-nav__link--active" : ""}`;
+
   return (
     <nav ref={navRef} className="site-nav">
       <div className="container">
@@ -90,12 +93,12 @@ export default function Nav() {
       </div>
 
       <div className={`site-nav__mobile${mobileOpen ? " site-nav__mobile--open" : ""}`}>
-        <Link to="/customer/features" className="site-nav__link">Features</Link>
-        <Link to="/customer/use-cases" className="site-nav__link">Use Cases</Link>
-        <Link to="/customer/pricing" className="site-nav__link">Pricing</Link>
-        <Link to="/professional" className="site-nav__link">For Professionals</Link>
-        <Link to="/faq" className="site-nav__link">FAQ</Link>
-        <Link to="/contact" className="site-nav__link">Contact</Link>
+        <Link to="/customer/features" className={linkClass("/customer/features")}>Features</Link>
+        <Link to="/customer/use-cases" className={linkClass("/customer/use-cases")}>Use Cases</Link>
+        <Link to="/customer/pricing" className={linkClass("/customer/pricing")}>Pricing</Link>
+        <Link to="/professional" className={linkClass("/professional")}>For Professionals</Link>
+        <Link to="/faq" className={linkClass("/faq")}>FAQ</Link>
+        <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
         <a href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</a>
       </div>
     </nav>

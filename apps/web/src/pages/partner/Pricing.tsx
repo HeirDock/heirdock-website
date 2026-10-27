@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
+import Planks from "../../components/Planks";
 
 export default function PartnerPricing() {
   return (
@@ -46,6 +47,7 @@ export default function PartnerPricing() {
 
       <section className="section text-center">
         <div className="container">
+          <Planks className="planks--divider" />
           <h3>Have questions about member pricing?</h3>
           <p className="text-muted mt-md mb-xl">
             Every practice is different. Let's talk about what works for your clients.

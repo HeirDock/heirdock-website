@@ -1,3 +1,4 @@
+import Drawing from "../components/Drawing";
 import Icon from "../components/Icon";
 
 export default function Security() {
@@ -93,14 +94,21 @@ export default function Security() {
 
       {/* Privacy */}
       <section className="section section--white">
-        <div className="container container--narrow text-center">
-          <h2 className="section__title">Your data, your control</h2>
-          <p className="text-md mt-lg">
-            HeirDock is built on a principle of household sovereignty. You own your data.
-            You control who sees it. You can export or delete it at any time.
-            We never sell your information, and family members and professionals see only
-            what you choose to share.
-          </p>
+        <div className="container">
+          <div className="story-band__inner">
+            <div className="story-band__drawing">
+              <Drawing name="strongbox" />
+            </div>
+            <div className="story-band__text">
+              <h2>Your data, your control</h2>
+              <p className="mt-md">
+                HeirDock is built on a principle of household sovereignty. You own your data.
+                You control who sees it. You can export or delete it at any time.
+                We never sell your information, and family members and professionals see only
+                what you choose to share.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>

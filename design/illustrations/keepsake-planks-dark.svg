@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 100 260 210" fill="none" role="img" aria-label="A keepsake box with a framed picture and a vase">
+  <path d="M82 185 L94 128 Q96 122 102 122 H198 Q204 122 206 128 L218 185" stroke="#A0D0F2" stroke-width="3" stroke-linejoin="round" fill="#1A222C"></path>
+  <path d="M96 134 H204" stroke="#A0D0F2" stroke-width="2" opacity=".55"></path>
+  <g transform="translate(0 0)">
+    <g transform="rotate(-9 118 160)">
+      <rect x="96" y="130" width="46" height="56" rx="3" stroke="#A0D0F2" stroke-width="3" fill="#1A222C"/>
+      <rect x="103" y="137" width="32" height="42" rx="1.5" stroke="#A0D0F2" stroke-width="1.8" opacity=".7"/>
+      <path d="M119 174 V156 M119 160 q-7 -3 -8 -10 q7 1 8 8 M119 156 q6 -4 7 -11 q-7 2 -7 9" stroke="#E8C06E" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+    <path d="M166 136 h20 M169 136 c0 8 -12 10 -12 24 c0 9 7 14 19 14 s19 -5 19 -14 c0 -14 -12 -16 -12 -24" stroke="#A0D0F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1A222C"/>
+    <path d="M160 158 q16 6 32 0" stroke="#A0D0F2" stroke-width="1.8" opacity=".6"/>
+  </g>
+  <rect x="75" y="185" width="150" height="80" rx="9" stroke="#A0D0F2" stroke-width="3" fill="#1A222C"/>
+  <path d="M75 201 H225" stroke="#A0D0F2" stroke-width="2" opacity=".55"/>
+  <g>
+    <path d="M150 202 q2 9 10 14" stroke="#E8C06E" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M158 214 h30 q5 0 7 4 l3 6 l-3 6 q-2 4 -7 4 h-30 q-5 0 -5 -5 v-10 q0 -5 5 -5z" fill="#E8C06E"/>
+    <circle cx="163" cy="224" r="2.2" fill="#1A222C"/>
+    <path d="M170 221 h18 M170 227 h12" stroke="#1A222C" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+  </g>
+  <polygon points="66,274 234,274 228,268 72,268" fill="#A0D0F2"/>
+  <polygon points="50,286 250,286 244,280 56,280" fill="#A0D0F2"/>
+  <polygon points="34,298 266,298 260,292 40,292" fill="#A0D0F2"/>
+</svg>

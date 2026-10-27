@@ -14,6 +14,12 @@ python design/illustrations/drawings.py
 |---|---|---|
 | `keepsake` | A keepsake box with a framed picture, a vase and a gold tag | `swing` (the tag sways and rests, a slow loop), `open` (the lid lifts and the keepsakes rise, once) |
 | `front-door` | A front door standing ajar, warm gold light inside, a plant by the step | `open` (the door swings ajar, once) |
+| `keepsake-planks` | The keepsake standing on three planks (the logo's dock boards) instead of under the arch | `open` (as `keepsake`) |
+| `valuables` | A pocket watch on a gold chain, a painting on the wall and an open ring box with a gold stone | `swing` (the watch sways on its chain and rests, a slow loop) |
+| `strongbox` | A strongbox with a dial, its centre and marker in gold: the Vault (website: Security) | still |
+| `letter` | An opened envelope with a note and a gold seal (website: every form's "sent" message) | still |
+| `lantern` | A lantern with a lit candle behind gold glass (website: the 404 page) | still |
+| `clipboard` | A clipboard with a checklist and a gold clip: a record a professional can work from (website: the professionals page) | still |
 
 Each comes in three palettes:
 
@@ -30,6 +36,8 @@ Files are named `<drawing>[-<motion>]-<palette>.svg`, e.g. `keepsake-swing-light
 - **The arch.** Every drawing stands under the logo's gold ring, raised into an arch:
   `M28 286 V160 a122 122 0 0 1 244 0 V286` on a 300 x 300 viewBox. It is the signature
   that ties the set to the logo.
+  The one exception is `keepsake-planks`, for pages that already show the arch twice:
+  it stands on the planks (the dock's boards, sky blue, never gold) instead.
 - **One stroke colour, gold accents.** 3px strokes for outlines, 1.8-2px for detail lines
   (often at 55-70% opacity). Gold is for small, meaningful details only: a tag, a knob,
   a sprig, the light through a door.
