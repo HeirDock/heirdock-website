@@ -1947,7 +1947,7 @@
 .drawing__accent-fill { fill: var(--color-accent); }
 .drawing__line-fill { fill: var(--drawing-line); }
 .drawing__planks { fill: var(--color-brand-highlight); }
-.drawing--navy .drawing__planks { fill: var(--drawing-line); }
+.drawing--navy .drawing__planks { fill: var(--planks-on-panel); }
 .drawing__surface { fill: var(--drawing-surface); }
 .drawing__surface-line { stroke: var(--drawing-surface); }
 

@@ -35,7 +35,7 @@ EASE = "0.2 0 0 1"
 # ends cut at 45 degrees) instead of under the arch, cropped to the box and boards.
 PLANKS = ["66,274 234,274 228,268 72,268", "50,286 250,286 244,280 56,280", "34,298 266,298 260,292 40,292"]
 PLANKS_VIEWBOX = "20 100 260 210"
-PLANK_BLUE = {"light": "#5A8EC2", "dark": "#A0D0F2", "navy": "#E8EEF5"}
+PLANK_BLUE = {"light": "#5A8EC2", "dark": "#A0D0F2", "navy": "#A0D0F2"}  # design/brand-marks
 
 
 def _svg(body, width, title, viewbox="0 0 300 300"):

@@ -100,6 +100,8 @@
   --on-panel-rule: color-mix(in srgb, var(--color-text-on-dark) 16%, transparent);
   /* Small uppercase labels above headings: the gold that holds 4.7:1 on white. */
   --eyebrow: var(--color-accent-active);
+  /* The planks on navy: the logo's reverse sky (design/brand-marks). */
+  --planks-on-panel: #a0d0f2;
   /* Line drawings: their line colour on navy (the accent is always gold). */
   --drawing-line-on-panel: color-mix(in srgb, var(--color-text-on-dark) 90%, var(--color-primary-active));
   /* The tint blocks behind app screenshots and mockups: deep enough to read on
