@@ -47,23 +47,6 @@
   opacity: 1;
 }
 
-/* The gold dot under the page you're on. */
-.site-nav__link--active {
-  position: relative;
-}
-
-.site-nav__link--active::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  transform: translateX(-50%);
-}
-
 .site-nav__actions {
   display: flex;
   align-items: center;
@@ -117,15 +100,6 @@
     font-size: var(--text-md);
     padding: var(--space-md) 0;
     border-bottom: 1px solid var(--color-divider);
-  }
-
-  /* In the stacked menu the dot follows the word instead. */
-  .site-nav__mobile .site-nav__link--active::after {
-    position: static;
-    display: inline-block;
-    margin-left: var(--space-sm);
-    vertical-align: middle;
-    transform: none;
   }
 
   .site-nav__mobile .btn {
@@ -305,6 +279,7 @@
 
 /* The 30-second film in the Home hero, with the player's own controls. */
 .film {
+  position: relative;
   max-width: 880px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
@@ -321,6 +296,48 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* The play button over the poster, until the film starts. The whole poster is
+   the button; the circle in the middle is what shows. */
+.film__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.film__play-icon {
+  width: 88px;
+  height: 88px;
+  padding: 22px 20px 22px 24px;
+  border-radius: 50%;
+  fill: var(--color-text-on-dark);
+  background: var(--film-play);
+  transition: background-color var(--duration-base) var(--ease-default);
+}
+
+.film__play:hover .film__play-icon {
+  background: var(--film-play-hover);
+}
+
+/* The film clips its corners, so the focus ring goes inside the edge. */
+.film__play:focus-visible,
+.film__media:focus-visible {
+  outline-offset: -4px;
+}
+
+@media (max-width: 767px) {
+  .film__play-icon {
+    width: 64px;
+    height: 64px;
+    padding: 16px 14px 16px 18px;
+  }
 }
 
 /* ========================================

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import BrandGlyph from "../components/BrandGlyph";
 import Drawing from "../components/Drawing";
+import Film from "../components/Film";
 import Icon from "../components/Icon";
 import Planks from "../components/Planks";
 
@@ -34,30 +35,7 @@ export default function Home() {
                 cache-buster: public/ files are not content-hashed and are served
                 with a one-year max-age, so a new cut must ship as -v2. */}
             <div className="hero-brand__media">
-              <div className="film">
-                <video
-                  className="film__media"
-                  controls
-                  /* No Download item in the menu and no "Save video as" on right-click.
-                     This hides the obvious routes; the file itself stays public. */
-                  controlsList="nodownload"
-                  onContextMenu={(e) => e.preventDefault()}
-                  preload="none"
-                  playsInline
-                  poster="/media/heirdock-intro-30s-poster-v1.jpg"
-                  width={1280}
-                  height={720}
-                >
-                  <source src="/media/heirdock-intro-30s-v1.mp4" type="video/mp4" />
-                  <track
-                    kind="captions"
-                    srcLang="en"
-                    label="English"
-                    src="/media/heirdock-intro-30s.en.vtt"
-                    default
-                  />
-                </video>
-              </div>
+              <Film />
             </div>
           </div>
         </div>
