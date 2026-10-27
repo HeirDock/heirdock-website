@@ -2,9 +2,9 @@
   <path d="M20 24 H220" stroke="#E8C06E" stroke-width="2"/>
   <path d="M220 24 H310" stroke="#A0D0F2" stroke-opacity=".3" stroke-width="2"/>
   <circle cx="20" cy="24" r="10" fill="#E8C06E"/>
-  <path d="M15 24 l3.5 3.5 l6.5 -7" stroke="#1A222C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 24 l3.5 3.5 l6.5 -7" stroke="#2E4E70" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="120" cy="24" r="10" fill="#E8C06E"/>
-  <path d="M115 24 l3.5 3.5 l6.5 -7" stroke="#1A222C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M115 24 l3.5 3.5 l6.5 -7" stroke="#2E4E70" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="220" cy="24" r="16" fill="#E8C06E" fill-opacity=".3"/>
   <circle cx="220" cy="24" r="10" fill="#E8C06E"/>
   <circle cx="310" cy="24" r="8" fill="#1A222C" stroke="#A0D0F2" stroke-opacity=".45" stroke-width="2"/>

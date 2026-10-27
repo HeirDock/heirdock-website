@@ -11,7 +11,7 @@ from pathlib import Path
 # themes, "navy" is the website's deep-navy panels (#2E4E70).
 PALETTES = {
     "light": {"line": "#456E9A", "gold": "#DEB05E", "surface": "#FFFFFF", "planks": "#5A8EC2", "check": "#2E4E70"},
-    "dark": {"line": "#A0D0F2", "gold": "#E8C06E", "surface": "#1A222C", "planks": "#A0D0F2", "check": "#1A222C"},
+    "dark": {"line": "#A0D0F2", "gold": "#E8C06E", "surface": "#1A222C", "planks": "#A0D0F2", "check": "#2E4E70"},
     "navy": {"line": "#E8EEF5", "gold": "#DEB05E", "surface": "#2E4E70", "planks": "#A0D0F2", "check": "#2E4E70"},
 }
 

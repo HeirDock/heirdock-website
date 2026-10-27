@@ -49,7 +49,7 @@ A gold line joining steps in order, with a node per step (`thread-*.svg` is a sp
 | Part | Spec |
 |---|---|
 | Line | 2px. Gold up to "now"; the line colour at 30% for what's ahead. |
-| Node, done | 20px solid gold with a check in deep navy (#2E4E70). |
+| Node, done | 20px solid gold with a check in deep navy (#2E4E70), in every theme (6:1 on the dark theme's gold). |
 | Node, now | 20px solid gold with a 6px gold halo at 30%. |
 | Node, next | 16px, the surface colour, with a 2px ring in the line colour at 45%. |
 | Numbered steps | 36px gold nodes carrying the number in ink (#1A1714, 8.9:1 on gold). |
