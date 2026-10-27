@@ -102,6 +102,12 @@
   --eyebrow: var(--color-accent-active);
   /* Line drawings: their line colour on navy (the accent is always gold). */
   --drawing-line-on-panel: color-mix(in srgb, var(--color-text-on-dark) 90%, var(--color-primary-active));
+  /* The tint blocks behind app screenshots and mockups: deep enough to read on
+     white and on the page background, so a screen reads as a picture of the
+     app, not as controls on the page. */
+  --stack-tint-navy: color-mix(in srgb, var(--color-primary) 16%, var(--color-surface));
+  --stack-tint-sage: color-mix(in srgb, var(--color-secondary) 20%, var(--color-surface));
+  --stack-tint-gold: color-mix(in srgb, var(--color-accent) 26%, var(--color-surface));
   /* The play button over the hero film's poster: deep navy, see-through. */
   --film-play: color-mix(in srgb, var(--color-primary-active) 72%, transparent);
   --film-play-hover: color-mix(in srgb, var(--color-primary-active) 90%, transparent);

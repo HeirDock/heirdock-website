@@ -2131,9 +2131,9 @@
 /* ---------- Section pattern: a tint block behind each set of screens ----------
    A rounded block in navy, sage or gold tint sits behind the screenshots.
    On reversed rows it mirrors. */
-.screen-stack--tint-navy { --stack-tint: var(--color-primary-light); }
-.screen-stack--tint-sage { --stack-tint: var(--color-secondary-light); }
-.screen-stack--tint-gold { --stack-tint: var(--color-accent-light); }
+.screen-stack--tint-navy { --stack-tint: var(--stack-tint-navy); }
+.screen-stack--tint-sage { --stack-tint: var(--stack-tint-sage); }
+.screen-stack--tint-gold { --stack-tint: var(--stack-tint-gold); }
 
 .screen-stack--tint-navy,
 .screen-stack--tint-sage,
@@ -2166,6 +2166,16 @@
   .feature-section--reverse .screen-stack--tint-sage::before,
   .feature-section--reverse .screen-stack--tint-gold::before {
     inset: -3% 4% -3% -3%;
+  }
+
+  /* The drawn mockup is tall on a phone, so a thin rim of tint would not set it
+     apart from the page: it sits inside the block instead. */
+  .screen-stack--mockup {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .screen-stack--mockup.screen-stack--tint-gold::before {
+    inset: 0;
   }
 
   .cta-band {
