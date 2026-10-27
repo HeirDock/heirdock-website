@@ -4,7 +4,7 @@ import url from "node:url";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import App from "./App";
-import { pageMeta } from "./pageMeta";
+import { DEFAULT_SHARE_IMAGE, pageMeta } from "./pageMeta";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const SITE_URL = "https://heirdock.com";
@@ -39,10 +39,9 @@ function buildHeadTags(routePath: string, fontHref: string): string {
 
   const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
   const shouldNoindex = noindex || meta.noindex;
-  // public/ files are cached for a year: a new image needs a new name.
-  const ogImage = `${SITE_URL}/og-image-v4.png`;
-  const ogImageAlt =
-    'HeirDock: "Know what you own. Protect what matters." beside a photo of an antique pocket watch';
+  const share = meta.shareImage ?? DEFAULT_SHARE_IMAGE;
+  const ogImage = `${SITE_URL}/${share.file}`;
+  const ogImageAlt = share.alt;
 
   const tags = [
     `<title>${meta.title}</title>`,
