@@ -11,17 +11,17 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["node"],
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"],
-      "styles/*": ["src/styles/*"],
-      "assets/*": ["src/assets/*"],
-      "pages/*": ["src/pages/*"]
+      "components/*": ["./src/components/*"],
+      "styles/*": ["./src/styles/*"],
+      "assets/*": ["./src/assets/*"],
+      "pages/*": ["./src/pages/*"]
     }
   },
   "include": ["src"]
