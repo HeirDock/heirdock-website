@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { ReactElement } from "react";
 
-// HeirDock's line drawings (source of truth: design/illustrations/drawings.py),
+// HeirDock's line drawings (source of truth: design/illustrations/drawings.py,
+// and for the briefcase the shared library's illustrations/source/new_drawings.py),
 // inline so their colours come from tokens: .drawing--light / --navy / --tint
 // set the line, accent and surface colours in components.css.
 //
@@ -39,7 +40,7 @@ const PLANKS = [
 const PLANKS_VIEWBOX = "20 100 260 210";
 
 // Still drawings: an object under the arch, on the shelf line, no motion.
-type StillName = "strongbox" | "letter" | "lantern" | "clipboard";
+type StillName = "strongbox" | "letter" | "lantern" | "clipboard" | "briefcase";
 
 const STILLS: Record<StillName, ReactElement> = {
   strongbox: (
@@ -91,6 +92,16 @@ const STILLS: Record<StillName, ReactElement> = {
       <path className="drawing__line" d="M140 183 h32" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
       <rect className="drawing__line" x="118" y="204" width="14" height="14" rx="3" strokeWidth="2" />
       <path className="drawing__line" d="M140 211 h36" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+    </>
+  ),
+  briefcase: (
+    <>
+      <path className="drawing__line" d="M126 170 V158 Q126 148 136 148 H164 Q174 148 174 158 V170" strokeWidth="3" strokeLinecap="round" />
+      <rect className="drawing__line drawing__surface" x="76" y="170" width="148" height="94" rx="8" strokeWidth="3" />
+      <path className="drawing__line" d="M76 202 H224" strokeWidth="2" opacity=".55" />
+      <path className="drawing__line" d="M106 170 V264 M194 170 V264" strokeWidth="1.8" opacity=".4" />
+      <rect className="drawing__accent-fill" x="140" y="194" width="20" height="16" rx="3" />
+      <circle className="drawing__surface" cx="150" cy="202" r="2.4" />
     </>
   ),
 };

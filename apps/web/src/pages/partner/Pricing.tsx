@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import Drawing from "../../components/Drawing";
 import Icon from "../../components/Icon";
-import Planks from "../../components/Planks";
 
 export default function PartnerPricing() {
   return (
@@ -45,20 +45,25 @@ export default function PartnerPricing() {
         </div>
       </section>
 
-      <section className="section text-center">
-        <div className="container">
-          <Planks className="planks--divider" />
-          <h3>Have questions about member pricing?</h3>
-          <p className="text-muted mt-md mb-xl">
-            Every practice is different. Let's talk about what works for your clients.
-          </p>
-          <div className="cta-band__actions">
-            <Link to="/professional/request-access" className="btn btn--primary">
-              Request Access <Icon name="arrowForward" />
-            </Link>
-            <Link to="/professional/demo" className="btn btn--outline">
-              Schedule a Conversation
-            </Link>
+      {/* Closing call to action */}
+      <section className="closing-cta">
+        <div className="brand-panel closing-cta__panel">
+          <div>
+            <h2 className="closing-cta__title">Have questions about member pricing?</h2>
+            <p className="closing-cta__text">
+              Every practice is different. Let&apos;s talk about what works for your clients.
+            </p>
+            <div className="closing-cta__actions">
+              <Link to="/professional/request-access" className="btn btn--gold btn--lg">
+                Request Access <Icon name="arrowForward" />
+              </Link>
+              <Link to="/professional/demo" className="btn btn--on-panel btn--lg">
+                Schedule a Conversation
+              </Link>
+            </div>
+          </div>
+          <div className="closing-cta__drawing">
+            <Drawing name="briefcase" tone="navy" />
           </div>
         </div>
       </section>

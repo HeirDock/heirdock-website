@@ -5,7 +5,26 @@ export interface PageMeta {
   title: string;
   description: string;
   noindex?: boolean;
+  // The link-preview image; pages without one use the default og-image.
+  shareImage?: ShareImage;
 }
+
+export interface ShareImage {
+  file: string;
+  alt: string;
+}
+
+// Rendered by design/share-images/make_share_images.mjs. public/ files are
+// cached for a year: a changed image needs a new -vN name here and there.
+export const DEFAULT_SHARE_IMAGE: ShareImage = {
+  file: "og-image-v4.png",
+  alt: 'HeirDock: "Know what you own. Protect what matters." beside a photo of an antique pocket watch',
+};
+
+const PROFESSIONAL_SHARE_IMAGE: ShareImage = {
+  file: "og-professional-v1.png",
+  alt: 'HeirDock: "Household asset intelligence for your clients." beside a line drawing of a briefcase',
+};
 
 export const pageMeta: Record<string, PageMeta> = {
   "/": {
@@ -22,6 +41,10 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "HeirDock - Security & Privacy",
     description:
       "Learn how HeirDock protects your data with industry-standard encryption, row-level security, audit logging, and compliance-ready infrastructure.",
+    shareImage: {
+      file: "og-security-v1.png",
+      alt: 'HeirDock: "Your data is sensitive. We treat it that way." beside a line drawing of a strongbox',
+    },
   },
   "/faq": {
     title: "HeirDock - FAQ",
@@ -47,31 +70,40 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "HeirDock - Use Cases",
     description:
       "How families use HeirDock for insurance readiness, estate planning, disaster recovery, and moving or downsizing.",
+    shareImage: {
+      file: "og-use-cases-v1.png",
+      alt: 'HeirDock: "A clear record for the moments that matter." beside a line drawing of a house',
+    },
   },
   "/professional": {
     title: "HeirDock - For Professionals",
     description:
       "Household asset intelligence for insurance agents, estate planners, appraisers, and financial advisors. Help clients with complete data.",
+    shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
   "/professional/features": {
     title: "HeirDock - Partner Features",
     description:
       "Client workspace management, document sharing, coverage gap analysis, analytics dashboard, team management, and consent-based access.",
+    shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
   "/professional/pricing": {
     title: "HeirDock - Partner Pricing",
     description:
       "Member pricing for the clients you work with, invitations in your practice's name, and every practice reviewed before it connects with clients.",
+    shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
   "/professional/request-access": {
     title: "HeirDock - Request Access for Your Practice",
     description:
       "Request access to HeirDock's Partner Portal for your practice. Work from your clients' household records, with their consent.",
+    shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
   "/professional/demo": {
     title: "HeirDock - Request a Demo",
     description:
       "Schedule a personalized demo of HeirDock's Partner Portal. See how it fits your professional practice.",
+    shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
   "/legal/terms": {
     title: "HeirDock - Terms of Use",
