@@ -8,11 +8,19 @@ import DocumentTitle from "./DocumentTitle";
 // (/customer/use-cases#estate), in which case it lands on that section.
 // Without the hash check this effect undid the browser's own jump to the
 // anchor on every load and client-side navigation.
+// A malformed escape in a shared link (#%E0) makes decodeURIComponent throw,
+// which would unmount the whole page, so it falls back to the raw text.
 function ScrollOnNavigate() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      let id = hash.slice(1);
+      try {
+        id = decodeURIComponent(id);
+      } catch {
+        // Malformed escape: keep the raw text.
+      }
+      const target = document.getElementById(id);
       if (target) {
         target.scrollIntoView();
         return;
