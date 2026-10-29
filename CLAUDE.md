@@ -52,6 +52,7 @@ Final output for deployment: `dist/client/` (all HTML + assets)
 - Contact form emails go to info@heirdock.com
 - Legal: heirdock.com/legal is the one home of HeirDock's terms and policies, for the website, web app and mobile apps alike (the app links here). The documents are Markdown in `src/content/legal/`, rendered to HTML at build time and loaded per page; their titles and "Last updated" dates are in `src/content/legal/index.ts`. Each also has a bare copy at `/legal/<slug>/in-app` for the HeirDock app's in-app browser: no site header or footer, and links only to other in-app legal pages, email, status.heirdock.com or other companies' sites, so the app never leads to prices, plans, sign-up or a demo (the prerender fails the build otherwise). A production build also fails while any legal document has a `[USER: ...]` placeholder.
 - Staging environment has `VITE_NOINDEX=true`
+- `public/email/heirdock-logo-v1.png` is linked from email signatures (https://heirdock.com/email/heirdock-logo-v1.png). Never rename or delete it: deploys prune files not in the build, which would break every signature. A new logo goes in as `-v2` beside it.
 
 ## Project Structure
 
