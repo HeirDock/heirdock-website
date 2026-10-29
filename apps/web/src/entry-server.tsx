@@ -4,6 +4,8 @@ import url from "node:url";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import App from "./App";
+import { legalDocuments } from "./content/legal";
+import { inAppLinkAllowed, loadAllLegalHtml, loadedLegalHtml } from "./content/legal/html";
 import { DEFAULT_SHARE_IMAGE, pageMeta } from "./pageMeta";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
@@ -37,7 +39,8 @@ function buildHeadTags(routePath: string, fontHref: string): string {
     return [`<title>HeirDock</title>`, fontPreload].join("\n    ");
   }
 
-  const canonical = routePath === "/" ? SITE_URL : `${SITE_URL}${routePath}`;
+  const canonicalPath = meta.canonicalPath ?? routePath;
+  const canonical = canonicalPath === "/" ? SITE_URL : `${SITE_URL}${canonicalPath}`;
   const shouldNoindex = noindex || meta.noindex;
   const share = meta.shareImage ?? DEFAULT_SHARE_IMAGE;
   const ogImage = `${SITE_URL}/${share.file}`;
@@ -94,6 +97,8 @@ function prerender() {
       </StaticRouter>
     );
 
+    if (routePath.endsWith("/in-app")) checkInAppLinks(routePath, appHtml);
+
     const headTags = buildHeadTags(routePath, fontHref);
 
     const html = template
@@ -143,4 +148,45 @@ function prerender() {
   console.log(`\nDone. Pre-rendered ${routes.length} pages.`);
 }
 
-prerender();
+// A legal document with an unfilled "[USER: ...]" placeholder can't go to
+// production. Staging (noindex) builds it, so the draft can be reviewed.
+function checkLegalPlaceholders() {
+  const unfinished = legalDocuments
+    .filter((doc) => loadedLegalHtml(doc.slug)?.includes("[USER:"))
+    .map((doc) => doc.slug);
+  if (unfinished.length === 0) return;
+  const message = `legal documents with [USER: ...] placeholders: ${unfinished.join(", ")}`;
+  if (!noindex) throw new Error(`prerender: ${message}`);
+  console.warn(`WARNING (staging only): ${message}`);
+}
+
+// An in-app legal page may link only where the HeirDock app allows
+// (inAppLinkAllowed): never to prices, plans, sign-up or a demo.
+function checkInAppLinks(routePath: string, appHtml: string) {
+  const hrefs = [...appHtml.matchAll(/<a\s[^>]*href="([^"]*)"/g)].map((m) => (m[1] ?? "").replace(/&amp;/g, "&"));
+  const bad = hrefs.filter((href) => !inAppLinkAllowed(href));
+  if (bad.length > 0) {
+    throw new Error(`prerender: ${routePath} links outside the in-app allowlist: ${bad.join(", ")}`);
+  }
+}
+
+// The Terms' lastUpdated is the version the app records and compares as a
+// date (content/legal/index.ts), so every document's must be a real
+// YYYY-MM-DD date.
+function checkLegalDates() {
+  const bad = legalDocuments.filter((doc) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(doc.lastUpdated)) return true;
+    const date = new Date(`${doc.lastUpdated}T00:00:00Z`);
+    return Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== doc.lastUpdated;
+  });
+  if (bad.length > 0) {
+    throw new Error(`prerender: lastUpdated must be a YYYY-MM-DD date: ${bad.map((d) => `${d.slug}=${d.lastUpdated}`).join(", ")}`);
+  }
+}
+
+// Legal documents load as separate chunks; have them all in hand first.
+loadAllLegalHtml().then(() => {
+  checkLegalDates();
+  checkLegalPlaceholders();
+  prerender();
+});

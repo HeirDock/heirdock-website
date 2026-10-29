@@ -96,13 +96,8 @@ export default function Contact() {
               </button>
 
               <p className="fine-print">
-                This site is protected by reCAPTCHA and the Google{" "}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-                  Privacy Policy
-                </a>{" "}and{" "}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
-                  Terms of Service
-                </a>{" "}apply.
+                We use what you send only to respond to your request. See our{" "}
+                <Link to="/legal/privacy">Privacy Policy</Link>. This site is protected by reCAPTCHA.
               </p>
             </form>
           )}

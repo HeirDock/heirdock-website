@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Static marketing website for HeirDock (heirdock.com). 20 pages across four sections: Global, Customer, Partner, and Legal stubs. Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
+Static marketing website for HeirDock (heirdock.com). 30 pages across four sections: Global, Customer, Partner, and Legal (including the in-app copies of the legal documents). Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
 
 ## Tech Stack
 
@@ -37,7 +37,7 @@ Static marketing website for HeirDock (heirdock.com). 20 pages across four secti
 `npm run build` runs three steps:
 1. `build:client` — Vite client build → `dist/client/` (JS, CSS, index.html template)
 2. `build:server` — Vite SSR build → `dist/server/` (Node.js prerender script)
-3. `prerender` — Runs `dist/server/entry-server.js` which renders all 20 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
+3. `prerender` — Runs `dist/server/entry-server.js` which renders all 30 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
 
 Final output for deployment: `dist/client/` (all HTML + assets)
 
@@ -50,7 +50,7 @@ Final output for deployment: `dist/client/` (all HTML + assets)
 - GitHub OIDC for AWS authentication (no stored credentials)
 - AWS Account: HeirDock-Prod (077207386011) for both environments
 - Contact form emails go to info@heirdock.com
-- Legal stubs have `noindex` meta tags
+- Legal: heirdock.com/legal is the one home of HeirDock's terms and policies, for the website, web app and mobile apps alike (the app links here). The documents are Markdown in `src/content/legal/`, rendered to HTML at build time and loaded per page; their titles and "Last updated" dates are in `src/content/legal/index.ts`. Each also has a bare copy at `/legal/<slug>/in-app` for the HeirDock app's in-app browser: no site header or footer, and links only to other in-app legal pages, email, status.heirdock.com or other companies' sites, so the app never leads to prices, plans, sign-up or a demo (the prerender fails the build otherwise). A production build also fails while any legal document has a `[USER: ...]` placeholder.
 - Staging environment has `VITE_NOINDEX=true`
 
 ## Project Structure
@@ -60,7 +60,8 @@ heirdock-website/
 ├── apps/web/           # React + Vite web app
 │   ├── src/
 │   │   ├── components/ # Reusable React components
-│   │   ├── pages/      # Page components (20 pages)
+│   │   ├── pages/      # Page components
+│   │   ├── content/legal/ # Legal documents (Markdown)
 │   │   ├── styles/     # CSS files (tokens, base)
 │   │   ├── assets/     # Images, icons, fonts
 │   │   ├── App.tsx     # Route definitions
