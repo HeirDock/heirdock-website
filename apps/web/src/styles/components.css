@@ -187,12 +187,35 @@
   opacity: 1;
 }
 
+/* One row: copyright on the left, legal links on the right. Below 768px
+   it wraps and centres. */
 .site-footer__bottom {
   border-top: 1px solid var(--footer-rule);
   padding-top: var(--space-xl);
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-xl);
   color: var(--footer-text-secondary);
   font-size: var(--text-sm);
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+.site-footer__legal a {
+  color: var(--footer-text-secondary);
+  line-height: 1.75;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.site-footer__legal a:hover {
+  color: var(--color-text-on-dark);
+  opacity: 1;
 }
 
 /* Tablets: the brand takes its own row above the three link columns. */
@@ -210,6 +233,12 @@
   .site-footer__grid {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
+  }
+
+  .site-footer__bottom,
+  .site-footer__legal {
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -1075,6 +1104,121 @@
 
 .legal-content a {
   font-weight: 500;
+}
+
+.legal-content ol {
+  list-style: decimal;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.legal-content ol li {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+/* Section ids come from the headings; keep a linked heading clear of the
+   sticky header. */
+.legal-content [id] {
+  scroll-margin-top: calc(64px + var(--space-lg));
+}
+
+/* Wide tables (Sub-Processors, the DPA) scroll inside their own box on a
+   phone rather than widening the page. */
+.legal-content table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-bottom: var(--space-md);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.legal-content th,
+.legal-content td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.legal-content th {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.legal-content td {
+  color: var(--color-text-secondary);
+}
+
+.legal-content a.legal-content__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+
+.legal-content__updated {
+  color: var(--color-text-secondary);
+}
+
+/* /legal/<slug>/in-app: the document alone, in the HeirDock app's browser. */
+.legal-in-app .section {
+  padding: var(--space-xl) 0 var(--space-3xl);
+}
+
+.legal-in-app__logo {
+  width: auto;
+  height: 32px;
+  margin-bottom: var(--space-xl);
+}
+
+/* /legal: the documents as link cards, in two groups. */
+.legal-hub {
+  padding-top: 0;
+}
+
+.legal-hub__group + .legal-hub__group {
+  margin-top: var(--space-2xl);
+}
+
+.legal-hub__heading {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-md);
+}
+
+.legal-hub__list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.legal-hub__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.legal-hub__title {
+  display: block;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.legal-hub__summary {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
 }
 
 /* ========================================

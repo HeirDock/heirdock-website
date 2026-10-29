@@ -44,13 +44,18 @@ export default function Footer() {
               <Link to="/security">Data Security</Link>
               <a href="https://status.heirdock.com" target="_blank" rel="noopener noreferrer">System Status</a>
               <Link to="/legal/privacy">Privacy Policy</Link>
-              <Link to="/legal/terms">Terms of Use</Link>
+              <Link to="/legal/terms">Terms of Service</Link>
             </div>
           </div>
         </div>
 
         <div className="site-footer__bottom">
-          &copy; {__BUILD_YEAR__} HeirDock, LLC. All rights reserved.
+          <span>&copy; {__BUILD_YEAR__} HeirDock, LLC. All rights reserved.</span>
+          <nav className="site-footer__legal" aria-label="Legal">
+            <Link to="/legal/privacy">Privacy</Link>
+            <Link to="/legal">Legal</Link>
+            <Link to="/legal/cookies">Cookie Notice</Link>
+          </nav>
         </div>
       </div>
     </footer>

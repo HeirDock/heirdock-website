@@ -1,3 +1,5 @@
+import { legalDocuments } from "./content/legal";
+
 // Shared page metadata — used by both the SSG pre-renderer and the client-side
 // DocumentTitle component so titles stay consistent everywhere.
 
@@ -5,6 +7,8 @@ export interface PageMeta {
   title: string;
   description: string;
   noindex?: boolean;
+  // Defaults to the page's own address.
+  canonicalPath?: string;
   // The link-preview image; pages without one use the default og-image.
   shareImage?: ShareImage;
 }
@@ -105,39 +109,21 @@ export const pageMeta: Record<string, PageMeta> = {
       "Schedule a personalized demo of HeirDock's Partner Portal. See how it fits your professional practice.",
     shareImage: PROFESSIONAL_SHARE_IMAGE,
   },
-  "/legal/terms": {
-    title: "HeirDock - Terms of Use",
-    description: "HeirDock Terms of Use.",
-    noindex: true,
-  },
-  "/legal/privacy": {
-    title: "HeirDock - Privacy Policy",
-    description: "HeirDock Privacy Policy.",
-    noindex: true,
-  },
-  "/legal/cookies": {
-    title: "HeirDock - Cookie Policy",
-    description: "HeirDock Cookie Policy.",
-    noindex: true,
-  },
-  "/legal/data-rights": {
-    title: "HeirDock - Data Rights",
-    description: "HeirDock Data Rights and Compliance information.",
-    noindex: true,
-  },
-  "/legal/acceptable-use": {
-    title: "HeirDock - Acceptable Use",
-    description: "HeirDock Acceptable Use Policy.",
-    noindex: true,
-  },
-  "/legal/dpa": {
-    title: "HeirDock - Data Processing Agreement",
-    description: "HeirDock Data Processing Agreement.",
-    noindex: true,
-  },
-  "/legal/accessibility": {
-    title: "HeirDock - Accessibility",
-    description: "HeirDock Accessibility Statement.",
-    noindex: true,
+  "/legal": {
+    title: "HeirDock - Legal",
+    description:
+      "HeirDock's terms and policies, one set for the website, the web app and the HeirDock app for Android.",
   },
 };
+
+// Each legal document has two pages: the site page, and a bare copy for the
+// HeirDock app's in-app browser (no site header or footer, noindex).
+for (const doc of legalDocuments) {
+  const meta = { title: `HeirDock - ${doc.title}`, description: doc.summary };
+  pageMeta[`/legal/${doc.slug}`] = meta;
+  pageMeta[`/legal/${doc.slug}/in-app`] = {
+    ...meta,
+    noindex: true,
+    canonicalPath: `/legal/${doc.slug}`,
+  };
+}

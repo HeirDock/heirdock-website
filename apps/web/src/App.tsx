@@ -12,13 +12,10 @@ import PartnerFeatures from "./pages/partner/Features";
 import PartnerPricing from "./pages/partner/Pricing";
 import Demo from "./pages/partner/Demo";
 import RequestAccess from "./pages/partner/RequestAccess";
-import Terms from "./pages/legal/Terms";
-import Privacy from "./pages/legal/Privacy";
-import Cookies from "./pages/legal/Cookies";
-import DataRights from "./pages/legal/DataRights";
-import AcceptableUse from "./pages/legal/AcceptableUse";
-import Dpa from "./pages/legal/Dpa";
-import Accessibility from "./pages/legal/Accessibility";
+import LegalHub from "./pages/legal/LegalHub";
+import LegalDocumentPage from "./pages/legal/LegalDocumentPage";
+import LegalInAppPage from "./pages/legal/LegalInAppPage";
+import { legalDocuments } from "./content/legal";
 import Invite from "./pages/Invite";
 import NotFound from "./pages/NotFound";
 
@@ -46,17 +43,19 @@ export default function App() {
         <Route path="professional/request-access" element={<RequestAccess />} />
 
         {/* Legal */}
-        <Route path="legal/terms" element={<Terms />} />
-        <Route path="legal/privacy" element={<Privacy />} />
-        <Route path="legal/cookies" element={<Cookies />} />
-        <Route path="legal/data-rights" element={<DataRights />} />
-        <Route path="legal/acceptable-use" element={<AcceptableUse />} />
-        <Route path="legal/dpa" element={<Dpa />} />
-        <Route path="legal/accessibility" element={<Accessibility />} />
+        <Route path="legal" element={<LegalHub />} />
+        {legalDocuments.map((doc) => (
+          <Route key={doc.slug} path={`legal/${doc.slug}`} element={<LegalDocumentPage doc={doc} />} />
+        ))}
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Route>
+
+      {/* Legal documents for the HeirDock app's in-app browser: no site layout */}
+      {legalDocuments.map((doc) => (
+        <Route key={doc.slug} path={`legal/${doc.slug}/in-app`} element={<LegalInAppPage doc={doc} />} />
+      ))}
     </Routes>
   );
 }
