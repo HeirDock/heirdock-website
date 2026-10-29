@@ -53,8 +53,9 @@ jobs:
       # free of downtime: new hashed assets go up first with nothing deleted,
       # then the HTML that references them, then the CDN purge. Stale assets
       # are pruned only after the invalidation has finished, so live HTML never
-      # points at a deleted file. The build is one JS and one CSS bundle with no
-      # lazy chunks, so a tab still open on the old HTML already holds its assets.
+      # points at a deleted file. Each legal document's text is a lazy chunk; a
+      # tab still open on old HTML that can't fetch one reloads the page
+      # (content/legal/html.ts). Pages removed from the build are pruned too.
       - name: Upload static assets to S3
         run: |
           aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
@@ -90,4 +91,11 @@ jobs:
             --exclude "*.html" \
             --exclude "*.json" \
             --cache-control "max-age=31536000,public" \
+            --delete
+          # Pages no longer built (a removed route) go too, or they stay live.
+          aws s3 sync dist/client/ s3://heirdock-website-${{ inputs.environment }}-frontend \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.json" \
+            --cache-control "no-cache,no-store,must-revalidate" \
             --delete
