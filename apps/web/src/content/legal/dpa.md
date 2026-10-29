@@ -257,8 +257,9 @@ For Clients with individually negotiated agreements, amendments to this DPA requ
 For questions about this DPA or data processing practices:
 
 **HeirDock LLC**
-P.O. Box 161
-Moultonborough, NH 03254
+500 N. Commercial St.
+Suite 502DA
+Manchester, NH 03101
 United States
 
 **Email:** [privacy@heirdock.com](mailto:privacy@heirdock.com)

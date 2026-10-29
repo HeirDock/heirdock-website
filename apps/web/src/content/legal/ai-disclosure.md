@@ -130,8 +130,9 @@ We may update this AI Disclosure from time to time, particularly as we add new A
 If you have questions about our use of AI, please contact us:
 
 **HeirDock LLC**
-P.O. Box 161
-Moultonborough, NH 03254
+500 N. Commercial St.
+Suite 502DA
+Manchester, NH 03101
 United States
 
 **Email:** [privacy@heirdock.com](mailto:privacy@heirdock.com)

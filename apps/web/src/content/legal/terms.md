@@ -559,7 +559,7 @@ HeirDock will not be liable for any delay or failure to perform its obligations 
 
 ### 25.6 Notices
 
-Notices to HeirDock must be sent by email to [legal@heirdock.com](mailto:legal@heirdock.com) or by mail to HeirDock LLC, P.O. Box 161, Moultonborough, NH 03254, United States. Notices to you will be sent to the email address associated with your account.
+Notices to HeirDock must be sent by email to [legal@heirdock.com](mailto:legal@heirdock.com) or by mail to HeirDock LLC, 500 N. Commercial St., Suite 502DA, Manchester, NH 03101, United States. Notices to you will be sent to the email address associated with your account.
 
 ### 25.7 California Users
 
@@ -580,8 +580,9 @@ The section headings in these Terms are for convenience only and have no legal o
 If you have questions about these Terms, please contact us:
 
 **HeirDock LLC**
-P.O. Box 161
-Moultonborough, NH 03254
+500 N. Commercial St.
+Suite 502DA
+Manchester, NH 03101
 United States
 
 **Email:** [legal@heirdock.com](mailto:legal@heirdock.com)
