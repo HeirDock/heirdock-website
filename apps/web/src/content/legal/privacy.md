@@ -350,7 +350,7 @@ Under Canadian law, you have the right to: access your personal information held
 
 **Access and correction requests:** You can see and correct most of your information in the Platform yourself. To ask for a copy of the personal information we hold about you, or to correct it, email [privacy@heirdock.com](mailto:privacy@heirdock.com). We answer within thirty (30) days.
 
-**Person in charge of personal information:** Our Privacy Officer is responsible for protecting personal information at HeirDock, including under Quebec's Law 25, and can be reached at [privacy@heirdock.com](mailto:privacy@heirdock.com), or by mail at HeirDock LLC, P.O. Box 161, Moultonborough, NH 03254, United States.
+**Person in charge of personal information:** Our Privacy Officer is responsible for protecting personal information at HeirDock, including under Quebec's Law 25, and can be reached at [privacy@heirdock.com](mailto:privacy@heirdock.com), or by mail at HeirDock LLC, 500 N. Commercial St., Suite 502DA, Manchester, NH 03101, United States.
 
 **Complaints:** If you are not satisfied with our answer, you can complain to the Office of the Privacy Commissioner of Canada at [www.priv.gc.ca](https://www.priv.gc.ca), or, in Quebec, to the Commission d'accès à l'information du Québec at [www.cai.gouv.qc.ca](https://www.cai.gouv.qc.ca).
 
@@ -396,8 +396,9 @@ We encourage you to review this Privacy Policy periodically. Your continued use 
 If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
 
 **HeirDock LLC**
-P.O. Box 161
-Moultonborough, NH 03254
+500 N. Commercial St.
+Suite 502DA
+Manchester, NH 03101
 United States
 
 **Email:** [privacy@heirdock.com](mailto:privacy@heirdock.com)

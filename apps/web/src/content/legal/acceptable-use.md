@@ -134,8 +134,9 @@ We may update this AUP from time to time. When we make material changes, we will
 If you have questions about this Acceptable Use Policy, please contact us:
 
 **HeirDock LLC**
-P.O. Box 161
-Moultonborough, NH 03254
+500 N. Commercial St.
+Suite 502DA
+Manchester, NH 03101
 United States
 
 **Email:** [legal@heirdock.com](mailto:legal@heirdock.com)

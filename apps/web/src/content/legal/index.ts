@@ -35,28 +35,28 @@ export const legalDocuments: LegalDocument[] = [
     title: "Terms of Service",
     summary: "The agreement that covers your use of the HeirDock website and app.",
     group: "Terms",
-    lastUpdated: "2026-10-28",
+    lastUpdated: "2026-10-29",
   },
   {
     slug: "acceptable-use",
     title: "Acceptable Use Policy",
     summary: "What you may and may not do with HeirDock.",
     group: "Terms",
-    lastUpdated: "2026-10-28",
+    lastUpdated: "2026-10-29",
   },
   {
     slug: "dpa",
     title: "Data Processing Agreement",
     summary: "For Professional firms that work with their clients' Household Records in HeirDock.",
     group: "Terms",
-    lastUpdated: "2026-10-28",
+    lastUpdated: "2026-10-29",
   },
   {
     slug: "privacy",
     title: "Privacy Policy",
     summary: "What we collect on the website and in the app, and how we use and protect it.",
     group: "Policies",
-    lastUpdated: "2026-10-28",
+    lastUpdated: "2026-10-29",
   },
   {
     slug: "cookies",
@@ -84,7 +84,7 @@ export const legalDocuments: LegalDocument[] = [
     title: "AI Disclosure",
     summary: "How identification and valuation work, and how your data is protected.",
     group: "Policies",
-    lastUpdated: "2026-10-28",
+    lastUpdated: "2026-10-29",
   },
 ];
 
