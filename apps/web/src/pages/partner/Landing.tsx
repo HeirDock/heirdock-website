@@ -88,6 +88,7 @@ export default function PartnerLanding() {
                   <li>Photos, receipts and serial numbers already attached</li>
                   <li>Beneficiaries, wishes and stories written down</li>
                   <li>Photos and past values in one place</li>
+                  <li>Flexible on integrations, shaped around how your firm works</li>
                 </ul>
               </div>
               <div className="asset-gap__drawing asset-gap__drawing--small">
