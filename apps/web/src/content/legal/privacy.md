@@ -146,7 +146,11 @@ We may disclose your information if required to do so by law, in response to a v
 
 If HeirDock is involved in a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change by updating this Privacy Policy and, where practicable, by email.
 
-### 3.7 With Your Consent
+### 3.7 With eBay
+
+If you mark an Item to sell, we can show you eBay links and listings. To find them, we send eBay the Item's name, maker, model number and category, but not your name, email or account details.
+
+### 3.8 With Your Consent
 
 We may share your information for other purposes with your explicit consent.
 
@@ -245,7 +249,7 @@ Trusted Participants are either Managers, who see and manage the whole Household
 
 ### 6.3 Professional (Institutional) Access
 
-Professionals see only what you consent to share with them. If you allow it, an insurance Professional can also add and update your insurance policies, coverage, and claims; every change is recorded, and you or a Manager can undo it. Professionals keep their own notes, flags, and comments about your account in their workspace. You or a Manager can change or revoke a Professional's access at any time, and every consent and change is logged in the Platform's audit trail.
+Professionals see only what you consent to share with them. If you allow it, an insurance Professional can also add and update your insurance policies, coverage, and claims; every change is recorded, and you or a Manager can undo it. Professionals keep their own notes, flags, and comments about your account in their workspace. You or a Manager can change or revoke a Professional's access at any time, and every consent and change is logged in the Platform's audit trail. Files a Professional already downloaded stay with them, so ask them directly if you want those removed.
 
 ### 6.4 Life Event Access Changes
 

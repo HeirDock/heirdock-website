@@ -325,7 +325,7 @@ You are responsible for reviewing all AI-generated outputs for accuracy. By usin
 
 The Platform works with some third-party services ("Integrations"), such as signing in with Google, payments through Stripe, and finding comparable listings on eBay. We may add others. When you use an Integration, data may pass between HeirDock and the third-party service.
 
-**eBay.** When you look for comparable listings for an item, we send eBay only the search terms for that item (such as its name, make, and model), not your personal information. Links to eBay may earn HeirDock a commission; the Platform says so where these links appear.
+**eBay.** When you look for comparable listings for an item, we send eBay only the search terms for that item (such as its name, make, and model), not your personal information.
 
 ### 12.2 Third-Party Terms
 
