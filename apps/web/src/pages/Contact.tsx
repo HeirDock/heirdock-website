@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContactForm } from "../lib/useContactForm";
 import Icon from "../components/Icon";
@@ -8,6 +8,17 @@ import Planks from "../components/Planks";
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const { status, errorMessage, submit, reset } = useContactForm();
+
+  // /contact?type=customer (or partner, press, support, general) preselects the
+  // Inquiry Type; the app's Support Center links here with ?type=customer. A ref
+  // callback, so it runs only when the form mounts (after hydration, and again
+  // after "Send another message"), never over a choice the visitor has made.
+  const presetInquiryType = useCallback((select: HTMLSelectElement | null) => {
+    if (!select) return;
+    const type = new URLSearchParams(window.location.search).get("type")?.trim().toLowerCase();
+    const option = Array.from(select.options).find((o) => o.value && o.value.toLowerCase() === type);
+    if (option) select.value = option.value;
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,7 +85,8 @@ export default function Contact() {
 
               <div className="form__field">
                 <label htmlFor="inquiryType" className="form__label">Inquiry Type *</label>
-                <select id="inquiryType" name="inquiryType" required className="form__select">
+                <select id="inquiryType" name="inquiryType" required className="form__select"
+                  ref={presetInquiryType}>
                   <option value="">Select a category</option>
                   <option value="Customer">Customer Question</option>
                   <option value="Partner">Partner Inquiry</option>
