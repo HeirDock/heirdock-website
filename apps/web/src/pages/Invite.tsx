@@ -4,6 +4,7 @@ import { useContactForm } from "../lib/useContactForm";
 import Icon from "../components/Icon";
 import Drawing from "../components/Drawing";
 import Planks from "../components/Planks";
+import AppLink from "../components/AppLink";
 
 export default function Invite() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -128,7 +129,7 @@ export default function Invite() {
                 <h3 className="invite-info-card__title">Already have an invite?</h3>
                 <p>
                   If you've received an invitation email, you can{" "}
-                  <a href="https://app.heirdock.com/login">sign in here</a> to
+                  <AppLink href="https://app.heirdock.com/login">sign in here</AppLink> to
                   get started.
                 </p>
               </div>

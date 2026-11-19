@@ -75,13 +75,16 @@ resource "aws_s3_bucket_lifecycle_configuration" "logs" {
       storage_class = "STANDARD_IA"
     }
 
-    transition {
-      days          = 90
-      storage_class = "GLACIER"
+    # Raw access logs hold visitor IPs: kept 90 days. The platform's traffic
+    # import reads only the previous 2 days.
+    expiration {
+      days = 90
     }
 
-    expiration {
-      days = 365
+    # The bucket is versioned, so expiring a log only adds a delete marker;
+    # this removes the expired version itself a day later.
+    noncurrent_version_expiration {
+      noncurrent_days = 1
     }
   }
 }

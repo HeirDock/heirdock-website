@@ -36,6 +36,23 @@ function escapeHtml(str) {
 // The access form's practice types, as offered on the page.
 const PRACTICE_TYPES = ["Insurance", "Estate Planning", "Appraisal", "Wealth & Banking", "Corporate Trustee", "Property Manager", "Other"];
 
+// Where the visitor's tab first landed and the campaign tags it arrived with
+// (sent by the site from sessionStorage). Only these keys are kept, as short
+// plain strings. They go into the staff email and are never logged.
+const SOURCE_FIELDS = ["landing_path", "utm_source", "utm_medium", "utm_campaign", "ref"];
+
+function cleanSource(raw) {
+  const source = {};
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return source;
+  for (const key of SOURCE_FIELDS) {
+    if (typeof raw[key] !== "string") continue;
+    // eslint-disable-next-line no-control-regex
+    const value = stripHtml(raw[key]).replace(/[\u0000-\u001f\u007f]/g, "").slice(0, key === "landing_path" ? 200 : 100);
+    if (value) source[key] = value;
+  }
+  return source;
+}
+
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
 }
@@ -143,6 +160,9 @@ exports.handler = async (event, context) => {
       log("log", "recaptcha_bypassed", { requestId, formType });
     }
 
+    const source = cleanSource(body.source);
+    const sourceEntries = Object.entries(source);
+
     // Escaped copies for the HTML bodies (the text bodies use the plain values)
     const h = {
       name: escapeHtml(name),
@@ -220,6 +240,15 @@ exports.handler = async (event, context) => {
         </p>
       `;
       textBody = `Contact Form\nName: ${name}\nEmail: ${email}\nType: ${inquiryType}\nMessage:\n${message}`;
+    }
+
+    if (sourceEntries.length) {
+      htmlBody += `
+        <p style="color: #999; font-size: 12px;">
+          Came from: ${sourceEntries.map(([k, v]) => `${k}=${escapeHtml(v)}`).join(" | ")}
+        </p>
+      `;
+      textBody += `\n\nCame from:\n${sourceEntries.map(([k, v]) => `${k}: ${v}`).join("\n")}`;
     }
 
     const command = new SendEmailCommand({

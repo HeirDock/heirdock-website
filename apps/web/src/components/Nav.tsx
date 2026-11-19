@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logoUrl from "../assets/images/heirdock-horizontal-color.svg";
 import Icon from "./Icon";
+import AppLink from "./AppLink";
 
 export default function Nav() {
   const location = useLocation();
@@ -77,9 +78,9 @@ export default function Nav() {
         </div>
 
         <div className="site-nav__actions">
-          <a href="https://app.heirdock.com/login" className="btn btn--primary btn--sm">
+          <AppLink href="https://app.heirdock.com/login" className="btn btn--primary btn--sm">
             Sign In
-          </a>
+          </AppLink>
         </div>
 
         <button
@@ -99,7 +100,7 @@ export default function Nav() {
         <Link to="/professional" className={linkClass("/professional")}>For Professionals</Link>
         <Link to="/faq" className={linkClass("/faq")}>FAQ</Link>
         <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
-        <a href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</a>
+        <AppLink href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</AppLink>
       </div>
     </nav>
   );

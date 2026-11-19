@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { getRecaptchaToken } from "./recaptcha";
+import { readFirstTouch } from "./campaign";
 
 const API_ENDPOINT = import.meta.env.VITE_CONTACT_API_ENDPOINT ?? "";
 
@@ -21,6 +22,11 @@ interface SubmitData {
   clientCount?: string;
   // Honeypot
   _phone?: string;
+}
+
+function sourceFields() {
+  const touch = readFirstTouch();
+  return touch ? { landing_path: touch.landing_path, ...touch.campaign } : {};
 }
 
 export function useContactForm() {
@@ -62,6 +68,9 @@ export function useContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
+          // Where this tab first landed and the campaign tags it arrived with,
+          // so the staff email says where the request came from.
+          source: sourceFields(),
           recaptchaToken,
         }),
       });
