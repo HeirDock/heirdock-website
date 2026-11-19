@@ -4,6 +4,7 @@ import Drawing from "../components/Drawing";
 import Film from "../components/Film";
 import Icon from "../components/Icon";
 import Planks from "../components/Planks";
+import AppLink from "../components/AppLink";
 
 export default function Home() {
   return (
@@ -25,9 +26,9 @@ export default function Home() {
               <Link to="/invite" className="btn btn--gold btn--lg">
                 Request Early Access <Icon name="arrowForward" />
               </Link>
-              <a href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
+              <AppLink href="https://app.heirdock.com/login" className="btn btn--outline btn--lg">
                 Sign In
-              </a>
+              </AppLink>
             </div>
             {/* Behind a click, with sound and captions. preload="none" keeps its
                 4.3 MB off the page until someone presses play; the poster is a

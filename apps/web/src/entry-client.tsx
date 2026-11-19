@@ -2,11 +2,15 @@ import { hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { legalSlugFromPath, loadLegalHtml } from "./content/legal/html";
+import { recordFirstTouch } from "./lib/campaign";
 import "@fontsource-variable/inter/wght.css";
 import "./styles/fonts.css";
 import "./styles/tokens.css";
 import "./styles/base.css";
 import "./styles/components.css";
+
+// Before hydration, so app links render with this tab's campaign tags.
+recordFirstTouch();
 
 function hydrate() {
   hydrateRoot(
