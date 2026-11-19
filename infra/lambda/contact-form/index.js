@@ -40,6 +40,18 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
 }
 
+// Logs never carry what a visitor typed: no name, email, company, role, client
+// count, inquiry type or message, and no raw error messages (an SES error can
+// quote the Reply-To address). Only the form type, the request id, the reCAPTCHA
+// score, the outcome and error names/codes are written to CloudWatch.
+function log(level, event, fields) {
+  console[level](JSON.stringify({ event, ...fields }));
+}
+
+function errorCode(err) {
+  return (err && (err.name || err.code)) || "UnknownError";
+}
+
 async function verifyRecaptcha(token) {
   const params = new URLSearchParams({
     secret: RECAPTCHA_SECRET_KEY,
@@ -55,9 +67,10 @@ async function verifyRecaptcha(token) {
   return res.json();
 }
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
   const origin = event.headers?.origin || "";
   const headers = corsHeaders(origin);
+  const requestId = event.requestContext?.requestId || context?.awsRequestId || "unknown";
 
   try {
     let body;
@@ -69,12 +82,13 @@ exports.handler = async (event) => {
 
     // Honeypot check
     if (body._phone) {
-      console.log("Honeypot triggered, rejecting silently");
+      log("log", "honeypot", { requestId });
       return { statusCode: 200, headers, body: JSON.stringify({ success: true }) };
     }
 
     // Determine form type
-    const formType = body.formType || "contact";
+    // Unknown values are treated as the contact form (and logged as such).
+    const formType = ["demo", "invite", "access"].includes(body.formType) ? body.formType : "contact";
     const isDemo = formType === "demo";
     const isInvite = formType === "invite";
     // A practice asking for Partner Portal access: the demo form's fields, with an optional message.
@@ -114,17 +128,19 @@ exports.handler = async (event) => {
     let recaptchaResult = { success: true, score: 1.0, action: "staging-bypass" };
     if (!(ALLOW_RECAPTCHA_BYPASS && recaptchaToken === "staging-bypass")) {
       recaptchaResult = await verifyRecaptcha(recaptchaToken);
-      console.log("reCAPTCHA result:", JSON.stringify({
+      log("log", "recaptcha", {
+        requestId,
+        formType,
         success: recaptchaResult.success,
         score: recaptchaResult.score,
         action: recaptchaResult.action,
-      }));
+      });
 
       if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
         return { statusCode: 403, headers, body: JSON.stringify({ error: "Security verification failed" }) };
       }
     } else {
-      console.log("reCAPTCHA bypassed (staging mode)");
+      log("log", "recaptcha_bypassed", { requestId, formType });
     }
 
     // Escaped copies for the HTML bodies (the text bodies use the plain values)
@@ -221,20 +237,21 @@ exports.handler = async (event) => {
 
     try {
       await ses.send(command);
-      console.log("Email sent successfully", { formType, name, email, score: recaptchaResult.score });
     } catch (sesErr) {
-      // Log the SES error but still return success to the user
-      // The submission is logged in CloudWatch even if email delivery fails
-      console.error("SES delivery failed (submission logged):", {
-        formType, name, email, company, role, clientCount, inquiryType,
-        message: message.substring(0, 200),
-        sesError: sesErr.message || sesErr,
-      });
+      // Logs are not a fallback store for submissions: the visitor is asked to
+      // try again, and only the error code is logged.
+      log("error", "ses_failed", { requestId, formType, error: errorCode(sesErr) });
+      return {
+        statusCode: 502,
+        headers,
+        body: JSON.stringify({ error: "We couldn't send your message just now. Please try again in a few minutes." }),
+      };
     }
 
+    log("log", "sent", { requestId, formType, score: recaptchaResult.score });
     return { statusCode: 200, headers, body: JSON.stringify({ success: true }) };
   } catch (err) {
-    console.error("Contact form error:", err);
+    log("error", "unhandled", { requestId, error: errorCode(err) });
     return { statusCode: 500, headers, body: JSON.stringify({ error: "Something went wrong. Please try again later." }) };
   }
 };
