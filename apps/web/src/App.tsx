@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Security from "./pages/Security";
 import Faq from "./pages/Faq";
+import About from "./pages/company/About";
 import CustomerFeatures from "./pages/customer/Features";
 import CustomerPricing from "./pages/customer/Pricing";
 import CustomerUseCases from "./pages/customer/UseCases";
@@ -29,6 +30,9 @@ export default function App() {
         <Route path="security" element={<Security />} />
         <Route path="faq" element={<Faq />} />
         <Route path="invite" element={<Invite />} />
+
+        {/* Company */}
+        <Route path="company/about" element={<About />} />
 
         {/* Customer */}
         <Route path="customer/features" element={<CustomerFeatures />} />

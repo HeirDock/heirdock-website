@@ -60,6 +60,11 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "HeirDock is invite-only. Request early access to organize, value, and protect your household assets.",
   },
+  "/company/about": {
+    title: "HeirDock - About",
+    description:
+      "HeirDock began on a family farm in New Hampshire. Read our story, meet the founders, and see what we believe and what you can count on.",
+  },
   "/customer/features": {
     title: "HeirDock - Features",
     description:

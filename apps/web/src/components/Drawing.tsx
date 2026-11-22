@@ -13,7 +13,7 @@ import type { ReactElement } from "react";
 // drawing scrolls into view.
 
 type Props = {
-  name: "keepsake" | "frontDoor" | "valuables" | StillName;
+  name: "keepsake" | "frontDoor" | "valuables" | "tools" | StillName;
   tone?: "light" | "navy" | "tint";
   motion?: "swing" | "open";
   // The keepsake can stand on the planks instead of under the arch, so a page
@@ -40,9 +40,23 @@ const PLANKS = [
 const PLANKS_VIEWBOX = "20 100 260 210";
 
 // Still drawings: an object under the arch, on the shelf line, no motion.
-type StillName = "strongbox" | "letter" | "lantern" | "clipboard" | "briefcase";
+type StillName = "strongbox" | "letter" | "lantern" | "clipboard" | "briefcase" | "barn";
 
 const STILLS: Record<StillName, ReactElement> = {
+  barn: (
+    <>
+      <path className="drawing__line drawing__surface" d="M84 268 V176 L98 138 L150 112 L202 138 L216 176 V268" strokeWidth="3" strokeLinejoin="round" />
+      <path className="drawing__line" d="M84 176 l-9 7 M216 176 l9 7" strokeWidth="3" strokeLinecap="round" />
+      <path className="drawing__line" d="M84 190 H216" strokeWidth="1.8" opacity=".55" />
+      <path className="drawing__line" d="M102 200 V268 M198 200 V268" strokeWidth="1.8" opacity=".4" />
+      <rect className="drawing__accent-fill" x="138" y="140" width="24" height="24" rx="2" />
+      <path className="drawing__surface-line" d="M150 140 v24 M138 152 h24" strokeWidth="1.6" />
+      <rect className="drawing__line drawing__surface" x="120" y="206" width="60" height="62" strokeWidth="3" strokeLinejoin="round" />
+      <path className="drawing__line" d="M150 206 V268" strokeWidth="2" />
+      <path className="drawing__line" d="M120 206 L150 268 M150 206 L120 268 M150 206 L180 268 M180 206 L150 268" strokeWidth="1.8" opacity=".55" />
+      <path className="drawing__line" d="M230 268 V246 M246 268 V246 M224 253 H252" strokeWidth="2.4" strokeLinecap="round" />
+    </>
+  ),
   strongbox: (
     <>
       <rect className="drawing__line drawing__surface" x="88" y="146" width="124" height="114" rx="8" strokeWidth="3" />
@@ -150,6 +164,30 @@ export default function Drawing({ name, tone = "light", motion, frame = "arch", 
         <path className="drawing__accent" d={ARCH} strokeWidth="3" strokeLinecap="round" />
         {STILLS[name as StillName]}
         <path className="drawing__line" d="M52 268 H248" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // Old tools: a hammer and a hand saw on a rail, a hand plane below. Always
+  // on the planks (the plane sits on the top board), never under the arch.
+  if (name === "tools") {
+    return (
+      <svg className={classes} viewBox={PLANKS_VIEWBOX} fill="none" aria-hidden="true" focusable="false">
+        <path className="drawing__line" d="M78 122 H222" strokeWidth="3" strokeLinecap="round" />
+        <circle className="drawing__line-fill" cx="112" cy="122" r="3.4" />
+        <circle className="drawing__line-fill" cx="188" cy="122" r="3.4" />
+        <rect className="drawing__line drawing__surface" x="108" y="138" width="8" height="66" rx="4" strokeWidth="3" />
+        <rect className="drawing__line drawing__surface" x="92" y="127" width="40" height="16" rx="4" strokeWidth="3" />
+        <path className="drawing__line drawing__surface" d="M174 154 H202 L195 214 H187 Z" strokeWidth="3" strokeLinejoin="round" />
+        <path className="drawing__line" d="M181 164 L190 206" strokeWidth="1.8" strokeLinecap="round" opacity=".55" />
+        <rect className="drawing__line drawing__surface" x="170" y="126" width="36" height="30" rx="8" strokeWidth="3" />
+        <rect className="drawing__line" x="180" y="134" width="16" height="13" rx="5" strokeWidth="1.8" opacity=".6" />
+        <path className="drawing__line" d="M146 240 L157 216" strokeWidth="3" strokeLinecap="round" />
+        <path className="drawing__line drawing__surface" d="M122 240 q-7 -18 5 -23 q10 -1 7 10 l-3 13" strokeWidth="3" strokeLinejoin="round" />
+        <path className="drawing__line drawing__surface" d="M110 254 V240 H192 V254" strokeWidth="3" strokeLinejoin="round" />
+        <circle className="drawing__accent-fill" cx="178" cy="230" r="9" />
+        <rect className="drawing__line drawing__surface" x="96" y="252" width="112" height="16" rx="3" strokeWidth="3" />
+        {PLANKS.map((points) => <polygon key={points} className="drawing__planks" points={points} />)}
       </svg>
     );
   }

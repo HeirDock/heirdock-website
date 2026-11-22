@@ -99,6 +99,7 @@ export default function Nav() {
         <Link to="/customer/pricing" className={linkClass("/customer/pricing")}>Pricing</Link>
         <Link to="/professional" className={linkClass("/professional")}>For Professionals</Link>
         <Link to="/faq" className={linkClass("/faq")}>FAQ</Link>
+        <Link to="/company/about" className={linkClass("/company/about")}>About</Link>
         <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
         <AppLink href="https://app.heirdock.com/login" className="btn btn--primary">Sign In</AppLink>
       </div>

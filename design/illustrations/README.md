@@ -20,6 +20,8 @@ python design/illustrations/drawings.py
 | `letter` | An opened envelope with a note and a gold seal (website: every form's "sent" message) | still |
 | `lantern` | A lantern with a lit candle behind gold glass (website: the 404 page) | still |
 | `clipboard` | A clipboard with a checklist and a gold clip: a record a professional can work from (website: the professionals page) | still |
+| `barn` | A gambrel-roofed barn with a lit loft window in gold and a fence beside it (website: the About page) | still |
+| `tools` | A hammer and a hand saw on a rail above a hand plane with a gold knob, on the planks with no arch (website: the About page) | still |
 
 Each comes in three palettes:
 

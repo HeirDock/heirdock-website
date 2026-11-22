@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none" role="img" aria-label="A barn with a lit loft window">
+  <path d="M28 286 V160 a122 122 0 0 1 244 0 V286" stroke="#DEB05E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M84 268 V176 L98 138 L150 112 L202 138 L216 176 V268" stroke="#456E9A" stroke-width="3" stroke-linejoin="round" fill="#FFFFFF"/>
+  <path d="M84 176 l-9 7 M216 176 l9 7" stroke="#456E9A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M84 190 H216" stroke="#456E9A" stroke-width="1.8" opacity=".55"/>
+  <path d="M102 200 V268 M198 200 V268" stroke="#456E9A" stroke-width="1.8" opacity=".4"/>
+  <rect x="138" y="140" width="24" height="24" rx="2" fill="#DEB05E"/>
+  <path d="M150 140 v24 M138 152 h24" stroke="#FFFFFF" stroke-width="1.6"/>
+  <rect x="120" y="206" width="60" height="62" stroke="#456E9A" stroke-width="3" stroke-linejoin="round" fill="#FFFFFF"/>
+  <path d="M150 206 V268" stroke="#456E9A" stroke-width="2"/>
+  <path d="M120 206 L150 268 M150 206 L120 268 M150 206 L180 268 M180 206 L150 268" stroke="#456E9A" stroke-width="1.8" opacity=".55"/>
+  <path d="M230 268 V246 M246 268 V246 M224 253 H252" stroke="#456E9A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M52 268 H248" stroke="#456E9A" stroke-width="3" stroke-linecap="round"/>
+</svg>
