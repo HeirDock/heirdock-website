@@ -116,7 +116,7 @@ export default function About() {
                 <h3 className="founder-card__name">Aaron</h3>
                 <span className="founder-card__role">Co-founder</span>
                 <p className="founder-card__bio">
-                  Aaron leads strategy and growth at HeirDock. Before HeirDock, he spent a
+                  Aaron leads growth and business development at HeirDock. Before HeirDock, he spent a
                   decade in product and partnerships across fintech, logistics, and property
                   technology, and co-founded a package management startup.
                 </p>
@@ -136,7 +136,7 @@ export default function About() {
                 <h3 className="founder-card__name">Adam</h3>
                 <span className="founder-card__role">Co-founder</span>
                 <p className="founder-card__bio">
-                  Adam leads technology and product at HeirDock. He has spent his career
+                  Adam leads product, operations, and technology at HeirDock. He has spent his career
                   building software that organizations depend on, with a focus on security,
                   reliability, and data that stays in the family&apos;s hands.
                 </p>
