@@ -56,19 +56,20 @@ export default function About() {
           </p>
           <p>
             Over time, I came to realize that this understanding shouldn&apos;t start when
-            something becomes old or valuable.
+            something becomes old or valuable. It should begin the moment it becomes ours.
           </p>
-          <p className="about-letter__pull">It should begin the moment it becomes ours.</p>
           <p>
             I looked for a simple, connected way to bring everything together: to understand
             what we own, capture what makes it valuable, and keep that knowledge current as our
             lives and possessions change. I couldn&apos;t find one.
           </p>
           <p>That realization, rooted in a lifelong appreciation, inspired HeirDock.</p>
-          <p>
+          <p className="about-letter__pull">
             HeirDock helps households understand, organize, and protect what they own, from the
-            day something is acquired to the day it is sold, shared, or passed along. Whether
-            it&apos;s a new purchase or a cherished family heirloom, HeirDock keeps the
+            day something is acquired to the day it is sold, shared, or passed along.
+          </p>
+          <p>
+            Whether it&apos;s a new purchase or a cherished family heirloom, HeirDock keeps the
             information, context, and value that make it meaningful, so families can make
             informed decisions today and for generations to come.
           </p>
