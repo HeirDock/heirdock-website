@@ -42,6 +42,7 @@ export default function Footer() {
             <div className="site-footer__links">
               <Link to="/contact">Contact Us</Link>
               <Link to="/security">Data Security</Link>
+              <a href="https://app.heirdock.com/help" target="_blank" rel="noopener noreferrer">Support Center</a>
               <a href="https://status.heirdock.com" target="_blank" rel="noopener noreferrer">System Status</a>
               <Link to="/legal/privacy">Privacy Policy</Link>
               <Link to="/legal/terms">Terms of Service</Link>

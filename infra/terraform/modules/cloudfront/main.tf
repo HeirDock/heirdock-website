@@ -15,7 +15,7 @@ resource "aws_cloudfront_function" "url_routing" {
         '/partner/how-it-works': '/professional#how-it-works',
         '/partner/use-cases': '/professional/features#practice',
         '/partner/why-partner': '/professional',
-        '/help': '/faq',
+        '/help': 'https://app.heirdock.com/help',
         '/status': 'https://status.heirdock.com'
       };
       var path = uri.length > 1 && uri.endsWith('/') ? uri.slice(0, -1) : uri;
