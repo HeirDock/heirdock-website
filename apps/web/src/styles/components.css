@@ -121,7 +121,7 @@
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
+  grid-template-columns: 1.5fr repeat(4, 1fr);
   gap: var(--space-3xl);
   margin-bottom: var(--space-3xl);
 }
@@ -218,10 +218,11 @@
   opacity: 1;
 }
 
-/* Tablets: the brand takes its own row above the three link columns. */
+/* Tablets: the brand takes its own row above the four link columns. */
 @media (max-width: 1023px) {
   .site-footer__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2xl);
   }
 
   .site-footer__brand {
