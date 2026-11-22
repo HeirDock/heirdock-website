@@ -65,7 +65,7 @@ export default function About() {
           </p>
           <p>That realization, rooted in a lifelong appreciation, inspired HeirDock.</p>
           <p className="about-letter__pull">
-            HeirDock helps households understand, organize, and protect what they own, from the
+            HeirDock helps households understand, care for, and protect what they own, from the
             day something is acquired to the day it is sold, shared, or passed along.
           </p>
           <p>
@@ -74,7 +74,7 @@ export default function About() {
             informed decisions today and for generations to come.
           </p>
           <p>
-            It also helps with the caring. A home and the things in it need looking after, so
+            A home and the things in it need looking after, so
             HeirDock keeps the upkeep, the service history, and the warranties with the things
             they belong to.
           </p>
