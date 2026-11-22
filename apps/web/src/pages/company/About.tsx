@@ -116,7 +116,7 @@ export default function About() {
                 <h3 className="founder-card__name">Aaron</h3>
                 <span className="founder-card__role">Co-founder</span>
                 <p className="founder-card__bio">
-                  Aaron grew up on the farm in the letter above. Before HeirDock, he spent a
+                  Aaron leads strategy and growth at HeirDock. Before HeirDock, he spent a
                   decade in product and partnerships across fintech, logistics, and property
                   technology, including co-founding a startup that modernized package
                   management.
