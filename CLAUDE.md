@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Static marketing website for HeirDock (heirdock.com). 30 pages across four sections: Global, Customer, Partner, and Legal (including the in-app copies of the legal documents). Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
+Static marketing website for HeirDock (heirdock.com). 31 pages across five sections: Global, Company, Customer, Partner, and Legal (including the in-app copies of the legal documents). Pre-rendered as static HTML for SEO, deployed to S3 + CloudFront.
 
 ## Tech Stack
 
@@ -37,7 +37,7 @@ Static marketing website for HeirDock (heirdock.com). 30 pages across four secti
 `npm run build` runs three steps:
 1. `build:client` — Vite client build → `dist/client/` (JS, CSS, index.html template)
 2. `build:server` — Vite SSR build → `dist/server/` (Node.js prerender script)
-3. `prerender` — Runs `dist/server/entry-server.js` which renders all 30 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
+3. `prerender` — Runs `dist/server/entry-server.js` which renders all 31 routes to individual HTML files in `dist/client/`, then deletes `dist/server/`
 
 Final output for deployment: `dist/client/` (all HTML + assets)
 

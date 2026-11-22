@@ -241,11 +241,48 @@ clipboard = _still("clipboard", "A clipboard with a checklist", lambda s, g, f: 
   <path d="M140 211 h36" stroke="{s}" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
 """)
 
+# A gambrel-roofed barn with a lit loft window in gold and a fence beside it: where the story starts.
+barn = _still("barn", "A barn with a lit loft window", lambda s, g, f: f"""\
+  <path d="M84 268 V176 L98 138 L150 112 L202 138 L216 176 V268" stroke="{s}" stroke-width="3" stroke-linejoin="round" fill="{f}"/>
+  <path d="M84 176 l-9 7 M216 176 l9 7" stroke="{s}" stroke-width="3" stroke-linecap="round"/>
+  <path d="M84 190 H216" stroke="{s}" stroke-width="1.8" opacity=".55"/>
+  <path d="M102 200 V268 M198 200 V268" stroke="{s}" stroke-width="1.8" opacity=".4"/>
+  <rect x="138" y="140" width="24" height="24" rx="2" fill="{g}"/>
+  <path d="M150 140 v24 M138 152 h24" stroke="{f}" stroke-width="1.6"/>
+  <rect x="120" y="206" width="60" height="62" stroke="{s}" stroke-width="3" stroke-linejoin="round" fill="{f}"/>
+  <path d="M150 206 V268" stroke="{s}" stroke-width="2"/>
+  <path d="M120 206 L150 268 M150 206 L120 268 M150 206 L180 268 M180 206 L150 268" stroke="{s}" stroke-width="1.8" opacity=".55"/>
+  <path d="M230 268 V246 M246 268 V246 M224 253 H252" stroke="{s}" stroke-width="2.4" stroke-linecap="round"/>
+""")
+
+
+def tools(palette="light", motion=None, loop=False, width=None):
+    """Old tools: a hammer and a hand saw hanging on a rail, a hand plane with a gold knob below.
+    Always on the planks (the plane sits on the top board), never under the arch."""
+    p = PALETTES[palette]
+    s, g, f = p["stroke"], p["gold"], p["fill"]
+    planks = "".join(f'  <polygon points="{pts}" fill="{PLANK_BLUE[palette]}"/>\n' for pts in PLANKS)
+    body = f"""  <path d="M78 122 H222" stroke="{s}" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="112" cy="122" r="3.4" fill="{s}"/><circle cx="188" cy="122" r="3.4" fill="{s}"/>
+  <rect x="108" y="138" width="8" height="66" rx="4" stroke="{s}" stroke-width="3" fill="{f}"/>
+  <rect x="92" y="127" width="40" height="16" rx="4" stroke="{s}" stroke-width="3" fill="{f}"/>
+  <path d="M174 154 H202 L195 214 H187 Z" stroke="{s}" stroke-width="3" stroke-linejoin="round" fill="{f}"/>
+  <path d="M181 164 L190 206" stroke="{s}" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+  <rect x="170" y="126" width="36" height="30" rx="8" stroke="{s}" stroke-width="3" fill="{f}"/>
+  <rect x="180" y="134" width="16" height="13" rx="5" stroke="{s}" stroke-width="1.8" opacity=".6"/>
+  <path d="M146 240 L157 216" stroke="{s}" stroke-width="3" stroke-linecap="round"/>
+  <path d="M122 240 q-7 -18 5 -23 q10 -1 7 10 l-3 13" stroke="{s}" stroke-width="3" stroke-linejoin="round" fill="{f}"/>
+  <path d="M110 254 V240 H192 V254" stroke="{s}" stroke-width="3" stroke-linejoin="round" fill="{f}"/>
+  <circle cx="178" cy="230" r="9" fill="{g}"/>
+  <rect x="96" y="252" width="112" height="16" rx="3" stroke="{s}" stroke-width="3" fill="{f}"/>
+{planks}"""
+    return _svg(body, width, "A hammer and a hand saw on a rail above a hand plane", PLANKS_VIEWBOX)
+
 
 DRAWINGS = {"keepsake": keepsake, "keepsake-planks": keepsake_planks, "front-door": front_door, "valuables": valuables,
-            "strongbox": strongbox, "letter": letter, "lantern": lantern, "clipboard": clipboard}
+            "strongbox": strongbox, "letter": letter, "lantern": lantern, "clipboard": clipboard, "barn": barn, "tools": tools}
 MOTIONS = {"keepsake": [None, "swing", "open"], "keepsake-planks": [None, "open"], "front-door": [None, "open"], "valuables": [None, "swing"],
-           "strongbox": [None], "letter": [None], "lantern": [None], "clipboard": [None]}
+           "strongbox": [None], "letter": [None], "lantern": [None], "clipboard": [None], "barn": [None], "tools": [None]}
 BACKGROUNDS = {"light": "#F9F7F4", "dark": "#111820", "navy": "#2E4E70"}
 
 

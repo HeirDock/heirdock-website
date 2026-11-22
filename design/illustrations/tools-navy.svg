@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 100 260 210" fill="none" role="img" aria-label="A hammer and a hand saw on a rail above a hand plane">
+  <path d="M78 122 H222" stroke="#E8EEF5" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="112" cy="122" r="3.4" fill="#E8EEF5"/><circle cx="188" cy="122" r="3.4" fill="#E8EEF5"/>
+  <rect x="108" y="138" width="8" height="66" rx="4" stroke="#E8EEF5" stroke-width="3" fill="#2E4E70"/>
+  <rect x="92" y="127" width="40" height="16" rx="4" stroke="#E8EEF5" stroke-width="3" fill="#2E4E70"/>
+  <path d="M174 154 H202 L195 214 H187 Z" stroke="#E8EEF5" stroke-width="3" stroke-linejoin="round" fill="#2E4E70"/>
+  <path d="M181 164 L190 206" stroke="#E8EEF5" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+  <rect x="170" y="126" width="36" height="30" rx="8" stroke="#E8EEF5" stroke-width="3" fill="#2E4E70"/>
+  <rect x="180" y="134" width="16" height="13" rx="5" stroke="#E8EEF5" stroke-width="1.8" opacity=".6"/>
+  <path d="M146 240 L157 216" stroke="#E8EEF5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M122 240 q-7 -18 5 -23 q10 -1 7 10 l-3 13" stroke="#E8EEF5" stroke-width="3" stroke-linejoin="round" fill="#2E4E70"/>
+  <path d="M110 254 V240 H192 V254" stroke="#E8EEF5" stroke-width="3" stroke-linejoin="round" fill="#2E4E70"/>
+  <circle cx="178" cy="230" r="9" fill="#DEB05E"/>
+  <rect x="96" y="252" width="112" height="16" rx="3" stroke="#E8EEF5" stroke-width="3" fill="#2E4E70"/>
+  <polygon points="66,274 234,274 228,268 72,268" fill="#A0D0F2"/>
+  <polygon points="50,286 250,286 244,280 56,280" fill="#A0D0F2"/>
+  <polygon points="34,298 266,298 260,292 40,292" fill="#A0D0F2"/>
+</svg>

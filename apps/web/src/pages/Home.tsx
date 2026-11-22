@@ -154,9 +154,14 @@ export default function Home() {
                 Record who each piece is meant for, and why, in your own words. Name a Steward
                 for the household, and give your family a clear record when the time comes.
               </p>
-              <Link to="/customer/use-cases#estate" className="story-band__link">
-                How estate planning works <Icon name="arrowForward" />
-              </Link>
+              <div className="story-band__links">
+                <Link to="/customer/use-cases#estate" className="story-band__link">
+                  How estate planning works <Icon name="arrowForward" />
+                </Link>
+                <Link to="/company/about" className="story-band__link">
+                  Our story <Icon name="arrowForward" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

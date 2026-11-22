@@ -40,6 +40,7 @@ export default function Footer() {
           <div>
             <div className="site-footer__heading">Company</div>
             <div className="site-footer__links">
+              <Link to="/company/about">About</Link>
               <Link to="/contact">Contact Us</Link>
               <Link to="/security">Data Security</Link>
               <a href="https://app.heirdock.com/help" target="_blank" rel="noopener noreferrer">Support Center</a>
