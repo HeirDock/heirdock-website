@@ -3,6 +3,7 @@ import Drawing from "../../components/Drawing";
 import Icon from "../../components/Icon";
 import Planks from "../../components/Planks";
 import aaronUrl from "../../assets/images/about/aaron.webp";
+import adamUrl from "../../assets/images/about/adam.webp";
 
 export default function About() {
   return (
@@ -118,14 +119,15 @@ export default function About() {
               </div>
             </article>
             <article className="founder-card">
-              <div className="founder-card__portrait founder-card__portrait--mark">
-                <svg className="drawing drawing--light" viewBox="0 0 300 300" fill="none" aria-hidden="true" focusable="false">
-                  <path className="drawing__accent" d="M28 286 V160 a122 122 0 0 1 244 0 V286" strokeWidth="14" strokeLinecap="round" />
-                  <polygon className="drawing__planks" points="96,214 204,214 196,202 104,202" />
-                  <polygon className="drawing__planks" points="80,244 220,244 212,232 88,232" opacity=".75" />
-                  <polygon className="drawing__planks" points="64,274 236,274 228,262 72,262" opacity=".5" />
-                </svg>
-              </div>
+              <img
+                className="founder-card__portrait"
+                src={adamUrl}
+                width={144}
+                height={144}
+                alt="Adam, co-founder of HeirDock"
+                decoding="async"
+                loading="lazy"
+              />
               <div className="founder-card__body">
                 <h3 className="founder-card__name">Adam</h3>
                 <span className="founder-card__role">Co-founder</span>

@@ -2977,18 +2977,6 @@
   object-fit: cover;
 }
 
-/* No photo: the arch and planks on a tint tile of the same size. */
-.founder-card__portrait--mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--stack-tint-navy);
-}
-
-.founder-card__portrait--mark .drawing {
-  width: 80px;
-}
-
 .founder-card__body {
   min-width: 0;
 }
