@@ -118,8 +118,7 @@ export default function About() {
                 <p className="founder-card__bio">
                   Aaron leads strategy and growth at HeirDock. Before HeirDock, he spent a
                   decade in product and partnerships across fintech, logistics, and property
-                  technology, including co-founding a startup that modernized package
-                  management.
+                  technology, and co-founded a package management startup.
                 </p>
               </div>
             </article>
