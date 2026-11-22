@@ -42,8 +42,8 @@ export default function About() {
           </p>
           <p>
             There was nothing better than picking up an old tool, finding a family heirloom, or
-            studying a faded photograph while my grandmother, and later my father, explained why
-            it mattered. These weren&apos;t simply possessions. They held value, meaning, and a
+            studying a faded photograph while my grandmother, and later my father, explained its
+            significance. These weren&apos;t simply possessions. They held value, meaning, and a
             connection to the people and places that came before us.
           </p>
           <div className="about-letter__figure">
@@ -73,9 +73,14 @@ export default function About() {
             informed decisions today and for generations to come.
           </p>
           <p>
-            I started HeirDock with my co-founder, Adam, who has spent his career building
-            software that organizations depend on. Together we are building the household
-            record that families have always needed.
+            It also helps with the caring. A home and the things in it need looking after, so
+            HeirDock keeps the upkeep, the service history, and the warranties with the things
+            they belong to.
+          </p>
+          <p>
+            I&apos;m building HeirDock with my co-founder, Adam. Where I am drawn to the stories
+            behind things, he is drawn to keeping them well cared for. Together we are building
+            the household record that families have always needed.
           </p>
           <div className="about-letter__signature">
             <span className="about-letter__name">Aaron Ober</span>

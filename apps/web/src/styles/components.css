@@ -2912,8 +2912,6 @@
 /* The one line pulled out of the letter, under a gold rule. */
 .about-letter p.about-letter__pull {
   margin: var(--space-xl) 0;
-  padding-top: var(--space-lg);
-  border-top: 2px solid var(--color-accent);
   font-size: clamp(1.5rem, 1.2vw + 1rem, 2rem);
   font-weight: 500;
   line-height: 1.3;
