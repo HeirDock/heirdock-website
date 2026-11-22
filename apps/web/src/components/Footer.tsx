@@ -43,10 +43,14 @@ export default function Footer() {
               <Link to="/company/about">About</Link>
               <Link to="/contact">Contact Us</Link>
               <Link to="/security">Data Security</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="site-footer__heading">Support</div>
+            <div className="site-footer__links">
               <a href="https://app.heirdock.com/help" target="_blank" rel="noopener noreferrer">Support Center</a>
               <a href="https://status.heirdock.com" target="_blank" rel="noopener noreferrer">System Status</a>
-              <Link to="/legal/privacy">Privacy Policy</Link>
-              <Link to="/legal/terms">Terms of Service</Link>
             </div>
           </div>
         </div>
@@ -55,6 +59,7 @@ export default function Footer() {
           <span>&copy; {__BUILD_YEAR__} HeirDock, LLC. All rights reserved.</span>
           <nav className="site-footer__legal" aria-label="Legal">
             <Link to="/legal/privacy">Privacy</Link>
+            <Link to="/legal/terms">Terms</Link>
             <Link to="/legal">Legal</Link>
             <Link to="/legal/cookies">Cookie Notice</Link>
           </nav>
