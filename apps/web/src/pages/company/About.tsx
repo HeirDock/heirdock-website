@@ -216,8 +216,11 @@ export default function About() {
       <section className="closing-cta">
         <div className="brand-panel closing-cta__panel">
           <div>
-            <h2 className="closing-cta__title">Rooted in New Hampshire<span className="gold-stop" aria-hidden="true" /></h2>
-            <p className="closing-cta__text">We&apos;d be glad to show you around.</p>
+            <h2 className="closing-cta__title">Come take a look<span className="gold-stop" aria-hidden="true" /></h2>
+            <p className="closing-cta__text">
+              We&apos;re a small team with New Hampshire roots, and we&apos;d be glad to show
+              you around.
+            </p>
             <div className="closing-cta__actions">
               <Link to="/customer/features" className="btn btn--gold btn--lg">
                 See how HeirDock works <Icon name="arrowForward" />
